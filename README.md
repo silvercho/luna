@@ -54,3 +54,5 @@ BlockQuote
 정다온|99점|99점|99점|
 
 
+![main_06](https://github.com/silvercho/luna/assets/130129061/1289c7d2-88dc-4d9f-b07e-a3207d3b4a92)
+
