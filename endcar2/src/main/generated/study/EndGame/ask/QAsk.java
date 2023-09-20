@@ -46,7 +46,7 @@ public class QAsk extends EntityPathBase<Ask> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> regTime = _super.regTime;
 
-    public final ListPath<study.EndGame.reply.Reply, study.EndGame.reply.QReply> replyEntityList = this.<study.EndGame.reply.Reply, study.EndGame.reply.QReply>createList("replyEntityList", study.EndGame.reply.Reply.class, study.EndGame.reply.QReply.class, PathInits.DIRECT2);
+    public final ListPath<study.EndGame.reply.ReplyEntity, study.EndGame.reply.QReplyEntity> replyEntityList = this.<study.EndGame.reply.ReplyEntity, study.EndGame.reply.QReplyEntity>createList("replyEntityList", study.EndGame.reply.ReplyEntity.class, study.EndGame.reply.QReplyEntity.class, PathInits.DIRECT2);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedTime = _super.updatedTime;

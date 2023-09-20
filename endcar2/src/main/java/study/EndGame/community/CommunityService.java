@@ -37,7 +37,7 @@ public class CommunityService {
             MultipartFile communityFile = communityDto.getCommunityFile(); // 1.
             String originalFilename = communityFile.getOriginalFilename(); // 2.
             String storedFileName = System.currentTimeMillis() + "_" + originalFilename; // 3.
-            String savePath = "D:/TeamProjectEndGame8/src/main/resources/static/img/" + storedFileName; // 4.
+            String savePath = "D:/endcar2/src/main/resources/static/img/" + storedFileName; // 4.
 //            String savePath = "D:/TeamProjectEndGame8/src/main/resources/templates/community/" + storedFileName; // 4.
             communityFile.transferTo(new File(savePath)); // 5.
 

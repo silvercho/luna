@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import study.EndGame.entity.User;
 import study.EndGame.reply.ReplyDto;
-import study.EndGame.service.ReplyService;
+import study.EndGame.reply.ReplyService;
 import study.EndGame.service.*;
 
 import java.io.IOException;
@@ -101,7 +101,7 @@ public class AskController {
         if(auth != null) {
             User loginUser = userService.getLoginUserByLoginId(auth.getName());
             if (loginUser != null) {
-                model.addAttribute("name", loginUser.getName());
+                model.addAttribute("nickname", loginUser.getName());
             }
         }
 //        pageable.getPageNumber();

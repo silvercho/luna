@@ -12,13 +12,13 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Table(name = "ask_table")
 public class Ask extends BaseEntity {
-    @Id
-    @Column(name = "ask_id")
+    @Id // pk 컬럼 지정. 필수
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private Long id;
 
-    @Column(length = 20, nullable = false)
+    @Column(length = 20, nullable = false) // 크기 20, not null
     private String askWriter;
 
     @Column // 크기 255, null 가능
@@ -33,8 +33,12 @@ public class Ask extends BaseEntity {
     @Column
     private int askHits;
 
+//
+//    @OneToMany(mappedBy = "ask", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+//    private List<FileEntity> fileEntityList = new ArrayList<>();
+
     @OneToMany(mappedBy = "ask", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<study.EndGame.reply.Reply> replyEntityList = new ArrayList<>();
+    private List<study.EndGame.reply.ReplyEntity> replyEntityList = new ArrayList<>();
 
     public static Ask toSaveEntity(AskDto askDto) {
         Ask ask = new Ask();

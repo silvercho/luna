@@ -16,12 +16,12 @@ public class ReplyDto {
     private Long askId;
     private LocalDateTime replyCreatedTime;
 
-    public static ReplyDto toReplyDto(Reply reply, Long askId) {
+    public static ReplyDto toReplyDto(ReplyEntity replyEntity, Long askId) {
         ReplyDto replyDto = new ReplyDto();
-        replyDto.setId(reply.getId());
-        replyDto.setReplyWriter(reply.getReplyWriter());
-        replyDto.setReplyContents(reply.getReplyContents());
-        replyDto.setReplyCreatedTime(reply.getCreatedTime());
+        replyDto.setId(replyEntity.getId());
+        replyDto.setReplyWriter(replyEntity.getReplyWriter());
+        replyDto.setReplyContents(replyEntity.getReplyContents());
+        replyDto.setReplyCreatedTime(replyEntity.getCreatedTime());
         replyDto.setAskId(askId);
         return replyDto;
     }

@@ -1,12 +1,9 @@
-package study.EndGame.service;
+package study.EndGame.reply;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import study.EndGame.ask.Ask;
 import study.EndGame.ask.AskRepository;
-import study.EndGame.reply.Reply;
-import study.EndGame.reply.ReplyDto;
-import study.EndGame.reply.ReplyRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,8 +20,8 @@ public class ReplyService {
         Optional<Ask> optionalAsk = askRepository.findById(askId);
         if (optionalAsk.isPresent()) {
             Ask ask = optionalAsk.get();
-            Reply reply = Reply.toSave(replyDto, ask);
-            return replyRepository.save(reply).getId();
+            ReplyEntity replyEntity = ReplyEntity.toSaveEntity(replyDto, ask);
+            return replyRepository.save(replyEntity).getId();
         } else {
             return null;
         }
@@ -34,11 +31,11 @@ public class ReplyService {
         Optional<Ask> optionalAsk = askRepository.findById(askId);
         if (optionalAsk.isPresent()) {
             Ask ask = optionalAsk.get();
-            List<Reply> replyList = replyRepository.findAllByAskOrderByIdDesc(ask);
+            List<ReplyEntity> replyEntityList = replyRepository.findAllByAskOrderByIdDesc(ask);
 
             List<ReplyDto> replyDtoList = new ArrayList<>();
-            for (Reply reply : replyList) {
-                ReplyDto replyDto = ReplyDto.toReplyDto(reply, askId);
+            for (ReplyEntity replyEntity : replyEntityList) {
+                ReplyDto replyDto = ReplyDto.toReplyDto(replyEntity, askId);
                 replyDtoList.add(replyDto);
             }
             return replyDtoList;

@@ -45,7 +45,6 @@ public class AskDto {
         askDto.setAskCreatedTime(ask.getCreatedTime());
         askDto.setAskUpdatedTime(ask.getUpdatedTime());
 
-
         return askDto;
     }
 }

@@ -27,10 +27,11 @@ public class BoardController {
     public String list(Model model, Authentication auth, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum);
+
         if(auth != null) {
             User loginUser = userService.getLoginUserByLoginId(auth.getName());
             if (loginUser != null) {
-                model.addAttribute("nickname", loginUser.getName());
+                model.addAttribute("name", loginUser.getName());
             }
         }
 
@@ -50,7 +51,7 @@ public class BoardController {
         if(auth != null) {
             User loginUser = userService.getLoginUserByLoginId(auth.getName());
             if (loginUser != null) {
-                model.addAttribute("nickname", loginUser.getName());
+                model.addAttribute("name", loginUser.getName());
             }
         }
         return "board/write";
@@ -74,7 +75,7 @@ public class BoardController {
         if(auth != null) {
             User loginUser = userService.getLoginUserByLoginId(auth.getName());
             if (loginUser != null) {
-                model.addAttribute("nickname", loginUser.getName());
+                model.addAttribute("name", loginUser.getName());
             }
         }
         BoardDto boardDTO = boardService.getPost(no);
@@ -90,7 +91,7 @@ public class BoardController {
         if(auth != null) {
             User loginUser = userService.getLoginUserByLoginId(auth.getName());
             if (loginUser != null) {
-                model.addAttribute("nickname", loginUser.getName());
+                model.addAttribute("name", loginUser.getName());
             }
         }
         BoardDto boardDTO = boardService.getPost(no);

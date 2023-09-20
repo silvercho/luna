@@ -11,16 +11,16 @@ import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
- * QReply is a Querydsl query type for Reply
+ * QReplyEntity is a Querydsl query type for ReplyEntity
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class QReply extends EntityPathBase<Reply> {
+public class QReplyEntity extends EntityPathBase<ReplyEntity> {
 
-    private static final long serialVersionUID = -116472320L;
+    private static final long serialVersionUID = 73733635L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final QReply reply = new QReply("reply");
+    public static final QReplyEntity replyEntity = new QReplyEntity("replyEntity");
 
     public final study.EndGame.entity.QBaseEntity _super = new study.EndGame.entity.QBaseEntity(this);
 
@@ -50,23 +50,23 @@ public class QReply extends EntityPathBase<Reply> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updateTime = _super.updateTime;
 
-    public QReply(String variable) {
-        this(Reply.class, forVariable(variable), INITS);
+    public QReplyEntity(String variable) {
+        this(ReplyEntity.class, forVariable(variable), INITS);
     }
 
-    public QReply(Path<? extends Reply> path) {
+    public QReplyEntity(Path<? extends ReplyEntity> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QReply(PathMetadata metadata) {
+    public QReplyEntity(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QReply(PathMetadata metadata, PathInits inits) {
-        this(Reply.class, metadata, inits);
+    public QReplyEntity(PathMetadata metadata, PathInits inits) {
+        this(ReplyEntity.class, metadata, inits);
     }
 
-    public QReply(Class<? extends Reply> type, PathMetadata metadata, PathInits inits) {
+    public QReplyEntity(Class<? extends ReplyEntity> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.ask = inits.isInitialized("ask") ? new study.EndGame.ask.QAsk(forProperty("ask")) : null;
     }
