@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>동서식품Y</title>
+	<script>
+	$(function(){
+		
+		var i=0;
+		var clone = $(".imgs li").eq(0).clone();
+		$(".slide .imgs").append(clone);
+		
+		setInterval(function(){
+			
+			if(i==5){
+				i=0;
+				$(".imgs").css({
+					"margin-left":0
+				});
+			}
+			i++;
+			$(".imgs").stop().animate({
+				"margin-left":-i*100+"%"
+			},600);
+			
+			
+		},3000);
+		
+		
+		var t=0;
+		var clone_0 = $(".text_list li").eq(0).clone();
+		$(".text_list").append(clone_0);
+		
+		setInterval(function(){
+			
+			if(t==5){
+				t=0;
+				$(".text_list").css({
+					"margin-left":0
+				});
+				
+			}
+			t++;
+			$(".text_list").stop().animate({
+				"margin-left":-t*100+"%"
+			},600);
+			
+			
+			
+			if(t>4){
+				$(".slide2 .pager li").removeClass("on");
+				$(".slide2 .pager li").eq(0).addClass("on");
+			}else{
+				$(".slide2 .pager li").removeClass("on");
+				$(".slide2 .pager li").eq(t).addClass("on");
+			}
+		},3000);
+		
+		
+		/*var n=0;
+		var clone_1 = $(".n_imgs li").eq(0).clone();
+		$(".n_imgs").append(clone_1);
+		
+		setInterval(function(){
+			
+			if(n==5){
+				n=0;
+				$(".n_imgs").css({
+					"margin-left":0
+				});
+			}
+			n++;
+			$(".n_imgs").stop().animate({
+				"margin-left":-n*100+"%"
+			},600);
+		},3000);
+		*/
+		$(".slide3 .pager li").click(function(){
+			var newp_pager = $(this).index();
+			
+			$(".slide3 ul").stop().animate({
+				"margin-left":-newp_pager*100+"%"
+			},600);
+			
+			$(".slide3 .pager li").removeClass("on");
+			$(this).addClass("on");
+			
+			return false;
+		});
+	
+		/*var c=0;
+		var clone_2 = $(".tvc li").eq(0).clone();
+		$(".tvc").append(clone_2);
+		
+		setInterval(function(){
+			
+			if(c==4){
+				c=0;
+				$(".tvc").css({
+					"margin-left":0
+				});
+			}
+			c++;
+			$(".tvc").stop().animate({
+				"margin-left":-c*100+"%"
+			},600);
+		},3000);
+		*/
+		$(".slide4 .pager li").click(function(){
+			var tvcf_pager = $(this).index();
+			
+			$(".slide4 ul").stop().animate({
+				"margin-left":-tvcf_pager*100+"%"
+			},600);
+			
+			$(".slide4 .pager li").removeClass("on");
+			$(this).addClass("on");
+			
+			return false;
+		});
+
+
+
+		
+		var s=0;
+		var clone_3 = $(".s_imgs li").eq(0).clone();
+		$(".s_imgs").append(clone_3);
+		
+		setInterval(function(){
+			
+			if(s==6){
+				s=0;
+				$(".s_imgs").css({
+					"margin-left":0
+				});
+			}
+			s++;
+			$(".s_imgs").stop().animate({
+				"margin-left":-s*100+"%"
+			},600);
+		},3000);
+	
+	
+	/*
+		$(".s2_cover .pager li").click(function(){
+			var webzine_pager = $(this).index();
+			
+			$(".s2_cover ul").stop().animate({
+				"margin-left":-webzine_pager*100+"%"
+			},600);
+			
+			$(".s2_cover .pager li").removeClass("on");
+			$(this).addClass("on");
+			
+			return false;
+		});*/
+		
+		var w=0;
+		var w_cron = $(".s2_cover ul li").eq(0).clone();
+		$(".s2_cover ul").append(w_cron);
+		
+		setInterval(function(){
+			
+			if(w==2){
+				w=0;
+				$(".s2_cover ul").css({
+					"margin-left":0
+				});
+			}
+			w++;
+			$(".s2_cover ul").stop().animate({
+				"margin-left":-w*100+"%"
+			},600);
+			
+			if(w==2){
+				$(".s2_cover .pager li").removeClass("on");
+				$(".s2_cover .pager li").eq(0).addClass("on");
+			}else{
+				$(".s2_cover .pager li").removeClass("on");
+				$(".s2_cover .pager li").eq(w).addClass("on");
+			}
+		},6000);
+		
+	});
+	
+		
+	</script>
+</head>
+<body>
+	<div id="side_fix">
+		<h1 class="b_logo">BRAND</h1>
+		<ul>
+			<li class="i_m1">
+				<a href="#"><span>커피<br>COFFEE</span> </a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m2">
+				<a href="#"><span>차<br>TEA</span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m3">
+				<a href="#"><span>분말음료<br>DRINK POWDER</span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m4">
+				<a href="#"><span>시리얼<br>CEREAL</span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m5">
+				<a href="#"><span>쿠키<br>COOKIE</span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m6">
+				<a href="#"><span>꿀<br>HONEY</span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m7">
+				<a href="#"><span>치즈<br>CHEESE</span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<div id="wrap">
+		<header>
+			<div class="header_top">
+				<a href="#">
+					<img src="./images/logo.png" alt="로고">
+				</a>
+			</div>
+			<div class="nav">
+				<div class="nav_cover">
+					<div class="gnb">
+						<ul>
+							<li><a href="#">회사소개</a>
+								<div class="full_down f1">
+									<div class="full_cover">
+										<div class="f_wrap">
+											<div class="f_ibox ibox1">
+												<h3>Dong Suh <br/>Foods</h3>
+												<div class="f_img"></div>
+											</div>
+											<ul class="f_box">
+												<li><a href="#">동서식품</a></li>
+												<li><a href="#">식품안전센터</a></li>
+											</ul>
+										</div>	
+									</div>
+								</div>
+							</li>
+							<li><a href="#">제품안내</a>
+								<div class="full_down f2">
+									<div class="full_cover">
+										<div class="f_wrap">
+											<div class="f_ibox ibox2">
+												<h3>Products</h3>
+												<div class="f_img"></div>
+											</div>
+											<ul class="f_box">
+												<li><a href="#">브랜드</a></li>
+												<li><a href="#">제품소개</a></li>
+											</ul>
+										</div>	
+									</div>
+								</div>
+							</li>
+							<li><a href="#">홍보센터</a>
+								<div class="full_down f3">
+									<div class="full_cover">
+										<div class="f_ibox ibox3">
+											<h3>Media<br/>Center</h3>
+											<div class="f_img"></div>
+										</div>
+										<ul class="f_box">
+											<li><a href="#">뉴스</a></li>
+											<li><a href="#">이벤트</a></li>
+											<li><a href="#">동서식품 홍보영상</a></li>
+											<li><a href="#">TV CF</a></li>
+										</ul>
+										<ul class="f_box">
+											<li><a href="#">웹진 삶의 향기</a></li>
+											<li><a href="#">커피 클래스</a></li>
+											<li><a href="#">커피 테이스트</a></li>
+											<li><a href="#">소셜미디어</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">사회공헌</a>
+								<div class="full_down f4">
+									<div class="full_cover">
+										<div class="f_ibox ibox4">
+											<h3>CSR</h3>
+											<div class="f_img"></div>
+										</div>
+										<ul class="f_box">
+											<li><a href="#">삶의향기 동서문학상</a></li>
+											<li><a href="#">맥심커피배 입신최강전</a></li>
+											<li><a href="#">동서커피클래식</a></li>
+										</ul>
+										<ul class="f_box">
+											<li><a href="#">동서식품 장학회</a></li>
+											<li><a href="#">맥심 사랑의 향기</a></li>
+											<li><a href="#">동서식품 꿈의 도서관</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">고객의소리</a>
+								<div class="full_down f5">
+									<div class="full_cover">
+										<div class="f_ibox ibox5">
+											<h3>Customer<br/>Support</h3>
+											<div class="f_img"></div>
+										</div>
+										<ul class="f_box">
+											<li><a href="#">FAQ</a></li>
+											<li><a href="#">고객문의</a></li>
+											<li><a href="#">제품 아이디어</a></li>
+											<li><a href="#">제품 불편사항</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="crum">
+						<ul>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">로그인</a></li>
+							<li><a href="#"><img src="./images/ico_search.png" alt=""/></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="fake_header"></div>
+		
+		
+		
+	<section id="section">
+		<div class="section_cover">
+			<div class="article_cover">
+				<div class="article box1">
+					<div class="slide slide1">
+						<ul class="imgs cf">
+							<li><img src="./images/img_banner1_7.jpg" alt=""/>
+								<p>삶의 향기가<br>문학이 됩니다</p>
+							</li>
+							<li><img src="./images/img_banner1_6.jpg" alt=""/>
+								<p>동서식품,<br> '맥심6차 리스테이지'시행</p>
+							</li>
+							<li><img src="./images/img_banner1_3.jpg" alt=""/>
+								<p>세상의 모든 순간이<br> 더욱 행복해지도록</p>
+							</li>
+							<li><img src="./images/img_banner1_2.jpg" alt=""/>
+								<p>세상의 모든 순간이<br> 더욱 행복해지도록</p>
+							</li>
+							<li><img src="./images/img_banner1_1.jpg" alt=""/>
+								<p>세상의 모든 순간이<br> 더욱 행복해지도록</p>
+							</li>
+						</ul>
+					</div>
+				</div>	
+				<div class="article box2">
+					<p>HOT NEWS</p>
+					<div class="slide slide2">
+						<ul class="text_list">
+							<li>
+								<a href="#">
+									<p>동서식품, '제12회 동서커피클래식' 내달 12일 부산서 개최</p>
+									<span>2019.11.01</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<p>동서식품, 태풍'미탁'피해 복구 성금 1억원기부</p>
+									<span>2019.11.01</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<p>동서식품, '맥심 원두커피 에스프레소 블렌드'출시</p>
+									<span>2019.11.01</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<p>동서식품, '포스트화이버 오트밀'3종출시</p>
+									<span>2019.10.23</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<p>동서식품, '맥심카누' 신제품 라떼 3종 출시</p>
+									<span>2019.10.07</span>
+								</a>
+							</li>
+						</ul>
+						<ol class="pager">
+							<li class="on"><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+						</ol>
+					</div>
+				</div>
+				<div class="article box3">
+					<p>PR FILM</p>
+					<a href="#">	
+						<span>
+							<img src="./images/img_prfilm.jpg" alt=""/>
+						</span>
+						<div class="over">
+							<div></div>
+							<p>동서식품 홍보영상</p>
+						</div>
+					</a>
+				</div>
+				<div class="article box4">
+					<p>NEW PRODUCT</p>
+					<div class="slide slide3">
+						<ul class="n_imgs">
+							
+							<li>
+								<a href="#">
+									<img src="./images/5001.png" alt=""/>
+									<!-- <div class="over"> -->
+										<!-- <div></div> -->
+										<!-- <p>동서 옥수수茶</p> -->
+									<!-- </div> -->
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/bo5001.png" alt=""/>
+									<!-- <div class="over"> -->
+										<!-- <div></div> -->
+										<!-- <p>동서 보리茶</p> -->
+									<!-- </div> -->
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/black325ml_5001.png" alt=""/>
+									<!-- <div class="over"> -->
+										<!-- <div></div> -->
+										<!-- <p>스타벅스<br> 콜드브루 블랙</p> -->
+									<!-- </div> -->
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/WITH325ml_5001.png" alt=""/>
+									<!-- <div class="over"> -->
+										<!-- <div></div> -->
+										<!-- <p>스타벅스<br> 콜드브루 WITH 밀크</p> -->
+									<!-- </div> -->
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/cup270ml_5001.png" alt=""/>
+									<!-- <div class="over"> -->
+										<!-- <div></div> -->
+										<!-- <p>스타벅스<br>스무스 아메리카노</p> -->
+									<!-- </div> -->
+								</a>
+							</li>
+						</ul>
+						<ol class="pager">
+							<li class="on"><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+						</ol>
+					</div>
+				</div>
+				<div class="article box5">
+					<p>TV CF</p>
+					<div class="slide slide4">
+						<ul class="tvc">
+							<li>
+								<a href="#">
+									<img src="./images/cf1.jpg" alt=""/>
+									<p>포스트 콘푸라이트</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/cf2.jpg" alt=""/>
+									<p>오레오</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/cf3.jpg" alt=""/>
+									<p>맥심 모카골드</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/cf4.jpg" alt=""/>
+									<p>맥스웰하우스 <br>콜롬비아나 마스터</p>
+								</a>
+							</li>
+						</ul>
+					
+					<ol class="pager">
+						<li class="on"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ol>
+				</div>
+			</div>
+				<div class="article box6">
+					<p>사회공헌</p>
+					<div class="slide slide5">
+						<ul class="s_imgs">
+							<li>
+								<a href="#">
+									<img src="./images/img_csr1.jpg" alt=""/>
+									<div class="over">
+										<div></div>
+										<p>삶의 향기 동서문학상</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/img_csr2.jpg" alt=""/>
+									<div class="over">
+										<div></div>
+										<p>맥심커피배 입신최강전</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/img_csr3.jpg" alt=""/>
+									<div class="over">
+										<div></div>
+										<p>동서커피클래식</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/img_csr4.jpg" alt=""/>
+									<div class="over">
+										<div></div>
+										<p>동서식품 장학회</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/img_csr5.jpg" alt=""/>
+									<div class="over">
+										<div></div>
+										<p>맥심 사랑의 향기</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="./images/img_csr6.jpg" alt=""/>
+									<div class="over">
+										<div></div>
+										<p>스타벅스 꿈의 도서관</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<ol class="pager">
+						<li class="on"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ol>
+				</div>
+				<div class="article box7">
+					<a href="#">
+						<span>Better Beans Better Coffee Better Culture
+							<p>맥심 브랜드 플래그쉽 스토어<br>그랜드 오픈</p>
+						</span>
+						<img src="./images/img_maxim_flant_banner.jpg" alt=""/>
+					</a>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	
+	<div id="section2">
+		<div class="s2_cover">
+			<h2>WEBZINE</h2>
+			<ul>
+				<li>
+					<div class="slide webzine">
+						<a href="#">
+							<span class="s_left">
+								<img src="./images/20190925PM85819iimg_wzb.jpg" alt=""/>
+							</span>
+							<span class="s_right">
+								<p>[향기로운 기억]</p>
+								<p>비석치기</p>
+							</span>
+						</a>
+					</div>
+					<div class="slide webzine">
+						<a href="#">
+							<span class="s_left">
+								<img src="./images/20190925PM85618iimg_wz_h.jpg" alt=""/>
+							</span>
+							<span class="s_right">
+								<p>[행복 레시피]</p>
+								<p>바나나 꿀 카누 무스 &amp; 타라 코코넛 라떼</p>
+							</span>
+						</a>
+					</div>
+					<div class="slide webzine">
+						<a href="#">
+							<span class="s_left">
+								<img src="./images/20190925PM85410iimg_wz_k.jpg" alt=""/>
+							</span>
+							<span class="s_right">
+								<p>[한국의 재발견]</p>
+								<p>행방이 묘연했던 신라 명필 김생의 친필 글씨</p>
+							</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="slide webzine">
+						<a href="#">
+							<span class="s_left">
+								<img src="./images/20190925PM85012iimg_wz_c.jpg" alt=""/>
+							</span>
+							<span class="s_right">
+								<p>[차 한 잔의 향기]</p>
+								<p>인생의 행복을 찾아 무동력 요트로 항해하다 해양모험가 김승진</p>
+							</span>
+						</a>
+					</div>
+					<div class="slide webzine">
+						<a href="#">
+							<span class="s_left">
+								<img src="./images/20190925PM84813iimg_wz_i.jpg" alt=""/>
+							</span>
+							<span class="s_right">
+								<p>[일상의 향기]</p>
+								<p>'나를 위로하는 것' 마음의 평화를 돕는 소중한 오늘의 이야기</p>
+							</span>
+						</a>
+					</div>
+					<div class="slide webzine">
+						<a href="#">
+							<span class="s_left">
+								<img src="./images/20190925PM84444iimg_wz_w.jpg" alt=""/>
+							</span>
+							<span class="s_right">
+								<p>[음식만담]</p>
+								<p>감자에 밀려 이름까지 뺏긴 고구마의 반전</p>
+							</span>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ol class="pager">
+						<li class="on"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+			</ol>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<footer>
+		<div class="f_cover">
+		<div class="f_top">
+			<div class="ft_left">
+				<ul>
+					<li><a href="#">개인정보취급방침</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">영상정보처리기기운영관리방침</a></li>
+				</ul>
+			</div>
+			<div class="ft_right">
+				<div class="select_box">
+					<ul>
+						<li><a href="#">브랜드 사이트</a>
+							<ul>
+								<li><a href="#">브랜드 사이트</a></li>
+								<li><a href="#">맥심</a></li>
+								<li><a href="#">모카골드</a></li>
+								<li><a href="#">카누</a></li>
+								<li><a href="#">화이트골드</a></li>
+								<li><a href="#">포스트</a></li>
+							</ul>
+						</li>
+						<li><a href="#">패밀리 사이트</a>
+							<ul>
+								<li><a href="#">패밀리 사이트</a></li>
+								<li><a href="#">식품안전센터</a></li>
+								<li><a href="#">삶의향기 동서문학상</a></li>
+								<li><a href="#">커피아카데미</a></li>
+								<li><a href="#">(주)동서</a></li>
+							</ul>
+						</li>
+						<li><a href="#">커뮤니티</a>
+							<ul>
+								<li><a href="#">커뮤니티</a></li>
+								<li><a href="#">동서문학회 커뮤니티</a></li>
+								<li><a href="#">그녀들의 커피이야기</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="f_bottom">
+			<span>
+			[부평공장] 인천시 부평구 새벌로 55 [서울사무소] 서울시 마포구 독막로 324 (도화동, 동서빌딩)<br>대표번호 1588-2233 고객상담실 080-023-9114<br>Copyright 2017 Dongsuh Foods Corporation. All rights reserved.
+			</span>
+		</div>
+		</div>
+	</footer>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+
+    /*초기화*/
+    * { margin: 0; padding: 0; }
+    ol, ul { list-style: none; }
+    a { text-decoration: none; outline: 0; color: #555; }
+    img { border: 0; }
+ 
+ 
+body {
+	min-width: 1400px;    /*최소 너비 지정*/
+	width: 100%;
+	height: 23000px;
+	font-family: orbitron;
+	font-size: 12px;
+	letter-spacing: 2px;     /*글자 간격*/
+}
+ 
+
+.bg{
+	position: fixed;
+	width: 100%; height: 100%; 
+	background: url(../images/bg.jpg) no-repeat center /cover;
+} 
+  
+h1{
+	position: fixed;
+	top: 40px; left: 60px;
+	width: 120px;
+	z-index: 2;
+}
+h1 img{
+	width: 100%;
+}
+
+.gnb{
+	position: fixed; 
+	top: 50px; right: 10%;
+	z-index: 2;
+}
+.gnb li{
+	float: left;
+	margin: 0 15px;
+}
+.gnb li a{
+	display: block;
+	font-size: 14px; 
+	font-weight: bold;
+	color: #fff;
+	opacity: 0.6;
+	transition: all 0.6s;
+}
+.gnb li a:hover{
+	opacity: 1;
+	transform: scale(1.2);
+}
+.sns{
+	position: fixed;
+	top: 50px; right: 20px;
+	z-index: 2;
+}
+.sns li{
+	float: left;
+	margin: 0 10px;
+}
+.sns li .fa{
+	font-size: 18px;
+	font-weight: bold;
+	display: block;
+	color: #fff;
+	opacity: 0.6;
+	transition: all 0.6s;
+}
+.sns li .fa:hover{
+	transform: scale(1.3);
+	opacity: 1;
+}
+
+.scrollNav{
+	position: fixed;
+	left: 100px; top: 50%; 
+	transform: translateY(-50%);
+	z-index: 2;	
+}
+
+.scrollNav li{
+	width: 150px; height: 35px; 
+	margin: 20px 0;   /*마진 병합현상으로 li들 아래위는 20px씩 떨어짐*/
+	font-size: 12px;
+	color: #fff;
+	text-align:  center;
+	border: 1px solid;
+	cursor: pointer;
+	position: relative;
+}
+/*발목아팡*/
+
+.scrollNav li em{
+	position:absolute;
+	left:20px;
+	top:50%;
+	transform:translateY(-50%);
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	text-shadow:1px 1px 1px #000;
+}
+ 
+.scrollNav li span{
+	display:block;
+	width:3%;
+	height:100%;
+	position:absolute;
+	box-shadow:1px 1px 1px #000;
+	transform:skewX(-30deg);
+} 
+.scrollNav li.on span{
+	width:100%;
+}  
+.scrollNav li:nth-child(1) span{
+	background-color:#ff0f51;
+}  
+.scrollNav li:nth-child(2) span{
+	background-color:#fffb02;
+}   
+.scrollNav li:nth-child(3) span{
+	background-color:#b57de4;
+} 
+.scrollNav li:nth-child(4) span{
+	background-color:#7cf023;
+} 
+.scrollNav li:nth-child(5) span{
+	background-color:#3dbdfa;
+}   
+
+
+.copyright{
+	position:fixed;
+	right:30px;
+	bottom:20px;
+	font-family:helvetica;
+	font-size:12px;
+	color:#999;
+} 
+
+
+section{
+	position:fixed;
+	width:1200px;
+	height:700px;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:1;
+	perspective:2300px;
+}
+
+section article{
+	position:absolute;
+	width:100%;
+	height:100%;
+	opacity:0.5;
+	left:0;
+	top:0;
+	z-index:15;
+	
+} 
+section article.on{
+	opacity:1;
+	z-index:20;
+}
+
+section article:nth-child(1){
+	transform:translateZ(0px);
+}
+section article:nth-child(2){
+	transform:translateZ(-5000px);
+}
+section article:nth-child(3){
+	transform:translateZ(-10000px);
+}
+section article:nth-child(4){
+	transform:translateZ(-15000px);
+}
+section article:nth-child(5){
+	transform:translateZ(-20000px);
+}
+
+
+
+
+section article p{
+	position:absolute;
+	width:450px;
+	padding:30px 60px;
+	color:#fff;
+}
+section article p span{
+	font-size:60px;
+	letter-spacing:0px;
+	line-height:1.5;
+}
+section article img{
+	position:absolute;
+}
+
+section article:nth-child(1) p{
+	bottom:100px;
+	right:-100px;
+}
+section article:nth-child(1) p span{
+	display:block;
+	color:#ff0f51;
+}
+
+.obj11{bottom:-100px;left:-270px;}
+.obj12{top:-85px;right:-590px;}
+.obj13{bottom:20px;left:-100px;}
+
+
+section article:nth-child(2) p{
+	bottom:200px;
+	left:100px;
+}
+section article:nth-child(2) p span{
+	display:block;
+	color:#fffb02;
+}
+
+.obj21{bottom:-420px;right:-700px;}
+.obj22{bottom:-100px;right:-50px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

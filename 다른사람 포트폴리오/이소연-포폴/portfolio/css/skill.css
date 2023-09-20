@@ -1,0 +1,571 @@
+/*skill_section*/
+
+#skill{
+	width:100%;
+	height:800px;
+}
+
+
+.skill_inner{
+	width:85%;
+	height:100%;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+
+.skill_title{
+	position:absolute;
+	right:0;
+	top:0;
+	width:30%;
+	height:100%;
+	/*background:url(../images/background-3516145_1920.jpg) no-repeat center /cover;*/
+	opacity:0.5;
+}
+
+.skill_box{
+	width:50%;
+	height:400px;
+	position:relative;
+	float:left;
+}
+
+
+.skill_inner .s_text2{
+	position:absolute;
+	left:50%;
+	bottom:-10px;
+	transform:translateX(-50%);
+	font-size:18px;
+	font-weight:bold;
+	color:#333;
+	text-align:center;
+}
+
+.bloom_skill{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:relative;
+	height:100%;
+	width:100%;
+}
+
+.bloom_skill .s_text1{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	margin-left:-12px;
+	margin-top:-20px;
+	font-size:20px;
+	color:#fff;
+	z-index:10;
+	opacity:0;
+	text-shadow:1px 1px 3px #333;
+	animation:s_text1 0.5s 3.3s forwards;
+}
+
+@keyframes s_text1{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+.bloom_skill .leaf{
+	width:120px;
+	height:120px;
+	margin-left:-75px;
+	margin-top:-75px;
+	border-radius:0px 200px;
+	position:absolute;
+	transform-origin:100% 100%;
+	opacity:0.5;
+	overflow:hidden;
+}
+
+
+/******************  html   **********************/
+
+
+.html_box .bloom_skill .leaf{background-color:#5C5CFF;}
+
+.skill_inner.on .html_box .bloom_skill .leaf1{animation:flip 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf2{animation:flip-1 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf3{animation:flip-2 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf4{animation:flip-3 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf5{animation:flip-4 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf6{animation:flip-5 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf7{animation:flip-6 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf8{animation:flip-7 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf9{animation:flip-8 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf10{animation:flip-9 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf11{animation:flip-10 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf12{animation:flip-11 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf13{animation:flip-12 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf14{animation:flip-13 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf15{animation:flip-14 4s ease forwards;}
+.skill_inner.on .html_box .bloom_skill .leaf16{animation:flip-15 4s ease forwards;}
+
+
+@keyframes flip{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(20deg);}
+}
+
+@keyframes flip-1{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(40deg);}
+}
+
+@keyframes flip-2{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(60deg);}
+}
+
+@keyframes flip-3{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(80deg);}
+}
+
+@keyframes flip-4{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(100deg);}
+}
+
+@keyframes flip-5{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(120deg);}
+}
+
+@keyframes flip-6{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(140deg);}
+}
+
+@keyframes flip-7{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(160deg);}
+}
+
+@keyframes flip-8{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(180deg);}
+}
+
+@keyframes flip-9{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(200deg);}
+}
+
+@keyframes flip-10{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(220deg);}
+}
+
+@keyframes flip-11{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(240deg);}
+}
+
+@keyframes flip-12{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(260deg);}
+}
+
+@keyframes flip-13{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(280deg);}
+}
+
+@keyframes flip-14{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(300deg);}
+}
+
+@keyframes flip-15{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(320deg);}
+}
+/*******************   html   *********************/
+
+/*******************   css   **********************/
+
+.css_box .bloom_skill .leaf{background-color:#ff9999;}
+
+.skill_inner.on .css_box .bloom_skill .leaf1{animation:css-0 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf2{animation:css-1 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf3{animation:css-2 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf4{animation:css-3 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf5{animation:css-4 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf6{animation:css-5 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf7{animation:css-6 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf8{animation:css-7 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf9{animation:css-8 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf10{animation:css-9 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf11{animation:css-10 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf12{animation:css-11 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf13{animation:css-12 4s 0.8s ease forwards;}
+.skill_inner.on .css_box .bloom_skill .leaf14{animation:css-13 4s 0.8s ease forwards;}
+
+@keyframes css-0{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(20deg);}
+}
+
+@keyframes css-1{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(40deg);}
+}
+
+@keyframes css-2{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(60deg);}
+}
+
+@keyframes css-3{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(80deg);}
+}
+
+@keyframes css-4{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(100deg);}
+}
+
+@keyframes css-5{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(120deg);}
+}
+
+@keyframes css-6{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(140deg);}
+}
+
+@keyframes css-7{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(160deg);}
+}
+
+@keyframes css-8{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(180deg);}
+}
+
+@keyframes css-9{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(200deg);}
+}
+
+@keyframes css-10{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(220deg);}
+}
+
+@keyframes css-11{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(240deg);}
+}
+
+@keyframes css-12{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(260deg);}
+}
+
+@keyframes css-13{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(280deg);}
+}
+
+/*******************   css   **********************/
+/*******************   jquery   **********************/
+
+.jquery_box .bloom_skill .leaf{background-color:#ffd400;}
+
+.skill_inner.on .jquery_box .bloom_skill .leaf1{animation:jquery-0 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf2{animation:jquery-1 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf3{animation:jquery-2 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf4{animation:jquery-3 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf5{animation:jquery-4 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf6{animation:jquery-5 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf7{animation:jquery-6 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf8{animation:jquery-7 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf9{animation:jquery-8 4s 1.3s ease forwards;}
+.skill_inner.on .jquery_box .bloom_skill .leaf10{animation:jquery-9 4s 1.3s ease forwards;}
+
+
+@keyframes jquery-0{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(20deg);}
+}
+
+@keyframes jquery-1{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(40deg);}
+}
+
+@keyframes jquery-2{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(60deg);}
+}
+
+@keyframes jquery-3{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(80deg);}
+}
+
+@keyframes jquery-4{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(100deg);}
+}
+
+@keyframes jquery-5{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(120deg);}
+}
+
+@keyframes jquery-6{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(140deg);}
+}
+
+@keyframes jquery-7{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(160deg);}
+}
+
+@keyframes jquery-8{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(180deg);}
+}
+
+@keyframes jquery-9{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(200deg);}
+}
+
+@keyframes jquery-10{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(220deg);}
+}
+
+
+/*******************   jquery   **********************/
+/*******************   design   **********************/
+
+.d_box .bloom_skill .leaf{background-color:#3cb371;}
+
+.skill_inner.on .d_box .bloom_skill .leaf1{animation:design-0 4s 1.8s ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf2{animation:design-1 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf3{animation:design-2 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf4{animation:design-3 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf5{animation:design-4 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf6{animation:design-5 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf7{animation:design-6 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf8{animation:design-7 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf9{animation:design-8 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf10{animation:design-9 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf11{animation:design-10 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf12{animation:design-11 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf13{animation:design-12 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf14{animation:design-13 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf15{animation:design-14 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf16{animation:design-15 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf17{animation:design-16 4s 1.8s  ease forwards;}
+.skill_inner.on .d_box .bloom_skill .leaf18{animation:design-17 4s 1.8s  ease forwards;}
+
+@keyframes design-0{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(20deg);}
+}
+
+@keyframes design-1{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(40deg);}
+}
+
+@keyframes design-2{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(60deg);}
+}
+
+@keyframes design-3{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(80deg);}
+}
+
+@keyframes design-4{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(100deg);}
+}
+
+@keyframes design-5{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(120deg);}
+}
+
+@keyframes design-6{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(140deg);}
+}
+
+@keyframes design-7{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(160deg);}
+}
+
+@keyframes design-8{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(180deg);}
+}
+
+@keyframes design-9{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(200deg);}
+}
+
+@keyframes design-10{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(220deg);}
+}
+
+@keyframes design-11{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(240deg);}
+}
+
+
+@keyframes design-12{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(260deg);}
+}
+
+
+@keyframes design-13{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(280deg);}
+}
+
+@keyframes design-14{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(300deg);}
+}
+
+@keyframes design-15{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(320deg);}
+}
+
+
+@keyframes design-16{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(340deg);}
+}
+
+
+@keyframes design-17{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+
+
+
+
+/*******************   design   **********************/
+
+
+@media screen and (max-width:1370px){
+	.skill_inner{
+		width:80%;
+	}
+	
+	.bloom_skill .leaf{
+		width:100px;
+		height:100px;
+		margin-left:-55px;
+	}
+	
+	.bloom_skill .s_text1{
+		margin-left:3px;
+		margin-top:-30px;
+	}
+	
+	.skill_inner .s_text2{
+		bottom:10%;
+		font-size:16px;
+	}
+}
+
+@media screen and (max-width:1120px){
+	.bloom_skill .leaf{
+			width:90px;
+			height:90px;
+			margin-left:-55px;
+	}	
+	
+	.bloom_skill .s_text1{
+		margin-left:-5px;
+		margin-top:-30px;
+	}
+	
+}
+
+@media screen and (max-width:800px){
+	.skill_inner{width:100%; left:0;top:0; transform:translate(0); min-width:300px;}
+	
+	.skill_box{height:300px;}
+	
+	.bloom_skill .leaf{
+		width:50px;
+		height:50px;
+		margin-left:-15px;
+	}
+	
+	.bloom_skill .s_text1{
+		font-size:15px;
+		margin-left:15px;
+		margin-top:-50px;
+	}
+	
+	.skill_inner .s_text2{
+		bottom:15%;
+		font-size:15px;
+		margin-left:15px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

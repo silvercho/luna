@@ -1,0 +1,83 @@
+.section .about_sub .about_cover{
+	position:relative;
+	width:80%;
+	margin:0 auto;
+	padding:150px 0;
+}
+
+.section .about_sub .about_cover h2{
+	color:#ff8400;
+}
+
+.section .about_sub .about_cover .intro{
+	position:relative;
+	width:100%;
+	margin-top:50px;
+}
+
+.section .about_sub .about_cover .intro .about_txt{
+	width:33.33%;
+	font-weight:300;
+	color:#ff8400;
+	float:left;
+	text-align:center;
+	word-break:keep-all;
+}
+.section .about_sub .about_cover .intro .about_txt p{
+	font-weight:400;
+	font-size:18px;
+}
+
+.section .about_sub .about_cover .intro img{
+	width:80%;
+}
+.section .about_sub .about_cover .intro .about_txt span {
+	font-size:14px;
+}
+.section .about_sub .about_cover .intro .about_txt span i{
+	display:inline-block;
+	padding:0 10px;
+}
+
+
+
+@media screen and (max-width:839px){
+	.section .about_sub .about_cover h2{
+		text-align:center;
+	}	
+	.section .about_sub .about_cover .intro .about_txt{
+		width:100%;
+		margin:30px 0;
+	}
+	.section .about_sub .about_cover .intro img{
+		width:50%;
+	}
+	.margin{
+		margin-top:30px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

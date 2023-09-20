@@ -1,0 +1,46 @@
+@font-face{
+	font-family:'roboto';
+	font-weight:300;
+	src:url(../fonts/Roboto-Regular.woff2) format("woff2"),
+		url(../fonts/Roboto-Regular.ttf) format("truetype"),
+		url(../fonts/Roboto-Regular.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'Avenir';
+	font-weight:900;
+	src:url(../fonts/AvenirLTStd-Black.otf) format("opentype"),
+		url(../fonts/AvenirLTStd-Black.ttf) format("truetype"),
+		url(../fonts/AvenirLTStd-Black.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'Avenir';
+	font-weight:900;
+	font-style:oblique;
+	src:url(../fonts/AvenirLTStd-BlackOblique.otf) format("opentype"),
+		url(../fonts/AvenirLTStd-BlackOblique.ttf) format("truetype"),
+		url(../fonts/AvenirLTStd-BlackOblique.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'Avenir';
+	font-weight:400;
+	font-style:oblique;	
+	src:url(../fonts/AvenirLTStd-LightOblique.otf) format("opentype"),
+		url(../fonts/AvenirLTStd-LightOblique.ttf) format("truetype"),
+		url(../fonts/AvenirLTStd-LightOblique.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'Radikal';
+	src:url(../fonts/Radikal-Thin.woff2) format("woff2"),
+		url(../fonts/Radikal-Thin.ttf) format("truetype"),
+		url(../fonts/Radikal-Thin.eot) format("embedded-opentype");
+}
+
+
+
+
+
+
+
+
+
+

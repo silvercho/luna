@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/footer.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <style>
+
+        .section{
+            width: 1320px;
+            margin: 0 auto;
+            position: relative;
+            padding: 32px 0;
+        }
+
+        .fixed p{
+            position: fixed;
+            right: 0;
+        }
+
+        select {
+            width: 100%;
+            height: 60px;
+            border: 0;
+            outline: none;
+            display: block;
+            border: 1px solid #dddddd !important;
+            font-size: 1.4rem;
+            line-height: 1.45;
+            letter-spacing: -0.04rem;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        input{
+            font-family: 'Noto Sans KR','Noto Sans Korean', "Nanum Gothic", sans-serif !important;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+        }
+
+        input::placeholder{
+            font-size: 1.6rem;
+            color: #d9d9d9
+        }
+
+
+        button {
+            margin-top: 5px;
+            background: #000;
+            color: #fff;
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid #c4c4c4;
+            font-size: 1.5rem;
+        }
+
+
+        .section h2{
+            font-size: 3rem;
+        }
+
+        .contentBox {
+            width: 550px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 1px solid #c4c4c4;;
+        }
+
+        .contentInnerBox {
+            margin-top: 16px;
+        }
+
+        .contentInnerBox:nth-of-type(14) {
+            margin-bottom: 32px;
+        }
+
+
+        .contentInnerBox label{
+            display: inline-block;
+            padding: 5px;
+            background: white;
+            font-size: 14px;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .contentInnerBox label span{
+            color: #da4841;
+            vertical-align: -1px;
+
+        }
+
+        .contentInnerBox input{
+            width: 100%;
+            height: 60px;
+            border: 1px solid #ddd;
+            font-size: 1.4rem;
+            line-height: 1.45;
+            letter-spacing: -0.04rem;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .form-group input {
+            width: 800px;
+        }
+
+        .custom-file-label{height: 35px; border: 1px solid #c4c4c4; font-size:1.6rem; }
+
+        .submitBtn {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            border: none;
+            right: 400px;
+            bottom: 40px;
+            font-weight: bold;
+            background: #1d1d1d;
+        }
+
+        .custom-file {
+            width: 516px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-file label{
+            display: block;
+            width: 90px;
+            border: none;
+        }
+
+        .custom-file input{
+            display: block;
+            width: 180px;
+        }
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div class="content">
+        <form th:action="@{/security-login/registration}" method="post" enctype="multipart/form-data">
+
+            <div class="contentBox">
+                <div class="contentInnerBox">
+                    <label for="carName"><span>* </span>차량명:</label>
+                    <input type="text" placeholder="차량명을 입력해주세요. ex) 제네시스 GV80" id="carName" name="carName" required>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="ownerName"><span>* </span>소유주명:</label>
+                    <input type="text" placeholder="소유주를 입력해주세요. ex) 홍길동" id="ownerName" name="ownerName" required>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carNumber"><span>* </span>차량번호:</label>
+                    <input type="text" placeholder="차량번호를 입력해주세요. ex) 12가3456" id="carNumber" name="carNumber" required>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carBrand"><span>* </span>브랜드:</label>
+                    <select id="carBrand" name="carBrand" required>
+                        <option value="">브랜드를 선택해주세요</option>
+                        <option value="현대">현대</option>
+                        <option value="제네시스">제네시스</option>
+                        <option value="기아">기아</option>
+                        <option value="쉐보레(GM대우)">쉐보레(GM대우)</option>
+                        <option value="르노코리아(삼성)">르노코리아(삼성)</option>
+                        <option value="KG모빌리티(쌍용)">KG모빌리티(쌍용)</option>
+                        <option value="벤츠">벤츠</option>
+                        <option value="BMW">BMW</option>
+                        <option value="아우디">아우디</option>
+                        <option value="폭스바겐">폭스바겐</option>
+                        <option value="미니">미니</option>
+                        <option value="볼보">볼보</option>
+                        <option value="폴스타">폴스타</option>
+                        <option value="포르쉐">포르쉐</option>
+                        <option value="렉서스">렉서스</option>
+                        <option value="도요타">도요타</option>
+                        <option value="인피니티">인피니티</option>
+                        <option value="혼다">혼다</option>
+                        <option value="닛산">닛산</option>
+                        <option value="미쯔비시">미쯔비시</option>
+                        <option value="테슬라">테슬라</option>
+                        <option value="포드">포드</option>
+                        <option value="지프">지프</option>
+                    </select>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carType"><span>* </span>차종:</label>
+                    <select id="carType" name="carType" required>
+                        <option value="">차종을 선택해주세요</option>
+                        <option value="경차">경차</option>
+                        <option value="소형">소형</option>
+                        <option value="준중형">준중형</option>
+                        <option value="대형">대형</option>
+                        <option value="RV">RV</option>
+                        <option value="SUV">SUV</option>
+                        <option value="승합차">승합차</option>
+                        <option value="스포츠카">스포츠카</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carTransmission"><span>* </span>변속기:</label>
+                    <select id="carTransmission" name="carTransmission" required>
+                        <option value="">변속기를 선택해주세요</option>
+                        <option value="오토">오토</option>
+                        <option value="수동">수동</option>
+                        <option value="세미오토">세미오토</option>
+                        <option value="CVT">CVT</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carFuelType"><span>* </span>연료:</label>
+                    <select id="carFuelType" name="carFuelType" required>
+                        <option value="">연료를 입력해주세요</option>
+                        <option value="가솔린">가솔린</option>
+                        <option value="디젤">디젤</option>
+                        <option value="LPG">LPG</option>
+                        <option value="가솔린+LPG">가솔린+LPG</option>
+                        <option value="가솔린+전기">가솔린+전기</option>
+                        <option value="디젤+전기">디젤+전기</option>
+                        <option value="LPG+전기">LPG+전기</option>
+                        <option value="전기">전기</option>
+                        <option value="가솔린+CGN">가솔린+CGN</option>
+                        <option value="LNG">LNG</option>
+                        <option value="CNG">CNG</option>
+                        <option value="수소전기">수소전기</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <div class="contentInnerBox">
+                    <label for="carColor"><span>* </span>색깔:</label>
+                    <select id="carColor" name="carColor" required>
+                        <option value="">색상을 선택해주세요</option>
+                        <option value="흰색">흰색</option>
+                        <option value="은색">은색</option>
+                        <option value="회색">회색</option>
+                        <option value="검은색">검은색</option>
+                        <option value="빨간색">빨간색</option>
+                        <option value="파란색">파란색</option>
+                        <option value="노란색">노란색</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carManufacturingDate"><span>* </span>연식:</label>
+                    <select id="carManufacturingDate" name="carManufacturingDate" required>
+                        <option value="">연식을 선택해주세요</option>
+                        <option value="2023">2023년</option>
+                        <option value="2022">2022년</option>
+                        <option value="2021">2021년</option>
+                        <option value="2020">2020년</option>
+                        <option value="2019">2019년</option>
+                        <option value="2018">2018년</option>
+                        <option value="2017">2017년</option>
+                        <option value="2016">2016년</option>
+                        <option value="2015">2015년</option>
+                        <option value="2014">2014년</option>
+                        <option value="2013">2013년</option>
+                        <option value="2012">2012년</option>
+                        <option value="2011">2011년</option>
+                        <option value="2010">2010년</option>
+                        <option value="2009">2009년</option>
+                        <option value="2008">2008년</option>
+                        <option value="2007">2007년</option>
+                        <option value="2006">2006년</option>
+                        <option value="2005">2005년</option>
+                        <option value="2004">2004년</option>
+                        <option value="2003">2003년</option>
+                        <option value="2002">2002년</option>
+                        <option value="2001">2001년</option>
+                        <option value="2000">2000년</option>
+                    </select>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carOdometer"><span>* </span>주행거리:</label>
+                    <input type="carOdometer" placeholder="주행거리" id="carOdometer" name="carOdometer" required>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carPrice"><span>* </span>금액:</label>
+                    <input type="number" placeholder="금액" id="carPrice" name="carPrice" required>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carOption"><span>* </span>옵션:</label>
+                    <select id="carOption" name="carOption" required>
+                        <option value="">옵션을 선택해주세요</option>
+                        <option value="선루프">선루프</option>
+                        <option value="헤드램프">헤드램프</option>
+                        <option value="파워 전동 트렁크">파워 전동 트렁크</option>
+                        <option value="고스트 도어 클로징">고스트 도어 클로징</option>
+                        <option value="전동접이 사이드 미러">전동접이 사이드 미러</option>
+                        <option value="알루미늄 휠">알루미늄 휠</option>
+                        <option value="루프랙">루프랙</option>
+                        <option value="열선 스티어링 휠">열선 스티어링 휠</option>
+                        <option value="전동 조절 스티어링 휠">전동 조절 스티어링 휠</option>
+                        <option value="패들 시프트">패들 시프트</option>
+                        <option value="스티어링 휠 리모컨">스티어링 휠 리모컨</option>
+                        <option value="하이패스">하이패스</option>
+                        <option value="파워 도어록">파워 도어록</option>
+                        <option value="파워 스티어링 휠">파워 스티어링 휠</option>
+                        <option value="파워 윈도우">파워 윈도우</option>
+                    </select>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carAccidentHistory"><span>* </span>사고이력:</label>
+                    <input type="text" placeholder="사고 이력을 기재해주세요." id="carAccidentHistory" name="carAccidentHistory"
+                           required>
+                </div>
+                <div class="contentInnerBox">
+                    <label for="carOpinion">사용자 의견:</label>
+                    <input type="text" placeholder="사용했던 용도 및 기타참고 사항을 기재해 주세요." id="carOpinion" name="carOpinion"
+                           required>
+                </div>
+                <div th:if="${#lists.isEmpty(carRegistrationDto.carImgDtoList)}">
+                    <div class="form-group" th:each="num: ${#numbers.sequence(1,5)}">
+                        <div class="custom-file img-div">
+                            <label class="custom-file-label" th:text="차량이미지 + ${num}"></label>
+                            <input type="file" class="custom-file-input" name="carImgFile">
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${not #lists.isEmpty(carRegistrationDto.carImgDtoList)}">
+                    <div class="form-group" th:each="carImgDto, status: ${carRegistrationDto.carImgDtoList}">
+                        <div class="custom-file img-div">
+                            <label class="custom-file-label"
+                                   th:text="${not #strings.isEmpty(carImgDto.oriImgName)} ? ${carImgDto.oriImgName} : '차량이미지' + ${status.index+1}">
+                            </label>
+                            <input type="file" class="custom-file-input" name="carImgFile">
+                            <input type="hidden" name="carImgIds" th:value="${carImgDto.id}">
+
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submitBtn">등록</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const footerLink = document.querySelector(".footer a[href='#top']");
+
+    if (footerLink) {
+    footerLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth" // 부드러운 스크롤을 원하면 추가
+    });
+    });
+    }
+    });
+</script>
+</body>
+</html>

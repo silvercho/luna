@@ -1,0 +1,145 @@
+
+@charset "utf-8";
+
+
+#logowrap{
+	position:fixed;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	z-index:20;
+	display:block;
+	background: #24c6dc;
+	background: -moz-linear-gradient(left, z-index 0%, #3494e6 26%, #8941ff 50%, #f27dda 79%, #ff9698 100%);
+	background: -webkit-linear-gradient(left, #24c6dc 0%,#3494e6 26%,#8941ff 50%,#f27dda 79%,#ff9698 100%);
+	background: linear-gradient(to right, #24c6dc 0%,#3494e6 26%,#8941ff 50%,#f27dda 79%,#ff9698 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24c6dc', endColorstr='#ff9698',GradientType=1 );
+	background-size : 400% 400%;
+    animation : Gradient 12s ease infinite;
+}
+@keyframes Gradient {
+    0% {
+         background-position: 0% 50%
+       }
+   50% { 
+         background-position: 100% 50%
+       }
+  100% {
+      background-position: 0% 50%
+      }
+}
+
+
+.logo{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	width:80%;
+	height:auto;
+}
+.logo > img{
+	width:100%;
+	height:auto;
+	display:block;
+	opacity:0;
+}
+.logo2{
+	position:absolute;
+	top:0;
+	left:0;
+	width:0;
+	height:100%;
+	overflow:hidden;
+	/* border:1px solid #fff; */
+	animation:width 5s linear forwards;
+}
+.logo2 > img{
+	width:auto;
+	height:100%;
+	display:block;
+}
+
+@-webkit-keyframes width{
+	from{
+		width:0;
+	}
+	to{
+		width:100%;
+	}
+}
+@keyframes width{
+	from{
+		width:0;
+	}
+	to{
+		width:100%;
+	}
+}
+
+
+
+
+
+
+
+.anime-btn{
+	width:80px;
+	position:absolute;
+	right:3%;
+	animation:btn 1s ease-in infinite alternate;
+}
+.anime-btn img{
+	width:100%;
+	display:block;
+	
+}
+@-webkit-keyframes btn{
+    from{
+        bottom:90px;
+    }
+    to{
+        bottom:60px;
+    } 
+}
+@keyframes btn{
+    from{
+        bottom:90px;
+    }
+    to{
+        bottom:60px;
+    } 
+}
+#logowrap .next-btn{
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	width:150px;
+	
+	/* border:1px solid #fff; */
+}
+
+#logowrap .next-btn img{
+	width:100%;
+}
+
+#logowrap .seconds{
+	position:absolute;
+	bottom:50px;
+	left:50%;
+	transform:translateX(-50%);
+	color:#fff;
+	font-size:25px;
+	font-weight:bold;
+}
+.seconds>span{
+	font-family:a_headM;
+	font-size:40px;
+	vertical-align:middle;
+}
+
+
+
+
+

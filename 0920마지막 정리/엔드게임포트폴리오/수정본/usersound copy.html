@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <!-- 사용자 CSS 추가 -->
+   <th:block layout:fragment="css">
+    <style>
+      *{
+        margin: 0;
+        top: 0;
+        box-sizing: border-box;
+      }
+      body { font-size: 10px;}
+      a{text-decoration: none;
+      color: #000;}
+      .userSound{text-align: center;}
+      .bg {
+        width: 100%;
+        height: 400px;
+        background: url(/img/carBg.jpg) no-repeat 50%;
+        background-size: contain; 
+        color: #fff;
+      }
+      .bg-txt {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+      .bg h1 {font-size: 3rem;}
+      .bg h4 {font-size: 1.4rem;}
+      
+
+
+
+
+
+      .header{
+    width: 100%;
+    height: 150px;
+    background: rgb(29, 29, 29);
+    border-bottom: 1px solid #444;
+}
+
+.header .navBar {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header .navBar .navLeft {
+    width: 110px;
+    height: 64px;
+}
+
+.header .navBar a {
+    cursor: pointer;
+}
+
+.header .navBar .navCenter .navList {
+    width: 800px;
+}
+
+.header .navBar .navCenter .navList ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .navBar .navCenter .navList ul li a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navRight div{
+display: flex;
+}
+
+.navRight .navLoginStatus {
+color: #fff;
+}
+
+.navRight p {
+color: #ccc;
+}
+
+.navRight input {
+    width: 200px;
+    height: 32px;
+    font-size: 1.5rem;
+    border: 1px solid #444;
+    border-radius: 15px;
+    outline: none;
+    background: rgba(100, 100, 100, 0.5);
+    text-align: center;
+}
+
+.navRight input::placeholder {
+    color: #fff;
+    font-weight: 500;
+
+}
+    </style>
+    </th:block>
+
+</head>
+<body><div th:fragment="header" class="header">
+  <div class="navBar">
+      <div class="navLeft">
+          <a href="http://localhost:8080/security-login"><img src="/img/logo7.png" alt="로고"></a>
+      </div>
+      <div class="navCenter">
+          <div class="navList">
+              <ul>
+                  <li></li>
+                  <li><a th:onclick="|location.href='@{/{loginType}/registration (loginType=${loginType})}'|">차량등록</a>
+                  </li>
+                  <li><a th:onclick="|location.href='@{/{loginType}/search (loginType=${loginType})}'|">차량검색</a></li>
+                  <div th:unless="${nickname == null}">
+                      <li><a th:onclick="|location.href='@{/{loginType}/admin (loginType=${loginType})}'|">관리자페이지</a>
+                      </li>
+                  </div>
+                  <li><a th:onclick="|location.href='@{/{loginType}/community (loginType=${loginType})}'|">커뮤니티</a></li>
+                  <li><a th:onclick="|location.href='@{/{loginType}/event (loginType=${loginType})}'|">혜택/이벤트</a></li>
+                  <li><a th:onclick="|location.href='@{/{loginType}/customerSupport (loginType=${loginType})}'|">고객지원</a></li>
+                  <li></li>
+              </ul>
+
+          </div>
+      </div>
+      <div class="navRight" th:action="@{/}" method="get">
+          <div th:if="${nickname == null}">
+              <a th:onclick="|location.href='@{/{loginType}/login (loginType=${loginType})}'|" class="navLoginStatus">로그인</a>
+              <p>되어있지 않습니다!</p>
+          </div>
+          <div th:unless="${nickname == null}">
+              <p>[[${nickname}]]님 환영합니다!</p>
+              <a th:onclick="|location.href='@{/{loginType}/logout (loginType=${loginType})}'|" class="navLoginStatus">로그아웃</a>
+          </div>
+          <input type="search" placeholder="차량 이름을 검색하세요">
+      </div>
+  </div>
+</div>   
+  
+</body>
+</html>
+
+  <div class="userSound">
+    <div class="bg">
+    <div class="bg-txt">
+      <h1>고객의 소리</h1>
+      <h4>엔드카는 고객의 의견을 가장 소중히 생각합니다.</h4>
+    </div>
+    </div>
+    <h2>고객의 소리 접수채널</h2>
+    <hr>
+    <h3>1. 인터넷, 전화 등 다양한 채널을 통해 접수</h3>
+    <h3>2. 고객의 소리 접수 , 관할 부서/ 담당자에게 통보</h3>
+    <h3>3. 공정거래 위원회 고시 소비자 분쟁해결 기준에 의거하여 처리 </h3>
+    <div class="usWrap">
+      <div class="usBox">
+        <b>FAQ</b>
+        <p>자주하는 질문을 확인해보세요.</p>
+        <button>확인하기</button>
+      </div>
+      <div class="usBox">
+        <b>인터넷</b>
+        <a href="#">자주하는 www.endcar.com</a>
+        <p>상담접수 시간 : 24시간 </p>
+        <button>접수하기</button>
+      </div>
+      <div class="usBox">
+        <b>전화</b>
+        <p class="callNm"></p>
+        <b>고객의 소리 운영시간</b>
+        <p>09:00~18:00 (주말*공휴일 휴무)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

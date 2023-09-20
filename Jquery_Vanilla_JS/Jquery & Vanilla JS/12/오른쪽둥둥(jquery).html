@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			width: 100%;
+			position: absolute;
+			background-color: rgba(255, 255, 255, 0.8);
+			height: 100px;
+			top: 100px;
+			left: 0;
+			transition: all 0.5s;
+			z-index: 100;
+		}
+
+		header.fixed {
+			position: fixed;
+			top: 0px;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.5);
+			height: 70px;
+		}
+
+		header.fixed h1 {
+			color: #fff;
+		}
+
+		section {
+			position: relative;
+			width: 1200px;
+			margin: 0 auto;
+		}
+
+		article {
+			position: relative;
+			width: 1200px;
+			height: 900px;
+			margin: 0 auto;
+		}
+
+		article:nth-child(1) {
+			background-color: red;
+		}
+
+		article:nth-child(2) {
+			background-color: orange;
+		}
+
+		article:nth-child(3) {
+			background-color: yellow;
+		}
+
+		article:nth-child(4) {
+			background-color: green;
+		}
+
+		article:nth-child(5) {
+			background-color: cyan;
+		}
+
+		.text1 {
+			font-size: 80px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			opacity: 0;
+			transition: all 0.7s;
+		}
+
+		.text1.on {
+			opacity: 1;
+		}
+
+		.text2 {
+			background-color: #fff;
+			font-size: 60px;
+			position: absolute;
+			padding: 10px;
+			top: 200px;
+			left: -1000px;
+			transition: all 0.5s;
+		}
+
+		.text2.on {
+			left: 100px;
+		}
+
+		.text3 {
+			background-color: #fff;
+			font-size: 60px;
+			position: absolute;
+			padding: 10px;
+			bottom: 200px;
+			right: -1000px;
+			transition: all 0.5s;
+		}
+
+		.text3.on {
+			right: 100px;
+		}
+
+		#fdiv {
+			width: 70px;
+			height: 250px;
+			background-color: purple;
+			padding-top: 10px;
+			position: absolute;
+			left: 50%;
+			margin-left: 610px;
+			top: 200px;
+		}
+
+		#fdiv ul li {
+			list-style: none;
+			width: 25px;
+			height: 25px;
+			border-radius: 13px;
+			background-color: #fff;
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+
+		#fdiv ul li.on {
+			background-color: orange;
+		}
+	</style>
+
+	<script>
+		$(function () {
+			var ht;
+			$(window).resize(function () {
+				ht = $(window).height();
+				$('article').height(ht);
+				//alert(ht);
+			});
+			$(window).trigger('resize');
+
+			var dTop = $('#fdiv').offset().top;
+			$(window).scroll(function () {
+				var sct = $(window).scrollTop();
+				//스크롤의 위치(scrollTop()) - sct 변수에 저장(실시간)
+				$('.scv').text(sct);
+				if (sct >= 100) {
+					$('header').addClass('fixed');
+					$('.text1').addClass('on');
+				} else {
+					$('header').removeClass('fixed');
+					$('.text1').removeClass('on');
+				}
+
+				if (sct >= 700 && sct < 1000) {
+					$('.text2').addClass('on');
+				} else {
+					$('.text2').removeClass('on');
+				}
+
+				if (sct >= 1000 && sct < 1500) {
+					$('.text3').addClass('on');
+				} else {
+					$('.text3').removeClass('on');
+				}
+
+				$('#fdiv').stop().animate({
+					top: sct + dTop
+				}, 500);
+
+
+			});
+			$('#fdiv ul li').click(function () {
+				var i = $(this).index();
+				$("html,body").stop().animate({
+					scrollTop: i * ht
+				}, 1300);
+				$('#fdiv ul li').removeClass('on');
+				$(this).addClass('on');
+
+			});
+
+
+
+
+		});
+	</script>
+
+
+
+</head>
+
+<body>
+	<header>
+		<h1 class="scv">0000</h1>
+	</header>
+	<section>
+		<article>
+			<h1 class="text1">우리반 화이팅</h1>
+		</article>
+		<article>
+			<h2 class="text2">손이가요 손이가</h2>
+			<h2 class="text3">새우깡에 손이가요</h2>
+		</article>
+		<article></article>
+		<article></article>
+		<article></article>
+	</section>
+
+	<div id="fdiv">
+		<ul>
+			<li class="on"><span id="btn1"></span></li>
+			<li><span id="btn2"></span></li>
+			<li><span id="btn3"></span></li>
+			<li><span id="btn4"></span></li>
+			<li><span id="btn5"></span></li>
+		</ul>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>sample5</title>
+<script src="인터벌슬라이드(vanilla).js" defer></script>
+<style>
+    .bigbox{
+        width:400px;
+        height:300px;
+        margin-top:100px;
+        margin-left:100px;
+        overflow:hidden;
+        position:relative;
+    }
+    .box{position:relative;
+        width:1200px;
+        height:300px;
+        transition:all .3s;
+    }
+    .box img{
+        float:left;
+        position:absolute;
+        transition:all .3s
+    }
+    .box .leftPlus400{
+        left:400px;
+        transition:none;
+    }
+
+    .box .left0{
+        left:0px;
+        transition:left .3s;
+    }
+
+    .box .leftMinus400{
+        left:-400px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="bigbox">
+    <div class="box" style="left:0px;">
+        <img alt="이미지1" src="images/img1.jpg" class="left0"/>
+        <img alt="이미지2" src="images/img2.jpg" class="leftPlus400"/>
+        <img alt="이미지3" src="images/img3.jpg" class="leftPlus400"/>
+        <img alt="이미지4" src="images/img4.jpg" class="leftPlus400"/>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

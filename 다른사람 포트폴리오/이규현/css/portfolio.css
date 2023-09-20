@@ -1,0 +1,116 @@
+.works_sub{
+	padding:200px 0;
+}
+
+
+.portfolio_cover{
+	width:80%;
+	margin:0 auto;
+	color:#1B49BE;
+}
+
+.portfolio_cover h2{
+	margin:30px 0;
+}
+
+.portfolio_cover .work{
+	width:50%;
+	float:left;
+	background-color:rgba(0,0,0,0.4);
+	box-sizing:border-box;
+	border:5px solid #1B49BE;
+	position:relative;
+	display:block;
+}
+.portfolio_cover .work:before{
+	content:'';
+	display:block;
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:0;
+	background-color:#1B49BE;
+	transition:all 0.4s;
+}
+.portfolio_cover .work:hover:before{
+	height:100%;
+}
+.portfolio_cover .work span{
+	position:absolute;
+	left:50%;
+	top:0%;
+	transform:translate(-50%,-50%);
+	font-size:15px;
+	color:#fff;
+	opacity:0;
+	transition:all 0.4s;
+}
+.portfolio_cover .work:hover span{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	font-size:15px;
+	opacity:1;
+	color:#fff;
+}
+.portfolio_cover .port1 img{
+	width:100%;
+	height:auto;
+	display:block;
+}
+
+.portfolio_cover .work:nth-child(even){
+	float:right;
+}
+.portfolio_cover .port1{
+	height:200px;
+	background:url(../images/logo_new.png) no-repeat center;
+}
+.portfolio_cover .port2{
+	height:400px;
+	background:url(../images/mo_logo.png) no-repeat center;
+}
+.portfolio_cover .port3{
+	height:400px;
+	background:url(../images/h_logo.gif) no-repeat center;
+}
+.portfolio_cover .port4{
+	height:200px;
+	background:url(../images/logo_hyunda.png) no-repeat center /contain;
+}
+.portfolio_cover .port5{
+	height:200px;
+	background:url(../images/ori_logo2.png) no-repeat center /contain;
+}
+.portfolio_cover .port6{
+	height:400px;
+	background:url(../images/wacom_logo.png) no-repeat center /contain;
+}
+.portfolio_cover .port7{
+	height:400px;
+	background:url(../images/lupin-the-3rd.jpg) no-repeat center /contain;
+}
+.portfolio_cover .port8{
+	height:200px;
+	background:url(../images/deadpool.png) no-repeat center /contain;
+}
+
+
+@media screen and (max-width:839px){
+	.portfolio_cover h2{
+		text-align:center;
+	}
+
+	.portfolio_cover .work{
+		width:100%;
+		float:left;
+		height:300px !important;
+	}
+	.portfolio_cover .work:nth-child(even){
+		float:left;
+	}
+}
+
+

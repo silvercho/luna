@@ -1,0 +1,89 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap&subset=korean');
+
+
+
+article.book{margin:50px 20px;}
+article.book .tab{width:440px;}
+article.book .tab .tab_btn{margin-right:10px; width:100px; height:40px; background-color:#d9e0de; text-align:center; font-size:16px; line-height:40px; letter-spacing:2px;}
+article.book .tab .tab_btn a{color:#fff; display:block; width:100%; height:100%;}
+article.book .tab .tab_btn.tab_on{background-color:#fff; box-shadow:-2px -2px 2px 0 #dfdfdf;}
+article.book .tab .tab_btn.tab_on a{color:#0c976d;}
+
+article.book .contents{width:100%; box-shadow:0 0 5px #ccc;}
+article.book .contents .img_cover{width:50%;}
+article.book .contents .img_cover img{display:block; width:200px; height:auto; margin:50px auto 30px;}
+
+article.book .contents .book_info h2{padding-top:60px;}
+article.book .contents .book_info ul{padding-top:30px;}
+article.book .contents .book_info ul li{line-height:30px; list-style:square inside;}
+
+article.book .contents .book_sum{clear:both;}
+article.book .contents .book_sum p{padding:0 14% 30px;}
+
+article.book .button{margin-top:30px;}
+article.book .button div{width:100px; height:40px; text-align:center; line-height:40px;}
+article.book .button div a{color:#0c976d; display:block; width:100%; height:100%;}
+article.book .button .search_btn{margin-left:10px;}
+article.book .button .search_btn a{color:#fff;}
+
+/********************************3-1**********************************/
+article.book .book_search{margin-top:0; padding:50px 0 35px;}
+
+article.book ul.book_list > li{margin:0 auto; width:80%; height:200px; border:1px solid #d9e0de; margin-bottom:20px;}
+article.book ul.book_list > li .img_cover{width:30%; height:100%;}
+article.book ul.book_list > li .img_cover img{margin:0 auto; display:block; width:auto; height:170px; margin-top:15px;}
+
+article.book ul.book_list > li .intro{padding-top:60px;}
+article.book ul.book_list > li .intro > li{padding:0 7.5px; margin-top:20px; border-right:1px solid #d9e0de;}
+article.book ul.book_list > li .intro > li:nth-child(2){padding-left:0;}
+article.book ul.book_list > li .intro > li:last-child{border:0;}
+article.book ul.book_list > li:hover{background-color:#f9f9f9;}
+article.book ul.book_list > li:hover .intro h2{color:#0c976d;}
+
+/*******************************반응형*********************************/
+@media screen and (max-width:1130px){
+	article.book .contents .book_sum p{padding:0 10% 30px;}
+}
+@media screen and (max-width:900px){
+	article.book .contents .book_sum p{padding:0 3% 30px;}
+	article.book .contents .img_cover{width:40%;}
+}
+
+
+@media screen and (max-width:920px){
+	article.book ul.book_list > li{width:95%;}
+}
+@media screen and (max-width:800px){
+	article.book .contents .book_info{width:60%;}
+	article.book .contents .book_info h2{font-size:18px; margin-left:10%;}
+	article.book .contents .book_info ul{margin-left:10%;}
+	article.book .contents .book_info ul li{font-size:14px;}
+	
+	
+	article.book ul.book_list > li .intro h2{font-size:16px;}
+	article.book ul.book_list > li .intro > li{font-size:12px; padding:0 5px;}
+}
+@media screen and (max-width:500px){
+	article.book .tab{width:100%;}
+	article.book .tab .tab_btn{margin-right:10px; width:100%; height:40px; background-color:#d9e0de; text-align:center; font-size:16px; line-height:40px; letter-spacing:2px;}
+	
+	
+	article.book .contents .img_cover{width:100%; float:none; padding-top:30px;}
+	article.book .contents .img_cover img{margin:0px auto 20px;}
+	article.book .contents .book_info{width:100%; float:none;}
+	article.book .contents .book_info h2{padding-top:10px;}
+	article.book .contents .book_info h2{margin-left:0; text-align:center;}
+	article.book .contents .book_info ul{margin-left:0; text-align:center; padding-top:10px;}
+	article.book .contents .book_info ul li{line-height:24px; list-style:none;}
+	article.book .contents .book_sum p{padding:30px 5% 20px; font-size:14px;}
+	
+	article.book ul.book_list > li{height:auto;}
+	article.book ul.book_list > li .img_cover{float:none; width:100%; height:50%; padding-top:10px;}
+	article.book ul.book_list > li .intro{float:none; padding-top:40px; margin-left:5%; padding:20px 0; text-align:center; margin-left:0;}
+	article.book ul.book_list > li .intro h2{padding-bottom:10px;}
+	article.book ul.book_list > li .intro > li{float:none; margin-top:10px; border-right:0;}
+	article.book ul.book_list > li .intro > li:nth-child(2){padding-left:5px;}
+}
+
+

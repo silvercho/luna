@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+	$(function(){
+		$('.sub').css('display','none');
+		$('.gnb>li>a').click(function(){
+			var kkk  = $(this).next('.sub').css('display');
+		// 클릭한것의 다음에 있는 .sub의 display 상태를 물어봄			
+		    if(kkk=='none'){
+				$(this).next().slideDown();
+			}else{
+				$(this).next().slideUp();
+			}
+		});
+	});
+	
+	
+	</script>
+	
+	
+</head>
+<body>
+	<ul class="gnb">
+		<li><a href="#">회사소개</a>
+			<ul class="sub">
+				<li><a href="#">submenu1</a></li>
+				<li><a href="#">submenu2</a></li>
+				<li><a href="#">submenu3</a></li>
+				<li><a href="#">submenu4</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

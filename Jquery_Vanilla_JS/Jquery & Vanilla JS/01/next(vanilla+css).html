@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		addEventListener('load',function(){
+			document.querySelector('h1').classList.add('red');
+			document.querySelector('h1').nextElementSibling.classList.add('red');
+			document.querySelector('h1').nextElementSibling.nextElementSibling.classList.add('orange');
+		})
+	</script>
+	<link rel="stylesheet" href="next(vanilla+css).css">
+</head>
+<body>
+	<h1>야 난 빨간색</h1>
+	<p>나도 빨간색</p>
+	<p>난 오렌지</p>
+</body>
+</html>
+
+

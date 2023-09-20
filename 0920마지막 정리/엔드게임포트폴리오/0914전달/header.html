@@ -1,0 +1,58 @@
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div th:fragment="header" class="header">
+    <div class="navBar">
+        <div class="navLeft">
+            <a href="http://localhost:8080/security-login"><img src="/img/logo7.png" alt="로고"></a>
+        </div>
+        <div class="navCenter">
+            <div class="navList">
+                <ul>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/registration (loginType=${loginType})}'|">차량등록</a>
+                    </li>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/search (loginType=${loginType})}'|">차량검색</a>
+                    </li>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/community (loginType=${loginType})}'|">커뮤니티</a>
+                    </li>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/event (loginType=${loginType})}'|">혜택/이벤트</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/board/list}">고객지원</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="navRight" th:action="@{/}" method="get">
+            <div class="loginRight">
+            <div th:if="${nickname == null}">
+                <a th:onclick="|location.href='@{/{loginType}/login (loginType=${loginType})}'|" class="navLoginStatus">로그인</a>
+                <p>되어있지 않습니다!</p>
+            </div>
+            <div th:unless="${nickname == null}">
+                <p>[[${nickname}]]님 환영합니다!</p>
+                <a th:onclick="|location.href='@{/{loginType}/info (loginType=${loginType})}'|" class="myPage"><i
+                        class="fa-regular fa-user">마이 페이지</i></a>
+                <a th:onclick="|location.href='@{/{loginType}/logout (loginType=${loginType})}'|"
+                   class="navLoginStatus">로그아웃</a>
+            </div>
+            <div th:unless="${nickname == null}">
+                <div th:if="${role == 'admin'}">
+                    <p>[[${nickname}]]님 환영합니다!</p>
+                    <a th:onclick="|location.href='@{/{loginType}/admin (loginType=${loginType})}'|"
+                       class="adminPage"><i class="fa-regular fa-user">관리자 페이지</i></a>
+                    <a th:onclick="|location.href='@{/{loginType}/logout (loginType=${loginType})}'|"
+                       class="navLoginStatus">로그아웃</a>
+                </div>
+            </div>
+            </div>
+            <input type="search" placeholder="차량 이름을 검색하세요">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+%!Adobe-FontList 1.14
+%Locale:0x412
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:GreatVibes-Regular
+FamilyName:Great Vibes
+StyleName:Regular
+FullName:Great Vibes
+MenuName:Great Vibes
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\웹디자인기능사취득과정\학생폴더\이소연\Font\Great_Vibes\GreatVibes-Regular.ttf
+DataFormat:sfntData
+FileLength:90528
+FileModTime:1332946800
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\웹디자인기능사취득과정\학생폴더\이소연\Font\Great_Vibes\OFL.txt
+FileModTime:1332946800
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Allura-Regular
+FamilyName:Allura
+StyleName:Regular
+FullName:Allura Regular
+MenuName:Allura
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\웹디자인기능사취득과정\학생폴더\이소연\Font\Allura\Allura-Regular.ttf
+DataFormat:sfntData
+FileLength:86448
+FileModTime:1328626800
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\웹디자인기능사취득과정\학생폴더\이소연\Font\Allura\OFL.txt
+FileModTime:1328626800
+%EndFont
+

@@ -1,0 +1,22 @@
+<div class="footer" th:fragment="footer">
+    <div class="footerLeft">
+        <a href="#top">
+            <img src="/img/logo7.png" alt="로고">
+        </a>
+    </div>
+    <div class="footerCenter">
+        <p>경기도 안양시 만안구 안양로 303 메쎄포스빌 8층 그린컴퓨터아트학원 안양캠퍼스</p>
+        <p>자바 기반 풀스택 웹개발자 실무 양성과정 | 팀명: ENDGAME | 팀원 : 최윤석, 김종우, 정재욱, 위재형, 조성은 </p>
+        <p>COPYRIGHT 2023 Team ENDGAME. ALL RIGHTS RESERVED</p>
+    </div>
+    <div class="fs">
+        <a href="#" class="fsBtn" onclick="abc"><span>패밀리 사이트</span><i class="fa-solid fa-plus"></i></a>
+        <ul>
+            <li>
+                <a th:onclick="|location.href='@{/{loginType}/customerSupport (loginType=${loginType})}'|">고객지원실</a>
+            </li>
+            <li><a href="#">페이스북</a></li>
+            <li><a href="#">인스타그램</a></li>
+        </ul>
+    </div>
+</div>

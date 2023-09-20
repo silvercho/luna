@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<script src="./js/jquery-3.1.1.js"></script>
+<script src="./js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="./css/jquery.bxslider.css"/>
+<title>qdwdw</title>
+<style>
+*{marign:0; padding:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+
+
+#wrap{
+	width:800px;
+	margin:0 auto;
+}
+</style>
+<script>
+	$(function(){
+	
+		$(".slide").bxSlider({
+			auto:true,
+			//자동실행 여부 - true, false
+			pause:3000,
+			//이미지가 멈춰있는 시간을 지정.
+			speed:1300,
+			//이미지 슬라이드가 이동하는 속도
+			autoHover:true,
+			//마우스 호버시에 자동실행 정지 여부 - true, false
+			controls:false,
+			//이전, 다음 버튼출력 여부 - true, false
+			pager:false,
+			//페이저 버튼 출력 여부 - true, false
+			mode:"horizonal"
+			//모드설정- horizontal , vertical, fade
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<ul class="slide">
+			<li><img src="./images/photo1.jpg" alt=""/></li>
+			<li><img src="./images/photo2.jpg" alt=""/></li>
+			<li><img src="./images/photo3.jpg" alt=""/></li>
+			<li><img src="./images/photo4.jpg" alt=""/></li>
+			<li><img src="./images/photo5.jpg" alt=""/></li>
+		</ul>
+	</div>
+</body>
+
+</html>

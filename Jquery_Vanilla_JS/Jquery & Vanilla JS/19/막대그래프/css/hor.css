@@ -1,0 +1,99 @@
+/* skills */
+#skills_box {
+	/* float: left; */
+	width: 300px;
+}
+
+.skillsIcon {
+	font-size: 0;
+}
+
+.skillsIcon img {
+	float: right;
+	width: 100px;
+	margin: -150px 0 10px 55px;
+}
+
+.skills h2 {
+	float: left;
+	font-size: 2em;
+	color: #000;
+	letter-spacing: 0.1em;
+}
+
+.skills {
+	clear: both;
+	font-size: 18px;
+	color: #cf75cc;
+	text-indent: 5px;
+	width: 300px;
+	margin-left: 80px;
+	position: relative;
+	left: -100%;
+}
+
+.skills>span {
+	line-height: 70px;
+}
+
+.skills span.bt {}
+
+.skill {
+	float: left;
+	width: 220px;
+}
+
+.skill_n {
+	color: #555;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 5px;
+
+}
+
+.skill_p {
+	color: #555;
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 15px;
+
+}
+
+.skill_g {
+	height: 20px;
+	width: 100%;
+}
+
+.skill_gBg {
+	height: 20px;
+	width: 100%;
+	background: url(../img/skill_gBg.png) no-repeat 0 0;
+}
+
+.g1 {
+	background: url(../img/skill_g-01.png) no-repeat 0 0;
+}
+
+.g2 {
+	background: url(../img/skill_g-02.png) no-repeat 0 0;
+}
+
+.g3 {
+	background: url(../img/skill_g-03.png) no-repeat 0 0;
+}
+
+.g4 {
+	background: url(../img/skill_g-04.png) no-repeat 0 0;
+}
+
+.g5 {
+	background: url(../img/skill_g-05.png) no-repeat 0 0;
+}
+
+.g6 {
+	background: url(../img/skill_g-06.png) no-repeat 0 0;
+}
+
+.g7 {
+	background: url(../img/skill_g-07.png) no-repeat 0 0;
+}

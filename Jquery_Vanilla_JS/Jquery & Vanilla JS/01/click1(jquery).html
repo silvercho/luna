@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+	$(function(){
+		$('#gnb li').click(function(){
+			$('#gnb li').css('color','black');
+			$(this).css('color','red');
+			$(this).parent().prev().css('color','red');
+		});
+	});
+	
+	
+	</script>
+	
+	
+</head>
+<body>
+	<p>나도 빨간색으로 만들어라</p>
+	<ul id="gnb">
+		<li>난 1등</li>
+		<li>난 2등</li>
+		<li>난 3등</li>
+		<li>난 4등</li>
+	</ul>
+	<p>any</p>
+</body>
+</html>
+
+

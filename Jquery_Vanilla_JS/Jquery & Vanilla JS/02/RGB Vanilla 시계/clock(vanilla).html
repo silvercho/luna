@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>sample5</title>
+    <script src="clock(vanilla).js" defer></script>
+    <style>
+        *{margin:0;padding:0}
+        #clock{position:relative;width:300px;height:300px;margin:100px auto 0}
+        #clock img{position:absolute;top:0;left:0;display:block}
+        .sec{width:3px;height:140px;transform-origin:50% 100%;position:absolute;right:50%;top:3%}
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <img alt="clock" src="clock.png"/>
+        <img alt="hour" src="h.png" class="hour"/>
+        <img alt="min" src="m.png" class="min"/>
+        <div class="sec"></div>
+    </div>
+	<div class="digital"></div>
+</body>
+</html>

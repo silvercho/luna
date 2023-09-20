@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="|${pageName}|"></title>
+  <link th:href="@{/css/layout1.css}" rel="stylesheet">
+</head>
+
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content">
+  <form action="/security-login/community/update" method="post" name="updateForm">
+    <input type="hidden" name="id" th:value="${communityUpdate.id}">
+    작성자: <input type="text" name="communityWriter" th:value="${communityUpdate.communityWriter}" readonly> <br>
+    비밀번호: <input type="text" name="communityPass" id="communityPass"> <br>
+    제목: <input type="text" name="communityTitle" th:value="${communityUpdate.communityTitle}"> <br>
+    내용: <textarea name="communityContents" cols="30" rows="10" th:text="${communityUpdate.communityContents}"></textarea> <br>
+    <input type="hidden" name="communityHits" th:value="${communityUpdate.communityHits}">
+    <input type="button" value="글수정" onclick="communityUpdate()">
+  </form>
+
+
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+<script th:inline="javascript">
+  const communityUpdate = () => {
+    const pass = [[${communityUpdate.communityPass}]];
+    const inputPass = document.getElementById("communityPass").value;
+    if (pass == inputPass) {
+      document.updateForm.submit();
+    } else {
+      alert("비밀번호가 일치하지 않습니다!");
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="shortcut icon" href="./images/favicon.ico">
+	<title>리니지2 레볼루션</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+	$(function(){
+		var i=0;
+		var repeat;
+		
+		
+		$(".button li").click(function(){
+			
+			i=$(this).index();
+			$(".images").stop().animate({
+				"margin-left":-i*100+"%"
+			},600);
+			
+			$(".button li").removeClass("on");
+			$(this).addClass("on");
+		});
+		
+		
+		
+		timer();
+		function timer(){
+			repeat = setInterval(function(){
+				i++;
+				if(i==5){
+					i=0;
+				}
+				
+				$(".img_slide .button li").eq(i).trigger("click");
+				
+			},6000);
+			
+		}
+		$(".img_slide .button li").mouseover(function(){
+			clearInterval(repeat);
+		});
+		$(".img_slide .button li").mouseleave(function(){
+			timer();
+		});
+		
+	
+	});
+	
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+	<!-- 헤더 -->
+	<header>
+		<div class="top_header">
+			<h2>netmarble</h2>
+		</div>
+		<div class="bot_header">
+		
+			
+		
+			<ul class="gnb1">
+				<li class="logo"><a href="#"><img src="./images/lnb_logo.png" alt=""></a></li>
+				<li class="g"><a href="#"><img src="./images/lnb_menutxt01.png" alt=""></a></li>
+				<li class="g"><a href="#"><img src="./images/lnb_menutxt03.png" alt=""></a></li>
+				<li class="g"><a href="#"><img src="./images/lnb_menutxt04.png" alt=""></a></li>
+			</ul>
+			<ul class="gnb2">
+				<li>
+					<div class="search_wrap">
+						<input type="text" class="search_bar" id="search_text" placeholder="공식 커뮤니티에 물어보세요!">
+						<input type="image" src="./images/icon_search.png" alt="" class="search_bar" id="search_icon">
+					</div>
+				</li>
+				<li><a href="#"><img src="./images/lnb_google.png" alt=''/></a></li>
+				<li><a href="#"><img src="./images/lnb_apple.png" alt=''/></a></li>
+		</div>
+			
+			
+
+	
+	</header>
+	<!-- 이미지 슬라이드 -->
+	<div class="mobile_img">
+	
+	</div>
+	<div class="img_slide">
+		
+		<ul class="images cf">
+			
+			<li><h3>新종족 카마엘</h3><span>태생적 강력함을 지금 느껴보세요!</span><a href="#"><!--<img src="./images/krkz1561108662850.jpg" alt=''>--></a></li>
+			<li><h3>듀얼 클래스 시스템</h3><span>나의 힘 그대로 원하는 클래스를!</span><a href="#"><!--<img src="./images/hh1i1560942695723.jpg" alt=''>--></a></li>
+			<li><h3>신서버 군터&이실로테</h3><span>역대급 혜택! 지금 바로 시작할때!!</span><a href="#"><!--<img src="./images/lnpf1561108588163.jpg" alt=''>--></a></li>
+			<li><h3 class="white">최대 레벨 440 확장</h3><span class="white">신규 영지 아덴 동부로 새로운 모험!</span><a href="#"><!--<img src="./images/wpto1567072230976.jpg" alt=''>--></a></li>
+			<li><h3>언데드 장비  추가</h3><span>언데드 몬스터를 수월하게 처치하자!</span><a href="#"><!--<img src="./images/dxmg1573118719298.jpg" alt=''>--></a></li>
+
+		</ul>
+		<ul class="button">
+			<li class="on"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+	</div>
+	<ul class="border_banner">
+		<li class="left_ban">
+			<a href="#">
+			</a>
+			<img src="./images/main_txt01.png" class="text"alt=""/>
+			<img src="./images/night1.png" class="hoveron1"alt=""/>
+		</li>
+		<li class="right_ban">
+			<a href="#">
+			</a>
+			<img src="./images/main_txt02.png" class="text"alt=""/>
+			<img src="./images/night2.png" class="hoveron2"alt=""/>
+		</li>
+	</ul>
+	
+	</div>
+	<!-- 내비 -->
+	<nav class="cf">
+		<div class="info">
+			<h3>공지사항<a href="#"><img src="./images/icon_more.png" alt=''></a></h3>
+			<div class="text">
+				<ul>
+					<li><a href="#">11월 2주차 매일 접속 보상 안내</a><span>2019.11.11</span></li>
+					<li><a href="#">다수의 계정을 이용한 비매너 행위에 대한 향후 조치 안내</a><span>2019.11.08</span></li>
+					<li><a href="#">11월 7일(목) 업데이트 이후 발생하고 있는 현상 안내</a><span>2019.11.07</span></li>
+					<li><a href="#">11월 7일(목) 신규 상품 안내</a><span>2019.11.07</span></li>
+					<li><a href="#">[완료] 11월 12일(화) 디온 서버 패치 안내</a><span>2019.11.12</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="event">
+			<h3>이벤트<a href="#"><img src="./images/icon_more.png" alt=''></a></h3>
+			<div class="text">
+				<ul>
+					<li><a href="#">두근두근 빼빼로 쟁탈전 이벤트 안내</a><span>2019.11.11</span></li>
+					<li><a href="#">묻고 보상 더블로 가! 가위.바위.보 이벤트 안내 (수정)</a><span>2019.11.07</span></li>
+					<li><a href="#">페르넬의 유적 탐사 - 장비 성장 편 이벤트 안내</a><span>2019.11.07</span></li>
+					<li><a href="#">시공의 균열 핫데이 이벤트 안내</a><span>2019.11.07</span></li>
+					<li><a href="#">겨울대비! 혈맹 특사 발령 이벤트 안내</a><span>2019.11.07</span></li>
+				
+				</ul>
+				
+			</div>
+		</div>
+	
+	</nav>
+	<!-- 섹션 -->
+	<section class="cf">
+		<article class="cf">
+			
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/gmdi1573436217244.png" alt=''></a></div><div class="intext"><strong>두근두근 빼빼로 쟁탈전!</strong>
+					<span>펠리시아의 빼빼로는 몇번~?</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/8jut1573105276089.png" alt=''></a></div><div class="intext"><strong>겨울대비! 혈맹 특사 발령</strong><span>자유로운 혈맹활동을 누려보세요!</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/ncri1573105195830.png" alt=''></a></div><div class="intext"><strong>시공의 균열 핫데이</strong><span>주말동안 무료 보상 횟수 2회!</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/hcpd1573105026525.png" alt=''></a></div><div class="intext"><strong>페르넬의 유적 탐사</strong><span>-장비 성장 편-</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/2hja1573106302944.png" alt=''></a></div><div class="intext"><strong>가위.바위.보!</strong><span>묻고 보상 더블로 가!!</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/1514188722869.png" alt=''></div></a><div class="intext"><strong>용작소</strong><span>용사님의 작품을 소개합니다.</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/1512546859709.png" alt=''></div></a><div class="intext"><strong>베스트 공략 & 꿀팁</strong><span>레볼루션 완전정복! 베스트 공략&꿀팁</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/kp4i1517823202443.png" alt=''></div></a><div class="intext"><strong>용사를 만나다</strong><span>용사님과의 1:1 인터뷰 보러가기!</span></div>
+				</div>
+				<div class="in_article">
+					<div class="inmage"><a href="#"><img src="./images/5tpg1517821549004.png" alt=''></div></a><div class="intext"><strong>주간 레볼루션!</strong><span>이번 주 최강 클래스를 알려드립니다.</span></div>
+				</div>
+			
+		</article>
+	</section>
+	<footer>
+		<div class="infoot">
+			<div class="text_center">
+				<div class="logo">
+					<span>netmarble</span>
+				</div>
+				<div class="copy">
+					<span>Copyright &copy; Netmarble Corp. All Rights Reserved.<br/>
+					이용약관 | 개인정보 취급방침</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

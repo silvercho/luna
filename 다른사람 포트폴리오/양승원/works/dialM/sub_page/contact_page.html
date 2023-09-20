@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" href="./css/reset.css"/>
+	<link rel="stylesheet" href="./css/style_custom.css"/>
+	<link rel="stylesheet" href="./css/style_contact.css"/>
+	<link rel="shortcut icon" href="./images/logo/dial_M_favicon.png"/>
+	 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApZd9hQCcit-GdoIgU5Q0AW5lVxFD6uCk&callback=initMap"
+    ></script>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./js/jquery.transform2d.js"></script>
+	<script src="./js/script_custom.js"></script>
+	<script src="./js/script_video.js"></script>
+	<title>dial M | Contact</title>
+
+    <script>
+     function initialize() {
+
+			
+			var Y_point			= 37.551642;		
+			var X_point			= 126.917924;		
+
+		
+			
+			var zoomLevel		= 17;						
+			var markerTitle		= "dailM";				
+			var markerMaxWidth	= 300;						
+
+			
+			var contentString	= '<div style="text-align:center;">' +
+			'<img src="./images/logo/main_logo_black.png" alt="" width="50"/>'+
+			'<p>서울특별시 마포구 서교동 양화로12길 8-7 5F</p>' +
+			'</div>';
+
+			var myLatlng = new google.maps.LatLng(Y_point, X_point);
+			var mapOptions = {
+								zoom: zoomLevel,
+								center: myLatlng,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+			var marker = new google.maps.Marker({
+													position: myLatlng,
+													map: map,
+													title: markerTitle
+			});
+
+			var infowindow = new google.maps.InfoWindow(
+														{
+															content: contentString,
+															maxWidth: markerMaxWidth
+														}
+			);
+
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+</script>
+</head>
+<body onload="initialize();">
+	<header>
+		<h1 class="logo">
+			<a href="../index.html">
+				<img src="./images/logo/black_logo.png" alt="logo" title="Home" class="black_logo"/>
+				<img src="./images/logo/white_logo.png" alt="logo" title="Home" class="white_logo"/>
+			</a>
+		</h1>
+		<ul class="gnb">
+			<li><a href="./about_page.html">about</a><div class="before"></div><div class="after"></div></li>
+			<li><a href="./musicvideo_page.html">music video</a><div class="before"></div><div class="after"></div></li>
+			<li><a href="./commercialvideo_page.html">commercial</a><div class="before"></div><div class="after"></div></li>
+			<li class="on"><a href="./contact_page.html">contact</a><div class="before"></div><div class="after"></div></li>
+		</ul>
+		<div id="m_menu_btn">
+			<div class="bar bar1"></div>
+			<div class="bar bar2"></div>
+			<div class="bar bar3"></div>
+		</div>
+	</header>
+	<div id="fake_header"></div>
+	<section class="cf">
+		<div class="contact_form" id="contact_form">
+			<form action="./contact_me.php" method="post">
+				<input type="text" id="name" name="name" placeholder="NAME" required/>
+				<input type="email" id="email" name="email" placeholder="E-MAIL" required/>
+				<input type="text" id="phone" name="phone" placeholder="SUBJECT" required/>
+				<textarea id="message" name="message" placeholder="MESSAGE" required></textarea>
+				<input type="submit" value="SEND MESSAGE">
+			</form>
+		</div>
+		<div class="president_section">
+			<p>contact info</p>
+			<p>김형석</p>
+			<p>+82-2-3142-7916<br/>+82-10-9085-5394</p>
+			<p class="site">dialm@dialm.co.kr</p>
+		</div>
+		
+		<div id="map_cover">
+			<div id="map_view"></div>
+		</div>
+		<div class="president_section" style="margin-top:50px;">
+			<p>LOCATION INFO</p>
+			<p>서울시 마포구 양화로 12길 8-7 5F</p>
+			<p class="site">5F, 8-7, YANGHWA-RO 12-GIL, MAPO-GU, SEOUL,<br/> REPUBLIC OF KOREA 04043</p>
+
+		</div>
+	</section>
+	<footer>
+		<div class="footer_box">
+			<img src="./images/logo/black_logo.png" alt=""/>
+			<p class="footer_logo">
+				<span class="site">www.dialm.co.kr</span>
+				<span class="copy">copyrights&nbsp;&copy;&nbsp;2019&nbsp;dial&nbsp;m</span>
+			</p>
+			<p class="address">
+				<span class="phone">+82-2-3142-7916</span>
+				<span class="mail">dialm@dialm.co.kr</span>
+			</p>
+		</div>
+	</footer>
+	<div id="m_menu">
+		<div class="mobile_header">
+			<h1 class="m_logo">
+				<a href="../index.html">
+					<img src="./images/logo/black_logo.png" alt="logo"/>
+				</a>
+			</h1>
+			<div class="mobile_close_btn">
+				<div class="close_bar close1"></div>
+				<div class="close_bar close2"></div>
+			</div>
+		</div>
+		<ul class="mobile_gnb">
+			<li><a href="./about_page.html">about</a></li>
+			<li><a href="./musicvideo_page.html">music video</a></li>
+			<li><a href="./commercialvideo_page.html">commercial</a></li>
+			<li><a href="./contact_page.html">contact</a></li>
+		</ul>
+		<p class="mobile_bottom_left">
+			<span class="site">www.dialm.co.kr</span>
+			<span class="copy">copyrights&nbsp;&copy;&nbsp;2019&nbsp;dial&nbsp;m</span>
+		</p>
+		<p class="mobile_bottom_right">
+			<span class="phone">+82-2-3142-7916</span>
+			<span class="mail">dialm@dialm.co.kr</span>
+		</p>
+	</div>
+</body>
+</html>

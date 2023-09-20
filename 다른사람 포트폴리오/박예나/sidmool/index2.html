@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	
+	<link rel="stylesheet" href="./style/img_slide.css">
+	<link rel="stylesheet" href="./style/header.css">
+	<link rel="stylesheet" href="./style/section.css">
+	<link rel="stylesheet" href="./style/footer.css">
+
+	
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="./js/jquery.mousewheel.min.js"></script>
+	<title>Sidmool</title>
+</head>
+<body>
+	<div id="img_slide1">
+			<ul class="imgs">
+					<li><a href="#">
+							<img src="./images/img_slide1_1.jpg" alt=""/>
+							<div class="slide1_text">
+									<h2>Natural Preserve System</h2>
+									<h3>화학 방부제 사용을 최소화하고 식물 추출물을 이용한 보존 시스템을 사용합니다.</h3>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<img src="./images/img_slide1_2.jpg" alt=""/>
+							<div class="slide1_text">
+									<h2>Use of Natural Plant Ingredients</h2>
+									<h3>천연성분을 활용하여 피부의 생명력을 되찾을 수 있는 방법을 연구합니다.</h3>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<img src="./images/img_slide1_3.jpg" alt=""/>
+							<div class="slide1_text">
+									<h2>Do not Animal Experiment</h2>
+									<h3>동물실험을 해야할 만큼 인간에게 유해한 성분을 사용하지 않습니다.</h3>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<img src="./images/img_slide1_4.jpg" alt=""/>
+							<div class="slide1_text">
+									<h2>Naturalism Beauty Brand</h2>
+									<h3>"사람은 자연을, 자연은 사람을 보호합니다."</h3>
+							</div>
+					</a></li>
+			</ul>
+			
+			<ul id="pager1">
+					<li class="on"><a href="#"></a><span>natural ingredient</span></li>
+					<li><a href="#"></a><span>preserve system</span></li>
+					<li><a href="#"></a><span>experiment</span></li>
+					<li><a href="#"></a><span>naturalism brand</span></li>
+					
+					<div class="pager1_bar"></div>
+			</ul>
+	</div>
+	
+	
+	<header>
+			<div class="logo"><img src="./images/logo.png" alt=""></div>
+			
+			<div class="menu_icon cf">
+				<div class="icon search">
+					<img src="./images/search.png" alt="" class="icon_off"/>
+					<img src="./images/search_on.png" alt="" class="icon_on"/>
+				</div>
+				<div class="icon mypage">
+					<img src="./images/mypage.png" alt="" class="icon_off"/>
+					<img src="./images/mypage_on.png" alt=""  class="icon_on"/>
+				</div>
+				<div class="icon like">
+					<img src="./images/like.png" alt="" class="icon_off"/>
+					<img src="./images/like_on.png" alt=""  class="icon_on"/>
+				</div>
+				<div class="icon basket">
+					<img src="./images/basket.png" alt="" class="icon_off"/>
+					<img src="./images/basket_on.png" alt=""  class="icon_on"/>
+				</div>
+				
+				<div class="icon menu">
+					<a href="#">
+						<div class="menu_bar menu_bar1"></div>
+						<div class="menu_bar menu_bar2"></div>
+						<div class="menu_bar menu_bar3"></div>
+					</a>
+				</div>
+			</div>
+			
+			<nav>
+				<ul class="gnb">
+						<li><a href="#">시드물 이야기</a></li>
+						<li><a href="#">제품성분</a></li>
+						<li><a href="#">사용후기</a></li>
+						<li><a href="#">QNA</a></li>
+						<li><a href="#">공지사항</a></li>
+						<div id="menu_dot"></div>
+				</ul>
+				
+			</nav>
+		</header>	
+		
+		
+			<div id="side_nav">
+				<img src="./images/side_menu1.jpg" alt="" class="nav_bg"/>
+				
+				<div class="close">
+					<a href="#">
+						<div class="bar bar1"></div>
+						<div class="bar bar2"></div>
+					</a>
+				</div>
+				
+				<ul class="side_gnb side_gnb1">
+						<li><a href="#">기능별</a>
+								<ul>
+										<li><a href="#">바디</a></li>
+										<li><a href="#">헤어</a></li>
+										<li><a href="#">클렌징</a></li>
+										<li><a href="#">에센스세럼</a></li>
+										<li><a href="#">로션</a></li>
+										<li><a href="#">크림</a></li>
+										<li><a href="#">수분젤</a></li>
+										<li><a href="#">마스크팩</a></li>
+										<li><a href="#">썬스크린</a></li>
+										<li><a href="#">화장소품</a></li>
+								</ul>
+						</li>
+						<li><a href="#">성분별</a>
+								<ul>
+										<li><a href="#">알로에</a></li>
+										<li><a href="#">EGF</a></li>
+										<li><a href="#">프로폴리스</a></li>
+										<li><a href="#">히아루론산</a></li>
+										<li><a href="#">세라마이드</a></li>
+										<li><a href="#">티트리</a></li>
+										<li><a href="#">사카로발효</a></li>
+										<li><a href="#">병풀</a></li>
+										<li><a href="#">아크바이</a></li>
+										<li><a href="#">카렌듈라</a></li>
+										<li><a href="#">동백</a></li>
+										<li><a href="#">판테놀</a></li>
+								</ul>
+						</li>
+						<li><a href="#">고민별</a>
+								<ul>
+										<li><a href="#">모공관리</a></li>
+										<li><a href="#">피지관리</a></li>
+										<li><a href="#">장벽강화</a></li>
+										<li><a href="#">각질관리</a></li>
+										<li><a href="#">건성</a></li>
+										<li><a href="#">붉은톤</a></li>
+										<li><a href="#">미백</a></li>
+										<li><a href="#">자외선차단</a></li>
+										<li><a href="#">주름개선 &amp; 탄력</a></li>
+										<li><a href="#">화이트헤드</a></li>
+										<li><a href="#">블랙헤드</a></li>
+										<li><a href="#">민감피부</a></li>
+										<li><a href="#">탈모</a></li>
+								</ul>
+						</li>
+				</ul>
+				
+				<ul class="side_gnb side_gnb2">
+						<li><a href="#">시드물 이야기</a></li>
+						<li><a href="#">제품성분</a></li>
+						<li><a href="#">사용후기</a></li>
+						<li><a href="#">QNA</a></li>
+						<li><a href="#">공지사항</a></li>
+				</ul>
+				
+			</div>
+
+	
+	
+	<div id="fake_header"></div>
+	
+	
+	<section>
+			<div class="img_slide2">
+					<ul class="left">
+							<li><a href="#"><img src="./images/slide2_3.png" alt=""/></a></li>
+							<li><a href="#"><img src="./images/slide2_5.png" alt=""/></a></li>
+							<li><a href="#"><img src="./images/slide2_4.png" alt=""/></a></li>
+							
+						<div class="np_button">
+								<div class="prev">
+										<img src="./images/prev_off.png" alt=""/>
+										<img src="./images/prev_on.png" alt=""/>
+								</div>
+								<div class="next">
+										<img src="./images/prev_off.png" alt=""/>
+										<img src="./images/prev_on.png" alt=""/>
+								</div>
+						</div>
+					</ul>
+					
+					<ul class="right_top">
+							<li><a href="#"><div id="text" class="on">
+												<h3>Dr. TROUB SKIN RETURNING<br/>FUNCTIONAL HYDROGEL</h3>
+												<p>하이드로겔이 피부온도에 반응해 녹으면서,<br/>
+												고농축 앰플을 피부에 풍부하게 전달해 줍니다.<br/>
+												피부에 영양을 공급해주세요.</p>
+							</div></a></li>
+							<li><a href="#"><div id="text">
+												<h3>SACCHARO FERMENT SPARKLE FIRST AMPOULE</h3>
+												<p>발효과정으로 만들어지는 이로운 성분으로,<br/>
+												브라이트닝, 피부장벽 관리, 보습관리의 균형 잡힌 관리를 통해<br/>
+												아름다운 피부를 완성해 보세요.</p>
+							</div></a></li>
+							<li><a href="#"><div id="text">
+												<h3>HUMAN OLIGO REPAIR CREAM</h3>
+												<p>탄력 잃고 칙칙해진 피부에 부담없는<br/>
+												은행잎 수와 자연에서 얻은 오일로 완성한 크림,<br/>
+												나이를 잊은 진실된 아름다움은 이제 휴먼크림에게 맡기세요.</p>
+							</div></a></li>
+					</ul>
+					
+					<ul class="right_bottom">
+							<li><a href="#"><img src="./images/right1_1.jpg" alt=""/></a></li>
+							<li><a href="#"><img src="./images/right1_3.jpg" alt=""/></a></li>
+							<li><a href="#"><img src="./images/right1_2.jpg" alt=""/></a></li>
+					</ul>
+			</div>
+	
+	</section>		
+			
+			
+	<article>
+			<div class="series">
+				<div id="text">
+						<h2>Sidmool Series</h2>
+						<h4>시드물은 시드물을 만들어가는 사람들의 마음과 생각을 전달하기 위해 많은 노력을 하고 있습니다.<br/> 오직 고객님들의 피부 고민을 덜어드리기 위해 시드물은 쉼 없이 공부하며<br/> 좋은 화장품을 개발하겠습니다.</h4>
+				</div>
+				<ul>
+						<li><a href="#">더 살펴보기</a>
+								<h6>Dr.troub 닥터트럽@</h6>
+								<img src="./images/slide2_3.png" alt=""/>
+								<div class="text">
+										<h5>닥터트럽 기능성 하이드로겔 30g</h5>
+										<p>고가의 기능성 앰플 30g 한 병을 통째로-</p>
+								</div>
+						</li>
+						<li><a href="#">더 살펴보기</a>
+								<h6>Saccharo 사카로@</h6>
+								<img src="./images/slide2_5.png" alt=""/>
+								<div class="text">
+										<h5>사카로 광채 앰플 100ml</h5>
+										<p>복합 발효 성분으로 광채결 있는 건강한 피부로 완성</p>
+								</div>
+						</li>
+						<li><a href="#">더 살펴보기</a>
+								<h6>Human Oligo 휴먼올리고@</h6>
+								<img src="./images/slide2_4.png" alt=""/>
+								<div class="text">
+										<h5>휴먼올리고 리페어 크림 50g</h5>
+										<p>수십만원짜리 크림 그 이상의 품질과 사용감</p>
+								</div>
+						</li>
+						<li><a href="#">더 살펴보기</a>
+								<h6>Min Jung Gi 민중기@</h6>
+								<img src="./images/slide2_7.png" alt=""/>
+								<div class="text">
+										<h5>민중기 EGF 앰플 11ml</h5>
+										<p>EGF 함유량 화장품 최대 배합 한도 10PPM</p>
+								</div>
+						</li>
+						<li><a href="#">더 살펴보기</a>
+								<h6>Acbye 아크바이@</h6>
+								<img src="./images/slide2_1.png" alt=""/>
+								<div class="text">
+										<h5>아크바이 효소 파우더 클렌져 60g</h5>
+										<p>피부에는 최소한의 자극, 환경에는 최소한의 부담</p>
+								</div>
+						</li>
+						<li><a href="#">더 살펴보기</a>
+								<h6>Bueureeze 뷰리즈@</h6>
+								<img src="./images/slide2_6.png" alt=""/>
+								<div class="text">
+										<h5>뷰리즈 스노우 화이트 크림 80g</h5>
+										<p>맑고 깨끗한 피부 결로 자연스럽게 밝아지는 피부결</p>
+								</div>
+						</li>
+				</ul>	
+			</div>
+		
+		
+			<div class="ingredient">
+					<h2>SIDMOOL INGREDIENTS</h2>
+					<p>내용물을 구성하는 성분이 좋고 기능에 충실해야<br/> 좋은, '착한 화장품' 이라고 생각합니다.<br/>천연 기능 화장품으로 세상에서 가장 사랑 받는 시드물이 되겠습니다.</p>
+					<div class="more"><a href="#">
+							<span>DISCOVER MORE</span><span>DISCOVER MORE</span>
+							<div class="bar"></div>
+					</a></div>
+			</div>
+			
+			
+			
+			<div class="experience">
+					<div class="ex_left">
+							<div class="text">
+									<h2>SIDMOOL EXPERIENCE</h2>
+									<p>고객님께서 제품을 사용하신 후 직접 작성하진 후기입니다.<br/>
+									사용후기는 다른 고객분들꼐 좋은 정보가 되고,<br/>
+									앞으로 출시되는 신제품 개발에 소중한 참고 자료로 활용됩니다.<br/>
+									고객님들의 소중한 후기는 시드물에게 큰 힘이 됩니다.</p>
+							</div>
+					</div>
+					<div class="ex_right">
+							<div class="photo"><a href="#"><img src="./images/photo1.jpg" alt=""/></a></div>
+							<div class="photo"><a href="#"><img src="./images/photo2.jpg" alt=""/></a></div>
+							<div class="photo"><a href="#"><img src="./images/photo3.jpg" alt=""/></a></div>
+							<div class="photo blank"><a href="#"><h2>SIDMOOL</h2></a></div>
+							<div class="photo"><a href="#"><img src="./images/photo5.jpg" alt=""/></a></div>
+							<div class="photo"><a href="#"><img src="./images/photo4.jpg" alt=""/></a></div>
+							<div class="photo"><a href="#"><img src="./images/photo6.jpg" alt=""/></a></div>
+					</div>
+			</div>
+			
+			<div class="crum cf">
+					<div class="notice">
+							<div class="top"><h3>TRACK ORDER</h3></div>
+							<p>배송 중인 상품의 위치를<br/>확인해 보실 수 있습니다.</p>
+							<span><a href="https://service.epost.go.kr/iservice/usr/trace/usrtrc001k01.jsp">우체국 바로가기</a></span>
+							<span><a href="https://www.cjlogistics.com/ko/main">CJ대한통운 바로가기</a></span>
+					</div>
+					<div class="notice">
+							<div class="top"><h3>NOTICE</h3></div>
+							<p>시드물의 다양한 소식을<br/>빠르게 알려드립니다.</p>
+							<a href="#"><div class="bar"></div></a>
+					</div>
+					<div class="notice">
+							<div class="top"><h3>CHECK ATTENDANCE</h3></div>
+							<p>한 달에 15번 출석하시면<br/>월 1회 2000원 할인 쿠폰을 드립니다.<br/>(2만원 이상 구매시 사용 가능)</p>
+							<a href="#"><div class="bar"></div></a>
+					</div>
+			</div>
+			
+			
+			<div class="foot_menu">
+					<ul class="foot_cover cf">
+							<li><a href="#">SIDMOOL</a>
+									<ul class="cf">
+											<li><a href="#">개요/연혁/소개</a></li>
+											<li><a href="#">개발 및 품질관리</a></li>
+											<li><a href="#">오시는 길</a></li>
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">시드물 통신</a></li>
+											<li><a href="#">동영상 게시판</a></li>
+									</ul>
+							</li>
+							<li><a href="#">COMUNITY</a>
+									<ul class="cf">
+											<li><a href="#">포토후기</a></li>
+											<li><a href="#">사용후기</a></li>
+											<li><a href="#">시사모 자유게시판</a></li>
+											<li><a href="#">시드물 매니아</a></li>
+									</ul>
+							</li>
+							<li><a href="#">GOODS</a>
+									<ul class="cf">
+											<li><a href="#">성분사전</a></li>
+											<li><a href="#">신제품 리스트</a></li>
+											<li><a href="#">제품 전체보기</a></li>
+									</ul>
+							</li>
+							<li><a href="#">MY PAGE</a>
+									<ul class="cf">
+											<li><a href="#">주문내역/배송조회</a></li>
+											<li><a href="#">적립금내역</a></li>
+											<li><a href="#">할인 쿠폰 내역</a></li>
+											<li><a href="#">1:1 문의 게시판</a></li>
+											<li><a href="#">나의 게시글 보기</a></li>
+									</ul>
+							</li>
+							<li><a href="#">CUSTOMER</a>
+									<ul class="cf">
+											<li><a href="#">공지사항</a></li>
+											<li><a href="#">자주 묻는 질문</a></li>
+											<li><a href="#">전 어떻게 쓰나요?</a></li>
+											<li><a href="#">미확인 입금</a></li>
+											<li><a href="#">해외배송 게시판</a></li>
+									</ul>
+							</li>
+							<li><a href="#">SHOPPING</a>
+									<ul class="cf">
+											<li><a href="#">장바구니</a></li>
+											<li><a href="#">위시리스트</a></li>	
+									</ul>
+							</li>
+					</ul>
+			</div>
+	</article>
+			
+	<footer>
+			<div class="foot_top">
+					<span><a href="#">개인정보처리방침</a></span>
+					<span><a href="#">이용약관</a></span>
+			</div>
+			<div class="foot_middle">
+					<p>상호명 : 주식회사 시드물/ 대표자명 : 민중기/ 사업자번호 : 305-81-94469</p>
+					<p>통신판매신고 : 제2008 - 대전중구 - 0247호/ 전화 : 1577-9638(해외 : +82-42-716-0227)/ 팩스 : 042-367-7989</p>
+					<p>주소 : 우)35083 대전광역시 중구 안영로 42 (안영동)/ 개인정보보호책임자 : 이은비</p>
+			</div>
+			<div class="foot_bottom">
+					<p>COPYRIGHT (C) 2008 SIDMOOL ALL RIGHTS RESERVED.</p>
+			</div>
+	</footer>
+</body>
+</html>

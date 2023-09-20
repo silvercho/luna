@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<!-- 익스플로러 edge 버전 
+		 작정된 html이 제대로 읽혀지도록 렌더링을 걸어주는 코드 -->
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<title>Nike_AirMax</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+		$(function(){
+			$(".gnb > li > a").click(function(){
+				$(".gnb > li > ul").stop().slideUp();
+				$(this).next("ul").stop().slideDown();
+			});
+			$(".btn").click(function(){
+				$(".side").toggleClass("on");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="vid">
+			<video autoplay muted loop playsinline>
+				<source src="./media/nike.mp4" type="video/mp4"/>
+			</video>
+		</div>
+		<header>
+			<h1 class="logo">
+				<a href="#">
+					<img src="./images/logo2.png" alt=""/>
+				</a>
+			</h1>
+			<ul class="gnb">
+				<li><a href="#"><em>About NIKE</em></a></li>
+				<li><a href="#"><em>Brand Info</em></a>
+					<ul>
+						<li><a href="#"><em>2차메뉴1</em></a></li>
+						<li><a href="#"><em>2차메뉴2</em></a></li>
+						<li><a href="#"><em>2차메뉴3</em></a></li>
+						<li><a href="#"><em>2차메뉴4</em></a></li>
+					</ul>
+				</li>
+				<li><a href="#"><em>Community</em></a>
+					<ul>
+						<li><a href="#"><em>2차메뉴1</em></a></li>
+						<li><a href="#"><em>2차메뉴2</em></a></li>
+						<li><a href="#"><em>2차메뉴3</em></a></li>
+						<li><a href="#"><em>2차메뉴4</em></a></li>
+					</ul>
+				</li>
+				<li><a href="#"><em>Product Value</em></a>
+					<ul>
+						<li><a href="#"><em>2차메뉴1</em></a></li>
+						<li><a href="#"><em>2차메뉴2</em></a></li>
+						<li><a href="#"><em>2차메뉴3</em></a></li>
+						<li><a href="#"><em>2차메뉴4</em></a></li>
+					</ul>
+				</li>
+				<li><a href="#"><em>Company History</em></a></li>
+			</ul>
+		</header>
+		<ul class="sns">
+			<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+		</ul>
+		<section class="txtbox">
+			<p class="tit">
+				50<em>/24</em>
+			</p>
+			<p class="txt">
+				Best Qualified <strong>AIR MAX</strong>
+			</p>
+		</section>
+		<section class="side">
+			<div class="con">
+				<div class="img_cover">
+					<p>
+						<span>Event &amp; Community</span>
+						<a href="#">
+							<img src="./images/pic1.png" alt=""/>
+						</a>
+					</p>
+					<p>
+						<span>News &amp; Notice</span>
+						<a href="#">
+							<img src="./images/pic2.png" alt=""/>
+						</a>
+					</p>
+					<p>
+						<span>Product Review</span>
+						<a href="#">
+							<img src="./images/pic3.png" alt=""/>
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="btn">
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        body {font-size: 10px;}
+        a {color: #000; text-decoration: none;}
+        li {list-style: none;}
+    .appTitle {
+      padding-top: 40px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .appTitle h1 {font-size: 3rem; margin-bottom: 5px;}
+    .appTitle p {font-size: 1.6rem;}
+    .app-wrap { padding: 50px 300px;
+      display: flex; justify-content: center;}
+
+    .bxslider li{height: 440px; border: 1px solid #c4c4c4;}
+    .bxslider li h2 {margin: 20px; font-size:2rem;}
+    .bxslider li p { font-size:1.2rem; margin-left: 20px; margin-bottom: 20px;}
+    .bxslider li a { font-size:1.2rem; font-weight: bold; margin-left: 20px; margin-bottom: 20px;}
+    .bxslider li img {margin-top: 30px; }
+    .appInner5 {padding: 20px; background: rgba(0, 0, 0, 0.1); height: 450px;}
+    .appInner5 h2 { font-size:2rem; margin-bottom:20px}
+    .appInner5 p { font-size:1.2rem;margin-bottom: 20px;}
+    .appInner5 a { font-size:1.2rem; font-weight: bold;}
+    .appInner5 img {margin-top: 120px; display: block;width: 150px; height:150px;float: right; }
+  </style>
+    <script>
+      $(function(){
+          $('.bxslider').bxSlider({
+    minSlides: 2,
+    maxSlides: 2,
+    slideWidth: 360,
+    slideHeight:300,
+    slideMargin: 10
+      });
+    });
+   </script>
+</head>
+<body>
+  <div class="section4">
+    <div class="appTitle">
+      <h1>My EndCar</h1>
+      <p>이제, 단순히 APP을 넘어서 당신의 카 라이프를 책임질<br> '라이프 플랫폼 my EndCar'를 만나보세요.</p>
+    </div>
+    <div class="app-wrap">
+      <ul class="bxslider">
+        <li>
+          <h2>홈</h2>
+          <p>관심있는 차량 정보에 따른 <br>맞춤 정보형 UI제공</p>
+          <a href="#">자세히 보기</a>
+          <img src="img/app1.png">
+        </li>
+        <li>
+          <h2>검색</h2>
+          <p>매물 검색을 더 쉽고 빠르게<br>검색하는 기능 제공</p>
+          <a href="#"> 자세히 보기</a>
+          <img src="img/app2.png">
+        </li>
+        <li>
+          <h2>Shop</h2>
+          <p>엔드카 대표 커머스<br> Shop 과의 연계</p>
+          <a href="#"> 자세히 보기</a>
+          <img src="img/app3.png">
+        </li>
+        <li>
+          <h2>서비스</h2>
+          <p>정비를 포함한 <br>다양한 차량 관련 서비스</p>
+          <a href="#"> 자세히 보기</a>
+          <img src="img/app4.png">
+        </li>
+      </ul>
+      <div class="appInner5">
+        <h2>마이엔드카 APP</h2>
+        <p>중고차거래의 모든것이 담겨있는<br> 엔드카 앱을 설치해보세요.</p>
+        <a href="#">APP 다운로드</a>
+        <img class="logo10" src="img/logo10.png">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

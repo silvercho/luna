@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- 내부 스타일 시트 -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- 외부 스크립트 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- 내부 스크립트 -->
+    <script src="/js/footer.js"></script>
+
+    <style>
+        .section {
+            width: 100%;
+            min-height: 630px;
+            padding: 32px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .innerContent{
+            width: 600px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div class="innerContent">
+        <h1><a th:href="|/${loginType}|">[[${pageName}]]</a></h1>
+        <hr/>
+        <h2>유저 정보</h2>
+        <div>
+            <div th:text="|loginId : ${user.loginId}|"/>
+            <div th:text="|name : ${user.name}|"/>
+            <div th:text="|role : ${user.role}|"/>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+</body>
+</html>

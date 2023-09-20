@@ -1,0 +1,253 @@
+@charset "UTF-8";
+.cf::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: '돋움체',Dotum,'글림체',Gulim;
+  color: #222328;
+}
+
+* header {
+  height: 100px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+* header .headerLogo {
+  float: left;
+  padding: 30px;
+  margin-left: 20px;
+}
+
+* header .gnb {
+  float: right;
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+* header .gnb > li {
+  float: left;
+  position: relative;
+}
+
+* header .gnb > li > a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  width: 175px;
+}
+
+* header .gnb > li > a:hover {
+  color: #fff;
+  background: #222328;
+}
+
+* header .gnb > li ul {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid #222328;
+  display: none;
+}
+
+* header .gnb > li ul a {
+  background: #fff;
+  width: 175px;
+  height: 40px;
+  line-height: 40px;
+}
+
+* header .gnb > li ul li > a:hover {
+  color: #fff;
+  background: #222328;
+}
+
+* .section1 {
+  margin: 0 auto;
+  width: 1200px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+* .section1 .ad1 {
+  position: absolute;
+  top: 0px;
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+* .section1 .ad2 {
+  position: absolute;
+  top: 300px;
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+* .section1 .ad3 {
+  position: absolute;
+  top: 600px;
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+* .section2 {
+  margin: 0 auto;
+  width: 1200px;
+  height: 200px;
+}
+
+* .section2 .section2BBS {
+  float: left;
+  width: 450px;
+  position: relative;
+  padding-left: 20px;
+}
+
+* .section2 .section2BBS > ul > li {
+  float: left;
+  padding-right: 10px;
+  border-bottom: 3px solid #222328;
+}
+
+* .section2 .section2BBS > ul > li > a {
+  width: 110px;
+  height: 47px;
+  text-align: center;
+  line-height: 47px;
+  font-size: 19.2px;
+}
+
+* .section2 .section2BBS > ul > li ul {
+  position: absolute;
+  left: 40px;
+  top: 53px;
+}
+
+* .section2 .section2BBS > ul > li:first-child ul {
+  list-style: square;
+  font-size: 14.4px;
+}
+
+* .section2 .section2BBS > ul > li:first-child ul li {
+  position: relative;
+  width: 440px;
+  height: 23px;
+  width: 410px;
+}
+
+* .section2 .section2BBS > ul > li:first-child ul li a:first-child {
+  float: left;
+}
+
+* .section2 .section2BBS > ul > li:first-child ul li a:last-child {
+  float: right;
+}
+
+* .section2 .section2BBS > ul > li:first-child ul li::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #222328;
+  position: absolute;
+  bottom: 3px;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+* .section2 .section2BBS > ul > li:first-child ul li:hover::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+* .section2 .section2BBS > ul > li:nth-child(2) {
+  width: 100px;
+  border-bottom: 3px solid #dfdfdf;
+}
+
+* .section2 .section2BBS > ul > li:nth-child(2) ul {
+  display: none;
+  margin-top: 7px;
+  left: 20px;
+}
+
+* .section2 .section2BBS > ul > li:nth-child(2) ul li {
+  float: left;
+  margin-right: 17px;
+}
+
+* .section2 .section2BBS > ul > li:nth-child(2) ul li:last-child {
+  margin-right: 0px;
+}
+
+* .section2 .section2BBS > ul > li:last-child {
+  width: 190px;
+  height: 47px;
+  border-bottom: 3px solid #dfdfdf;
+}
+
+* .section2 .section2Banner {
+  float: right;
+  width: 720px;
+}
+
+* .section2 .section2Banner li {
+  float: left;
+}
+
+* footer {
+  margin: 0 auto;
+  width: 1200px;
+  height: 100px;
+}
+
+* footer .footerLogo {
+  float: left;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+* footer .footerMid {
+  float: left;
+  width: 700px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+
+* footer .footerMid li {
+  float: left;
+  margin-right: 10px;
+}
+
+* footer .footerSNS {
+  float: right;
+  width: 200px;
+  margin-top: 17px;
+}
+
+* footer .footerSNS li {
+  float: left;
+  margin-right: 10px;
+}
+/*# sourceMappingURL=style.css.map */

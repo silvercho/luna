@@ -1,0 +1,527 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Anton|Muli&display=swap');
+
+*{margin: 0; padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none; color: #000;}
+.cf:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+body{font-family: 'Anton', sans-serif;}
+
+#wrap{
+	position: fixed;
+	width: 100%; height: 100%;
+	left: 0; top: 0;
+	/* min-width: 400px; */
+}
+
+/*header start*/
+header{
+	position: fixed;
+	left: 0; top: 0;
+	width: 100%; height: 65px;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index:1;
+}
+	header .logo{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%; height: 70%;
+	}
+		.logo a img{
+			position: absolute;
+			left: 50%; top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	header .gnb{
+		position: absolute;
+		top: 0; left:0;
+		width: 80px; height: 100%;
+		cursor: pointer;
+	}
+		.gnb .bars{
+			width: 28px; height: 30px;
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+		}
+		.gnb .bars .bar{
+			width: 100%; height: 3px;
+			background-color: #fff;
+			margin: 5px 0;
+			border-radius: 1.5px;
+		}
+		.gnb .bars .bar1.on{transform: translateY(8px) rotate(45deg);}
+		.gnb .bars .bar2.on{opacity: 0;}
+		.gnb .bars .bar3.on{transform: translateY(-8px) rotate(-45deg);}
+
+
+
+	header .lang{
+		position: absolute;
+		top: 0; right: 0;
+		width: 80px; height: 100%;
+		cursor: pointer;
+	}
+		.lang .kor{
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+			color: #ddd;
+			transition: all 0.3s;
+		}
+		.lang .kor.on{color:#fff;}
+		.lang .lang_inner{
+			position: absolute;
+			right: 0; top: 100%;
+			width: 80px; height: 400%;
+			background-color: #fff;
+			opacity: 0;
+			display: none;
+			transition: all 0.3s;
+		}
+		.lang .lang_inner.hidden{
+			display: block;
+			opacity: 1;
+		}
+			.lang_inner:before{
+				content:'';
+				display: block;
+				width: 12px; height: 12px;
+				background-color: #fff;
+				transform: rotate(45deg) translateX(-50%);
+				position: absolute;
+				left: 50%; top: -2px;
+				z-index: -1;
+			}
+			.lang_inner ul{
+				width: 100%; height: 100%;
+			}
+			.lang_inner ul li{
+				width: 100%; height: 25%;
+				border-bottom: 1px solid #7D7D7D;
+				box-sizing: border-box;
+			}
+			.lang_inner ul li:last-child{border-bottom: none;}
+			.lang_inner ul li a{
+				display: block;
+				width: 100%; height: 100%;
+				text-align: center;
+				line-height: 4;
+				color: #7d7d7d;
+			}
+			.lang_inner ul li a:hover{
+				background-color: #000;
+				color: #fff;
+			}
+	header .menu{
+		position: fixed;
+		left: 0; top: 0;
+		width: 100%; height: calc(100% - 60px);
+		background: rgba(0, 0, 0, 0.8);
+		opacity: 0;
+		display: none;
+		transition: all 0.4s;
+		/* min-width: 400px; */
+	}
+	header .menu.hidden{opacity: 1; display: block;}
+
+		.menu .menu_box{
+			position: absolute;
+			left: 50%; top: 50%;
+			transform: translate(-50%, -50%);
+			width: 400px; height: 500px;
+			transition: all 0.6s;
+			background-color: rgba(0,0,0,0.8);
+		}
+		.menu .menu_box.center{
+			left: 50%; top: 50%;
+			transform: translate(-50%, -50%);
+			width: 760px;
+		}
+			.main_menu{
+				width: 400px; height: 100%;
+			}
+			.main_menu > li{
+				width: 100%; height: 25%;
+				position: relative;
+				border-bottom: 1px solid #7d7d7d;
+				box-sizing: border-box;
+			}
+			.main_menu > li > a{
+				display: block;
+				width: 100%; height: 100%;
+				font-size: 30px;
+				text-align: center;
+				line-height: 4.5;
+				color: #7d7d7d;
+				word-break: keep-all;
+			}
+			.main_menu > li > a.color{color: #fff;}
+			.main_menu > li > a:hover{color: #fff;}
+
+			/*menu 공통*/
+			.main_menu > li > ul{
+				position: absolute;
+				top: -50%; left: 120%;
+				width: 80%; height: 300%;
+				transition: all 0.6s;
+				display: none;
+				opacity: 0;
+			}
+			.main_menu > li.active{
+				border-bottom: 3px solid #fff;
+			}
+			.main_menu > li.active > ul{
+				display: block;
+				opacity: 1;
+			}
+			.main_menu > li > ul > li{
+				width: 100%; height: 20%;
+				line-height: 4;
+			}
+			.main_menu li ul li a{font-size: 22px; color: #7d7d7d;}
+			.main_menu li ul li a:hover{color: #fff;}
+			/*menu 개별*/
+			.main_menu .bts_menu ul{
+				opacity: 0;
+			}
+			.main_menu .txt_menu ul{
+				top: -150%;
+				opacity: 0;
+			}
+			.main_menu .yej_menu ul{
+				top: -250%;
+				opacity: 0;
+			}
+			.main_menu .yej_menu ul li{
+				height: 33.33%;
+				line-height: 6;
+			}
+
+/*footer*/
+footer{
+	width: 100%; height: 60px;
+	position: fixed;
+	left: 0; bottom: 0;
+	background-color: #272727;
+	/* min-width: 400px; */
+}
+.footer_box{
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%; height: 70%;
+	}
+.footer_box .sns{
+	width: 40%; height: 100%;
+	float: left;
+	position: relative;
+}
+	.sns ul{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding-left: 10px;
+	}
+	.sns ul li{
+		width: 30px; height: 30px;
+		background-color:#1F1F1F;
+		float: left;
+		margin-left: 5px;
+		border-radius: 50%;
+	}
+	.sns ul li a{
+		display: block;
+		width: 100%; height: 100%;
+	}
+		.sns ul li:nth-child(1) a{background: url(../images/twitter-star.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(2) a{background: url(../images/twitter.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(3) a{background: url(../images/facebook.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(4) a{background: url(../images/insta.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(5) a{background: url(../images/youtube.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(6) a{background: url(../images/weibo.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(7) a{background: url(../images/weibo-member.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(8) a{background: url(../images/youku.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(9) a{background: url(../images/cafe.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(10) a{background: url(../images/blog.png) no-repeat center /30px 30px;}
+
+		.sns ul li:nth-child(1) a:hover{background: url(../images/twitter-star_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(2) a:hover{background: url(../images/twitter_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(3) a:hover{background: url(../images/facebook_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(4) a:hover{background: url(../images/insta_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(5) a:hover{background: url(../images/youtube_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(6) a:hover{background: url(../images/weibo_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(7) a:hover{background: url(../images/weibo-member_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(8) a:hover{background: url(../images/youku_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(9) a:hover{background: url(../images/cafe_h.png) no-repeat center /30px 30px;}
+		.sns ul li:nth-child(10) a:hover{background: url(../images/blog_h.png) no-repeat center /30px 30px;}
+
+.footer_box .family{
+	width: 20%; height: 100%;
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+	.family .family_txt{
+		width: 100%; height: 100%;
+		color: #7d7d7d;
+		border-bottom: 1px solid #7d7d7d;
+		text-align: center;
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.4s;
+	}
+		.family .family_txt.on{
+			color: #EC6478;
+			border-bottom-color: #EC6478;
+		}
+		.family .family_txt span{
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.family .family_txt i{
+			position: absolute;
+			right: 10px; top: 50%;
+			transform: translateY(-50%);
+		}
+		.family .family_txt i.reverse{
+			transform: translateY(-50%) rotate(-180deg);
+		}
+	.family .family_inner{
+		position: absolute;
+		left: 0; bottom: 100%;
+		width: 100%;
+		background-color: #1e1e1e;
+		opacity: 0;
+		display: none;
+	}
+	.family .family_inner.hidden{opacity: 1; display: block;}
+		.family_inner li{
+			width: 100%;
+			height: auto;
+			border-bottom: 1px solid #7d7d7d;
+			line-height:1;
+		}
+		.family_inner li:last-child{border-bottom: none;}
+		.family_inner li a{
+			display: block;padding:15px 0 10px;
+			width: 100%;
+			color: #7d7d7d;
+			text-align: center;
+			font-size: 14px;
+		}
+		.family_inner li a:hover{
+			background-color: #000;
+			color: #fff;
+		}
+.footer_box .copyright{
+	width: 40%; height: 100%;
+	float: left;
+	position: relative;
+}
+	.copyright p{
+		position: absolute;
+		top: 50%; right: 10px;
+		transform: translateY(-50%);
+		font-size: 10px;
+		font-family: 'Muli', sans-serif;
+		color: #7d7d7d;
+		text-align: right;
+		width: 70%;
+	}
+
+/*main_section*/
+section{
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%; height: calc(100% - 60px);
+	z-index: 0;
+}
+section .img_slide{
+	width:100%; height: 100%;
+	position: relative;
+}
+	.img_slide li{
+		width: 100%; height: 100%;
+		position: absolute;
+		left: 100%; top: 0;
+		cursor: pointer;
+	}
+	.img_slide li:nth-child(1){left: 0;  background: url(../images/kv-make_it_right.jpg) no-repeat center /cover;}
+	.img_slide li:nth-child(2){background: url(../images/kv-bts_tour.jpg) no-repeat center /cover;}
+	.img_slide li:nth-child(3){background: url(../images/kv-heartbeat.jpg) no-repeat center /cover;}
+	.img_slide li:nth-child(4){background: url(../images/kv-all_night.jpg) no-repeat center /cover;}
+	.img_slide li:nth-child(5){background: url(../images/kv-a_brand_new_day.jpg) no-repeat center /cover;}
+	.img_slide li:nth-child(6){background: url(../images/kv-dream_glow.jpg) no-repeat center /cover;}
+	.img_slide li:nth-child(7){background: url(../images/kv-gr-map_of_the_soul-persona.jpg) no-repeat center /cover;}
+
+
+	.img_slide li .album{
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%; height: 100%;
+	}
+	.img_slide li:nth-child(1) .album{background: url(../images/kv-make_it_right.png) no-repeat center /cover;}
+	.img_slide li:nth-child(2) .album{background: url(../images/kv-bts_tour.png) no-repeat center /cover;}
+	.img_slide li:nth-child(3) .album{background: url(../images/kv-heartbeat.png) no-repeat center /cover;}
+	.img_slide li:nth-child(4) .album{background: url(../images/kv-all_night.png) no-repeat center /cover;}
+	.img_slide li:nth-child(5) .album{background: url(../images/kv-a_brand_new_day.png) no-repeat center /cover;}
+	.img_slide li:nth-child(6) .album{background: url(../images/kv-dream_glow.png) no-repeat center /cover;}
+	.img_slide li:nth-child(7) .album{background: url(../images/kv-map_of_the_soul-persona.png) no-repeat center /cover;}
+
+	.img_slide li .title{
+		position: absolute;
+		top: 3%; right: 40%;
+		width: 35%; height: 80%;
+	}
+	.title .title_in{
+		width: 100%; height: 30%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.title .title_in span{
+		display: block;
+		color: #fff;
+		font-size: 75px;
+	}
+
+	.btn{
+		position: absolute;
+		bottom: 22px; left: 50%;
+		transform: translateX(-50%);
+		width: 250px; height: 20px;
+	}
+	.btn ul li{
+		width: 20px; height: 20px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.4);
+		float: left; margin-left: 10px;
+	}
+	.btn ul li.on{background: rgba(255,255,255,1);}
+
+	.arrow_left{
+		width: 90px; height: 90px;
+		position: absolute;
+		top: 50%; left: 12px;
+		transform: translateY(-50%);
+		transform: translateY(-50%);
+		background: url(../images/btn-prev.png) no-repeat center /100% auto;
+		cursor: pointer;
+	}
+		.arrow_left:hover{background: url(../images/btn-prev_hover.png)}
+	.arrow_right{
+		width: 90px; height: 90px;
+		position: absolute;
+		top: 50%; right: 12px;
+		transform: translateY(-50%);
+		background: url(../images/btn-next.png) no-repeat center /100% auto;
+		cursor: pointer;
+	}
+		.arrow_right:hover{background: url(../images/btn-next_hover.png)}
+
+
+
+	.music{
+		position: absolute;
+		width: 100%; height: calc(100% - 65px);
+		background: rgba(0, 0, 0, 0.8);
+		top: 65px; left: 0;
+		display: none;
+		opacity: 0;
+		transition: all 0.4s;
+	}
+	.music.hidden{
+		display: block;
+		opacity: 1;
+	}
+	.music .music_box{
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%);
+		width: 350px; height: 480px;
+		font-family: 'Muli', sans-serif;
+	}
+	.music .exit{
+			padding-top: 20px;
+			padding-left: 20px;
+			cursor: pointer;
+		}
+		.music_box h2{
+			color: #fff;
+			font-size: 30px;
+			text-align: center;
+			font-weight: bold;
+			line-height: 2;
+		}
+
+		.music_box ul{
+			width: 100%; height: 420px;
+			border-top: 2px solid #A29E99;
+			border-bottom: 2px solid #A29E99;
+			box-sizing: border-box;
+		}
+		.music_box ul li{
+			width: 100%; height: 14.2%;
+			border-bottom: 1.5px solid rgba(255,255,255,0.2);
+			box-sizing: border-box;
+			position:relative;
+		}
+		.music_box ul li:last-child{
+			border-bottom: none;
+		}
+		.music_box ul li .m_box_warp{
+			position:absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			margin-left: 90px;
+			display: block;
+		}
+		.music_box ul li .m_box{
+			display: block;
+			width: 30px; height: 30px;
+			float: left;
+			margin-right: 30px;
+		}
+		.music_box ul li span{
+			float: right;
+			display: block;
+			width: auto; height: 30px;
+			line-height: 30px;
+		}
+		.music_box ul li:nth-child(1) .m_box{background: url(../images/ico-melon.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(2) .m_box{background: url(../images/ico-flo.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(3) .m_box{background: url(../images/ico-genie.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(4) .m_box{background: url(../images/ico-bugs.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(5) .m_box{background: url(../images/ico-apple.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(6) .m_box{background: url(../images/ico-spotify.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(7) .m_box{background: url(../images/ico-amazon.png) no-repeat center /cover;}
+		.music_box ul li a{
+			width: 100%; height: 100%;
+			display: block;
+			color: #fff;
+			font-weight: bold;
+			font-size: 15px;
+		}
+		.music_box ul li a:hover{
+			color: #EC6478;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+		.music_box ul li:nth-child(1) a:hover .m_box{background: url(../images/ico-melon_h.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(2) a:hover .m_box{background: url(../images/ico-flo_h.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(3) a:hover .m_box{background: url(../images/ico-genie_h.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(4) a:hover .m_box{background: url(../images/ico-bugs_h.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(5) a:hover .m_box{background: url(../images/ico-apple_h.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(6) a:hover .m_box{background: url(../images/ico-spotify_h.png) no-repeat center /cover;}
+		.music_box ul li:nth-child(7) a:hover .m_box{background: url(../images/ico-amazon_h.png) no-repeat center /cover;}

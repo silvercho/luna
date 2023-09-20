@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section>
+        <div class="btn_wrap">
+            <div class="block b1"></div>
+            <div class="btn btn_left">
+                <img src="images/main_prev.png" alt="prev">
+            </div>
+            <div class="block b2"></div>
+            <div class="btn btn_right">
+                <img src="images/main_next.png" alt="prev">
+            </div>
+        </div>
+        <div class="slide page1 fade">
+            <div class="text_wrap">
+                <div>
+
+                    <div class="text">
+                        <div>
+                            <p>언택트시대 필수 과정</p>
+                            <p>이제 당신의 공간에서 전문 상담사를 만나보세요</p>
+                        </div>
+                        <h2>비대면 상담 <br>
+                            비대면 검사
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide page2">
+            <div class="text_wrap">
+                <div>
+                    <div class="text">
+                        <div>
+                            <p>가격부담 Down x 치료기대효과 Up</p>
+                            <p>검사와 상담이 모두 필요한 여러분에게 딱 !</p>
+                        </div>
+                        <h2>다소니 관계 테라피 </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const page = document.querySelectorAll(".slide"),
+            left_btn = document.querySelector(".btn_left"),
+            right_btn = document.querySelector(".btn_right"),
+            block_btn = document.querySelectorAll(".block"),
+            title = document.querySelectorAll(".text h2"),
+            text = document.querySelectorAll(".text>div");
+        let fade_page = 1;
+
+        function click_block(btn_num) {
+            block_btn[btn_num].style.display = "block";
+            setTimeout(function () {
+                block_btn[btn_num].style.display = "none";
+            }, 4000);
+        }
+        function class_control(remove, add) {
+            page[add].classList.add("fade");
+            page[remove].classList.remove("fade");
+        }
+        function text_ani(text_num) {
+            title[text_num].classList.add("title_move");
+            text[text_num].classList.add("text_move");
+        }
+        function text_reset(reset_num) {
+            title[reset_num].classList.remove("title_move");
+            text[reset_num].classList.remove("text_move");
+        }
+        function page_move() {
+            text_reset(0);
+            text_reset(1);
+            if (fade_page == 1) {
+                class_control(0, 1);
+                text_ani(1);
+                fade_page = 0;
+            } else {
+                class_control(1, 0);
+                text_ani(0);
+                fade_page = 1;
+            }
+        }
+        right_btn.onclick = function () {
+            page_move();
+            click_block(1);
+        }
+
+        left_btn.onclick = function () {
+            page_move();
+            click_block(0)
+        }
+        window.onload = function () {
+            text_ani(0);
+        }
+    </script>
+</body>
+
+</html>

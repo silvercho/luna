@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/media.css"/>
+	<link rel="shortcut icon" href="./images/favicon.png">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<title>DESIGN PRESENT</title>
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script>
+	$(function(){
+	
+		/* grid position */
+		
+		$(window).resize(function(){
+			var w = $(window).width();
+			var h = $(".grid li").width();
+			
+			if(w>1200){
+				$(".grid").height(4*h);
+				$(".grid li:nth-child(1)").css({"top":0,"left":0});
+				$(".grid li:nth-child(2)").css({"top":h,"left":0});
+				$(".grid li:nth-child(3)").css({"top":0,"left":h});
+				$(".grid li:nth-child(4)").css({"top":0,"left":2*h});
+				$(".grid li:nth-child(5)").css({"top":h,"left":2*h});
+				$(".grid li:nth-child(6)").css({"top":0,"left":3*h});
+				$(".grid li:nth-child(7)").css({"top":h,"left":3*h});
+				$(".grid li:nth-child(8)").css({"top":2*h,"left":0});
+				$(".grid li:nth-child(9)").css({"top":2*h,"left":h});
+				$(".grid li:nth-child(10)").css({"top":2*h,"left":2*h});
+				$(".grid li:nth-child(11)").css({"top":2*h,"left":3*h});
+				$(".grid li:nth-child(12)").css({"top":3*h,"left":0});
+				$(".grid li:nth-child(13)").css({"top":3*h,"left":h});
+				$(".grid li:nth-child(14)").css({"top":3*h,"left":2*h});
+				$(".grid li:nth-child(15)").css({"top":3*h,"left":3*h});
+				
+			}else if(w>990 && w<=1200){
+				$(".grid").height(6*h);
+				$(".grid li:nth-child(1)").css({"top":0,"left":0});
+				$(".grid li:nth-child(2)").css({"top":h,"left":2*h});
+				$(".grid li:nth-child(3)").css({"top":0,"left":h});
+				$(".grid li:nth-child(4)").css({"top":0,"left":2*h});
+				$(".grid li:nth-child(5)").css({"top":2*h,"left":0});
+				$(".grid li:nth-child(6)").css({"top":h,"left":0});
+				$(".grid li:nth-child(7)").css({"top":2*h,"left":h});
+				$(".grid li:nth-child(8)").css({"top":2*h,"left":2*h});
+				$(".grid li:nth-child(9)").css({"top":3*h,"left":0});
+				$(".grid li:nth-child(10)").css({"top":3*h,"left":h});
+				$(".grid li:nth-child(11)").css({"top":3*h,"left":2*h});
+				$(".grid li:nth-child(12)").css({"top":4*h,"left":0});
+				$(".grid li:nth-child(13)").css({"top":4*h,"left":h});
+				$(".grid li:nth-child(14)").css({"top":4*h,"left":2*h});
+				$(".grid li:nth-child(15)").css({"top":5*h,"left":h});
+				
+			}else if(w>767 && w<=990){
+				$(".grid").height(8*h);
+				$(".grid li:nth-child(1)").css({"top":0,"left":0});
+				$(".grid li:nth-child(2)").css({"top":2*h,"left":h});
+				$(".grid li:nth-child(3)").css({"top":0,"left":h});
+				$(".grid li:nth-child(4)").css({"top":h,"left":0});
+				$(".grid li:nth-child(5)").css({"top":3*h,"left":0});
+				$(".grid li:nth-child(6)").css({"top":2*h,"left":0});
+				$(".grid li:nth-child(7)").css({"top":3*h,"left":h});
+				$(".grid li:nth-child(8)").css({"top":4*h,"left":0});
+				$(".grid li:nth-child(9)").css({"top":4*h,"left":h});
+				$(".grid li:nth-child(10)").css({"top":5*h,"left":0});
+				$(".grid li:nth-child(11)").css({"top":5*h,"left":h});
+				$(".grid li:nth-child(12)").css({"top":6*h,"left":0});
+				$(".grid li:nth-child(13)").css({"top":6*h,"left":h});
+				$(".grid li:nth-child(14)").css({"top":7*h,"left":0});
+				$(".grid li:nth-child(15)").css({"top":7*h,"left":h});
+				
+			}else{
+				$(".grid").height(15*h);
+				$(".grid li:nth-child(1)").css({"top":h,"left":0});
+				$(".grid li:nth-child(2)").css({"top":4*h,"left":0});
+				$(".grid li:nth-child(3)").css({"top":0,"left":0});
+				$(".grid li:nth-child(4)").css({"top":2*h,"left":0});
+				$(".grid li:nth-child(5)").css({"top":5*h,"left":0});
+				$(".grid li:nth-child(6)").css({"top":3*h,"left":0});
+				$(".grid li:nth-child(7)").css({"top":6*h,"left":0});
+				$(".grid li:nth-child(8)").css({"top":7*h,"left":0});
+				$(".grid li:nth-child(9)").css({"top":8*h,"left":0});
+				$(".grid li:nth-child(10)").css({"top":9*h,"left":0});
+				$(".grid li:nth-child(11)").css({"top":10*h,"left":0});
+				$(".grid li:nth-child(12)").css({"top":11*h,"left":0});
+				$(".grid li:nth-child(13)").css({"top":12*h,"left":0});
+				$(".grid li:nth-child(14)").css({"top":13*h,"left":0});
+				$(".grid li:nth-child(15)").css({"top":14*h,"left":0});
+			}
+			
+			
+			
+			$(".grid li:not(.another_height)").height(h);
+			
+			if(w>767){
+			$(".grid li.another_height").height(2*h);
+			}else{
+			$(".grid li.another_height").height(h);
+			}
+			
+			
+			
+		});
+		
+		$(".grid li a").mouseenter(function(){
+			$(this).children(".box_cover").stop().fadeIn(200);
+			$(this).children(".box_cover").children(".cover2").stop().animate({
+				"bottom":0
+			},150);
+			
+		});
+		
+		$(".grid li a").mouseleave(function(){
+		
+			$(this).children(".box_cover").stop().fadeOut(200);
+			
+			$(this).children(".box_cover").children(".cover2").stop().animate({
+				"bottom":"-12px"
+			},150);
+		});
+		
+	
+		
+		/* nav_mobile slide */
+		
+		$(".logo_holder .menu").click(function(){
+			$("nav").toggleClass("on");
+			$(this).children().toggleClass("on");
+		});
+		
+		$(window).scroll(function(){
+			var ww=$(window).width();
+			var scr=$(window).scrollTop();
+			
+			if(ww>990){
+				if(scr>100){
+					$(".scr_btn").stop().fadeIn(200);
+				}else{
+					$(".scr_btn").stop().fadeOut(200);
+				}	
+			}else{
+				$(".scr_btn").hide();
+			}
+		});
+		
+		$(".scr_btn").click(function(){
+			
+			$("html,body").stop().animate({
+				"scrollTop":0
+			},400);
+		});
+		
+			$(window).trigger("resize");
+	});	
+	</script>
+	
+</head>
+<body>
+<div id="wrap">
+	<div class="logo_holder">
+		<h1 class="logo">
+			<div class="logo_cover">
+				<a href="#"><img src="./images/logo.png" alt=""/></a>
+			</div>
+		</h1>
+		<div class="menu">
+			<span class="line line1"></span>
+			<span class="line line2"></span>
+			<span class="line line3"></span>
+		</div>
+	</div>
+	<nav>
+		<h1 class="logo">
+			<div class="logo_cover">
+				<a href="#"><img src="./images/logo.png" alt=""/></a>
+			</div>
+		</h1>
+		<ul class="gnb">
+			<li><a href="#">포트폴리오</a></li>
+			<li><a href="#">회사소개</a></li>
+			<li><a href="#">직원소개</a></li>
+			<li><a href="#">위치안내</a></li>
+			<li><a href="#">의뢰하기</a></li>
+		</ul>
+		<div class="nav_bottom">
+			<ul>
+				<li class="down"><a href="#">회사소개서 다운</a></li>
+				<li class="sns"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			</ul>
+			<div class="txt">
+				<a href="#">02 . 535 . 8793</a>
+				<p>ipresent@ipresent.co.kr</p>
+			</div>
+		</div>
+	</nav>
+	<div class="padding_cover">
+		<div class="content">
+			<ul class="grid cf">
+				<li>
+					<a href="#">
+						<img src="./images/main_m_CGV_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">CGV 모바일 APP 리뉴얼</span>
+								<p class="txt2">MOBILE APP UI, UX DESIGN RENEWAL</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_amore_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">amorepacific</span>
+								<p class="txt2">product detail ui, ux design</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li class="another_height">
+					<a href="#">
+						<img id="pc" src="./images/main_CGV_banner.jpg" alt=""/>
+						<img id="m" src="./images/main_m_webCGV_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">cgv 홈페이지 리뉴얼</span>
+								<p class="txt2">website ui, ux design renewal</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_CGV_oper_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">CGV 온라인 운영</span>
+								<p class="txt2">cgv ui, ux design</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_oliveyoung_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">olive young</span>
+								<p class="txt2">website UI, UX DESIGN RENEWAL</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_styleo_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">style o shop</span>
+								<p class="txt2">website UI, UX DESIGN RENEWAL</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_cjonmart_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">cj on mart</span>
+								<p class="txt2">MOBILE APP UI, UX DESIGN RENEWAL</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_hanwha_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">한화증권</span>
+								<p class="txt2">MOBILE APP UI, UX DESIGN</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_kdb_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">kdb대우증권</span>
+								<p class="txt2">smart tab ui, ux design</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_auction_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">auction</span>
+								<p class="txt2">brand website UI, UX DESIGN</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/main_deco_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">deco online</span>
+								<p class="txt2">website UI, UX DESIGN</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/posco_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">posco</span>
+								<p class="txt2">posco UI, UX campaign DESIGN</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/exabra_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">exabra</span>
+								<p class="txt2">website UI, UX DESIGN RENEWAL</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/nnsp_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">nnsp</span>
+								<p class="txt2">security program ui, ux design</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/axl_banner.jpg" alt=""/>
+						<div class="box_cover">
+							<div class="cover2">
+								<div class="line"></div>
+								<span class="txt">axl 비트코인 앱</span>
+								<p class="txt2">MOBILE APP UI, UX DESIGN</p>
+							</div>	
+						</div>
+					</a>
+				</li>
+			</ul>
+		
+		</div>
+		<section class="introduce">
+			<div class="i_cover">
+				<span>Present is design</span>
+				<h3>프레즌트는 디자인에 특화된 웹에이전시입니다</h3>
+				<div class="btn">
+					<a href="#">회사소개 보기</a>
+				</div>
+				<div class="img_box">
+					<img src="./images/test2.jpg" alt=""/>
+				</div>
+			</div>
+		</section>	
+		<section class="blog_cover">
+			<div class="blog_container">
+				<div class="blog_txt_cover">
+					<div class="blog_txt">
+						<h5>Present people</h5>
+						<p>각 팀의 리더를 소개합니다. 풍부한 경험과 실력을 갖춘 전문가가 모든 프로젝트를 관리, 감독하여 높은 퀄리티에 합리적인 견적이 가능합니다.</p>
+						<div class="btn"><a href="#">직원소개 보기</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="staff">
+				<ul class="cf">
+					<li>
+						<div class="img">
+							<img src="./images/single-project-04-img91.jpg" alt=""/>
+						</div>
+						<div class="txt_box">
+							<h5>포토그래피, 인터넷쇼핑몰, 그래픽디자인, 웹 구축 감독 전문가</h5>
+							<span>HYOUNG KWON KIM | CHIEF EXECUTIVE DIRECTOR</span>
+							<div class="line"></div>
+							<p>경력 20년 이상의 디렉터급 디자이너로서 목적성을 충족하는 디자인을 중요시 합니다. 클라이언트의 성공을 위해 집요하게 파고드는 것으로 알려져 있습니다.</p>
+						</div>
+					</li>
+					<li>
+						<div class="img">
+							<img src="./images/single-project-04-img92.jpg" alt=""/>
+						</div>
+						<div class="txt_box">
+							<h5>진심과 소통을 소중하게 생각하며 목적에 충실한 임팩트 있는 디자인</h5>
+							<span>HYUN HEE PARK | MAIN DESIGNER</span>
+							<div class="line"></div>
+							<p>경력 7년 이상의 많은 프로젝트 수행 경험이 있으며, 어디에서도 그 실력을 인정받고 있습니다. 친화력이 뛰어나며 작업 중에는 카리스마가 있습니다.</p>
+						</div>
+					</li>
+					<li>
+						<div class="img">
+							<img src="./images/single-project-04-img93.jpg" alt=""/>
+						</div>
+						<div class="txt_box">
+							<h5>문제해결 능력이 뛰어나며 매우 꼼꼼한 철저함을 중시한 퍼블리싱</h5>
+							<span>CHANG JUN LEE | MAIN PUBLISHER</span>
+							<div class="line"></div>
+							<p>신조는 '코딩은 거짓말하지 않는다'입니다. 경력 8년 이상의 많은 퍼블리싱 경험을 가지고 있으며 특히 시간약속에 철저합니다.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="logos">
+			<ul class="cf">
+				<li><img src="./images/posco.png" alt=""/></li>
+				<li><img src="./images/cgv.png" alt=""/></li>
+				<li><img src="./images/CJ_oh.png" alt=""/></li>
+				<li><img src="./images/amore.png" alt=""/></li>
+				<li><img src="./images/woori.png" alt=""/></li>
+				<li><img src="./images/hanwha.png" alt=""/></li>
+				<li><img src="./images/kdb.png" alt=""/></li>
+				<li><img src="./images/auction.png" alt=""/></li>
+				<li><img src="./images/Gmarket.png" alt=""/></li>
+				<li><img src="./images/oliveyoung.png" alt=""/></li>
+				<li><img src="./images/CJ_onmart.png" alt=""/></li>
+				<li><img src="./images/CJ_cheil.png" alt=""/></li>
+				<li><img src="./images/CJ_hello.png" alt=""/></li>
+				<li><img src="./images/HMC.png" alt=""/></li>
+				<li><img src="./images/etrade.png" alt=""/></li>
+				<li><img src="./images/dongyang.png" alt=""/></li>
+				<li><img src="./images/hankook.png" alt=""/></li>
+				<li><img src="./images/lotte_home.png" alt=""/></li>
+				<li><img src="./images/nongshim.png" alt=""/></li>
+				<li><img src="./images/LG_CNS.png" alt=""/></li>
+				<li><img src="./images/chemopia.png" alt=""/></li>
+				<li><img src="./images/korean.png" alt=""/></li>
+				<li><img src="./images/exabra.png" alt=""/></li>
+				<li><img src="./images/universal.png" alt=""/></li>
+			</ul>
+		</section>
+		<section class="request">
+			<div class="txt_box">
+				<span>We would love to work with you</span>
+				<h3>정직한 상담 의뢰하기</h3>
+				<p>귀사의 성공이 저희 일의 본질입니다. 20년 이상의 경험과 노하우를 바탕으로 최선의 노력을 다 할것을 약속드립니다.</p>
+				<div class="btn">
+					<a href="#">상담 및 의뢰하기</a>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer_cover">
+				<ul class="cf">
+					<li>
+						<h3>(주)프레즌트</h3>
+					</li>
+					<li>
+						<p>03042, 서울특별시 종로구 효자로13길 40-7, 2층<br/>
+							F2, 40-7, Hyoja-ro, Jongno-gu, Seoul, Republic of Korea<br/>
+							Tel : 02. 535. 8793 / ipresent@ipresent.co.kr
+						</p>
+					</li>
+					<li>
+						<a href="#">FACEBOOK</a>
+					</li>
+				</ul>
+			</div>
+		
+		</footer>
+	</div>
+	<div class="scr_btn">
+		<i class="fa fa-arrow-up" aria-hidden="true"></i>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+	a{text-decoration:none; color:#000;}
+	.cf:after{content:""; display:block; clear:both;}
+	body{max-width:900px;}
+	
+	
+	#m_skill{width:100%; height:auto;}
+	.m_three_quart{width:100%; height:750px; background-color:#eddfde;}
+	.m_three_quart.m_html{background:url(../images/m_grass.svg) no-repeat bottom /cover;}
+	.m_three_quart.m_illust{background:url(../images/m_illust_bg.svg) no-repeat bottom /cover;}
+	.m_three_quart.m_jquery{background:url(../images/m_juice.svg) no-repeat bottom /cover;}
+
+
+	.m_three_quart .m_graph{width:100%; height:20%; background-color:red;}
+	.m_three_quart .m_graph h1{display:block; font-size:20px; text-align:center; line-height:50px; padding:10px 0;}
+	.m_three_quart .m_graph .skillbar{width:100%; height:60px; position:relative;}
+	.m_three_quart .m_graph .skillbar .skill_bar{position:absolute; width:100%; height:100%; overflow:hidden;}
+	.m_three_quart .m_graph .skillbar .skill_bar img{position:absolute; width:100%; height:500%; top:-150%; left:-100%; animation:skill 2s linear infinite;}
+@keyframes skill{0%{top:-150%;} 50%{top:-40%;} 100%{top:-150%;}}
+	.m_three_quart .m_graph .skillbar .skill_percent{position:absolute; text-align:center; top:50%; left:50%; transform:translate(-50%,-50%); font-size:20px;}
+	
+	
+	
+	.m_animate{width:100%; height:80%; position:relative;}
+	.m_animate > img{width:80%; height:auto; position:absolute; bottom:10%; left:50%; transform:translateX(-50%); animation:grass 1s linear infinite;}
+	@keyframes grass{0%{transform:translateX(-50%);}50%{transform:translateX(-49%);}100%{transform:translateX(-50%);}}
+	
+	.m_animate .rain_cover{position:absolute; top:10%; left:50%; transform:translateX(-50%); width:60%; height:60%; animation:rain 1s linear infinite}
+	@keyframes rain{0%{top:50px;}50%{top:45px;}100%{top:50px;}}
+	.m_animate .rain_cover img{position:absolute; top:0; left:0; width:100%; height:auto; display:none;}
+	.m_animate .rain_cover img:nth-child(1){display:block;}
+	
+	.m_animate .juice_cover{position:absolute; bottom:10%; left:30%; transform:translateX(-50%); width:80%; height:50%;}
+	.m_animate .juice_cover > img{position:absolute; bottom:10%; left:0; width:100%; height:auto; display:none;}
+	.m_animate .juice_cover > img:nth-child(1){display:block;}
+	
+	
+	
+	
+	.m_animate .bike_cover{position:absolute; width:250px; height:250px; bottom:15%; /*left:-100%;*/}
+	.m_animate .bike_cover .bike{position:absolute; width:100%; height:100%;}
+	.m_animate .bike_cover .bike li{position:absolute; width:100%; height:100%; top:0; left:0; /*left:-100%;*/}
+	.m_animate .bike_cover .bike li img{position:absolute; top:0; left:0; width:100%; height:100%;}
+	
+	
+	.m_three_quart .m_animate.on .bike_cover{left:-100%; animation:bike_cover 5s linear forwards;}
+	@keyframes bike_cover{0%{left:-100%;}100%{left:100%;}}
+	.m_three_quart .m_animate.on .bike_cover .bike1{animation:bike1 2.5s linear;}
+	@keyframes bike1{0%{opacity:1;}99%{opacity:1;}100%{opacity:0;}}
+	.m_three_quart .m_animate.on .bike_cover .bike2{animation:bike2 2.5s 3.5s linear; opacity:0;}
+	@keyframes bike2{0%{opacity:1;}100%{opacity:1;}}
+
+	
+	.m_animate .bike_cover .bike li:nth-child(1){animation:leg2 1s linear infinite;}
+	@keyframes leg2{0%{top:0;} 50%{top:5px;} 100%{top:0;}}
+	.m_animate .bike_cover .bike li:nth-child(3){animation:hair 1s linear infinite;}
+	@keyframes hair{0%{top:0; transform:translateX(-2px);} 50%{top:1px;  transform:translateX(0px);} 100%{top:0;  transform:translateX(-2px);}}
+	.m_animate .bike_cover .bike li:nth-child(4){animation:leg1 1s linear infinite; top:5px;}
+	@keyframes leg1{0%{top:5px;} 50%{top:0;} 100%{top:5px;}}
+	.m_animate .bike_cover .bike li:nth-child(5){animation:wheel1 1s linear infinite;}
+	@keyframes wheel1{0%{transform:translateX(0px)  scale(1);} 50%{transform:translateX(-2px) scale(1.01);} 100%{transform:translateX(0px) scale(1);}}
+	.m_animate .bike_cover .bike li:nth-child(6){animation:wheel2 1s linear infinite;}
+	@keyframes wheel2{0%{transform:translateX(0px) scale(1.01);} 50%{transform:translateX(-2px) scale(1);} 100%{transform:translateX(0px) scale(1.01);}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/footer.js"></script>
+    <script th:inline="javascript" th:src="@{/js/board.js}"></script>
+    <style>
+    .outB {
+        width: 1903px;
+        height: 100%;
+        padding : 50px 0;
+        }
+    .section_board {
+        width: 800px;
+        border: 1px solid #111;
+        margin: 0 auto;
+    }
+    .board_wrap {
+        width: 800px;
+        padding: 40px;
+    }
+    .board_wrap h1{ font-size: 2rem; border-bottom: 1px solid #111; }
+    .board_table  .askCont {width: 500px; }
+    .board_tit { font-size: 1.6rem; }
+    .board_writer td , .ask_writer th{ font-size: 1.2rem; border-bottom: 1px solid #E9ECEF;}
+    .board_cont { font-size: 1.6rem; height: 400px; }
+    .board_cont td { padding : 20px;}
+    .board_btn {
+        display: flex;
+        justify-content: flex-end;
+        margin: 40px 0;
+        border-top:1px solid #E9ECEF;
+        border-bottom:1px solid #E9ECEF;
+    }
+    .board_btn button {
+        background: #fff;
+        color: #000;
+        width: 80px;
+        height: 20px;
+        border: #fff;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content">
+<div class="outB">
+    <div class="section_board">
+        <div class="board_wrap">
+            <h1>커뮤니티 글 작성</h1>
+        <table class="board_table">
+            <tr class="board_tit">
+                <th>제목</th>
+                <td th:text="${boardDto.title}"></td>
+            </tr>
+            <tbody>
+            <tr class="board_writer">
+                <th>작성자</th>
+                <td th:text="${boardDto.writer}"></td>
+            </tr>
+            <tr>
+                <th>날짜</th>
+                <td th:inline="text">[[${#temporals.format(boardDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</td>
+            </tr>
+            <tr class="board_cont">
+                <th>본문 내용</th>
+                <td th:text="${boardDto.content}"></td>
+            </tr>
+        </table>
+
+        <!-- 수정/삭제 -->
+        <div class="board_btn">
+            <a th:href="@{'/security-login/board/edit/' + ${boardDto.id}}">
+                <button class="btn btn-primary">수정</button>
+            </a>
+            <form id="delete-form" th:action="@{'/security-login/board/delete/' + ${boardDto.id}}" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button class="btn btn-warning" id="delete-btn">삭제</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div th:replace="~{fragments/footer::footer}"></div>
+    <div>
+        <!-- 변수 셋팅 -->
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            var boardDto = /*[[${boardDto}]]*/ "";
+            /*]]>*/
+ document.getElementById("delete-btn").addEventListener("click", function() {
+        var confirmation = confirm("정말로 삭제하시겠습니까?");
+        if (confirmation) {
+            document.getElementById("delete-form").submit();
+        }
+    });
+
+        </script>
+    </div>
+</body>
+</html>

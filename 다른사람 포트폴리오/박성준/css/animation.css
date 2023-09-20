@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+#Layer_1{
+width:100%;
+	/*-webkit-display:block;
+	-moz-display:block;
+	-ms-display:none;
+	-o-display:block;*/
+	opacity:0;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	-ms-opacity:0 !important;
+	-o-opacity:1;	
+	
+}
+.logo{
+	width:100%;
+	position:absolute;
+	left:50%;
+	transform:translate(-50%,-50%);
+	top:50%;
+	-webkit-opacity:0;
+	-moz-opacity:0;
+	-ms-opacity:1;
+	-o-opacity:0;
+	/* display:none; 
+	-webkit-display:none;
+	-moz-display:none;
+	-ms-display:block;
+	-o-display:none;*/
+}	
+.write1{
+	stroke-dasharray:1670;
+	stroke-dashoffset:1670;
+	animation:write 1.5s  linear forwards;
+}
+.write2{
+	stroke-dasharray:1640;
+	stroke-dashoffset:1640;
+	animation:write 1.5s  linear forwards;
+}
+.write3{
+	stroke-dasharray:1700;
+	stroke-dashoffset:1700;
+	animation:write 1.5s  linear forwards;
+}
+.write4{
+	stroke-dasharray:1670;
+	stroke-dashoffset:1670;
+	animation:write 1.5s  linear forwards;
+}
+.write5{
+	stroke-dasharray:1550;
+	stroke-dashoffset:1550;
+	animation:write 1.5s  linear forwards;
+}
+.write6{
+	stroke-dasharray:1640;
+	stroke-dashoffset:1640;
+	animation:write 1.5s  linear forwards;
+}
+.write7{
+	stroke-dasharray:1700;
+	stroke-dashoffset:1700;
+	animation:write 1.5s  linear forwards;
+}
+.write8{
+	stroke-dasharray:1520;
+	stroke-dashoffset:1520;
+	animation:write 1.5s  linear forwards;
+}
+.write9{
+	stroke-dasharray:1670;
+	stroke-dashoffset:1670;
+	animation:write 1.5s  linear forwards;
+}
+.write10{
+	stroke-dasharray:1660;
+	stroke-dashoffset:1660;
+	animation:write 1.5s  linear forwards;
+}
+.write11{
+	stroke-dasharray:1660;
+	stroke-dashoffset:1660;
+	animation:write 1.5s  linear forwards;
+}
+.write12{
+	stroke-dasharray:1660;
+	stroke-dashoffset:1660;
+	animation:write 1.25s  linear forwards;
+}
+.write14{
+	stroke-dasharray:1000;
+	stroke-dashoffset:1000;
+	animation:write2 1.35s 1.25s linear forwards;
+}
+@keyframes write2{
+	0%{stroke-dashoffset:1000;}
+	100%{stroke-dashoffset:800;}
+}
+.write15{
+	stroke-dasharray:900;
+	stroke-dashoffset:1000;
+	animation:write3 1.5s linear forwards;
+}
+@keyframes write3{
+	0%{stroke-dashoffset:900;}
+	100%{stroke-dashoffset:700;}
+}
+.write16{
+	stroke-dasharray:1560;
+	stroke-dashoffset:1560;
+	animation:write 1.6s  linear forwards;
+}
+.write17{
+	stroke-dasharray:1580;
+	stroke-dashoffset:1580;
+	animation:write 1.2s  linear forwards;
+}
+.write18{
+	stroke-dasharray:1550;
+	stroke-dashoffset:1550;
+	animation:write 1.4s 0.3s linear forwards;
+}
+.write19{
+	stroke-dasharray:1660;
+	stroke-dashoffset:1660;
+	animation:write 1.5s  linear forwards;
+}
+.write20{
+	stroke-dasharray:1580;
+	stroke-dashoffset:1580;
+	animation:write 1.5s  linear forwards;
+}
+.write21{
+	stroke-dasharray:1560;
+	stroke-dashoffset:1560;
+	animation:write 1.5s  linear forwards;
+}
+.write22{
+	stroke-dasharray:1660;
+	stroke-dashoffset:1660;
+	animation:write 1.5s  linear forwards;
+}
+
+@keyframes write{
+	0%{stroke-dashoffset:1700;}
+	100%{stroke-dashoffset:1470;}
+}

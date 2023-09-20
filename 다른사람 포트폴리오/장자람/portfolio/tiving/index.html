@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>티빙</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+<header>
+	<div class="top_header">
+		<div class="header_cover">
+			<ul class="gnb">
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">이용권</a></li>
+				<li><a href="#">편성표</a></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">다운로드</a></li>
+				<li><a href="#">티빙키즈</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="bottom_header">
+		<div class="bottom_header_cover">
+			<h1 class="logo">
+				<img src="./image/tiving_logo.png" alt="">
+			</h1>
+			<ul class="menu">
+				<li><a href="#">LIVE</a></li>
+				<li><a href="#">VOD</a></li>
+				<li><a href="#">MOVE</a></li>
+				<li><a href="#">CLIP</a></li>
+				<li><a href="#">MUSIC</a></li>
+				<li><a href="#">STYLE</a></li>
+				<li><a href="#">MALL</a></li>
+			</ul>
+			<form action="#" method="post">
+				<div class="search">
+					<input type="text" name="search">
+					<a href="#">
+					<!-- <img src="./image/search1.png" alt=""> -->
+					
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</header>
+	<div class="fake_header"></div>
+	<section id="section_wrap">
+		<div class="color_box"></div>
+		<div class="section_cover">
+			<ul class="img_slide">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+				<p class="btn next_btn"><span>&gt;</span></p>
+				<p class="btn prev_btn"><span class="prev">&lt;</span></p>
+			
+			<script>
+				$(function(){
+				
+					var i = 0;
+					setInterval(function(){
+						i++;
+						
+						if(i==5){
+							i=0;
+						}
+						
+						$(".img_slide li").fadeOut().eq(i).fadeIn();
+					},3000);
+					
+					$(".next_btn").on("click",nextSlide);
+					$(".prev_btn").on("click",prevSlide);
+					function nextSlide(){
+						$(".next_btn").off("click",nextSlide);
+						$(".prev_btn").off("click",prevSlide);
+						
+						i++;
+						
+						if(i==5){
+							i=0;
+						}
+						
+						$(".img_slide li").fadeOut().eq(i).fadeIn();
+						
+						setTimeout(function(){
+							$(".next_btn").on("click",nextSlide);
+							$(".prev_btn").on("click",prevSlide);
+						},600);
+					}
+					function prevSlide(){
+						$(".next_btn").off("click",nextSlide);
+						$(".prev_btn").off("click",prevSlide);
+						
+						i--;
+						
+						if(i==-1){
+							i=4;
+						}
+						
+						$(".img_slide li").fadeOut().eq(i).fadeIn();
+						
+						setTimeout(function(){
+							$(".next_btn").on("click",nextSlide);
+							$(".prev_btn").on("click",prevSlide);
+						},600);
+					}
+				});
+			</script>
+		</div>
+		<div class="section_cover live">
+			<div class="live_cover">
+				<h1 class="live_text">LIVE</h1>
+				<h2 class="chanel">실시간 인기 채널</h2>
+				<div class="text_box tv_box">실시간 TV</div>
+				<div class="text_box tving_box">TVING TV</div>
+			</div>
+			
+			<div class="chanel_box">
+				<div class="box">
+					<div class="chanel_img">
+						<img src="./image/ocn_c.jpg" alt=""> 
+					</div>
+					<div class="c_box">
+						<img src="./image/tvn.png" alt="">
+						<span>온앤오프 4화<br><span class="per">16.3%</span></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="chanel_img">
+						<img src="./image/news.jpg" alt=""> 
+					</div>
+					<div class="c_box">
+						<img src="./image/ytn.png" alt="" class="ytn">
+						<span>뉴스특보<br><span class="per">13.7%</span></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="chanel_img">
+						<img src="./image/ocn_c.jpg" alt=""> 
+					</div>
+					<div class="c_box">
+						<img src="./image/jtbc.png" alt="">
+						<span>사건반장<br><span class="per">14.5%</span></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="chanel_img">
+						<img src="./image/ocn_c.jpg" alt=""> 
+					</div>
+					<div class="c_box">
+						<img src="./image/ocn.png" alt="">
+						
+						<span>번외수사 2화<br><span class="per">11.2%</span></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="chanel_img">
+						<img src="./image/ocn_c.jpg" alt=""> 
+					</div>
+					<div class="c_box">
+						<img src="./image/jtbc2.png" alt="">
+						<span>쌍갑포차 1화<br><span class="per">5%</span></span>
+					</div>
+				</div>
+				<div class="box">
+					<div class="chanel_img">
+						<img src="./image/1.jpg" alt=""> 
+					</div>
+					<div class="c_box">
+						<img src="./image/news.png" alt="">
+						<span>뉴스 1번지<br><span class="per">5.1%</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section_cover vod_cover">
+			<div class="vod_text_cover">
+				<h1 class="vod_text">VOD</h1>
+				<h2 class="chanel">프로그램 다시보기</h2>
+				<div class="text_box tv_box">인기</div>
+				<div class="text_box tving_box">최신</div>
+			</div>
+			
+			<div class="chanel_box">
+				<div class="box">
+					<img src="./image/vod1.jpg" alt="">
+					<span>대탈출</span>
+				</div>
+				<div class="box">
+					<img src="./image/vod2.jpg" alt="">
+					<span>삼시세끼</span>
+				</div>
+				<div class="box">
+					<img src="./image/vod3.jpg" alt="">
+					<span>슬기로운 의사생활</span>
+				</div>
+				<div class="box">
+					<img src="./image/vod4.jpg" alt="">
+					<span>번외수사</span>
+				</div>
+				<div class="box">
+					<img src="./image/vod5.jpg" alt="">
+					<span>놀라운토요일-도레미마켓</span>
+				</div>
+				<div class="box">
+					<img src="./image/vod6.jpg" alt="">
+					<span>뭉쳐야산다</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section_cover vod_cover">
+			<div class="vod_text_cover">
+				<h1 class="clip_text">CLIP</h1>
+				<h2 class="chanel">실시간 인기 클립</h2>
+			</div>
+			
+			<div class="chanel_box">
+				<div class="box_n">
+					<img src="./image/c1.PNG" alt="">
+					<span>[케미룩]공효진x손이 차유 케미모아보기!</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c2.PNG" alt="">
+					<span>[최종화 예고]'할말있지?'99즈가 우리에게 하고싶은말</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c3.PNG" alt="">
+					<span>벙커?감옥?전장?눈 앞에 펼쳐진 미지의 공간!</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c4.PNG" alt="">
+					<span>[9회/퀴즈]윤종신 '환생'에 대한 설명으로 틀린것은?</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c5.PNG" alt="">
+					<span>막내 호준이 왔다!!!♥ 삼시세끼 최초 두부만들기 도전!</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c6.PNG" alt="">
+					<span>[예고]신메뉴 기세등등하게 open!...결말은 지옥주방</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c7.PNG" alt="">
+					<span>[겟잇뷰티2020] 여름함께 준비해요</span>
+				</div>
+				<div class="box_n">
+					<img src="./image/c8.PNG" alt="">
+					<span>[9회/희귀자료]'현재진행형 레전드'아이유 '좋은날'</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section_cover vod_cover">
+			<div class="vod_text_cover">
+				<h1 class="movie_text">MOVIE</h1>
+				<h2 class="chanel">박스오피스</h2>
+			</div>
+			
+			<div class="chanel_box">
+				<div class="box_m">
+					<img src="./image/m1.jpg" alt="">
+					<span>위대한쇼맨</span>
+				</div>
+				<div class="box_m">
+					<img src="./image/b2.jpg" alt="">
+					<span>카페 벨에포크</span>
+				</div>
+				<div class="box_m">
+					<img src="./image/m3.jpg" alt="">
+					<span>프리즌 이스케이프</span>
+				</div>
+				<div class="box_m">
+					<img src="./image/m4.jpg" alt="">
+					<span>루팡3세-더 퍼스트</span>
+				</div>
+				<div class="box_m">
+					<img src="./image/m5.jpg" alt="">
+					<span>톰보이</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section_cover vod_cover">
+			<div class="vod_text_cover">
+				<h1 class="evnet_text">EVENT</h1>
+				<div class="text_box tv_box">당첨자발표></div>
+			</div>
+			
+			<div class="chanel_box">
+				<div class="box_e">
+					<img src="./image/e1.jpg" alt="">
+					<span><번외사수>본방사수 굿즈 이벤트</span>
+				</div>
+				<div class="box_e">
+					<img src="./image/e2.png" alt="">
+					<span>[롯데카드x우리카드]공짜로 1년동안 티빙에서...</span>
+				</div>
+			</div>
+		</div>
+			
+
+	</section>
+	
+	<footer id="footer_wrap"> 
+		 <div class="footer_cover">
+			<div class="sns">
+				<span class="gonggi">공지사항</span><span class="gajung">[안내] 티빙 유료이용약관 개정 안내</span>
+			</div>
+			<div class="face_book"><img src="./image/f1.png" alt=""></div>
+			<div class="face_book"><img src="./image/f2.png" alt="" class="fa"></div>
+			<div class="baro brand">　브랜드 바로가기</div>
+			<div class="baro gay">　계열사 바로가기</div>	
+		 </div> 
+		 
+		 <div class="f_bottom">
+			 <div class="footer_cover">
+				<ul class="copy">
+					<li>고객센터</li>
+					<li>사이트맵</li>
+					<li>이용약관</li>
+					<li style="color:white">개인정보 처리 방침</li>
+					<li>청소년 보호정책</li>
+					<li>법적고지</li>
+					<li>이벤트</li>
+					<li style="color:white">다운로드</li>
+					<li>티빙몰 바로가기</li>
+				</ul>
+				
+				<ul class="ceo">
+					<li>대표이사:허민회,허민호</li>
+					<li>사업자정보확인</li>
+					<li>개인정보관리책임자:고창남</li>
+					<li>사업자등록번호:106-81-51510</li>
+					<li>통신판매신고번호:서초 제 000015호</li>
+				</ul>
+				
+				<ul class="adress">
+					<li>본점:서울특별시 서초구 과천대로 870-13(방배동)</li>
+					<li>사업장:서울특별시 마포구 상암산로 66(상암동)</li>
+					<li>호스팅 사업자 : 씨제이올리브네트윅스(주)</li>
+				</ul>
+				
+				<ul class="phone">
+					<li>고객센터:1670-1525(평일09시~18시)</li>
+					<li>ENM 시청자 상담실(편성 문의 및 시청자 의견):080-080-0780</li>
+					<li>Mnet 고객센터(방송편성문의):1855-1631</li>
+					<li>대표메일:tving@cj.net)</li>
+					<li>티빙몰 문의:tving.mall@cj.net</li>
+				</ul>
+				
+				<p>Copyright (C) CJ ENM All right reserved.</p>
+				
+				<img src="./image/footer_logo.png" alt="">
+			 </div>
+		 </div>
+	
+	 </footer>
+
+</div>
+
+</body>
+</html>
+

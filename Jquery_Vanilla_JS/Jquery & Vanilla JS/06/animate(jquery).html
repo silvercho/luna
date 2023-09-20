@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>animate</title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<style>
+		.box1 {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script>
+		$(function () {
+			$(".box1").animate({
+				left: "500px",
+				width: "200px",
+				height: "200px",
+				opacity: 0.5
+			}, 1000);
+		});
+	</script>
+
+
+</head>
+
+<body>
+	<div class="box box1">
+		상자1
+	</div>
+</body>
+
+</html>

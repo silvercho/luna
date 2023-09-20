@@ -1,0 +1,88 @@
+
+
+#bar{
+	width:100%;
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+}
+.skillbar{
+	position:relative;
+	width:50%;
+	margin:2px auto;
+	background-color:#fff;
+}
+
+.skillbar .skillbar_title{
+	position:absolute;
+	top:0;
+	left:0;
+	width:110px;
+	font-size:13px;
+	color:#777;
+}
+.skillbar .skillbar_title span{
+	display:block;
+	padding:0 20px;
+	line-height:45px;
+}
+
+
+
+
+.s4 #bar .skillbar{
+	margin-top:30px;
+}
+
+.s4 #bar .skillbar span{
+	font-size:25px;
+	font-family:zuka;
+	color:hotpink;
+}
+
+.s4 #bar .skillbar:last-child span{
+	color:yellow;
+}
+
+.s4 #bar .skillbar .Count{
+	font-size:25px;
+
+}
+
+
+
+.skillbar .skill_bar{
+	height:45px;
+	width:0;
+	/* background-color:#000; */
+}
+
+#bar .skillbar:nth-child(1) .skill_bar{background-color:#f6b306;}
+#bar .skillbar:nth-child(2) .skill_bar{background-color:#ffff00;}
+#bar .skillbar:nth-child(3) .skill_bar{background-color:#603691;}
+#bar .skillbar:nth-child(4) .skill_bar{background-color:#0071bb;}
+#bar .skillbar:nth-child(5) .skill_bar{background-color:#00a89c;}
+#bar .skillbar:nth-child(6) .skill_bar{background-color:#000;}
+
+
+.skillbar .skill_bar_percent{
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:15px;
+	height:35px;
+	line-height:55px;
+	color:#777;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title> jQuery </title>
+		<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+		<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.flip.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.transit.js"></script>
+
+		<!-- 스타일 -->
+		<style type="text/css">
+		#ribbon { width:100px; height:100px; position:fixed; left:50%; margin-left:-50px; top:200px; }
+		#ribbon div.front { background:red; text-align:center; color:#fff; }
+		#ribbon div.back { background:blue; text-align:center; color:#fff; }
+		</style>
+		<!-- // 스타일 -->
+
+	</head>
+	<body>
+
+		<a href="../index-2.html" class="home">Home</a>
+		<div id="wrap">
+			<div id="ribbon">
+				<div class="ribbon front">앞면</div>
+				<div class="ribbon back">뒷면</div>
+			</div>
+		</div>
+		<!-- // wrap -->
+
+		<!-- 스크립트 -->
+		<script type="text/javascript">
+		var rotation = 10;
+		var swingtime = 700;
+		var swinger = $('#ribbon');
+
+		function init() {
+			swinger.animate({rotate: rotation}, 0, function () {
+				swinger.css('display', 'block');
+				rotation *= -1;
+				pendulumswing1();
+			});
+		}
+
+		function pendulumswing1() {
+			swinger.animate({rotate: rotation},swingtime, 'swing', function(){
+				rotation *= -1;
+				pendulumswing1();
+			});
+		}
+
+		init();
+
+		$('#ribbon').mouseenter(function(){
+			$(this).stop();
+		}).mouseleave(function(){
+			init();
+		});
+
+		$('#ribbon').flip({
+			axis: 'y',
+			reverse: true,
+			trigger: 'hover'
+		});
+		</script>
+		<!-- // 스크립트 -->
+
+	</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/footer.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <style>
+        .section {
+            position: relative;
+            width: 100%;
+            height: 630px;
+            overflow: hidden;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .section>div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 400px;
+            height: 300px;
+            border: 10px solid #fff;
+        }
+
+        .section h2, .section p, .section .line {
+            position: absolute;
+            color: #ffffff;
+        }
+
+        /* 이미지 중앙 글씨 설정 */
+        .section h2 {
+            font-size: 7rem;
+            font-weight: bold;
+            width: 100%;
+            top: 15%;
+        }
+
+        /* 이미지 중앙하단 서브 글자 설정 */
+        .section p {
+            top: 50%;
+            font-size: 3rem;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* 라인 */
+        .section .line {
+            width: 80%;
+            border: 5px solid #fff;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        /* 슬라이드 이미지 가로 정렬, 애니메이션 설정 */
+        .section ul {
+            position: relative;
+            display: flex;
+            left: 0;
+            top: 0;
+            width: 400%;
+            animation: slide 18s infinite;
+        }
+        .section ul li img{
+            width: 100%;
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: -100%;
+            }
+
+            33.33333% {
+                left: -100%;
+            }
+
+            38% {
+                left: -200%;
+            }
+
+            66.66666% {
+                left: -200%;
+            }
+
+            71% {
+                left: -300%;
+            }
+
+            99.99999% {
+                left: -300%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+                .section img {
+        width: 1903px;
+        height: 630px;
+        }
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<form action="/poster/write" method="post">
+    <label>제목</label>
+    <input type="text" name="title"><br>
+    <label>작성자</label>
+    <input type="text" name="writer"><br>
+    <label>내용</label>
+    <textarea type="text" name="content"></textarea><br>
+    <button type="submit">제출</button>
+</form>
+<div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/footer.js"></script>
+    <style>
+        /* 공통 스타일 */
+        .container {
+            padding: 0 120px; /* 양 옆 패딩 추가 */
+            height: 100vh;
+            text-align: center;
+        }
+        h3 {
+            margin-top: 30px;
+        }
+
+        /* 검색창 스타일 */
+        .search-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        /* 검색 입력 스타일 */
+        .search-container input[type="text"] {
+            padding: 15px;
+            height: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        /* 검색 버튼 스타일 */
+        .search-button {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px; /* 높이 맞춤 */
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px; /* 좌우 간격 추가 */
+            font-size: 16px; /* 글꼴 크기 조절 */
+        }
+
+        /* 게시글 스타일 */
+        .asklist {
+            margin: 15px ;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* 게시글 목록 스타일 */
+        .asklist tr:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* 버튼 스타일 */
+        .post-button, .list-button {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-right: 20px; /* 좌우 간격 추가 */
+            float: right;
+        }
+
+        /* 비활성화된 링크 스타일 */
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content" class="container">
+    <h3>공지사항 게시판</h3>
+    <!-- 검색창 -->
+    <div class="search-container">
+        <form th:action="@{/ask/list}" method="get">
+            <input type="text" name="keyword" placeholder="검색어 입력">
+            <button type="submit" class="search-button">검색</button>
+        </form>
+    </div>
+    <!-- 게시글 목록 -->
+    <table class="asklist">
+        <tr>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>시간</th>
+            <th>조회수</th>
+        </tr>
+        <tr th:each="ask, rowStat: ${askList}">
+            <td><a th:href="@{|/ask/list/${ask.id}|}" th:text="${ask.askTitle}"></a></td>
+            <td th:text="${ask.askWriter}"></td>
+            <td th:text="*{#temporals.format(ask.askRegTime, 'yy-MM-dd')}"></td>
+            <td th:text="${ask.askHits}"></td>
+        </tr>
+    </table>
+    <!-- 검색 결과 없을 시 메시지 -->
+    <div th:if="${#lists.isEmpty(askList) && (searchKeyword != null)}">
+        <p>검색 결과가 없습니다.</p>
+    </div>
+
+    <!-- 게시글이 없을 시 메시지 -->
+    <div th:if="${#lists.isEmpty(askList) && (searchKeyword == null)}">
+        <p>게시글이 없습니다.</p>
+    </div>
+    <!-- 페이지네이션 -->
+    <div class="pagination" th:if="${not #lists.isEmpty(askList)}">
+        <a th:href="@{/ask/list(page=1)}">First</a>
+        <a th:href="@{/ask/list(page=${currentPage - 1})}" th:class="${currentPage == 1} ? 'disabled' : ''">prev</a>
+        <span th:each="pageNumber : ${#numbers.sequence(1, totalPages)}">
+        <a th:href="@{/ask/list(page=${pageNumber})}" th:text="${pageNumber}" th:class="${pageNumber == currentPage} ? 'active'"></a>
+    </span>
+        <a th:href="@{/ask/list(page=${currentPage + 1})}" th:class="${currentPage == totalPages} ? 'disabled' : ''">next</a>
+        <a th:href="@{/ask/list(page=${totalPages})}">Last</a>
+    </div>
+    <!-- 버튼 -->
+    <div class="button-container">
+        <a href="/ask/post" class="post-button">글작성</a>
+        <a th:if="${not #lists.isEmpty(askList)}" href="/ask/list" class="list-button">전체 리스트 보기</a>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+</body>
+</html>

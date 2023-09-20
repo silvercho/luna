@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content">
+<table>
+    <tr>
+        <th>번호</th>
+        <td th:text="${community.id}"></td>
+    </tr>
+    <tr>
+        <th>제목</th>
+        <td th:text="${community.communityTitle}"></td>
+    </tr>
+    <tr>
+        <th>작성자</th>
+        <td th:text="${community.communityWriter}"></td>
+    </tr>
+    <tr>
+        <th>날짜</th>
+<!--        <td th:text="${community.communityCreatedTime}"></td>-->
+        <td th:text="${#temporals.format(community.communityCreatedTime, 'yyyy-MM-dd HH:mm')}"></td>
+
+    </tr>
+    <tr>
+        <th>조회수</th>
+        <td th:text="${community.communityHits}"></td>
+    </tr>
+    <tr>
+        <th>내용</th>
+        <td th:text="${community.communityContents}"></td>
+    </tr>
+    <tr th:if="${community.fileAttached == 1}">
+        <th>이미지</th>
+<!--        <td><img th:src="@{|/upload/${community.storedFileName}|}" alt=""></td>-->
+        <td><img th:src="@{'/img/' + ${community.storedFileName}}" alt=""></td>
+    </tr>
+</table>
+<button onclick="listReq()">목록</button>
+<button onclick="updateReq()">수정</button>
+<button onclick="deleteReq()">삭제</button>
+
+<!-- 댓글 작성 부분 -->
+<div id="comment-write">
+    <input type="text" id="commentWriter" placeholder="작성자">
+    <input type="text" id="commentContents" placeholder="내용">
+    <button id="comment-write-btn" onclick="commentWrite()">댓글작성</button>
+</div>
+
+<!-- 댓글 출력 부분 -->
+<div id="comment-list">
+    <table>
+        <tr>
+            <th>댓글번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성시간</th>
+        </tr>
+        <tr th:each="comment: ${commentList}">
+            <td th:text="${comment.id}"></td>
+            <td th:text="${comment.commentWriter}"></td>
+            <td th:text="${comment.commentContents}"></td>
+            <td th:text="${#temporals.format(comment.commentCreatedTime, 'yyyy-MM-dd HH:mm').substring(0, 16)}"></td>
+<!--            <td th:text="${comment.commentCreatedTime}"></td>-->
+        </tr>
+    </table>
+</div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+<script th:inline="javascript">
+    const commentWrite = () => {
+        const writer = document.getElementById("commentWriter").value;
+        const contents = document.getElementById("commentContents").value;
+        console.log("작성자: ", writer);
+        console.log("내용: ", contents);
+        const postId = [[${community.id}]];
+$.ajax({
+   type: "post",
+   url: "/security-login/community/comment/save",
+   data: {
+       "commentWriter": writer,
+       "commentContents": contents,
+       "postId": postId
+   },
+           success: function (res) {
+               console.log("요청성공", res);
+               let output = "<table>";
+               output += "<tr><th>댓글번호</th>";
+               output += "<th>작성자</th>";
+               output += "<th>내용</th>";
+               output += "<th>작성시간</th></tr>";
+               for (let i in res) {
+                   output += "<tr>";
+                   output += "<td>" + res[i].id + "</td>";
+                   output += "<td>" + res[i].commentWriter + "</td>";
+                   output += "<td>" + res[i].commentContents + "</td>";
+                   output += "<td>" + res[i].commentCreatedTime.substring(0, 16) + "</td>";
+                   output += "</tr>";
+               }
+               output += "</table>";
+               document.getElementById('comment-list').innerHTML = output;
+               document.getElementById('commentWriter').value = '';
+               document.getElementById('commentContents').value = '';
+           },
+           error: function (err) {
+               console.log("요청실패", err);
+           }
+        });
+
+    }
+    const listReq = () => {
+        console.log("목록 요청");
+        const page = [[${page}]];
+        location.href = "/security-login/community/?page="+page;
+    }
+    const updateReq = () => {
+        console.log("수정 요청");
+        const id = [[${community.id}]];
+        location.href = "/security-login/community/update/" + id;
+    }
+    const deleteReq = () => {
+        console.log("삭제 요청");
+        const id = [[${community.id}]];
+        location.href = "/security-login/community/delete/" + id;
+    }
+</script>
+</body>
+
+
+</html>

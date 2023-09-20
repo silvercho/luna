@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+    body{font-family: 'Noto Sans KR', sans-serif;}
+
+    a{color:#000}
+    h1{ display: none;}
+    h2{
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      margin-left: 40px;
+      margin-bottom: 40px;
+    }
+    .loginTab{
+      margin: 200px;
+    }
+    .loginForm {
+                text-align: center;
+            }
+            .loginForm label {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-right: 20px;
+            }
+            .loginForm .loginput {
+                padding: 8px;
+                width: 350px;
+                height: 20px;
+                margin-bottom: 5px;
+                border: 1px solid #C4C4C4;
+            }
+            .check-wrap{
+              display: flex;
+              margin-bottom: 30px;
+            }
+            .check-keep{
+              margin-left: 595px;
+            }
+            .keep-txt {
+              margin-left: 5px;
+            }
+            button {
+              margin-left: 50px;
+              background: #000;
+              color: #fff;
+              width: 350px;
+              height: 40px;
+              border: #fff;
+              border-radius: 15px;
+              font-size: 1.2rem;
+              font-weight: bold;
+            }
+            .or img{
+              width: 200px; 
+            }
+            .simple {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+            }
+            .simple img{
+              margin-right: 30px;
+              width: 50px;
+              height: 50px;             
+            }
+  </style>
+  </th:block>
+</head>
+<body>
+<div class="loginTab">
+    <h1><a th:href="|/${loginType}|">[[${pageName}]]</a></h1>
+        <h2> E N D C A R</h2>
+        <form th:method="post" th:action="|@{/{loginType}/login (loginType=${loginType})}|" th:object="${loginRequest}" class="loginForm" >
+            <div>
+                <label th:for="loginId">ID </label>
+                <input class="loginput" type="text" th:field="*{loginId}" placeholder="이메일 또는 아이디"/>
+            </div>
+            <br/>
+            <div>
+                <label th:for="password">PW</label>
+                <input class="loginput" type="password" th:field="*{password}" placeholder="비밀번호"/>
+            </div>
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <br/>
+                <div class="error-class" th:each="error : ${#fields.globalErrors()}" th:text="${error}" />
+            </div>
+            <div class="check-wrap">
+              <input class="check-keep" type="checkbox" id="check" name="로그인상태유지">
+              <span class="keep-txt">로그인 상태 유지</spap>
+              <label class="check" for="check"> </label>
+            </div>
+            <button type="submit">로그인</button>
+          </form>
+        </div>
+        <img src="img/Line1.png">
+    <th:if th:if="${loginType == 'security-login'}">
+    <div class="simple">
+        <a href="/oauth2/authorization/google"><img src="/img/google_logo.png"></a>
+        <a href="/oauth2/authorization/kakao"><img src="/img/kakao_logo.png"></a>
+        <a href="/oauth2/authorization/naver"><img src="/img/naver_logo.png"></a>
+        <a href="/oauth2/authorization/facebook"><img src="/img/facebook_logo.png"></a>
+    </div>
+    </th:if>
+    <p><a href='@{/{loginType}/join (loginType=${loginType})}'>회원 가입</a></p>
+</body>
+</html>
+
+<style>
+.error-class {
+    color: red;
+}
+.error-input {
+    border-color: red;
+}
+</style>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    margin: 0;
+    font-size: 10px;
+}
+body {
+    min-height: 100%;
+    font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    vertical-align: top;
+}
+
+
+.header{
+    width: 100%;
+    height: 150px;
+    background: rgb(29, 29, 29);
+    border-bottom: 1px solid #444;
+}
+
+.header .navBar {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header .navBar .navLeft {
+    width: 110px;
+    height: 64px;
+}
+
+.header .navBar a {
+    cursor: pointer;
+}
+
+.header .navBar .navCenter .navList {
+    width: 800px;
+}
+
+.header .navBar .navCenter .navList ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .navBar .navCenter .navList ul li a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.navRight {background: #fff; float: right;} 
+
+.navRight .navLoginStatus {
+color: #fff;
+}
+
+.navRight p {
+    margin: 0;
+color: #ccc;
+}
+
+.navRight input {
+    position: absolute;
+    line-height: 150px;
+    width: 200px;
+    height: 32px;
+    font-size: 1.5rem;
+    border: 1px solid #444;
+    border-radius: 15px;
+    outline: none;
+    background: rgba(100, 100, 100, 0.5);
+    text-align: center;
+}
+
+.navRight input::placeholder {
+    color: #fff;
+    font-weight: 500;
+
+}
+
+
+
+
+</style>
+<body>
+
+
+<div th:fragment="header" class="header">
+    <div class="navBar">
+        <div class="navLeft">
+            <a href="http://localhost:8080/security-login"><img src="/img/logo7.png" alt="로고"></a>
+        </div>
+        <div class="navCenter">
+            <div class="navList">
+                <ul>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/registration (loginType=${loginType})}'|">차량등록</a>
+                    </li>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/search (loginType=${loginType})}'|">차량검색</a>
+                    </li>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/community (loginType=${loginType})}'|">커뮤니티</a>
+                    </li>
+                    <li>
+                        <a th:onclick="|location.href='@{/{loginType}/event (loginType=${loginType})}'|">혜택/이벤트</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/board/list}">고객지원</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="navRight" th:action="@{/}" method="get">
+
+            <div th:if="${nickname == null}">
+                <a th:onclick="|location.href='@{/{loginType}/login (loginType=${loginType})}'|" class="navLoginStatus">로그인</a>
+                <p>되어있지 않습니다!</p>
+            </div>
+            <div th:unless="${nickname == null}">
+                <p>[[${nickname}]]님 환영합니다!</p><br>
+                <a th:onclick="|location.href='@{/{loginType}/info (loginType=${loginType})}'|" class="myPage"><i
+                        class="fa-regular fa-user">마이 페이지</i></a>
+                <a th:onclick="|location.href='@{/{loginType}/logout (loginType=${loginType})}'|"
+                   class="navLoginStatus">로그아웃</a>
+            </div>
+            <div th:unless="${nickname == null}">
+                <div th:if="${role == 'admin'}">
+                    <p>[[${nickname}]]님 환영합니다!</p>
+                    <a th:onclick="|location.href='@{/{loginType}/admin (loginType=${loginType})}'|"
+                       class="adminPage"><i class="fa-regular fa-user">관리자 페이지</i></a>
+                    <a th:onclick="|location.href='@{/{loginType}/logout (loginType=${loginType})}'|"
+                       class="navLoginStatus">로그아웃</a>
+                </div>
+            </div>
+            <input type="search" placeholder="차량 이름을 검색하세요">
+            
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/footer.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+<style>
+    .comm_Save{
+        width:500px;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+    .comm_Save h1{ font-size: 3rem; border-bottom: 1px solid #111;  margin-bottom: 20px;}
+
+    .comm_Save input{
+        width : 100%;
+        height: 30px;
+        padding: 10px;
+        margin-top: 5px;
+        box-sizing : border-box;
+    }
+    .comm_Save .save_file {
+        width : 100%;
+        height: 40px;
+        box-sizing : border-box;
+        padding: 0;
+        margin: 0;
+        }
+    .comm_Save textarea {
+        width: 100%;
+        margin-top : 10px;
+        height : 300px;
+    }
+
+    .comm_Save .save_btn {
+    background: #222;
+    color: #fff;
+    margin: 0;
+    padding :0;
+    width: 200px;
+    height: 30px;
+    border: #fff;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content">
+    <div class="comm_Save">
+        <h1>글 작성하기</h1>
+        <form action="/security-login/community/save" method="post" enctype="multipart/form-data">
+            <input type="text" name="communityWriter" placeholder="작성자"> <br>
+            <input type="text" name="communityPass" placeholder="비밀번호"> <br>
+            <input type="text" name="communityTitle" placeholder="제목을 입력하세요."> <br>
+            <textarea name="communityContents" class="comm_Save_Cont" placeholder="내용"></textarea> <br>
+            <input class="save_file" type="file" name="communityFile" placeholder="파일"> <br>
+            <input class="save_btn" type="submit" value="글작성">
+        </form>
+    </div>
+
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+</body>
+</html>
+<script>
+    window.addEventListener('load', function() {
+  const upload_file = document.querySelector("#upload-file");
+  const upload_name = document.querySelector(".upload-name");
+  
+  upload_file.addEventListener('input', ()=>{
+      if(isImage(upload_file.files[0])){
+        changeVal(upload_name, (upload_file.files[0].name));
+      }
+  });
+  
+  function isImage(file){
+    return file.type.indexOf('image') >= 0;
+  }
+  function changeVal(class_name, change_name){
+    class_name.value = chnage_name;
+  }
+});
+</script>

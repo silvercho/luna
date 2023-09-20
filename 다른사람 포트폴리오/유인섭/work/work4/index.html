@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>msi</title>
+	<script>
+	$(function(){
+		var i = 0;
+		var repeat;
+		
+		$(".img_slide .button li").click(function(){
+			
+			i=$(this).index();
+			
+			$(".img_slide .imgs li").fadeOut();
+			$(".img_slide .imgs li").eq(i).fadeIn();
+			
+			$(".img_slide .button li").removeClass("on");
+			$(this).addClass("on");
+			
+			return false;
+		});
+		
+		
+		timer();
+		function timer(){
+			repeat = setInterval(function(){
+				i++;
+				if(i==3){
+					i=0;
+				}
+				$(".img_slide .button li").eq(i).trigger("click");
+				
+			},5000);
+		
+		}
+		
+		$(".img_slide .button li").mouseover(function(){
+			clearInterval(repeat);
+		});
+		$(".img_slide .button li").mouseleave(function(){
+			timer();
+		});
+	});
+
+	</script>
+	
+</head>
+<body>
+<div id="wrap">
+
+<!-- header -->
+	<header>
+		<div class="mobile_menu_btn">
+		<div class="bar bar1"></div>
+		<div class="bar bar2"></div>
+		<div class="bar bar3"></div>
+	</div>
+		<div class="header_wrap">
+			<div class="gnb_wrap">
+				<div class="logo"></div>
+				<ul class="main_nav">
+					<li><a href="#">PRODUCTS</a></li>
+					<li><a href="#">ODM SOLUTIONS</a></li>
+					<li><a href="#">COMMUNITY</a></li>
+					<li><a href="#">WHAT'S NEW</a></li>
+					<li><a href="#">SUPPORT</a></li>
+				</ul>
+				<div class="nav-right">
+					<div class="a1">
+						<img src="./images/location.svg" alt='';/>
+						<img src="./images/serch.svg" alt='';/>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</header>
+		<div class="img_slide cf">
+			<ul class="imgs">
+				<li>
+				<!-- <img src="./images/banner_15695721355d8dc52792309.jpg" alt=''/> -->
+				</li>
+				<li>
+				<!-- <img src="./images/banner_15717283775daeabf9f1671.jpg" alt=''/> -->
+				</li>
+				<li>
+				<!-- <img src="./images/banner_15681943195d78bf0f1c28c.jpg" alt=''/> -->
+				</li>
+			</ul>
+			<ul class="button">
+				<li class="on"><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+		
+<!-- section -->
+	<section>
+		<div id="section_wrap">
+			
+			<div class="bg1">
+				<ul class="cf">
+					<li class="a1_1"><a href="#"><h3>GT76 Titan</h3><p>Total Dominance</p></a></li>
+					<li class="a1_2"><a href="#"><h3>GeForce RTX 20 GAMING Series</h3><p>Play Hard Stay Silent</p></a></li>
+					<li class="a1_3"><a href="#"></a></li>
+				</ul>
+			</div>
+			<div class="bg2">
+				<ul>
+					<a href="#"><li class="a2_1"><img src="./images/mga.JPG" alt=''/></li></a>
+				</ul>
+			</div>
+			<div class="bg3">
+				<ul class="cf">
+					
+					<a href="#"><li class="a3_1"><img src="./images/ProductsSupport_bgimg01.jpg" alt=''>
+					<h3>Product Registration</h3><p>To enjoy a host of benefits, promotions and events</p></li></a>
+				
+					
+					<a href="#"><li class="a3_2"><img src="./images/ProductsSupport_bgimg02.jpg" alt=''><h3>Support</h3><p>Customized services especially for you</p>
+					</li></a>
+					
+				</ul>
+			</div>
+			<div class="bg4 cf">
+				<ul class="cf">
+					<a href="#"><li class="a4_1"><img src="./images/BrandRelated_forum.jpg" alt=''><span>MSI포럼</span></li></a>
+					<a href="#"><li class="a4_2"><img src="./images/BrandRelated_blogs.jpg" alt=''><span>Blog</span></li></a>
+					<a href="#"><li class="a4_3"><img src="./images/BrandRelated_video.jpg" alt=''><span>Video</span></li></a>
+					<a href="#"><li class="a4_4"><img src="./images/BrandRelated_app.jpg" alt=''><span>MSI Apps</span></li></a>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+
+<!-- footer -->
+	<footer>
+	
+		<div class="topfooter">
+			<ul class="gnb cf">
+				<li class="menu"><a href="#">커뮤니티</a>
+					<ul>
+						<li>Rewards</li>
+						<li>Forums</li>
+						<li>Social Media</li>
+						<li>Videos</li>
+						<li>Gaming Teams</li>
+					</ul>
+				</li>
+				
+				<li class="menu"><a href="#">서비스</a>
+					<ul>
+						<li>Downloads</li>
+						<li>Member Center</li>
+						<li>Online Customer Service</li>
+						<li>Service Locations</li>
+						<li>Warranty</li>
+					</ul>
+				</li>
+				
+				<li class="menu"><a href="#">뉴스</a>
+					<ul>
+						<li>News</li>
+						<li>Awards</li>
+						<li>RSS</li>
+					</ul>
+				</li>
+				<li class="menu"><a href="#">미디어</a>
+					<ul>
+						<li>Brochure</li>
+						<li>Wallpaper</li>
+						<li>MSI Apps</li>
+						<li>ABOUT MSI</li>
+						<li>MSI Vision</li>
+						<li>Brand Story</li>
+						<li>Investor Information</li>
+						<li>Innovation DNA</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="fulldown"></div>
+		</div>
+	
+		<div class="">
+			<ul class="footerbot">
+				<li class="alpha"><img src="./images/footer_msilogo.png" alt=''/>
+				<span>Copyright &copy; 2019 Micro-Star INT'L CO., LTD. All rights reserved. 인터넷 익스플로러 8 이상에서 정상 작동합니다.</span>
+				</li>
+				
+				<li class="beta">
+					<p>contact-us</p>
+					<p>privacy policy</p>
+					<p>website term of us</p>
+					<p><img src="./images/global.png" alt=''/>  Korea / 한국어</p>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+	</footer>
+</div>
+
+
+</body>
+</html>

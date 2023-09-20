@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>slider_banner</title>
+	<script src="sliderbasic(vanilla).js" defer></script>
+	<style>
+		/*common*/
+		html {
+			width: 100%;
+			height: 100%;
+			overflow-y: scroll
+		}
+
+		* {
+			margin: 0px;
+			padding: 0px;
+			font: inherit;
+			vertical-align: baseline;
+		}
+
+		body {
+			font-size: 12px;
+			font-family: Dotum, Arial;
+			color: #74767a;
+			line-height: 120%;
+		}
+
+		a,
+		a:link,
+		a:visited {
+			color: #74767a;
+			text-decoration: none
+		}
+
+		ul,
+		ol {
+			list-style: none
+		}
+
+		table,
+		fieldset,
+		th,
+		td,
+		img {
+			border: none
+		}
+
+		img,
+		input,
+		select {
+			vertical-align: middle
+		}
+
+		#wrap {}
+
+		#brandVisual {
+			position: relative;
+			width: 100%;
+			min-width: 1000px;
+			overflow: hidden;
+			height: 500px;
+			background-color: #8c908c;
+		}
+
+		#brandVisual ul {
+			position: relative;
+			float: left;
+			width: 100%;
+			height: 500px;
+		}
+
+		#brandVisual ul li {
+			position: absolute;
+			width: 100%;
+			height: 500px;
+		}
+
+		#brandVisual ul li a {}
+
+		#brandVisual .visual_0 {
+			left: 0%;
+			background: url(img/0.png) 50% 0 no-repeat;
+		}
+
+		#brandVisual .visual_1 {
+			left: 100%;
+			background: url(img/1.png) 50% 0 no-repeat;
+		}
+
+		#brandVisual .visual_2 {
+			left: 200%;
+			background: url(img/2.png) 50% 0 no-repeat;
+		}
+
+		#buttonList:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		#buttonList {
+			position: absolute;
+			top: 215px;
+			left: 50%;
+		}
+
+		#buttonList li {
+			width: 14px;
+			height: 15px;
+			float: left;
+			margin: 0 5px;
+			overflow: hidden;
+			background: url(img/btnVisual.png) 0 -16px no-repeat;
+		}
+
+		#buttonList li.on {
+			background-position: 0 0;
+		}
+
+		#buttonList li a {
+			display: block;
+			text-indent: -9999px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="brandVisual">
+			<ul>
+				<li class="visual_0"><a href="#">배너이미지 1</a></li>
+				<li class="visual_1"><a href="#">배너이미지 2</a></li>
+				<li class="visual_2"><a href="#">배너이미지 3</a></li>
+			</ul>
+		</div>
+		<ul id="buttonList">
+			<li class="on"><a href="#">배너1</a></li>
+			<li><a href="#">배너2</a></li>
+			<li><a href="#">배너3</a></li>
+		</ul>
+
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+@font-face{
+	font-family:roboto;
+	font-weight:500;
+	src:url(../fonts/Roboto-Medium.woff2) format("woff2"),
+		url(../fonts/Roboto-Medium.ttf) format("truetype"),
+		url(../fonts/Roboto-Medium.eot) format("embedded-opentype");
+}
+
+@font-face{
+	font-family:roboto;
+	font-weight:700;
+	src:url(../fonts/Roboto-Bold.woff2) format("woff2"),
+		url(../fonts/Roboto-Bold.ttf) format("truetype"),
+		url(../fonts/Roboto-Bold.eot) format("embedded-opentype");
+}
+
+@font-face{
+	font-family:poppins;
+	font-weight:700;
+	src:url(../fonts/Poppins-Bold.woff2) format("woff2"),
+		url(../fonts/Poppins-Bold.ttf) format("truetype"),
+		url(../fonts/Poppins-Bold.eot) format("embedded-opentype");
+}
+
+@font-face{
+	font-family:'crimson';
+	font-weight:700;
+	src:url(../fonts/CrimsonText-Bold.ttf) format("truetype"),
+		url(../fonts/CrimsonText-Bold.woff2) format("woff2"),
+		url(../fonts/CrimsonText-Bold.eot) format("embedded-opentype");
+}
+
+@font-face{
+	font-family:'crimson';
+	font-weight:300;
+	src:url(../fonts/CrimsonText-Regular.ttf) format("truetype"),
+		url(../fonts/CrimsonText-Regular.woff2) format("woff2"),
+		url(../fonts/CrimsonText-Regular.eot) format("embedded-opentype");
+}

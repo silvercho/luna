@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title> jQuery </title>
+		<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+		<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.transit.js"></script>
+
+		<!-- 스타일 -->
+		<style type="text/css">
+		.btn_valentine_body2 { height:166px; position:absolute; width:190px; }
+		.ico_bird1 { background:url("img/valentine_bird01.png") no-repeat; background-size:100% auto; height:158px; position:absolute; top:6px; width:69px; animation:ico_bird1 2s linear infinite; }
+		/* @keyframes ico_bird1 {
+			0% { transform:rotate(0deg); }
+			50% { transform:rotate(-15deg); }
+			100% { transform:rotate(0deg); }
+		} */
+		.ico_bird2 { background:url("img/valentine_bird02.png") no-repeat; background-size:100% auto; height:135px; left:68px; position:absolute; width:122px; animation:ico_bird2 2s linear infinite; }
+		/* @keyframes ico_bird2 {
+			0% { transform:rotate(0deg); }
+			50% { transform:rotate(15deg); }
+			100% { transform:rotate(0deg); }
+		} */
+		.ico_heart { background-size:100% auto; height:129px; left:-20px; position:absolute; top:-80px; width:155px; z-index:-1; }
+		</style>
+		<!-- // 스타일 -->
+
+	</head>
+	<body>
+
+		<a href="../index-2.html" class="home">Home</a>
+		<div id="wrap">
+			<div class="btn_valentine_body2">
+				<div class="ico_bird1"></div>
+				<div class="ico_bird2"></div>
+			</div>
+		</div>
+		<!-- // wrap -->
+
+		<!-- 스크립트 -->
+		<script type="text/javascript">
+		function rotate() {
+			$('.ico_bird1').animate({
+				'rotate':'-15deg'
+			}, 2000).animate({
+				'rotate':'0'
+			}, 2000, rotate);
+		}
+		rotate();
+		function rotate2() {
+			$('.ico_bird2').animate({
+				'rotate':'15deg'
+			}, 2000).animate({
+				'rotate':'0'
+			}, 2000, rotate2);
+		}
+		rotate2();
+		</script>
+		<!-- // 스크립트 -->
+
+	</body>
+
+</html>

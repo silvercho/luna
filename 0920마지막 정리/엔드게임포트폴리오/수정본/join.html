@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+</head>
+      <!-- 사용자 CSS 추가 -->
+      <th:block layout:fragment="css">
+          <style>
+              a{color:#000}
+              h1{ display: none;}
+              h2{
+                  font-size: 3rem;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-bottom: 0;
+              }
+              .joinTab p {
+                  text-align: center;
+              }
+              .joinForm {
+                  text-align: center;
+              }
+
+              .joinForm label {
+                  font-size: 1.2rem;
+                  font-weight: bold;
+                  margin-right: 20px;
+              }
+              .joinForm input {
+                  padding: 8px;
+                  width: 350px;
+                  height: 20px;
+                  margin-bottom: 5px;
+                  border: 1px solid #C4C4C4;
+              }
+              button {
+                  margin-left: 30px;
+                  background: #000;
+                  color: #fff;
+                  width: 350px;
+                  height: 40px;
+                  border: #fff;
+                  border-radius: 15px;
+                  font-size: 1.2rem;
+                  font-weight: bold;
+              }
+          </style>
+    </th:block>
+    <body>
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <div th:replace="~{fragments/header::header}"></div>
+    <div layout:fragment="content" class="joinTab">
+        <h1><a th:href="|/${loginType}|">[[${pageName}]]</a></h1>
+            <h2> E N D C A R</h2>
+            <p>신규 가입을 환영 합니다 !</p>
+            <form th:method="post" th:action="|@{/{loginType}/join (loginType=${loginType})}|" class="joinForm" th:object="${joinRequest}">
+                <div>
+                    <label th:for="nickname"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" th:field="*{nickname}" th:errorclass="error-input" placeholder="닉네임" />
+                    <div class="error-class" th:errors="*{nickname}"></div>
+                </div>
+                <br/>
+                <div>
+                    <label th:for="loginId"><i class="fa-solid fa-user-pen"></i></label>
+                    <input type="text" th:field="*{loginId}" th:errorclass="error-input" placeholder="이메일 또는 아이디"/>
+                    <div class="error-class" th:errors="*{loginId}"></div>
+                </div>
+                <br/>
+                <div>
+                    <label th:for="password"><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" th:field="*{password}" th:errorclass="error-input" placeholder="비밀번호"/>
+                    <div class="error-class" th:errors="*{password}"></div>
+                </div>
+                <br/>
+                <div>
+                    <label th:for="passwordCheck"><i class="fa-solid fa-check"></i></label>
+                    <input type="password" th:field="*{passwordCheck}" th:errorclass="error-input" placeholder="비밀번호 확인"/>
+                    <div class="error-class" th:errors="*{passwordCheck}"></div>
+                </div>
+                <br/>
+                <button type="submit">회원 가입</button>
+            </form>
+        </div>
+        <div th:replace="~{fragments/footer::footer}"></div>
+    </body>
+    </html>
+    
+    <style>
+    .error-class {
+        color: red;
+    }
+    .error-input {
+        border-color: red;
+    }
+    </style>

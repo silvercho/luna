@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대차 탭메뉴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        .ageCar {padding-top: 50px; margin: 0;
+            text-align: center;}
+        .wrap {
+            width: 1400px;
+            height: 800px;
+            margin: 0 auto;
+            padding-top: 100px;
+            display: flex;
+            position: relative;
+        }
+
+        .wrap>div {
+            width: 50%;
+            height: 800px;
+            padding: 16px;
+        }
+
+        .no1 img {
+            width: 100%;
+            height: auto;
+        }
+        .no2 img {
+            width: 320px;
+            height: auto;
+        }
+
+        .btn_wrap {
+            width: 100%;
+            display: flex;
+            /* justify-content: space-around; */
+        }
+
+        button {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+        }
+
+        .name1 {margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        .img_wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .name_wrap {
+            font-size: 16px; font-weight: bold;
+            margin-top: 16px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .tabImgs {height: 150px;
+            background: rgba(0, 0, 0, 0.1); }
+            .tabIcon { display: flex; justify-content: space-between; padding: 0 500px; margin: 0;}
+            .tabImgs i {margin-top: 30px; font-size: 3rem; }
+            .tabTxt { display: flex; justify-content: center; padding: 0 600px; margin: 0;}
+            .tabTxt p {margin-top: 10px; margin-right: 60px; font-size: 1.6rem;} 
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div class="tabImgs">
+            <div class="tabIcon">
+                <i class="fa-solid fa-caret-right"></i>
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <i class="fa-solid fa-headphones"></i>
+                <i class="fa-solid fa-map-location-dot"></i>
+                <i class="fa-solid fa-gift"></i>
+                <i class="fa-solid fa-wrench"></i>
+                <i class="fa-solid fa-caret-left"></i>
+            </div>
+            <div class="tabTxt">
+                <p>CarMart</p>
+                <p>CsCenter</p>
+                <p>CenterMap</p>
+                <p>EVENT</p>
+                <p>Repair Shop</p>
+            </div>
+    </div>
+    <h1 class="ageCar">연령대 별 자동차 선호도</h1>
+    <div class="wrap">
+        <div class="no1">
+            <img src="img/carM1.jpg" alt="그랜저">
+        </div>
+        <div class="no2">
+            <div class="btn_wrap">
+                <button>전체</button>
+                <button>2-30대</button>
+                <button>40대</button>
+                <button>50대</button>
+            </div>
+            <div class="name1">1위.<span>디올 뉴 그랜저</span></div>
+            <div class="img_wrap">
+                <img src="img/carM2.jpg" alt="제네시스">
+                <img src="img/carM3.jpg" alt="쏘렌토">
+            </div>
+            <div class="name_wrap">
+                <span class="name2">2위. <span>제네시스 g80</span></span>
+                <span class="name3">3위. <span>더 뉴 쏘렌토</span></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let btn1 = document.querySelector("button:nth-of-type(1)");
+        let btn2 = document.querySelector("button:nth-of-type(2)");
+        let btn3 = document.querySelector("button:nth-of-type(3)");
+        let btn4 = document.querySelector("button:nth-of-type(4)");
+        let no1 = document.querySelector(".name1 span");
+        let no2 = document.querySelector(".name2 span");
+        let no3 = document.querySelector(".name3 span");
+
+        btn1.onclick = function () { 
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM2.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM3.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "제네시스 g80";
+            no3.innerHTML = "더 뉴 쏘렌토";
+        }
+        btn2.onclick = function () { 
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM3.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM2.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "더 뉴 쏘렌토";
+            no3.innerHTML = "제네시스 g80";
+        }
+        btn3.onclick = function () { 
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM2.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM3.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "제네시스 g80";
+            no3.innerHTML = "더 뉴 쏘렌토";
+        }
+        btn4.onclick = function () {
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM3.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM2.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "더 뉴 쏘렌토";
+            no3.innerHTML = "제네시스 g80";
+        }
+    </script>
+</body>
+</html>

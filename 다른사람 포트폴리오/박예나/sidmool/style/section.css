@@ -1,0 +1,325 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Playfair+Display+SC&display=swap');
+/*font-family: 'Playfair Display SC', serif;
+font-family: 'Nanum Myeongjo', serif;*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+/*font-family: 'Noto Sans KR', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+/*font-family: 'Montserrat', sans-serif;*/
+
+
+	section{width:100%; height:auto;}
+			.img_slide2{position:relative; width:100%; height:100%; overflow:hidden;}
+			
+			.left{position:absolute; left:-50%; top:0; width:100%; height:100%; overflow:hidden;}
+			.right_top{position:absolute; right:-50%; top:0; width:100%; height:50%;}
+			.right_bottom{position:absolute; right:0; top:50%; width:50%; height:100%; overflow:hidden;}  
+			
+			.left li{position:absolute; top:0; left:0; width:50%; height:100%; } 
+			.left li:first-child{left:50%;}
+			.left li img{position:absolute; display:block; width:100%; height:auto; top:50%; transform:translateY(-50%);} 
+			.right_top li{position:absolute; top:0; right:0; width:50%; height:100%; background-color#fff;} 
+			.right_top li:first-child{right:50%;} 
+			.right_bottom li{position:absolute; bottom:0; left:0; width:100%; height:50%; overflow:hidden;} 
+			.right_bottom li:first-child{bottom:50%;} 
+			
+			.left li:nth-child(1){background-color:#e69607;} 
+			.left li:nth-child(2){background-color:#ED845A;} 
+			.left li:nth-child(3){background-color:#e8cd2d;} 
+			.left li:nth-child(4){background-color:#e69607;} 
+			
+			.left .np_button{position:absolute; top:50%; right:30px; transform:translateY(-50%); width:70px; height:145px; }
+			.left .np_button .prev{position:absolute; top:0; left:0; width:100%; height:50%; }
+			.left .np_button .next{position:absolute; bottom:0; left:0; width:100%; height:50%;}
+			.left .np_button img{z-index:10; display:block; width:100%; height:auto; position:absolute; top:0; left:0; transition:all 0.5s;}
+			.left .np_button .next img{transform:rotate(90deg);}
+			.left .np_button .next img:last-child{opacity:0;}
+			.left .np_button .prev img{transform:rotate(-90deg);}
+			.left .np_button .prev img:last-child{opacity:0;}
+			.left .np_button .next:hover img:last-child{opacity:1;}
+			.left .np_button .prev:hover img:last-child{opacity:1;}
+			
+			.right_top li #text{position:absolute; top:60%; left:50%; transform:translate(-50%,-50%); width:80%; opacity:0; transition:all 0.6s;}
+			.right_top li #text.on{top:50%; opacity:1;}
+			.right_top li h3{font-family: 'Playfair Display SC', serif; font-size:50px;}
+			.right_top li p{font-family: 'Noto Sans KR', sans-serif; font-size:18px; line-height:30px; font-weight:300; margin-top:30px; white-space:nowrap;}
+			
+			.right_bottom li img{display:block; position:absolute; top:50%; transform:translate(-50%,-50%); left:50%; width:auto; height:100%;}
+/*****************************img_slide2 반응형**************************************/
+@media screen and (max-width:1150px){
+	.right_top li h3{font-size:35px;}
+	.right_top li p{font-size:14px; line-height:25px; margin-top:5px;}
+}
+@media screen and (max-width:980px){
+	.left .np_button{width:60px; height:125px;}
+}
+@media screen and (max-width:830px){
+	.left{position:relative; height:75%; left:0;}
+	.left li{width:100%; left:-100%;}
+	.left li:first-child{left:0;}	
+	.left li img{width:auto; height:100%; top:0; left:50%; transform:translateX(-50%);} 
+	
+	.right_top{position:relative; height:25%; right:0; bottom:0;}
+	.right_top li{width:100%; height:100%;}
+	.right_top li:first-child{right:0;}
+	.right_top li #text{text-align:center;}
+	
+	.right_bottom{display:none;}	
+}
+@media screen and (max-width:700px){
+	.right_top li h3{font-size:30px;}
+	.right_top li p{font-size:12px; line-height:20px; margin-top:5px;}
+}
+@media screen and (max-width:500px){
+	.left .np_button{width:50px; height:105px; right:3%;}
+	.right_top li h3{font-size:20px;}
+}
+
+/*****************************series**************************************/
+article{width:100%; height:auto; background:#1F3328 url(../images/organic-bg.jpg) no-repeat 50% 100% /50%; background-attachment:fixed;}
+.series{width:100%; height:auto;}
+.series #text{width:80%; height:auto; margin:0 auto; padding:100px 0 150px;}
+.series #text h2{color:#fff; font-family: 'Playfair Display SC', serif; font-size:60px;}
+.series #text h4{color:#fff; font-family: 'Noto Sans KR', sans-serif; font-size:16px; font-weight:100; padding-top:20px; line-height:33px;}
+
+.series > ul{width:80%; height:900px; margin:0 auto; position:relative;}
+.series > ul > li{position:absolute; width:32.67%; height:49%; background-color:#fff; transition:all 0.5s; overflow:hidden;}
+.series > ul > li:nth-child(1){top:0; left:0;}
+.series > ul > li:nth-child(2){top:-15%; left:33.67%;}
+.series > ul > li:nth-child(3){top:0; left:67.34%;}
+.series > ul > li:nth-child(4){top:50%; left:0;}
+.series > ul > li:nth-child(5){top:35%; left:33.67%;}
+.series > ul > li:nth-child(6){top:50%; left:67.34%;}
+
+.series > ul > li:nth-child(1):hover{background-color:#e69607;}
+.series > ul > li:nth-child(2):hover{background-color:#ED845A;}
+.series > ul > li:nth-child(3):hover{background-color:#e8cd2d;}
+.series > ul > li:nth-child(4):hover{background-color:#D7C272;}
+.series > ul > li:nth-child(5):hover{background-color:#355D45;}
+.series > ul > li:nth-child(6):hover{background-color:/*#E38E9F*/#8EBD41;}
+
+.series > ul > li > a{display:block; position:absolute; bottom:50%; right:0%; transform:translate(50%,50%); width:200px; height:50px; border:1px solid #fff; text-align:center; line-height:50px; color:#fff; z-index:9; transition:all 0.5s; opacity:0;}
+.series > ul > li:hover > a{right:50%; opacity:1;}
+.series > ul > li > a:hover{background-color:rgba(255,255,255,.4);}
+
+.series > ul > li img{display:block; width:100%; height:auto; position:absolute; top:0; left:0;}
+.series > ul > li h6{padding:30px; font-family: 'Noto Sans KR', sans-serif; /*font-family: 'Nanum Myeongjo', serif;*/ font-size:17px; font-weight:300; color:#213429;}
+.series > ul > li:hover h6{color:#fff;}
+.series > ul > li .text{position:absolute; bottom:0; left:0; margin:0 0 40px; text-align:center; width:100%; height:60px;}
+.series > ul > li .text h5{font-family: 'Nanum Myeongjo', serif; font-size:20px; padding-bottom:20px; color:#213429;}
+.series > ul > li:hover .text h5{color:#fff;}
+.series > ul > li .text p{font-family: 'Noto Sans KR', sans-serif; font-size:14px; color:#213429;}
+.series > ul > li:hover .text p{color:#fff;}
+
+/*****************************series반응형*************************************/
+	@media screen and (max-width:1500px){
+	.series > ul{height:900px;}
+	}
+	@media screen and (max-width:1400px){
+	.series > ul{height:850px;}
+	.series > ul > li img{top:10px;}
+	}
+	@media screen and (max-width:1300px){
+		.series > ul > li img{top:20px;}
+	}
+	@media screen and (max-width:1200px){
+		.series > ul{height:700px;}
+		.series > ul > li img{top:0;}
+		.series > ul > li h6{padding:5px; font-size:15px;}
+		.series > ul > li .text{margin:0 0 20px; height:50px;}
+		.series > ul > li .text h5{font-size:18px; padding-bottom:10px;}
+	}
+	@media screen and (max-width:1130px){
+		.series > ul > li img{top:10px;}
+		.series > ul{height:650px;}
+		.series > ul > li .text{height:20px;}
+		.series > ul > li .text p{display:none;}
+	}
+	@media screen and (max-width:1000px){
+		.series > ul{height:1100px;}
+		.series > ul > li{width:49.5%; height:33%;}
+		
+		.series > ul > li:nth-child(1){top:0; left:0;}
+		.series > ul > li:nth-child(2){top:0; left:50%;}
+		.series > ul > li:nth-child(3){top:33.33%; left:0;}
+		.series > ul > li:nth-child(4){top:33.33%; left:50%;}
+		.series > ul > li:nth-child(5){top:66.66%; left:0;}
+		.series > ul > li:nth-child(6){top:66.66%; left:50%;}
+		
+		.series > ul > li img{top:0;}
+	}
+	@media screen and (max-width:880px){
+		.series > ul{height:1000px;}
+	}
+	@media screen and (max-width:800px){
+		.series > ul{height:900px;}
+	}
+	@media screen and (max-width:790px){
+		.series #text{padding:50px 0 100px; white-space:nowrap;}
+		.series #text h2{font-size:50px;}
+		.series #text h4{font-size:14px; line-height:28px;}
+	}
+	@media screen and (max-width:700px){
+		.series > ul{height:800px;}
+	}
+	@media screen and (max-width:660px){
+		.series #text{padding:50px 0;} 
+		.series #text h2{font-size:40px;}
+		.series #text h4{font-size:12px; line-height:23px;}
+		
+		.series > ul{height:3000px;}
+		.series > ul > li{width:100%; height:16.5%;}
+		
+		.series > ul > li:nth-child(1){top:0; left:0;}
+		.series > ul > li:nth-child(2){top:16.66%; left:0;}
+		.series > ul > li:nth-child(3){top:33.32%; left:0;}
+		.series > ul > li:nth-child(4){top:49.98%; left:0;}
+		.series > ul > li:nth-child(5){top:66.64%; left:0;}
+		.series > ul > li:nth-child(6){top:83.3%; left:0;}
+	}
+	@media screen and (max-width:590px){
+		.series > ul{height:2800px;}
+	}
+	@media screen and (max-width:540px){
+		.series > ul{height:2500px;}
+		.series #text{padding:10px 0;} 
+		.series #text h2{font-size:50px;}
+		.series #text h4{display:none;}	
+	}
+	@media screen and (max-width:470px){
+	.series #text h2{font-size:40px; text-align:center;}
+	.series > ul{height:2300px;}
+	}
+	@media screen and (max-width:435px){
+		.series > ul{height:2100px;}
+	}
+	@media screen and (max-width:400px){
+		.series #text h2{font-size:30px;}
+		.series > ul{height:1900px;}
+	}
+	@media screen and (max-width:350px){
+		.series > ul{height:1700px;}
+	}
+	@media screen and (max-width:325px){
+		.series > ul{height:1500px;}
+		.series > ul > li .text h5{font-size:15px;}
+	}
+/*****************************ingredient*************************************/
+.ingredient{width:50%; height:auto; margin:0 auto; margin-top:300px;}
+.ingredient h2{text-align:center; color:#fff; font-family: 'Playfair Display SC', serif; font-size:35px; letter-spacing:2px;}
+.ingredient p{text-align:center; color:#fff; font-family: 'Noto Sans KR', sans-serif; font-size:14px; font-weight:100; padding-top:20px; line-height:25px;}
+.ingredient .more{margin:0 auto; width:180px; height:20px; text-align:center; line-height:20px; margin-top:30px; border:1px solid #fff; padding:5px; }
+.ingredient .more a{display:block; width:100%; height:100%; position:relative;}
+.ingredient .more a span{position:absolute; left:10px; display:block; color:#fff; font-size:10px; font-weight:bold; transition:all 0.5s; transform:translateY(-50%);}
+.ingredient .more a span:nth-child(1){top:50%; opacity:1;}
+.ingredient .more a span:nth-child(2){top:100%; opacity:0;}
+.ingredient .more a:hover span:nth-child(1){top:0%; opacity:0;}
+.ingredient .more a:hover span:nth-child(2){top:50%; opacity:1;}
+.ingredient .more a .bar{position:relative; width:60px; height:1px; background-color:#fff; position:absolute; right:10px; top:50%; transform:translateY(-50%);}
+.ingredient .more a .bar:before{content:""; display:block; position:absolute; top:50%; transform:translateY(-50%) rotate(40deg); transform-origin:right; width:10px; height:1.3px; background-color:#fff; right:0;}
+.ingredient .more a .bar:after{content:""; display:block; position:absolute; top:50%; transform:translateY(-50%) rotate(-40deg); transform-origin:right; width:10px; height:1.3px; background-color:#fff; right:0;}
+/*****************************ingredient반응형*************************************/
+@media screen and (max-width:780px){
+	.ingredient{width:60%;}
+}
+@media screen and (max-width:650px){
+	.ingredient{width:70%;}
+	.ingredient{margin-top:200px;}
+}
+@media screen and (max-width:560px){
+	.ingredient{width:80%;}
+}
+@media screen and (max-width:490px){
+	.ingredient{width:90%;}
+}
+@media screen and (max-width:435px){
+	.ingredient p{font-size:12px; line-height:20px;}
+}
+@media screen and (max-width:375px){
+	.ingredient{width:238px;}
+	.ingredient{margin-top:100px;}
+}
+/*****************************experience*************************************/
+
+.experience{width:80%; height:500px; background-color:#fff; margin:200px auto 100px; overflow:hidden;}
+.ex_left{width:50%; height:100%; position:relative; float:left;}
+.ex_left .text{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+.ex_left .text h2{text-align:center; font-family: 'Playfair Display SC', serif; font-size:35px; letter-spacing:2px; line-height:54px;}
+.ex_left .text p{text-align:center; font-family: 'Noto Sans KR', sans-serif; font-size:14px; font-weight:100; padding-top:20px; line-height:25px; white-space:nowrap;}
+
+.ex_right{width:50%; height:100%; float:left;}
+.ex_right .photo{float:left; width:33.33%; height:40%; overflow:hidden;}
+.ex_right .blank{width:100%; height:20%; position:relative;}
+.ex_right .blank h2{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:70px; letter-spacing:40px; color:#ddd; font-family: 'Montserrat', sans-serif;}
+/*****************************experience반응형*************************************/
+@media screen and (max-width:1550px){
+	.ex_right .blank h2{letter-spacing:30px;}
+}
+@media screen and (max-width:1360px){
+	.ex_right .blank h2{letter-spacing:20px;}
+}
+@media screen and (max-width:1200px){
+	.experience{height:400px;}
+	.ex_right .blank h2{letter-spacing:10px;}
+}
+@media screen and (max-width:1050px){
+	.experience{height:300px; margin:100px auto;}
+	.ex_right .blank h2{font-size:60px;}
+}
+@media screen and (max-width:930px){
+	.experience{height:600px;}
+	.ex_left{width:100%; height:40%; float:none;}
+	.ex_left .text p{padding-top:10px;}
+	.ex_right{width:100%; height:60%; float:none;}
+	.ex_right .blank{display:none;}
+	.ex_right .photo{height:50%;}
+	.ex_right .photo img{display:block; width:100%; height:auto;}
+}
+@media screen and (max-width:780px){
+	.experience{height:500px;}
+	.ex_left .text h2{font-size:28px;  line-height:40px;}
+	.ex_left .text p{text-align:center; font-family: 'Noto Sans KR', sans-serif; font-size:13px; line-height:20px;}
+}
+@media screen and (max-width:665px){
+	.experience{height:500px; width:100%;}
+}
+@media screen and (max-width:540px){
+	.ex_left{height:50%;}
+	.ex_right{height:50%;}
+}
+@media screen and (max-width:450px){
+	.experience{height:400px;}
+}
+@media screen and (max-width:365px){
+	.experience{height:350px;}
+	.ex_left .text h2{line-height:33px;}
+	.ex_left .text p{font-size:12px; letter-spacing:-1px; line-height:18px;}
+}
+@media screen and (max-width:320px){
+	.experience{height:320px;}
+}
+/*****************************crum*************************************/
+
+.crum{width:80%; height:auto; margin:0 auto;}
+.crum .notice{float:left; border-right:1px solid rgba(255,255,255,.65); width:33.33%; height:200px; box-sizing:border-box; text-align:center;}
+.crum .notice:last-child{border:0;}
+.crum .notice .top{width:100%; height:50px;}
+.crum .notice .top h3{font-family: 'Montserrat', sans-serif; color:#fff; transition:all 0.6s; line-height:50px;}
+.crum .notice:hover .top h3{line-height:20px;}
+.crum .notice p{color:rgba(255,255,255,.65); text-align:center; font-family: 'Noto Sans KR', sans-serif; font-size:14px; font-weight:100; line-height:25px; white-space:nowrap; padding-bottom:30px;}
+.crum .notice span{padding:8px; border:1px solid rgba(255,255,255,.65); margin-right:10px;  text-align:center; font-family: 'Noto Sans KR', sans-serif; font-size:12px; font-weight:100; line-height:25px;}
+.crum .notice span:hover{background-color:rgba(255,255,255,.2);}
+.crum .notice span a{color:#fff;}
+
+.crum .notice > a{display:block; width:80px; height:30px; position:relative; margin:0 auto;}
+.crum .notice > a .bar{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);width:60px; height:1px; background-color:#fff; transition:all 0.6s; opacity:0;}
+.crum .notice:hover > a .bar{opacity:1;}
+.crum .notice >  a .bar:before{content:""; display:block; position:absolute; top:50%; transform:translateY(-50%) rotate(40deg); transform-origin:right; width:10px; height:1.3px; background-color:#fff; right:0;}
+.crum .notice > a .bar:after{content:""; display:block; position:absolute; top:50%; transform:translateY(-50%) rotate(-40deg); transform-origin:right; width:10px; height:1.3px; background-color:#fff; right:0;}
+
+/*****************************crum반응형************************************/
+@media screen and (max-width:945px){
+	.crum .notice{width:100%; float:none;  border-right:0; border-bottom:1px solid rgba(255,255,255,.65); padding-top:20px;}
+	.crum .notice p{padding-bottom:10px;}
+	.crum .notice > a .bar{opacity:1;}
+}

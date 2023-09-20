@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<title>신전떡볶이</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+	
+	$(function(){
+		var i=0;
+		var clone = $(".slide_cover ul li").clone();
+		$(".slide_cover ul").append(clone);
+		// clone = 복사. 변수 clone을 만들어 li를 복사한 후 ul에 덧붙여준다.
+		var repeat;
+		
+		timer();
+		
+		function timer(){
+		 repeat = setInterval(function(){
+			if(i==2){
+				i=0;
+				$(".slide_cover ul").css("margin-left",0);
+			}
+			i++;
+			
+			slide();
+		 }, 3000);
+		
+		}
+		
+		
+		function slide(){
+			$(".slide .btn .r_btn").off("click");
+			$(".slide .btn .l_btn").off("click");
+			
+			$(".slide_cover ul").stop().animate({
+				"margin-left":-(50*i)+"%"
+			},600, function(){
+				$(".slide .btn .r_btn").on("click",right_click);
+				$(".slide .btn .l_btn").on("click",left_click);
+			});
+		}
+		
+		$(".btns").mouseover(function(){
+			clearInterval(repeat);
+		});
+		$(".btns").mouseleave(function(){
+			timer();
+		});
+		
+		$(".slide .btn .r_btn").on("click",right_click);
+		
+		function right_click(){
+			if(i==2){
+				i=0;
+				$(".slide_cover ul").css("margin-left",0);
+			}
+			i++;
+			
+			slide();
+			
+		}
+		
+		$(".slide .btn .l_btn").on("click",left_click);
+		
+		function left_click(){
+			if(i==0){
+				i=2;
+				$(".slide_cover ul").css("margin-left",-(50*i)+"%");
+			}
+			i--;
+			
+			slide();
+			
+		}
+		
+		
+	});
+	
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<div class="header_top_wrap">
+			<div class="top_menu cf">
+				<ul class="top_left cf">
+					<li><a href="#">신전 떡볶이</a></li>
+					<li><a href="#">신전 뮤지엄</a></li>
+				</ul>
+				<ul class="top_right cf">
+					<li><a href="#">LOGIN</a></li>
+					<li><a href="#">JOIN</a></li>
+					<li><a href="#">SNS</a></li>
+					<li><a href="#">ENG</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="header_bottom_wrap">
+			<div class="bottom_menu">
+				<h1 class="logo">
+					<a href="#">
+						<img src="./images/logo.png" alt=""/>
+					</a>
+				</h1>
+				<ul class="gnb cf">
+					<li><a href="#">신전떡볶이</a>
+						<ul>
+							<li><a href="#">인사말</a></li>
+							<li><a href="#">회사 연혁</a></li>
+							<li><a href="#">브랜드소개</a></li>
+							<li><a href="#">인증서/등록증</a></li>
+							<li><a href="#">찾아오시는 길</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴</a>
+						<ul>
+							<li><a href="#">떡볶이</a></li
+							<li><a href="#">튀김</a></li>
+							<li><a href="#">라이스</a></li>
+							<li><a href="#">기타</a></li>
+						</ul>
+					</li>
+					<li><a href="#">신전떡볶이양념 HACCP인증</a>
+						<ul>
+							<li><a href="#">HACCP란?</a></li>
+							<li><a href="#">신전 HACCP 시스템</a></li>
+							<li><a href="#">신전 HACCP 7원칙 12절차</a></li>
+							<li><a href="#">신전양념 검사성적</a></li>
+						</ul>
+					</li>
+					<li><a href="#">가맹점</a>
+						<ul>
+							<li><a href="#">국내 가맹점</a></li>
+							<li><a href="#">해외 가맹점</a></li>
+						</ul>
+					</li>
+					<li><a href="#">프랜차이즈</a>
+						<ul>
+							<li><a href="#">신전의 약속</a></li>
+							<li><a href="#">가맹개설 절차</a></li>
+							<li><a href="#">일반형 인테리어</a></li>
+							<li><a href="#">고급형 인테리어</a></li>
+						</ul>
+					</li>
+					<li><a href="#">커뮤니티</a>
+						<ul>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li><a href="#">신전VIDEO</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">고객의 소리</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="fulldown">
+					<div class="fulldown_cover">
+						<img src="./images/top_img_s.png" alt=""/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="video_cover">
+		<video autoplay muted playsinline>  <!-- controls -->
+			<source src="./media/main_intro.mp4" type="video/mp4"/>
+		</video>
+	</div>
+	<div class="content_cover">
+		<div class="content area1">
+			<h2>신전떡볶이 본사 <b>신전푸드시스</b></h2>
+			<img src="./images/area1_dd.png" alt=""/>
+			<img src="./images/area1_img.jpg" alt=""/>
+			
+		</div>
+		<div class="content area2">
+			<img src="./images/area2-img0527.png" alt=""/>
+		</div>
+		<div class="food_menu cf">
+			<div class="content">
+				<div class="menu_list">
+					<div class="slide">
+						<div class="slide_cover">
+							<ul class="cf">
+								<li>
+									<a href="#">
+										<span>
+											<img src="./images/new_icon.png" alt=""/>
+										</span>
+										<img src="./images/menu25.png" alt=""/>
+										<p>게맛살튀김</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span>
+											<img src="./images/new_icon.png" alt=""/>
+										</span>
+										<img src="./images/menu26.png" alt=""/>
+										<p>크림치즈볼</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="btn cf">
+							<div class="l_btn btns"></div>
+							<div class="r_btn btns"></div>			
+						</div>
+					</div>
+				</div>
+				<div class="food_tit">
+					<h2>SINJEON MENU</h2>
+					<p>
+					신전떡볶이 메뉴
+					</p>
+					<dl>
+						<dt>
+						중독되는 <span>매운 맛!<br/>
+						HOLIC SINFUS</span>
+						</dt>
+						<dd>
+						잊을수 없어! 두고 갈수 없어!<br/>
+						중독되어 찾게 되는 궁극의 맛!
+						</dd>
+					</dl>
+					<p class="more"><a href="#">MORE</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="franchise">
+		<div class="content cf">
+			<h2>SINJEON FRANCHISE</h2>
+			<p>고객님과 가장 가까이 있는 매장을 찾아보세요!</p>
+			<ul class="cf">
+				<li>
+					<a href="#">
+						<img src="./images/store_img.jpg" alt=""/>
+						<div class="txt">
+							<h3>운정 산내점</h3>
+							<p class="number">
+								<img src="./images/store_icon.png" alt=""/>
+								031-945-3260
+							</p>
+							<p class="new_icon">신규매장</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/store_img.jpg" alt=""/>
+						<div class="txt">
+							<h3>향남2호점</h3>
+							<p class="number">
+								<img src="./images/store_icon.png" alt=""/>
+								031-353-8049
+							</p>
+							<p class="new_icon">신규매장</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./images/store_img.jpg" alt=""/>
+						<div class="txt">
+							<h3>괴산점</h3>
+							<p class="number">
+								<img src="./images/store_icon.png" alt=""/>
+								043-832-8199
+							</p>
+							<p class="new_icon">신규매장</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="more">
+				<a href="#">MORE</a>
+			</div>
+		</div>
+	</div>
+	<div class="movie">
+		<div class="movie_cover">
+			<h2>PROMOTION VIDEO</h2>
+			<p>신전 홍보 영상입니다.</p>
+			<div class="movie_box">
+				<iframe width="818px" height="459px" src="https://www.youtube.com/embed/Gv90cnL2usU?&amp;autoplay=0&amp;showinfo=0&amp;wmode=transparent&amp;rel=0&amp;disablekb=0&amp;playsinline=1&amp;modestbranding=0&amp;enablejsapi=1&amp;controls=2&amp;loop=1&amp;playlist=Gv90cnL2usU&amp;autohide=1" frameborder="0" allowfullscreen=""></iframe>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer_cover cf">
+			<h1 class="f_logo">
+				<img src="./images/f_logo.png" alt=""/>
+			</h1>
+			<div class="f_main">
+				<ul class="f_top cf">
+					<li>
+						<a href="#">회사소개</a>
+					</li>
+					<li>
+						<a href="#">신전떡볶이의 매력</a>
+					</li>
+					<li>
+						<a href="#">찾아오시는 길</a>
+					</li>
+				</ul>
+				<div class="f_bottom">
+                대구광역시 북구 칠성로 15길 6<span></span>전화번호 : 053)423-6339<span></span>팩스 : 053)424.6339<span></span>E-mail:sinjeon@sinjeon.co.kr<span></span>
+                사업자등록번호 : 504-22-36813<span></span>대표:하성호
+                <p>Copyright ⓒ SINFUS all rights reserved. </p>
+                </div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

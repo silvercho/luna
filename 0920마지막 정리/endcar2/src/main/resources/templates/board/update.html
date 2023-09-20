@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="|${pageName}|"></title>
+
+  <!-- 외부 스타일 시트 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- 내부 스타일 시트 -->
+  <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+  <!-- 외부 스크립트 -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- 내부 스크립트 -->
+  <script src="/js/footer.js"></script>
+</head>
+<style>
+        .boardUp{
+            width:500px;
+            margin: 0 auto;
+           padding: 50px 0;
+        height: 630px;
+        }
+    .boardUp h1{ font-size: 3rem; border-bottom: 1px solid #111;  margin-bottom: 20px;}
+        .boardUp input{
+            width : 100%;
+        height: 30px;
+              padding: 10px;
+        box-sizing : border-box;
+        margin-bottom: 5px;
+        }
+
+        .boardUp textarea {
+            width: 100%;
+            margin-top : 10px;
+            height : 300px;
+        }
+
+        .board_upBtn button{
+        background: #222;
+        color: #fff;
+        width: 200px;
+        height: 30px;
+        border: #fff;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        }
+    </style>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content">
+  <div class="boardUp">
+    <h1>글 수정하기</h1>
+    <form role="update-form" th:action="@{'/security-login/board/edit/' + ${boardDto.id}}" method="post">
+      <input type="hidden" name="_method" value="put"/>
+      <input type="hidden" name="id" th:value="${boardDto.id}"/>
+      <input type="text" name="title" th:value="${boardDto.title}" placeholder="제목"> <br>
+      <input type="text" name="writer" th:value="${boardDto.writer}" placeholder="작성자"> <br>
+      <textarea name="content" th:text="${boardDto.content}" placeholder="내용을입력해주세요"></textarea><br>
+      <div class="board_upBtn">
+        <button type="submit">수정</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+</body>
+</html>

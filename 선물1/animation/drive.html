@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title> jQuery </title>
+		<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+		<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+
+		<!-- 스타일 -->
+		<style type="text/css">
+		.drive_through_track { width:100%; height:663px; background:url('img/store/drive_through_bg.jpg') 0 0 repeat; margin-top:40px; position:relative; overflow:hidden; }
+		.drive_through_rail { width:1414px; height:663px; background:url('img/store/drive_through_rail2.png') 0 0 no-repeat; position:absolute; top:0; left:50%; margin-left:-707px; }
+		.drive_through_inner { width:1414px; height:663px; position:relative; }
+
+		.drive_through_track p.drive_tit { position:absolute; left:160px; top:40px; display:none; }
+
+		.drive_through_track div.drive_car { width:93px; height:97px; background:url('img/store/drive_car.png') 0 0 no-repeat; position:absolute; left:80px; top:-110px; z-index:2; }
+
+		.drive_through_track div.step1_obj { position:absolute; left:354px; top:139px; z-index:3; }
+		.drive_through_track div.step2_obj { position:absolute; left:848px; top:80px; z-index:3; }
+		.drive_through_track div.step3_obj { position:absolute; left:528px; top:378px; z-index:3; }
+
+		.drive_through_track div.step1_txt { position:absolute; left:522px; top:116px; z-index:3; display:none; }
+		.drive_through_track div.step2_txt { position:absolute; left:848px; top:241px; z-index:3; display:none; }
+		.drive_through_track div.step3_txt { position:absolute; left:741px; top:526px; z-index:3; display:none; }
+
+		.drive_through_track div.step1_flag { position:absolute; left:558px; top:188px; z-index:1; }
+		.drive_through_track div.step2_flag { position:absolute; left:1073px; top:188px; z-index:1; }
+		.drive_through_track div.step3_flag { position:absolute; left:752px; top:401px; z-index:3; }
+
+		.drive_through_track div.cloud_bg1 { position:absolute; left:1161px; top:39px; }
+		.drive_through_track div.cloud_bg2 { position:absolute; left:1084px; top:112px; }
+		.drive_through_track div.cloud_bg3 { position:absolute; left:0; top:329px; }
+
+		.drive_through_track div.store_bg { position:absolute; right:85px; bottom:0; }
+
+		.m_drive_wrap { display:none; }
+
+		.drive_through_know_wrap { background:#f4f4f2; padding-bottom:70px; }
+		.drive_through_know { width:1100px; margin:0 auto; }
+		.drive_through_know p.tit { font-size:18px; font-weight:bold; color:#222222; padding-top:40px; margin-bottom:20px; font-family:'Arial'; }
+		.drive_through_know ul { width:1100px; background:url('img/store/drive_through_bg.png') 0 0 repeat;}
+		.drive_through_know ul li:after { content:""; display:block; clear:both; }
+		.drive_through_know ul li.li1 { margin-bottom:50px;}
+		.drive_through_know ul li dl { width:1100px; }
+		.drive_through_know ul li dl:after { content:""; display:block; clear:both; }
+		.drive_through_know ul li.li1 dl dt { float:left; width:550px; }
+		.drive_through_know ul li.li1 dl dd { float:left; width:520px; padding-left:30px; }
+		.drive_through_know ul li.li1 dl dd p.p1 { color:#222; font-size:16px; font-weight:bold; margin-bottom:20px; }
+		.drive_through_know ul li.li1 dl dd p.p2 { color:#666; font-size:14px; line-height:1.6; margin-top:20px; }
+
+		.drive_through_know ul li.li2 dl dt { float:right; width:550px; }
+		.drive_through_know ul li.li2 dl dd { float:left; width:550px; }
+		.drive_through_know ul li.li2 dl dd p.p1 { color:#222; font-size:16px; font-weight:bold; margin-bottom:20px; }
+		.drive_through_know ul li.li2 dl dd p.p3 { font-size:14px; color:#666; line-height:1.6; margin:20px 0; }
+		.drive_through_know ul dd p.go { font-size:12px; color:#222; font-weight:bold; width:103px; }
+		.drive_through_know ul dd p.go a { border-bottom:1px dashed #222; display:block; padding-bottom:3px;  }
+		.drive_through_know ul dd p.go img { vertical-align:middle; }
+
+		/* (드라이브 스루 매장) */
+		strong.dt_emphasis { color:#006633; font-size:20px; font-weight:normal; font-style:italic; line-height:1.3; }
+		article.full_text p { font-size:14px; color:#666; line-height:22px; }
+		article.full_text p span { color:#444; }
+		article.full_text figure.full_img { margin:25px 0; }
+
+		section.driveStore_ber_wrap { position:relative; height:80px; background:#006633;  }
+		article.driveStore_ber_innner { left:50%; margin-left:-550px; position:absolute; top:0; width:1100px; }
+		article.driveStore_ber_innner dl:after { content:""; display:block; clear:both; }
+		article.driveStore_ber_innner dl dt { float:left; }
+		article.driveStore_ber_innner dl dd { float:left; font-size:14px; color:#ffffff; line-height:76px; height:76px; padding:4px 0 0 10px; }
+		</style>
+		<!-- // 스타일 -->
+
+	</head>
+	<body>
+
+		<a href="../index-2.html" class="home">Home</a>
+		<section class="drive_store_full">
+			<div class="drive_through_track">
+				<div class="drive_through_rail">
+					<div class="drive_through_inner">
+						<p class="drive_tit"><img src="img/store/drive_through_tit.png" alt="이용방법" /></p>
+						<div class="drive_car"></div>
+
+						<div class="step1_obj"><img src="img/store/myCircle01.png" alt="" /></div>
+						<div class="step1_txt"><img src="img/store/myText01.png" alt="" /></div>
+						<div class="step2_obj"><img src="img/store/myCircle02.png" alt="" /></div>
+						<div class="step2_txt"><img src="img/store/myText02.png" alt="" /></div>
+						<div class="step3_obj"><img src="img/store/myCircle03.png" alt="" /></div>
+						<div class="step3_txt"><img src="img/store/myText03.png" alt="" /></div>
+
+						<div class="step1_flag"><img src="img/store/drive_step01.png" alt="" /></div>
+						<div class="step2_flag"><img src="img/store/drive_step02.png" alt="" /></div>
+						<div class="step3_flag"><img src="img/store/drive_step03.png" alt="" /></div>
+
+						<div class="cloud_bg1"><img src="img/store/cloud_bg1.png" alt="" /></div>
+						<div class="cloud_bg2"><img src="img/store/cloud_bg2.png" alt="" /></div>
+						<div class="cloud_bg3"><img src="img/store/cloud_bg3.png" alt="" /></div>
+
+						<div class="store_bg"><img src="img/store/icon_store.png" alt="" /></div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 스크립트 -->
+		<script type="text/javascript" src="../common/js/jquery.easing.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.drive.js"></script>
+		<script type="text/javascript">
+		function aniCar(){
+			var myCarPoint  = [
+				// 1st Course - 진입 & 드리프트(좌회전)
+				[80,-110], [75,-80], [70,-50], [65,-30], [60,-10], [55,10], [50,30], [55,50], [60,70], [65,90], [70,110], [90,130], [110,145], [130,155],
+
+				// 2nd Course - 직진코스
+				[150,160], [170,160], [190,160], [210,160], [230,160], [250,160], [270,160], [290,160], [310,160], [330,160], [350,160], [370,160], [390,160], [410,160], [430,160], [450,160], [470,160], [490,160], [510,160], [530,160], [550,160], [570,160], [590,160], [610,160], [630,160], [650,160], [670,160], [690,160], [710,160], [730,160], [750,160], [770,160], [790,160], [810,160], [830,160], [850,160], [870,160], [890,160], [910,160], [930,160], [950,160], [970,160], [990,160], [1010,160], [1030,160], [1050,160], [1070,160], [1090,160], [1100,160],
+
+				// 3rd Course - 드리프트(우회전)
+				[1150,170], [1180,190], [1210,210], [1220,230], [1220,260], [1215,300], [1205,320], [1180,340],
+
+				// 4th Course - 직진코스
+				[1150,345], [1130,345], [1110,345], [1090,345], [1070,345], [1050,345], [1030,345], [1010,345], [990,345], [970,345], [950,345], [930,345], [910,345], [890,345], [870,345], [850,345], [830,345], [810,345], [790,345], [770,345], [750,345], [730,345], [710,345], [690,345], [670,345], [650,345], [630,345], [610,345], [590,345], [570,345], [550,345], [530,345], [510,345], [490,345], [470,345], [430,345], [390,345], [350,345], [310,345], [270,345], [230,345], [190,345],
+
+				// 5th Course - 드리프트(좌회전) & 사라짐
+				[170,350], [130,360], [80,420], [65,550], [65,690]
+			];
+			var myCar = $.sbDrive.buildSequence(myCarPoint);
+			$(".drive_car").animate({ 'opacity':1, sbDrive: myCar }, 30000);
+
+			var autoCar = setTimeout(aniCar, 32000);
+		}
+		var autoCar = setTimeout(aniCar);
+
+		function cloudRun(){
+			$('.cloud_bg1').animate({top: 44}, 500).animate({top: 39}, 500);
+			$('.cloud_bg2').delay(500).animate({top: 117}, 500).animate({top: 112}, 500);
+			$('.cloud_bg3').delay(800).animate({top: 334}, 500).animate({top: 329}, 500);
+			var cloudAuto = setTimeout(cloudRun, 3000);
+		}
+
+		var cloudAuto = setTimeout(cloudRun);
+		
+		function textAni(){
+			$('.drive_tit').delay(2500).fadeIn('slow');
+			$('.step1_txt').delay(4000).fadeIn('slow');
+			$('.step2_txt').delay(8500).fadeIn('slow');
+			$('.step3_txt').delay(19700).fadeIn('slow');
+		}
+		textAni();
+
+		function mCarRun(){
+			$('.m_car').animate({left:'73.8%'}, 10000, function(){
+				$('.m_car').delay(1500).animate({left:'105%'}, 7000, function(){
+					$('.m_car').css({left:"-30%"});
+				});
+			});
+			var mCarAuto = setTimeout(mCarRun, 19000);
+		}
+		var mCarAuto = setTimeout(mCarRun);
+		</script>
+		<!-- // 스크립트 -->
+
+	</body>
+
+</html>

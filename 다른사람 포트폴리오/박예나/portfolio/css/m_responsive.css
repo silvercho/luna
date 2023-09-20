@@ -1,0 +1,108 @@
+@charset "utf-8";
+/*@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600&display=swap');*/
+/*font-family: 'Josefin Sans', sans-serif;*/
+/*@import url('https://fonts.googleapis.com/css?family=Poor+Story&display=swap');*/
+/*font-family: 'Poor Story', cursive;*/
+
+/*******************main**************************/
+@media screen and (max-width:690px){
+	#work .work2{left:14%;}
+	#work .work3{right:3%;}
+	#work .work4{right:-6%;}
+}
+@media screen and (max-width:667px){
+	#main .main_text{right:5%; width:200px;}
+	#main .main_text h1{font-size:40px;}
+	#main .main_text p{font-size:14px;}
+}
+@media screen and (max-width:650px){
+	@keyframes skill{0%{top:-170%;} 50%{top:-120%;} 100%{top:-170%;}}
+}
+@media screen and (max-width:580px){
+	@keyframes skill{0%{top:-190%;} 50%{top:-140%;} 100%{top:-190%;}}
+	.m_animate .bike_cover{width:250px; height:250px; bottom:18%;}
+}
+@media screen and (max-width:560px){
+	#contact .con_left{width:100%; height:45%; float:none;}
+	#contact .con_left .con_cover{height:60; top:50%; right:50%; transform:translate(50%,-50%);}
+	#contact .con_left .con_cover h1{padding:3% 0;}
+	#contact .con_left .con_cover p{padding:1% 0;}
+	#contact .con_left .con_cover .sns{margin-top:0%; border-top:0px; margin-top:6%;}
+	#contact .con_left .con_cover .sns a:nth-child(1){left:35%;}
+	#contact .con_left .con_cover .sns a:nth-child(2){right:35%;}
+	
+	#contact .con_right{width:100%; height:55%; float:none;}
+}
+@media screen and (max-width:550px){
+	#contact .con_left .con_cover .sns a:nth-child(1){left:20%;}
+	#contact .con_left .con_cover .sns a:nth-child(2){right:20%;}
+}
+@media screen and (max-width:500px){
+	.clothes_left .mirror .eyes{width:15%;}
+	.clothes_right .next_button img{width:40px; height:80px;}
+	.clothes_right .cloth li{top:-3%;}
+	
+	.clothes_right .cloth li:nth-child(1) h2{top:37%; line-height:35px;}
+	.clothes_right .cloth li:nth-child(1) h3.birth{top:51%;}
+	.clothes_right .cloth li:nth-child(1) h3.address{top:61%;}
+	.clothes_right .cloth li:nth-child(1) h3.call{top:71%;}
+	.clothes_right .cloth li:nth-child(2) h2{top:40%;}
+	.clothes_right .cloth li:nth-child(2) p{top:50%;}
+	.clothes_right .cloth li:nth-child(3) h2{top:35%;}
+	.clothes_right .cloth li:nth-child(3) p{top:45%; line-height:20px;}
+}
+@media screen and (max-width:480px){
+	@keyframes skill{0%{top:-200%;} 50%{top:-160%;} 100%{top:-200%;}}
+
+	.m_animate .bike_cover{bottom:28%;}
+	.m_animate .juice_cover{bottom:18%;}
+}
+@media screen and (max-width:450px){
+	#main .main_text p:nth-child(2){top:20%;}
+	#main .main_text p:nth-child(2).on2{opacity:1; top:15%;}
+	
+	#main .main_text p:nth-child(3){top:30%;}
+	#main .main_text p:nth-child(3).on2{opacity:1; top:25%;}
+	
+	#main .main_text p:nth-child(4){top:40%;}
+	#main .main_text p:nth-child(4).on2{opacity:1; top:35%;}
+	
+	#main .main_text p:nth-child(5){top:50%;}
+	#main .main_text p:nth-child(5).on2{opacity:1; top:45%;}
+	
+	#main .main_text p:nth-child(6){top:60%;}
+	#main .main_text p:nth-child(6).on2{opacity:1; top:55%;}
+	
+	#main .main_text p:nth-child(7){top:70%;}
+
+}
+@media screen and (max-width:430px){
+	#contact .con_left .con_cover h1{font-size:20px;}
+	#contact .con_left .con_cover p{font-size:15px;}
+	#contact .con_left .con_cover p:nth-child(3){white-space:nowrap;}
+	
+	.m_animate .bike_cover{width:170px; height:170px;}
+}
+@media screen and (max-width:400px){
+	#main .main_text{top:15%; width:170px;}
+	
+	.clothes_right .cloth li:nth-child(1) h2{font-size:20px; line-height:30px;}
+	.clothes_right .cloth li:nth-child(1) h3{font-size:16px;}
+	.clothes_right .cloth li:nth-child(2) h2{font-size:20px;}
+	.clothes_right .cloth li:nth-child(2) p{font-size:16px;}
+	.clothes_right .cloth li:nth-child(3) h2{font-size:20px;}
+	.clothes_right .cloth li:nth-child(3) p{font-size:16px;}
+	
+	@keyframes skill{0%{top:-210%;} 50%{top:-180%;} 100%{top:-210%;}}
+	.m_three_quart .m_graph h1{font-size:20px;}
+}
+@media screen and (max-width:320px){
+	.clothes_right .cloth li:nth-child(2) p{line-height:25px;}
+	.clothes_right .cloth li:nth-child(3) h2{top:36%;}
+	.clothes_right .cloth li:nth-child(3) p{top:45%; line-height:20px;}
+	
+	@keyframes skill{0%{top:-210%;} 50%{top:-190%;} 100%{top:-210%;}}
+	.m_animate1 > img{bottom:20%;}
+	.m_animate .juice_cover{bottom:30%;}
+}
+	

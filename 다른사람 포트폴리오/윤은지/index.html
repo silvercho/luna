@@ -1,0 +1,580 @@
+<!doctype html/>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/media.css"/>
+	<link rel="shortcut icon" href="./images/favicon.ico"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./js/jquery.mousewheel.min.js"></script>
+	<script src="./js/jquery.easing.1.3.js"></script>
+	<script src="./js/jquery.transform2d.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApZd9hQCcit-GdoIgU5Q0AW5lVxFD6uCk&callback=initMap"
+    ></script>
+	<title>윤은지의 포트폴리오</title>
+</head>
+<body>
+
+<div id="wrap">
+	<div class="header">
+		<h2 class="m_logo"><img src="./images/m_logo.png" alt=""></h2>
+		<div class="m_menu">
+			<div class="m_bar bar1"></div>
+			<div class="m_bar bar2"></div>
+			<div class="m_bar bar3"></div>
+		</div>
+	</div>
+	
+	<!-- 첫번째 페이지 main -->
+	<section id="main">
+		<div class="box">
+			<div class="left_nav nav_cover">
+				<div class="nav video_nav">
+					<video muted loop preload playsinline>
+						<source src="./media/SnowyTrees_2.mp4" type="video/mp4">
+					</video>
+					<h3 id="left_h3">Hello</h3>
+					<p id="left_p">I am interested in work together. - especially ambitious or large projects. However, if you have other request or question, don't hesitate to contact me.</p>
+				</div>
+				<div class="nav hover_nav"></div>
+			</div>
+			<div class="right_nav nav_cover">
+				<div class="nav hover_nav"></div>
+				<div class="nav video_nav">
+					<video muted loop preload playsinline>
+						<source src="./media/Sequence01.mp4" type="video/mp4">
+					</video>
+					<h3 id="right_h3">안녕</h3>
+					<p id="right_p">도시, 겨울에 태어난 사람의 <br>웹디자인 포트폴리오입니다</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!-- 두번째 페이지 work1 -->
+	<section id="work1">
+		<div class="work_box">
+			<div class="circle"><a href="./intro/intro.html"></a></div>
+			<div class="contents">
+				<div class="cont_bg baemin_bg"></div>
+				<div class="cont_theme baemin_theme">
+					<img src="./images/baemin.png" alt="">
+				</div>
+				<div class="cont_info baemin_info">
+					<span class="baemin_info_hori"></span>
+					<span class="baemin_info_verti"></span>
+					<span class="baemin_info_text"><a href="./portfolio/woowa_bro/index.html" target="blank">보러가기</a></span>
+				</div>
+			</div>
+			<div class="name_cover">
+				<div class="name">
+						<span>우아한형제들</span>
+						<span>Woowa Brothers</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 세번째 페이지 work2 -->
+	<section id="work2">
+		<div class="work_box">
+			<div class="circle"><a href="./intro/intro.html"></a></div>
+			<div class="contents">
+				<div class="farms_info">
+					<span class="farms_info_text"><a href="./portfolio/farms/index_dwfarm.html" target="blank">보러가기</a></span>
+				</div>
+				<div class="cont_bg farms_bg"></div>
+				<div class="cont_theme farms_theme">
+					<img src="./images/farms2.png" alt="">
+				</div>
+
+			</div>
+			<div class="name_cover">
+				<div class="name">
+						<span>동원팜스</span>
+						<span>Dongwon Farms</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--네번째 페이지 work3 -->
+	<section id="work3">
+		<div class="work_box">
+			<div class="circle"><a href="./intro/intro.html"></a></div>
+			<div class="contents">
+				<div class="bts_info">
+					<span class="bts_info_text"><a href="./portfolio/BTS/index_bts.html" target="blank">보러가기</a></span>
+				</div>
+				<div class="cont_bg bts_bg"></div>
+				<div class="cont_theme bts_theme">
+					<img src="./images/BTS.png" alt="">
+				</div>
+			</div>
+			<div class="name_cover">
+				<div class="name">
+						<span>방탄소년단</span>
+						<span>BTS</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="work4">
+		<div class="work_box">
+			<div class="circle"><a href="./intro/intro.html"></a></div>
+			<div class="contents">
+				<div class="img_slide">
+					<ul>
+						<li class="on">
+							<img src="./images/pul01.png" alt="">
+							<img src="./images/pul01_gray.png" alt="">
+						</li>
+						<li >
+							<img src="./images/pul02.png" alt="">
+							<img src="./images/pul02_gray.png" alt="">
+						</li>
+						<li>
+							<img src="./images/pul03.png" alt="">
+							<img src="./images/pul03_gray.png" alt="">
+						</li>
+						<li>
+							<img src="./images/pul04.png" alt="">
+							<img src="./images/pul04_gray.png" alt="">
+						</li>
+						<li>
+							<img src="./images/pul05.png" alt="">
+							<img src="./images/pul05_gray.png" alt="">
+						</li>
+						<li>
+							<img src="./images/pul06.png" alt="">
+							<img src="./images/pul06_gray.png" alt="">
+						</li>
+						<li>
+							<img src="./images/pul07.png" alt="">
+							<img src="./images/pul07_gray.png" alt="">
+						</li>
+					</ul>
+					<div class="bookmark"></div>
+				</div>
+				<div class="pul_info">
+					<span class="pul_info_text"><a href="./portfolio/pulmuone/index_pulmuone.html" target="blank">보러가기</a></span>
+				</div>
+			</div>
+			<div class="name_cover">
+				<div class="name">
+						<span>풀무원</span>
+						<span>Pulmuone</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="work5">
+		<div class="work_box">
+			<div class="circle"><a href="./intro/intro.html"></a></div>
+			<div class="contents">
+				<div class="fc_info">
+					<span class="fc_info_text"><a href="./portfolio/fc/index_fc.html" target="blank">보러가기</a></span>
+				</div>
+				<div class="fc_bg"></div>
+				<div class="cont_theme fc_theme">
+					<img src="./images/fc.png" alt="">
+				</div>
+			</div>
+			<div class="name_cover">
+				<div class="name">
+					<span>성남FC</span>
+					<span>Seongnam Football Club</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="works">
+		<div class="work_box">
+			<div class="piece_wrap">
+				<div class="piece" id="vogue">
+					<a href="./portfolio/vogue/index.html" target="blank">
+						<span class="piece_txt vogue_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">01</p>
+							<p class="piece_title">
+								<em>VOGUE</em>
+								<em>3D layout</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic vogue_inner"></span>
+						</span>
+					</a>
+					
+				</div>
+				<div class="piece" id="swatch">
+					<a href="./portfolio/swatch/index.html" target="blank">
+						<span>
+							<span class="piece_pic swatch_inner"></span>
+						</span>
+						<span class="piece_txt swatch_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">02</p>
+							<p class="piece_title">
+								<em>SWATCH</em>
+								<em>parallax</em>
+							</p>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="ironman">
+					<a href="#">
+						<span class="piece_txt ironman_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">03</p>
+							<p class="piece_title">
+								<em>IRONMAN</em>
+								<em>CSS Animation</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic ironman_inner"></span>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="glitch">
+					<a href="#">
+						<span>
+							<span class="piece_pic glitch_inner"><span id="youn">YOUN</span></span>
+						</span>
+						<span class="piece_txt glitch_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">04</p>
+							<p class="piece_title">
+								<em>Glitch</em>
+								<em>CSS Animation</em>
+							</p>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="dialM">
+					<a href="./portfolio/dialM/index_dialM.html" target="blank">
+						<span class="piece_txt dialM_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">05</p>
+							<p class="piece_title">
+								<em>dialM</em>
+								<em>Video website</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic dialM_inner"></span>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="soccer">
+					<a href="./portfolio/soccer/index.html" target="blank">
+						<span>
+							<span class="piece_pic soccer_inner"></span>
+						</span>
+						<span class="piece_txt soccer_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">06</p>
+							<p class="piece_title">
+								<em>SOCCER</em>
+								<em>3D scroll</em>
+							</p>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="submarine">
+					<a href="#">
+						<span class="piece_txt submarine_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">07</p>
+							<p class="piece_title">
+								<em>Submarine</em>
+								<em>CSS Animation</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic submarine_inner"></span>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="hite">
+					<a href="./portfolio/hite/index_hite.html" target="blank">
+						<span>
+							<span class="piece_pic hite_inner"></span>
+						</span>
+						<span class="piece_txt hite_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">08</p>
+							<p class="piece_title">
+								<em>하이트진로</em>
+								<em>Hitejinro</em>
+							</p>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="bubble">
+					<a href="./portfolio/bubble.html" target="blank">
+						<span class="piece_txt bubble_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">09</p>
+							<p class="piece_title">
+								<em>BUBBLE</em>
+								<em>CSS Animation</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic bubble_inner"></span>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="minions">
+					<a href="#">
+						<span>
+							<span class="piece_pic minions_inner"></span>
+						</span>
+						<span class="piece_txt minions_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">10</p>
+							<p class="piece_title">
+								<em>MINIONS</em>
+								<em>CSS Animation</em>
+							</p>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="supermoon">
+					<a href="./portfolio/supermoon/index_supermoon.html" target="blank">
+						<span class="piece_txt supermoon_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">11</p>
+							<p class="piece_title">
+								<em>SUPER MOON</em>
+								<em>Responsive Web</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic supermoon_inner"></span>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="kimchi">
+					<a href="./portfolio/kimchi/index_kimchi.html" target="blank">
+						<span>
+							<span class="piece_pic kimchi_inner"></span>
+						</span>
+						<span class="piece_txt kimchi_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">12</p>
+							<p class="piece_title">
+								<em>세계김치연구소</em>
+								<em>World Institute of Kimchi</em>
+							</p>
+						</span>
+					</a>
+				</div>
+				<div class="piece" id="timepage">
+					<a href="./portfolio/theme_layout/index.html" target="blank">
+						<span class="piece_txt timepage_inner">
+							<span class="piece_hover"></span>
+							<p class="piece_num">13</p>
+							<p class="piece_title">
+								<em>Change <br> over time</em>
+								<em>theme layout</em>
+							</p>
+						</span>
+						<span>
+							<span class="piece_pic timepage_inner"></span>
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class="arrow_s">
+				<img src="./images/arrow_s.png" alt="">
+				<span>scroll</span>
+			</div>
+		</div>
+
+	</section>
+
+
+	<!-- wrap 안에 고정되어 있는 about 메뉴-->
+	<div class="about_box">
+		<div class="about_menu">
+			<span>T</span>
+			<span>U</span>
+			<span>O</span>
+			<span>B</span>
+			<span>A</span>
+		</div>
+
+		<div class="left_about">
+			<div class="horse_bg">
+				<img src="./images/star.png" alt="">
+				<img src="./images/star.png" alt="">
+				<img src="./images/star.png" alt="">
+				<div class="horse_run"></div>
+			</div>
+		</div>
+		<div class="right_about">
+			<div class="introduce">
+				<div class="intro_k">자기소개
+					<div class="intro_e">About me</div>
+				</div>
+			</div>
+			<div class="hello">
+				<p class="hello_k">
+					안녕하세요 웹디자인을 공부하고 있는 윤은지입니다<br> 잘 부탁드립니다
+				</p>
+				<p class="hello_e">
+					Hello My name is Eunji Yoon and I am studying Web Design <br>Please take care of me
+				</p>
+			</div>
+			<div class="cert">
+				<div class="cert_name">
+					<span>자격</span>
+					<span>Certification</span>
+				</div>	
+				<div class="cert_box">
+					<ul>
+						<li>웹디자인기능사</li>
+						<li>GTQ 1급</li>
+						<li>GTQi 1급</li>
+					</ul>
+					<ul>
+						<li>컴퓨터활용능력 1급</li>
+						<li>운전면허 1종</li>
+					</ul>
+				</div>
+			</div>
+			<div class="skills">
+				<div class="skill_name">
+					<span>능력치</span>
+					<span>Ability</span>
+				</div>	
+				<div class="skill">
+					<div class="skillbar" data-percent="88%">
+						<div class="skill_title">HTML5</div>
+						<div class="skill_count">88</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="86%">
+						<div class="skill_title">CSS3</div>
+						<div class="skill_count">86</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="83%">
+						<div class="skill_title">jQuery</div>
+						<div class="skill_count">83</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="90%">
+						<div class="skill_title">Photoshop</div>
+						<div class="skill_count">90</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="92%">
+						<div class="skill_title">Illustrator</div>
+						<div class="skill_count">92</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="70%">
+						<div class="skill_title">Premiere</div>
+						<div class="skill_count">70</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="90%">
+						<div class="skill_title">Stamina</div>
+						<div class="skill_count">90</div>
+						<div class="skill_bar"></div>
+					</div>
+					<div class="skillbar" data-percent="95%">
+						<div class="skill_title">Etiquette</div>
+						<div class="skill_count">95</div>
+						<div class="skill_bar"></div>
+					</div>
+				</div>
+
+			</div>
+			<div class="contact">
+				<div class="contact_name">
+					<span>연락처</span>
+					<span>Contact</span>
+				</div>
+				<div class="m_mail">
+					redtigerv@naver.com
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- wrap 안에 고정되어 있는 getintouch 메뉴-->
+	<div class="touch_box">
+		<div class="touch_menu">
+			<div class="tm_ani" data-text="CONTACT">
+				<span>CONTACT</span>
+			</div>
+		</div>
+		<div class="left_touch">
+			<div class="touch_intro">
+				<div class="intro_cover">연락처
+					<div class="intro_in">Contact me</div>
+				</div>
+			</div>
+			<div class="mail">
+				<div class="NLine">
+					<span>redtigerv@naver.com</span>
+					<div class="dLine"></div>
+					<div class="aLine"></div>
+					<div class="arrow"></div>
+					<div class="mouse_box"></div>
+					<div class="cover_Line"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right_touch">
+			<div id="map_view"></div>
+		</div>
+	</div>
+
+	
+
+	
+</div>
+<h1 class="logo"></h1>
+
+<ul class="pager">
+	<li class="on"><span></span><span></span><span>01</span></li>
+	<li><span></span><span></span><span>02</span></li>
+	<li><span></span><span></span><span>03</span></li>
+	<li><span></span><span></span><span>04</span></li>
+	<li><span></span><span></span><span>05</span></li>
+	<li><span></span><span></span><span>06</span></li>
+	<li><span></span><span></span><span>07</span></li>
+</ul>
+
+
+<div class="modal">
+	<div class="modal_box modal_iron">
+		<iframe src="./portfolio/ironman.html" allowfullscreen=""></iframe>
+	</div>
+	<div class="modal_box modal_subm">
+		<iframe src="./portfolio/submarine.html" allowfullscreen=""></iframe>
+	</div>	
+	<div class="modal_box modal_mini">
+		<iframe src="./portfolio/minions.html" allowfullscreen=""></iframe>
+	</div>
+	<div class="modal_close">
+		<span class="right_x"></span>
+		<span class="left_x"></span>
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

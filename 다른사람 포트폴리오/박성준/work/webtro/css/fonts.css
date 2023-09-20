@@ -1,0 +1,71 @@
+@font-face{
+	font-family:'roboto';
+	font-weight:300;
+	src:url(../fonts/Roboto-regular.woff2) format("woff2");
+	src:url(../fonts/Roboto-regular.ttf) format("truetype");
+	src:url(../fonts/Roboto-regular.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'roboto';
+	font-weight:500;
+	src:url(../fonts/Roboto-Medium.woff2) format("woff2");
+	src:url(../fonts/Roboto-Medium.ttf) format("truetype");
+	src:url(../fonts/Roboto-Medium.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'roboto';
+	font-weight:700;
+	src:url(../fonts/Roboto-Bold.woff2) format("woff2");
+	src:url(../fonts/Roboto-Bold.ttf) format("truetype");
+	src:url(../fonts/Roboto-Bold.eot) format("embedded-opentype");
+}
+@font-face{
+	font-familY:'montserrat';
+	font-weight:700;
+	src:url(../fonts/montserrat-bold.woff2) format("woff2");
+	src:url(../fonts/montserrat-bold.ttf) format("truetype");
+	src:url(../fonts/montserrat-bold.eot) format("embedded-opentype");
+}
+@font-face{
+	font-familY:'montserrat';
+	font-weight:500;
+	src:url(../fonts/montserrat-medium.woff2) format("woff2");
+	src:url(../fonts/montserrat-medium.ttf) format("truetype");
+	src:url(../fonts/montserrat-medium.eot) format("embedded-opentype");
+}
+
+
+@font-face{
+	font-family:'montserrat';
+	font-weight:300;
+	src:url(../fonts/montserrat-regular.woff2) format("woff2");
+	src:url(../fonts/montserrat-regular.ttf) format("truetype");
+	src:url(../fonts/montserrat-regular.eot) format("embedded-opentype");
+}
+
+@font-face{
+	font-familY:'khand';
+	font-weight:500;
+	src:url(../fonts/khand-regular.woff2) format("woff2");
+	src:url(../fonts/khand-regular.ttf) format("truetype");
+	src:url(../fonts/khand-regular.eot) format("embedded-opentype");
+}
+
+@font-face{
+	font-familY:'khand';
+	font-weight:600;
+	src:url(../fonts/khand-bold.woff2) format("woff2");
+	src:url(../fonts/khand-bold.ttf) format("truetype");
+	src:url(../fonts/khand-bold.eot) format("embedded-opentype");
+}
+@font-face{
+	font-family:'Linearicons-Free';
+	src:url(../fonts/Linearicons-Free.woff2) format("woff2");
+	src:url(../fonts/Linearicons-Free.ttf) format("truetype");
+	src:url(../fonts/Linearicons-Free.eot) format("embedded-opentype");
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap');

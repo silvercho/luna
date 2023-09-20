@@ -1,0 +1,235 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+@import url(themeNav.css);
+ 
+/*기본 초기화*/
+* { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+img { border: 0; }
+a { text-decoration: none; outline: 0; color: #555; }
+ 
+ 
+body { font-family: Orbitron, 'Jeju Gothic'; }
+ 
+
+#wrap{
+	position:fixed;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	min-width:1400px;
+	min-height:780px;
+	background-image:url(../images/bg_morning.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	transition:all 2s;
+} 
+ 
+#wrap .logo{
+	position:absolute;
+	width:113px;
+	height:108px;
+	top:30px;
+	left:3%;
+} 
+
+#wrap .logo a{
+	display:block;
+	width:100%;
+	height:100%;
+	background-image:url(../images/logo_b.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+}
+ 
+.gnb{
+	position:fixed;
+	top:50px;
+	right:20%;
+} 
+ 
+.gnb li{
+	float:left;
+	margin:0 10px;
+}
+
+.gnb li a{
+	font-size:14px;
+	font-weight:bold;
+	color:#555;
+}
+ 
+
+.sns{
+	position:fixed;
+	top:50px;
+	right:2%;
+}
+
+.sns li{
+	float:left;
+	margin:0 10px;
+}
+
+.sns li i{
+	font-size:18px;
+	color:#555;
+}
+ 
+article{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	left:3%;
+	width:450px;
+}
+
+article p{
+	font-size:50px;
+	color:#555;
+	text-shadow:1px 1px 1px #aaa;
+	font-family:"Jeju Gothic";
+}
+ 
+article p strong{color:#111;}
+
+article em{
+	font-size:14px;
+	font-style:normal;
+	color:#222;
+	text-shadow:1px 1px 1px #ccc;
+}
+
+#frontFrame{
+	position:absolute;
+	background-image:url(../images/phone_morning.png);
+	width:1226px;
+	height:809px;
+	top:200px;
+	right:-300px;
+	transition:all 2s;
+}
+
+#frontFrame p{
+	position:absolute;
+	top:100px;
+	left:137px;
+	width:540px;
+	height:307px;
+	font-size:60px;
+	font-weight:bold;
+	color:#333;
+	line-height:4.6;
+	box-sizing:border-box;
+	padding-left:50px;
+	overflow:hidden;
+	font-family:"Jeju Gothic";
+}
+
+#frontFrame p span{
+	position:relative;
+	z-index:5;
+}
+
+
+#wrap > img:nth-child(1){
+	position:absolute;
+	top:0;
+	left:-1146px;
+	opacity:0.8;
+	animation:flow1 110s linear infinite;
+}
+
+@keyframes flow1{
+	0%{left:-1146px;}
+	100%{left:1950px;}
+} 
+
+#wrap > img:nth-child(2){
+	position:absolute;
+	top:20px;
+	left:0;
+	animation:flow2 100s linear infinite;
+}
+
+@keyframes flow2{
+	0%{left:0;}
+	50%{left:1950px;opacity:0;}
+	50.001%{left:-1840px;opacity:0.8;}
+	100%{left:0;}
+}
+
+#frontFrame p .cld1{
+	position:absolute;
+	width:600px;
+	top:30px;
+	left:-600px;
+	animation:flow3 110s linear infinite;
+}
+
+@keyframes flow3{
+	0%{left:-600px;}
+	100%{left:540px;}
+}
+
+#frontFrame p .cld2{
+	position:absolute;
+	width:700px;
+	top:20px;
+	left:0;
+	animation:flow4 100s linear infinite;
+}
+
+@keyframes flow4{
+	0%{left:0;}
+	50%{left:540px; opacity:0;}
+	50.001%{left:-700px;opacity:1;}
+	100%{left:0;}
+}
+
+
+#themeChange{
+	position:fixed;
+	width:92%;
+	left:4%;
+	bottom:5%;
+}
+ 
+#themeChange ul li{
+	width:25%;
+	float:left;
+}
+
+#themeChange ul li a{
+	display:block;
+	box-sizing:border-box;
+	width:98%;
+	height:35px;
+	border:1px solid #ccc;
+	color:#ccc;
+	margin:0 auto;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	letter-spacing:5px;
+	text-align:center;
+	opacity:0.6;
+	transition:all 0.6s;
+}
+#themeChange ul li a:hover{
+	background-color:#111;
+	color:#eee;
+	opacity:1;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

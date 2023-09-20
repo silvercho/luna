@@ -1,0 +1,50 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap&subset=korean');
+
+.pop_center .contents{position:absolute; width:80%; height:200px; top:100px; left:50%; transform:translateX(-50%);}
+.pop_center .contents input{width:100%; height:40px; border:1px solid #d0d0d0; margin-bottom:10px; padding:0 10px; box-sizing:border-box;}
+.pop_center .contents input[type=button]{color:#fff; cursor:pointer;}
+	
+.pop_center .contents ul.cf{margin-bottom:35px;}
+.pop_center .contents ul.cf li{width:33.33%; text-align:center;}
+.pop_center .contents ul.cf li a{display:inline-block; padding:0 2px; box-sizing:border-box;}
+.pop_center .contents ul.cf li:hover a{border-bottom:1px solid #333;}
+.pop_center .contents ul.color_666 li{margin-left:5%; width:95%;list-style-type:disc;}
+
+/****************반응형*********************/
+	@media screen and (max-width:420px){
+		.pop_center .contents{width:90%;}
+	}
+	@media screen and (max-width:310px){
+		.pop_center .contents ul.cf li{font-size:12px;}
+	}
+
+/********************사이드 팝업***********************/
+#closed_day{position:absolute; top:100px; right:20px; width:100px; height:300px; background-color:#fff; box-shadow: 0 0 5px #ccc; border-radius:10px; overflow:hidden;}
+.month{position:relative;}
+.np_btn i.np{width:10px; height:10px; background-color:red; display:block; position:absolute; cursor:pointer; z-index:1;}
+.np_btn i.prev{top:10px; left:10px; background:url(../images/month_prev.png) no-repeat center /contain;}
+.np_btn i.next{top:10px; right:10px; background:url(../images/month_next.png) no-repeat center /contain;}
+.month > ul{width:200%; margin-top:10px; position:relative;}
+.month > ul > li{position:absolute; left:50%; width:50%; padding:0 30px; box-sizing:border-box;}
+.month > ul > li.on_month{left:0;}
+.month > ul > li:nth-child(10),
+.month > ul > li:nth-child(11),
+.month > ul > li:nth-child(12){padding:0 25px;}
+
+.month > ul > li > ul{width:80px; position:absolute; right:10px; top:35px;}
+.month > ul > li > ul > li{width:30px; height:30px;  text-align:center; line-height:30px; float:left; margin:8px 5px;}
+.month > ul > li > ul > li.box_dark{background-color:#fff; border:2px solid #0c976d; box-sizing:border-box;}
+.month > ul > li > ul > li.box_light{color:#666;}
+
+.month .ref{position:absolute; bottom:-280px; left:10px; border:1px solid #dfdfdf; padding:5px; border-radius:5px;}
+.month .ref .text:nth-child(2){margin-top:5px;}
+.month .ref .text div{width:10px; height:3px;}
+
+@media screen and (max-width:1400px){
+	#closed_day{right:10px;}
+}
+@media screen and (max-width:1200px){
+	#closed_day{display:none;}
+}
+

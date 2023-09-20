@@ -1,0 +1,100 @@
+@meta charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600&display=swap');
+/*font-family: 'Josefin Sans', sans-serif;*/
+
+#skill{width:100%; height:auto; background-color:#eddfde; font-family: 'Josefin Sans', sans-serif; overflow:hidden;}
+.graph{width:100%; height:30%;}
+.graph .three_quart1{width:33.33%; height:100%; float:left;}
+.graph .three_quart1 h1{height:80px; padding:15px 0; line-height:80px; width:100%; text-align:center; font-size:25px;}
+.graph .illust1 h1{line-height:45px;}
+.graph .three_quart1 .skillbar{width:100%; height:40%; position:relative; overflow:hidden;}
+.graph .three_quart1 .skillbar .skill_bar{position:absolute; top:0; left:0; width:100%; height:100%; background-color:#fff;}
+.graph .three_quart1 .skillbar .skill_bar img{display:block; position:absolute; top:0; left:-100%; width:100%; height:200%; animation:skill 2s linear infinite; background-color:#fff;}
+@keyframes skill{0%{top:-70%;} 50%{top:-30%;} 100%{top:-70%;}}
+.graph .three_quart1 .skillbar .skill_percent{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:30px;}
+
+
+.animate{width:100%; height:70%; position:relative;}
+.animate .three_quart2{width:33.33%; height:100%; float:left; position:relative;}
+.animate .html2{background:url(../images/m_grass.svg) no-repeat bottom /cover;}
+.animate .illust2{background:url(../images/m_illust_bg.svg) no-repeat bottom /cover;}
+.animate .jquery2{background:url(../images/m_juice.svg) no-repeat bottom /cover;}
+
+
+.animate  .bike_cover{width:300px; height:300px; position:absolute; bottom:10%; left:-100%;}
+.animate.on .bike_cover{animation:bike_cover 5s linear forwards;}
+@keyframes bike_cover{0%{left:-20%;}100%{left:100%;}}
+.animate.on .bike_cover .bike{width:100%; height:100%; position:absolute; left:0; top:0;}
+.animate.on  .bike_cover .bike1{animation:bike1 1s linear;}
+@keyframes bike1{0%{opacity:1;}99%{opacity:1;}100%{opacity:0;}}
+.animate.on  .bike_cover .bike2{animation:bike1 1.6s 1s linear; opacity:0;}
+@keyframes bike2{0%{opacity:1;}99%{opacity:1;}100%{opacity:0;}}
+.animate.on  .bike_cover .bike3{animation:bike1 1.6s 2.5s linear; opacity:0;}
+@keyframes bike3{0%{opacity:1;}99%{opacity:1;}100%{opacity:0;}}
+.animate.on  .bike_cover .bike4{animation:bike1 1.6s 3.8s linear; opacity:0;}
+@keyframes bike4{0%{opacity:1;}99%{opacity:1;}100%{opacity:0;}}
+
+.bike_cover .bike li{width:100%; height:100%; position:absolute; left:0; top:0;}
+.bike_cover .bike li img{width:100%; height:100%; position:absolute; left:0; top:0;}
+
+
+.grass_cover{position:absolute; bottom:5%; left:0; width:30%; height:20%;}
+.grass_cover img{width:auto; height:100%; animation:grass 2s linear infinite;}
+@keyframes grass{0%{transform:translateX(0%);}50%{transform:translateX(2%);}100%{transform:translateX(0%);}}
+.rain_cover{position:absolute; top:20%; left:50%; transform:translateX(-50%); width:30%; height:60%; animation:rain 2s linear infinite;}
+@keyframes rain{0%{transform:translate(-50%,0%);}50%{transform:translate(-50%,3%);}100%{transform:translate(-50%,0%);}}
+.rain_cover img{width:auto; height:100%;  display:none;}
+
+.rain_cover img:first-child{display:block;}
+.juice_cover{position:absolute; bottom:10%; left:58%; width:30%; height:50%;}
+.juice_cover img{width:auto; height:100%; display:none;}
+
+
+/*****************************work*************************************/
+#work{width:100%; height:auto; background:#000 url(../images/work.svg) no-repeat center /contain; position:relative; overflow:hidden;}
+
+
+#work{width:100%; height:auto; background-color:#000; position:relative; }
+#work .shop{width:100%; height:100%; position:absolute; top:0; left:0;}
+#work .shop.on{background-color:#eddfde; }
+#work .shop img{width:100%; height:100%; position:absolute; left:0; top:50%; transform:translateY(-50%); opacity:0;}
+#work .shop img.on4{opacity:1;}
+
+#work .w_hover{width:20%; height:20%; border-radius:10px; z-index:10; position:absolute;transform:translate(-50%,-50%);}
+#work .w_hover a{width:100%; height:100%; display:block;}
+#work .work1{top:35%; left:18.5%; }
+#work .work2{top:23%; left:48.5%;}
+#work .work3{top:35%; right:4.5%;}
+#work .work4{bottom:15%; right:0%;}
+#work .work5{bottom:-15.5%; left:30%;}
+#work .work6{bottom:0%; right:31%;}
+
+/*****************************contact*************************************/
+
+#contact{width:100%; height:auto; background-color:#EEB193; font-family: 'Josefin Sans', sans-serif;}
+#contact .con_left{width:50%; height:100%; float:left; text-align:center; position:relative;}
+#contact .con_left .con_cover{width:80%; height:50%; position:absolute; top:50%; right:0%; transform:translateY(-50%);}
+#contact .con_left .con_cover h1{font-size:50px; padding-bottom:8%;}
+#contact .con_left .con_cover p{font-size:30px; padding:2% 0; }
+#contact .con_left .con_cover .sns{margin:0 auto; margin-top:5%; width:100%; border-top:1px solid #000; position:relative; height:25%;}
+#contact .con_left .con_cover .sns a{display:block; width:60px; height:60px; overflow:hidden; position:absolute; top:50%; transform:translateY(-50%);}
+#contact .con_left .con_cover .sns a:nth-child(1){left:30%;}
+#contact .con_left .con_cover .sns a:nth-child(2){right:30%;}
+#contact .con_left .con_cover .sns a img{width:120px; height:auto; position:absolute; top:0; left:0;}
+
+#contact .con_left .con_cover .sns a:hover img{transform:translateX(-50%);}
+
+
+#contact .con_right{width:50%; height:100%; float:right; position:relative;}
+#contact .con_right .me_animation{width:80%; height:80%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+#contact .con_right .me_animation img{width:100%; height:100%; position:absolute; top:0; left:0;}
+#contact .con_right .me_animation img:nth-child(2){opacity:0;}
+#contact .con_right .me_animation.on5 img:nth-child(2){animation:mirror 2s 0.5s linear infinite;}
+@keyframes mirror{0%{opacity:0;}20%{opacity:1;}80%{opacity:1;}100%{opacity:0;}}
+#contact .con_right .me_animation.on5 img:nth-child(4){animation:eyebrow 1s 0.5s linear infinite;}
+@keyframes eyebrow{0%{top:0;}50%{top:2px;}100%{top:0;}}
+#contact .con_right .me_animation.on5 img:nth-child(5){animation:arm 1s 0.5s linear infinite;}
+@keyframes arm{0%{transform:rotate(-2deg);}50%{transform:rotate(2deg);}100%{transform:rotate(-2deg);}}
+#contact .con_right .me_animation img:nth-child(6){opacity:0;}
+#contact .con_right .me_animation.on5 img:nth-child(6){animation:word 2s 0.5s linear infinite;}
+@keyframes word{0%{opacity:0;}20%{opacity:1;}80%{opacity:1;}100%{opacity:0;}}

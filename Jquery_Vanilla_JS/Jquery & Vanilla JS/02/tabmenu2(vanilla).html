@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="tabmenu2(vanilla).js" defer></script>	
+
+<style>
+*{margin:0;padding:0;}
+.tab{
+	width:280px;
+	height:160px;
+	border:1px solid #333;
+}
+.tab_menu{
+	height:40px;
+	line-height:40px;list-style:none;
+}
+.tab_menu li{float:left;width:70px;text-align:center;}
+.tab_menu li.on{background-color:red;font-weight:bold;color:#fff;}
+
+.tab_list ul{
+	display:none;
+}
+
+.tab_list ul.on{
+	display:block;
+}
+</style>
+
+
+
+	
+</head>
+<body>
+<div class="tab">
+	<ul class="tab_menu">
+		<li class="on">공지사항</li>
+		<li>알림마당</li>
+		<li>보도자료</li>
+		<li>채용정보</li>
+	</ul>
+	<div class="tab_list">
+		<ul class="on">
+			<li>공지사항입니다.</li>
+			<li>공지사항입니다.</li>
+			<li>공지사항입니다.</li>
+			<li>공지사항입니다.</li>
+		</ul>
+		<ul>
+			<li>알림마당입니다.</li>
+			<li>알림마당입니다.</li>
+			<li>알림마당입니다.</li>
+			<li>알림마당입니다.</li>
+		</ul>
+		<ul>
+			<li>보도자료입니다.</li>
+			<li>보도자료입니다.</li>
+			<li>보도자료입니다.</li>
+			<li>보도자료입니다.</li>
+		</ul>
+		<ul>
+			<li>채용정보입니다.</li>
+			<li>채용정보입니다.</li>
+			<li>채용정보입니다.</li>
+			<li>채용정보입니다.</li>
+		</ul>
+		
+	
+	</div>
+</div>	
+	
+</body>
+</html>

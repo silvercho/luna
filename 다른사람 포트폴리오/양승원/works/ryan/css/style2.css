@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+body{
+	background-color:#383e5d;
+}
+.ryan{
+	width:400px;
+	height:380px;
+	margin:50px auto;
+	/* border-radius:1px solid #fff; */
+	position:relative;
+}
+.ryan .face{
+	position:absolute;
+	width:400px;
+	height:367px;
+	background-color:#d59729;
+	border:10px solid #000;
+	box-sizing:border-box;
+	border-radius:50%;
+	bottom:0;
+}
+.ryan .ear{
+	position:absolute;
+	width:92px;
+	height:92px;
+	border:10px solid #000;
+	box-sizing:border-box;
+	background-color:#d59729;
+	border-radius:50%;
+	top:0;
+}
+/*그냥 left가 아니라 ear클래스안에 있는 left(성같은거)띄어쓰면 안됨 붙여서 쓰기*/
+.ryan .ear.left{
+	left:54px;
+}
+.ryan .ear.right{
+	right:54px;
+}
+.ryan .face .eyebrow{
+	position:absolute;
+	width:78px;
+	height:14px;
+	border-radius:7px;
+	background-color:#000;
+	top:106px;
+	transition:all 0.2s;
+}
+.ryan .face .eyebrow.left{
+	left:68px;
+}
+.ryan .face .eyebrow.right{
+	right:68px;
+}
+.ryan .face .eye{
+	position:absolute;
+	width:26px;
+	height:26px;
+	background-color:#000;
+	border-radius:50%;
+	top:147px;
+	transition:all 0.2s;
+}
+.ryan .face .eye.left{
+	left:98px;
+}
+.ryan .face .eye.right{
+	right:98px;
+}
+.ryan .face .nose{
+	position:absolute;
+	top:184px;
+	width:32px;
+	height:33px;
+	left:50%;
+	transform:translateX(-50%);
+	background-color:#000;
+	border-radius:80% 80% 100% 100%;
+	z-index:5;
+}
+.ryan .face .mouth{
+	position:absolute;
+	top:191px;
+	width:73px;
+	height:68px;
+	background-color:#000;
+	border-radius:50%;
+	box-sizing:border-box;
+}
+.ryan .face .mouth.left{
+	left:129px;
+}
+.ryan .face .mouth.right{
+	right:129px;
+}
+.ryan .face .mouth:after{
+	content:'';
+	display:block;
+	width:53px;
+	height:48px;
+	background-color:#fff;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	border-radius:50%;
+	z-index:1;
+}
+.ryan:hover .eyebrow.left{
+	position:absolute;
+	top:96px;
+	left:58px;
+	transform:rotate(-10deg);
+}
+.ryan:hover .eyebrow.right{
+	position:absolute;
+	top:96px;
+	right:74px;
+	transform:rotate(10deg);
+}
+.ryan:hover .eye.left{
+	position:absloute;
+	top:130px;
+	left:88px;
+}
+.ryan:hover .eye.right{
+	position:absloute;
+	top:130px;
+	right:108px;
+}
+.ryan:hover .nose{
+	position:absloute;
+	top:174px;
+	left:47%;
+	transform:translateX(-47%);
+}
+.ryan:hover .mouth.left{
+	position:absloute;
+	top:181px;
+	left:119px;
+}
+.ryan:hover .mouth.right{
+	position:absloute;
+	top:181px;
+	right:139px;
+}
+.ryan:hover .eye:before{
+	content:'';
+	display:block;
+	width:60px;
+	height:20px;
+	border-radius:50%;
+}
+.ryan:hover .eye.left:before{
+	box-shadow:-60px 45px 0 0 #F5A9BC;
+}
+.ryan:hover .eye.right:before{
+	box-shadow:30px 45px 0 0 #F5A9BC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

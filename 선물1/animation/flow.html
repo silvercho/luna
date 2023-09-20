@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title> jQuery </title>
+		<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+		<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.easing.js"></script>
+
+		<!-- 스타일 -->
+		<style type="text/css">
+		#wrap { width:100%; }
+
+		.contact_wrap { position:relative; padding-top:65px; }
+		.nav { position:absolute; left:10px; top:10px; }
+		.water_flow { width:100%; height:683px; overflow:hidden; }
+		.water_flow div { width:5181px; height:683px; overflow:hidden; }
+		.water_flow div a { float:left; display:block; cursor:default; }
+		.water_flow div a img { width:1727px; height:683px; /*margin-right:10px;*/ }
+
+		@media screen and (max-width:950px) {
+			#wrap { width:96%; }
+		}
+		</style>
+		<!-- // 스타일 -->
+
+	</head>
+	<body>
+
+		<a href="../index-2.html" class="home">Home</a>
+		<div id="wrap">
+			<div class="contact_wrap">
+				<div class="nav">
+					<button onClick="moveType=0;">왼쪽으로</button>  
+					<button onClick="moveType=1;">오른쪽으로</button>  
+					<button onClick="movePause=true;">일시정지</button>  
+					<button onClick="goMove();">움직이기</button>  
+				</div>
+				<div class="water_flow">
+					<div>
+						<a href="javascript:void(0)"><img src="img/water_flow.png" alt="" /></a>
+						<a href="javascript:void(0)"><img src="img/water_flow.png" alt="" /></a>
+						<a href="javascript:void(0)"><img src="img/water_flow.png" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			<!-- // contact_wrap -->
+		</div>
+		<!-- // wrap -->
+
+		<!-- 스크립트 -->
+		<script type="text/javascript">
+		// moveType (0:left / 1:right) 
+		var moveType = 0; 
+		// 이동시간간격 3초 
+		var moveSpeed = 3000; 
+		// 움직이는 작업중 다시 명령 받지 않음 
+		var moveWork = false; 
+		// 일시정지 flag 
+		var movePause = false; 
+
+		function imgMove(){ 
+			if(moveWork==false){ 
+				// 0d\일경우 left방향 
+				if(moveType==0){ 
+					// 맨처음 이미지의 폭 
+					var aWidth = $(".water_flow > div > a:first").width(); 
+					// 롤링마지막에 맨처음의 a태그 추가 
+					$(".water_flow > div").append("<a href=\""+$(".water_flow > div > a:first").attr("href")+"\">" + $(".water_flow > div > a:first").html()+ "</a>");
+					// 맨처음이미지를 왼쪽으로 이동시킨다. 
+					$(".water_flow > div > a:first").animate(
+						{
+							marginLeft: -aWidth
+						},
+						{
+							duration: moveSpeed,
+							step: function(){ 
+								// 이동중 만약 일시정지 flag가 true라면 
+								if(movePause==true){
+									// 이동을 멈춘다
+									$(this).stop();
+								}
+							},
+							easing: 'linear', // 동일한 속도로 흐르게한다.
+							complete: function(){ 
+								// 이동을 마친후 첫번째 a태그를 지워버린다.
+								$(this).remove(); 
+								// 이미지 움직이는것을 다시 실행 
+								imgMove(); 
+							}
+						}
+					);
+				}else{
+					// 마지막 a태그의 폭 
+					var aWidth = $(".water_flow > div > a:last").width();
+					// a태그 앞에 마지막의 a태그를 생성한다 단 스타일은 마지막 a태그의 폭만큼 빼준다.
+					$("<a href=\"" + $(".water_flow > div > a:last").attr("href")+ "\" style=\"margin-left:-" + aWidth + "px\">" + $(".water_flow > div > a:last").html()+ "</a>").insertBefore(".water_flow > div > a:first");
+					// 맨처음 a태그의 margin-left를 다시 0으로 맞춰준다.
+					$(".water_flow > div > a:first").animate(
+						{
+							marginLeft: 0
+						},
+						{
+							duration: moveSpeed,
+							step: function(){
+								// 이동중 만약 일시정지 flag가 true라면
+								if(movePause==true){
+									// 이동을 멈춘다.
+									$(this).stop(); 
+								}
+							},
+							easing: 'linear', // 동일한 속도로 흐르게한다.
+							complete:function(){ 
+								// 이동을 마친후 마지막 a태그를 지워버린다.
+								$(".water_flow > div > a:last").remove();
+								// 이미지 움직이는것을 다시 실행
+								imgMove(); 
+							}
+						}
+					);
+				}
+			}
+		}
+		function goMove(){ 
+			// 일시정지가 풀려있을 경우를 대비하여 일시정지를 풀러준다 
+			movePause=false;
+			// 0d\일경우 left방향
+			if(moveType==0){ 
+				imgMove(); 
+			}else{ 
+				$(".water_flow > div > a:first").animate(
+					{
+						marginLeft: 0
+					},
+					{
+						duration: moveSpeed,
+						step: function(){
+							// 이동중 만약 일시정지 flag가 true라면 
+							if(movePause==true){ 
+								// 이동을 멈춘다 
+								$(this).stop();
+							}
+						},
+						easing: 'linear', // 동일한 속도로 흐르게한다.
+						complete:function(){ 
+							// 이동을 마친후 마지막 a태그를 지워버린다 
+							//$(".water_flow > div > a:last").remove(); 
+							// 이미지 움직이는것을 다시 실행 
+							imgMove(); 
+						}
+					}
+				);
+			}
+		}
+		imgMove(); 
+		</script>
+		<!-- // 스크립트 -->
+
+	</body>
+
+</html>

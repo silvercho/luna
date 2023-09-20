@@ -1,0 +1,103 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap&subset=korean');
+/**************************sub1******************************/
+ul.order{margin:50px 0 0 30px;}
+ul.order li{width:100px; height:40px; background-color:#d9e0de; border-radius:5px; text-align:center; line-height:35px; box-sizing:border-box; float:left; border:2px solid #fff;}
+ul.order li.order_on{background-color:#fff;}
+ul.order li.bar{width:20px; height:1px; border:0; background-color:#fff;  margin-top:20px;}
+
+article.member{clear:both; background-color:#fff; padding:20px 20px 40px; margin-top:30px; box-sizing:border-box; margin-bottom:50px;}
+article.member h2{padding-bottom:10px; font-size:20px;}
+article.member > ul > li{list-style:circle inside; line-height:24px; font-size:14px;}
+article.member > ul > li > ul{padding-left:20px;}
+
+.fourteen{width:45%; border:2px solid #e0e0e0; box-sizing:border-box; margin:40px 2% 0; border-radius:10px;}
+.fourteen h3{padding:10px; text-align:center;}
+.fourteen > p{padding:5px 10px 10px; text-align:center;}
+.fourteen .button{width:80%; height:40px; line-height:40px; background-color:#0c976d; margin:5px auto 20px; text-align:center;}
+.fourteen .button a{color:#fff; display:block; width:100%; height:100%;}
+/*******************반응형 시작*******************/
+	@media screen and (max-width:515px){
+		ul.order{width:400px; margin:50px auto 0;}
+		ul.order li{width:80px; height:40px; font-size:14px;}
+		
+		article.member h2{font-size:16px; padding:20px 20px 20px 0;}
+		article.member ul li{letter-spacing:-1px; font-size:12px; line-height:20px;}
+		.fourteen{margin:25px 2% 0;}
+		.fourteen h3{font-size:16px;}
+		.fourteen > p{font-size:12px;}
+		.fourteen .button{font-size:14px;}
+	}
+	@media screen and (max-width:435px){
+		ul.order{width:100%; margin:50px 0 0 10px;}
+		ul.order li{width:20%; height:60px;}
+		ul.order li p{width:30px; line-height:18px; margin:0 auto;}
+		ul.order li:nth-child(3) p,
+		ul.order li:nth-child(5) p{margin-top:10px;}
+		
+		.fourteen{float:none; width:100%;}
+	}
+	@media screen and (max-width:330px){
+		ul.order li.bar{width:10px;}
+	}
+
+
+/**************************sub2******************************/
+
+.enrol_search{width:555px;}
+.enrol_search select{width:80px;}
+
+.enrol_board table.board_list tbody tr td{line-height:30px;}
+.enrol_board table.board_list tbody tr td:nth-child(2){text-align:center; padding-left:0px;}
+
+.enrol_paging{width:120px;}
+
+/*******************반응형 시작*******************/
+	@media screen and (max-width:940px){
+		.enrol_board table.board_list thead tr th:nth-child(2),
+		.enrol_board table.board_list thead tr th:nth-child(3),
+		.enrol_board table.board_list thead tr th:nth-child(4){display:none;}
+
+		.enrol_board table.board_list tbody tr td:nth-child(2),
+		.enrol_board table.board_list tbody tr td:nth-child(3),
+		.enrol_board table.board_list tbody tr td:nth-child(4){display:none;}
+	}
+	@media screen and (max-width:920px){
+		.enrol_board table.board_list thead tr th:nth-child(1),
+		.enrol_board table.board_list thead tr th:nth-child(5){display:table-cell;}
+		
+		.enrol_board table.board_list tbody tr td:nth-child(1),
+		.enrol_board table.board_list tbody tr td:nth-child(5){display:table-cell;}
+	}
+	@media screen and (max-width:840px){
+		.enrol_search{width:296px;}
+		.enrol_search select{width:92.5px; margin-bottom:3px;}
+	}
+	@media screen and (max-width:500px){
+		.enrol_search{width:80%;}
+		.enrol_search select{width:31.3%; margin-right:3%;}
+		.enrol_search select:nth-child(3){margin-right:0px;}
+
+		.enrol_board table.board_list tbody tr td:nth-child(5),
+		.enrol_board table.board_list tbody tr td:nth-child(6){width:60px;}
+	}
+	@media screen and (max-width:380px){
+		.enrol_board table.board_list tbody tr td:nth-child(1){width:100px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display:block; margin:18px auto 0;}
+	}
+	@media screen and (max-width:330px){
+		.enrol_board table.board_list tbody tr td:nth-child(1){width:80px;}
+	}
+/*******************반응형 끝*******************/
+
+
+
+
+
+
+
+
+
+
+
+
+

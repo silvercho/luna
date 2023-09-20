@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>portfolio tip11 : Simple Lightbox</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="css/simplelightbox.min.css">
+<style>
+/* line 1, ../sass/demo.scss */
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", serif;
+	background: #fff;
+}
+
+/* line 8, ../sass/demo.scss */
+* {
+	box-sizing: border-box;
+}
+
+/* line 12, ../sass/demo.scss */
+a {
+	color: #4ab19a;
+}
+
+/* line 16, ../sass/demo.scss */
+.clear {
+	clear: both;
+	float: none;
+	width: 100%;
+}
+
+/* line 22, ../sass/demo.scss */
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+	max-width: 1170px;
+}
+
+/* line 32, ../sass/demo.scss */
+.container .gallery a img {
+	position: relative;
+	float: left;
+	width: 20%;
+	height: auto;
+	border: 2px solid #fff;
+	-webkit-transition: -webkit-transform 0.3s ease;
+	transition: transform 0.3s ease;
+}
+
+/* line 46, ../sass/demo.scss */
+.container .gallery a:hover img {
+	z-index: 5;
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+/* line 57, ../sass/demo.scss */
+.container .gallery a.big img {
+	width: 40%;
+}
+
+/* line 65, ../sass/demo.scss */
+.align-center {
+	text-align: center;
+}
+
+/* modify */
+.sl-overlay {
+	background: #000;
+	opacity: 0.5;
+}
+.sl-wrapper .sl-counter {
+	color: #fff;
+}
+.sl-wrapper .sl-close,
+.sl-wrapper .sl-navigation button {
+	color: #fff;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+<script>
+$(function(){
+	var $gallery=$(".gallery a").simpleLightbox();
+
+	$gallery.on("show.simplelightbox", function(){
+		console.log("Requested for showing");
+	})
+	.on("shown.simplelightbox", function(){
+		console.log("Shown");
+	})
+	.on("close.simplelightbox", function(){
+		console.log("Requested for closing");
+	})
+	.on("closed.simplelightbox", function(){
+		console.log("Closed");
+	})
+	.on("change.simplelightbox", function(){
+		console.log("Requested for change");
+	})
+	.on("next.simplelightbox", function(){
+		console.log("Requested for next");
+	})
+	.on("prev.simplelightbox", function(){
+		console.log("Requested for prev");
+	})
+	.on("nextImageLoaded.simplelightbox", function(){
+		console.log("Next image loaded");
+	})
+	.on("prevImageLoaded.simplelightbox", function(){
+		console.log("Prev image loaded");
+	})
+	.on("changed.simplelightbox", function(){
+		console.log("Image changed");
+	})
+	.on("nextDone.simplelightbox", function(){
+		console.log("Image changed to next");
+	})
+	.on("prevDone.simplelightbox", function(){
+		console.log("Image changed to prev");
+	})
+	.on("error.simplelightbox", function(e){
+		console.log("No image found, go to the next/prev");
+		console.log(e);
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="container">
+	<div class="gallery">
+		<a href="images/image1.jpg" class="big"><img src="images/thumbs/thumb1.jpg" alt="" title="Beautiful Image"></a>
+		<a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title=""></a>
+		<a href="images/image3.jpg"><img src="images/thumbs/thumb3.jpg" alt="" title="Beautiful Image"></a>
+		<a href="images/image4.jpg"><img src="images/thumbs/thumb4.jpg" alt="" title=""></a>
+		<div class="clear"></div>
+
+		<a href="images/image5.jpg"><img src="images/thumbs/thumb5.jpg" alt="" title=""></a>
+		<a href="images/image6.jpg"><img src="images/thumbs/thumb6.jpg" alt="" title=""></a>
+		<a href="images/image7.jpg" class="big"><img src="images/thumbs/thumb7.jpg" alt="" title=""></a>
+		<a href="images/image8.jpg"><img src="images/thumbs/thumb8.jpg" alt="" title=""></a>
+		<div class="clear"></div>
+
+		<a href="images/image9.jpg" class="big"><img src="images/thumbs/thumb9.jpg" alt="" title=""></a>
+		<a href="images/image10.jpg"><img src="images/thumbs/thumb10.jpg" alt="" title=""></a>
+		<a href="images/image11.jpg"><img src="images/thumbs/thumb11.jpg" alt="" title=""></a>
+		<a href="images/image12.jpg"><img src="images/thumbs/thumb12.jpg" alt="" title=""></a>
+		<div class="clear"></div>
+</div>
+</body>
+</html>

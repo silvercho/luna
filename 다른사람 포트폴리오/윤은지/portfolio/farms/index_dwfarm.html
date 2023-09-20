@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="./css/style_dwfarm.css">
+	<link rel="stylesheet" href="./css/media.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>Dongwon Farms</title>
+	<script>
+
+
+	
+	$(function(){
+	
+		var m = null;
+		var k = 0;
+		$(".pager li").on("click",slide);
+		
+		
+		function slide(){
+			
+			m = $(this).index();
+			
+			if(m==k) return;
+			
+			$(".pager li").off("click");
+			
+			if(m>k){
+				$("section .img_slide").eq(m).stop().css("top","100%").animate({
+					"top": "0"
+				},600);
+				
+				$("section .img_slide").eq(k).stop().css("top","0%").animate({
+					"top": "-100%"
+				},600,function(){
+					$(".pager li").on("click",slide);
+				});
+			}else if(m<k){
+				$("section .img_slide").eq(m).stop().css("top","-100%").animate({
+					"top":"0"
+				},600);
+				$("section .img_slide").eq(k).stop().css("top","0%").animate({
+					"top":"100%"
+				},600,function(){
+					$(".pager li").on("click",slide);
+				});
+			}
+			
+			$(".pager li").removeClass("on");
+			$(this).addClass("on");
+			
+			k = m;
+			
+			return false;
+		}
+		
+		var n = null;
+		var j = 0;
+
+		
+		$(".manage_cover .btn ol li").click(function(){
+			
+			n = $(this).index();
+			
+			if(n==j) return;
+			
+			if(n>j){
+				$(".manage_cover ul li").eq(n).stop().css("left","100%").animate({
+					"left":"0"
+				},600);
+				
+				$(".manage_cover ul li").eq(j).stop().css("left","0").animate({
+					"left":"-100%"
+				},600);
+			}else if(n<j){
+				$(".manage_cover ul li").eq(n).stop().css("left","-100%").animate({
+					"left":"0"
+				},600);
+				$(".manage_cover ul li").eq(j).stop().css("left","0").animate({
+					"left":"100%"
+				},600);
+			}			
+			
+			$(".manage_cover .btn ol li").removeClass("on");
+			$(this).addClass("on");
+			
+			j = n;
+			
+			return false;		
+		});	
+		
+		
+		$(".arrow").click(function(){
+			var a = $(window).height();
+			
+			$("html, body").stop().animate({
+				"scrollTop":a
+			},1300);
+
+		});
+		
+	});
+
+	</script>
+</head>
+<body>
+<!--<div id="wrap"> -->
+	<section>
+			<div class="img_slide img_a">
+				<div class="txt">
+					<h2>축산업의 새로운 미래</h2>
+					<h3>'하이트 동원팜'이 앞장섭니다</h3>
+				</div>
+			</div>
+			<div class="img_slide img_b">	
+				<div class="txt">
+					<h2>건강한 먹거리를 위한 약속</h2>
+					<h3>'하이트 동원팜'이 함께 합니다</h3>
+				</div>
+			</div>
+			<div class="img_slide img_c">
+				<div class="txt">
+					<h2>선진화된 기술력, </h2>
+					<h3>'하이트 동원팜'이 제공해요</h3>
+				</div>
+			</div>
+			<div class="img_slide img_d">
+				<div class="txt">
+					<h2>지도를 거꾸로 보면</h2>
+					<h3>한국인의 미래가 보인다</h3>
+				</div>
+			</div>		
+	</section>
+	
+	<ul class="pager">
+		<li class="on"><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+	</ul>
+
+	<div class="arrow"><a href="#"></a></div>
+	
+	<header>
+		<h1 class="logo">
+			<a href="#"><img src="./images/img_logo.png" alt=""/></a>
+		</h1>
+		<ul class="gnb cf">
+			<li><a href="#">회사소개</a>
+				<ul>
+					<li><a href="#">About</a></li>
+					<li><a href="#">CEO메시지</a></li>
+					<li><a href="#">비전</a></li>
+					<li><a href="#">연혁</a></li>
+					<li><a href="#">품질경영</a></li>
+					<li><a href="#">전자공고</a></li>
+				</ul>
+			</li>
+			<li><a href="#">제품소개</a>
+				<ul>
+					<li><a href="#">전체</a></li>
+					<li><a href="#">낙농</a></li>
+					<li><a href="#">비육</a></li>
+					<li><a href="#">양돈</a></li>
+					<li><a href="#">양계</a></li>
+					<li><a href="#">특수</a></li>
+				</ul>
+			</li>
+			<li><a href="#">News&amp;PR</a>
+				<ul>
+					<li><a href="#">뉴스 &amp; 공지</a></li>
+					<li><a href="#">홍보자료</a></li>
+					<li><a href="#">홍보영상</a></li>
+				</ul>
+			</li>
+			<li><a href="#">인재채용</a>
+				<ul>
+					<li><a href="#">인재상</a></li>
+					<li><a href="#">복리후생</a></li>
+					<li><a href="#">동원그룹 채용 FAQ</a></li>
+					<li><a href="#">동원그룹 채용공지</a></li>
+				</ul>
+			</li>
+			<li><a href="#">고객센터</a>
+				<ul>
+					<li><a href="#">자주 묻는 질문</a></li>
+					<li><a href="#">문의접수</a></li>
+					<li><a href="#">오시는 길</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="eng">
+			<a href="#">
+				<span>English</span>
+				<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+			</a>
+		</div>
+		
+		<div class="bars">
+			<div class="bar bar1"></div>
+			<div class="bar bar2"></div>
+			<div class="bar bar3"></div>
+		</div>
+	</header>
+
+	<aside>
+		<ul>
+			<li data-hover="낙농">
+				<a href="#">
+					<span class="pic1"></span>
+					<span class="exp">
+					<span>낙농</br>무항생제, 친환경 사료로 건강한 소를</br>키울 수 있단다</span>
+					</span>	
+					<span class="pic2"><span class="pic2_in"></span></span>
+				</a>
+			</li>
+			<li data-hover="비육">
+				<a href="#">
+					<span class="pic1"></span>
+					<span class="exp">
+						<span>비육</br>하이트동원팜 비육사료는 최대의 육량과</br>육질을 기대할 수 있다능</span>
+					</span>
+					<span class="pic2"><span class="pic2_in"></span></span>
+				</a>
+			</li>
+			<li data-hover="양돈">
+				<a href="#">
+					<span class="pic1"></span>
+					<span class="exp">
+						<span>양돈</br>엄선된 원료와 최신 기술로 최고의</br>제품을 생산하고 있네</span>
+					</span>
+					<span class="pic2"><span class="pic2_in"></span></span>
+				</a>
+			</li>
+			<li data-hover="양계">
+				<a href="#">
+					<span class="pic1"></span>
+					<span class="exp">
+						<span>양계</br>천연항생 물질 첨가로 가축의 스트레스를</br>방지하고 생산성을 향상시켜줘요</span>
+					</span>
+					<span class="pic2"><span class="pic2_in"></span></span>
+				</a>
+			</li>
+			<li data-hover="특수">
+				<a href="#">
+					<span class="pic1"></span>
+					<span class="exp">
+						<span>특수</br>하이트동원팜 특수사료는 각종 영양소를</br>충분히 배합한 고급 영양식이닷</span>
+					</span>
+					<span class="pic2"><span class="pic2_in"></span></span>
+				</a>
+			</li>
+			<li data-hover="담당자">
+				<a href="#">
+					<span class="pic1"></span>
+					<span class="exp">
+						<span>Contact</br>해당 카테고리에 대한 담당자를</br>확인해주떼여</span>
+					</span>
+					<span class="pic2"><span class="pic2_in"></span></span>
+				</a>
+			</li> 
+		</ul>
+	</aside>
+
+<!--</div>-->
+<div id="wrap2">
+
+
+
+	<div class="product">
+		<div class="product_cover">
+			<h3>하이트 동원팜스에서 파는 상품을 소개합니다
+				<i class="fa fa-sign-language" aria-hidden="true"></i>
+			</h3>
+			<div class="product_box cf">
+				<div class="pro pro1">
+					<a	href="#"><span>참∼어린 오리C</span></a>
+				</div>
+				<div class="pro pro2">
+					<a href="#"><span>한우 고급육을 위한</br>퍼팩트 1호!</span></a>
+				</div>
+				<div class="pro pro3">
+					<a href="#"><span>드 림 염 소</span></a>
+				</div>
+				<div class="pro pro4">
+					<a href="#"><span>스페셜+드림 고올드</span></a>
+				</div>
+				<div class="pro pro5">
+					<a href="#"><span>스페셜+드림 쁘라스</span></a>
+				</div>
+				<div class="pro pro6">
+					<a href="#"><span>유레카우</br>플러스</span></a>
+				</div>
+				<div class="pro pro7">
+					<a href="#"><span>Switching</br>스위칭</span></a>
+				</div>
+				<div class="pro pro8">
+					<a href="#"><span>성장 극대화를 위한</br>더 드림</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="manage">
+		<div class="manage_cover">
+			<h3>하이트 동원팜 품질경영
+				<i class="fa fa-cog" aria-hidden="true"></i>
+			</h3>
+			<ul>
+				<li>
+					<a href="#">
+						<span class="manage_left"></span>
+						<span class="manage_right">
+							<p>
+							<strong>고객</strong>은 우리의 <strong>스승</strong>이다
+							<i class="fa fa-book" aria-hidden="true"></i>
+							</p>
+							<p>
+							‘고객이 우리의 스승’ 이라는 말은 고객의 만족을 통해서만 우리의 생존이 보장되기 때문에 부서와 직위에 관계없이 모든 판단의 기준이 고객이어야 한다는 것입니다.
+고객이 원하는 것이 무엇이며 무엇 때문에 불만스러워 하는가? 그들의 문제는 무엇이며 어떻게 변하고 있는가? 그들을 만족시킬 수 있는 방법이 무엇인가? 하는 질문들에 대한 답변을 항상 고객들에게서 찾아야 하며 고객의 만족에 최고의 가치를 부여해야 할 것입니다.
+							</p>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="manage_left"></span>
+						<span class="manage_right">
+							<p>
+							<strong>품질</strong>은 우리의 <strong>자존심</strong>이다
+							<i class="fa fa-balance-scale" aria-hidden="true"></i>
+							</p>
+							<p>
+							품질이 우리의 자존심이 되기 위해서는 언제나 최고의 품질을 보장할 수 있어야 하고 그러기 위해서는 과감한 기술투자와 완벽한 품질관리가 이루어져야 할 것입니다.
+완벽한 품질관리란 기술적 품질을 넘어서 소비자의 취향에 철저하게 영합함으로써 고객의 만족도를 최대한 보장하는 것입니다.
+							</p>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="manage_left"></span>
+						<span class="manage_right">
+							<p>
+							<strong>혁신</strong>은 우리의 <strong>생활</strong>이다
+							<i class="fa fa-home" aria-hidden="true"></i>
+							</p>
+							<p>
+							혁신의 생활화 문제인데 소비자의 욕구는 물론 기술도 환경도 끊임없이 변하고 있는 만큼 고객들에게 언제나 최고의 만족을 제공하기 위해서는 모든 동원팜스 가족들이 날마다 새로워지는 부단한 노력을 경주해야 할 것입니다.
+고객이 선호하는 가장 좋은 것은 언제나 내일, 즉 미래에 새로 창출되기 때문입니다.
+							</p>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="manage_left"></span>
+						<span class="manage_right">
+						<p>
+							<strong>인재</strong>는 우리의 <strong>보배</strong>다
+							<i class="fa fa-users" aria-hidden="true"></i>
+						</p>
+						<p>
+						최고의 품질을 만들어내고 고객을 만족시키는 일은 결국 사람을 통해 이루어진다고 볼 때 사원들이 그럴만한 능력이 없거나 그렇게 할 생각이 없다면 이러한 목표는 결코 달성될 수 없으며 기업도 성장, 발전할 수가 없을 것입니다.
+따라서 경영자들은 능력과 의욕을 갖춘 사원들이 최고의 보배임을 명심하고 사원들의 능력을 개발하고 그들의 의욕을 고취시키는데 한 치의 소홀함이 없어야 할 것입니다.
+						</p>
+						</span>
+					</a>
+				</li>
+			</ul>
+			<div class="btn">
+					<ol>
+						<li class="on"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ol>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="top_foot cf">
+			<div class="right_foot">
+				<div class="util cf">
+					<a href="#" class="naver"></a>
+					<select class="animal" name="">
+						<option value="">축산관련 사이트</option>
+						<option value="">가축위생방역지원본부</option>
+						<option value="">낙농육우협회</option>
+						<option value="">농림축산식품부</option>
+						<option value="">농촌경제연구원</option>
+						<option value="">대양양계협회</option>
+						<option value="">대한한돈협회</option>
+						<option value="">사단법인 한국단미사료협회</option>
+						<option value="">(사)한국육가공협</option>
+						<option value="">(사)한국육계협회</option>
+						<option value="">축산물품질평가원</option>
+						<option value="">축산유통종합정보센터</option>
+						<option value="">한국동물약품협회</option>
+						<option value="">한국사료협회</option>
+						<option value="">한국식품안전관리인증원</option>
+					</select>
+					<div class="go go1">GO</div>
+					<select class="family" name="">
+						<option value="">패밀리 사이트</option>
+						<option value="">동원그룹</option>
+						<option value="">동원사업</option>
+						<option value="">동원F&B</option>
+						<option value="">동원시스템즈</option>
+						<option value="">동원건설산업</option>
+						<option value="">동원홈푸드</option>
+						<option value="">동원냉장</option>
+						<option value="">동원와인플러스</option>
+						<option value="">동원CNS</option>
+						<option value="">STARKIST</option>
+						<option value="">S.C.A SA</option>
+						<option value="">동원육영재단</option>
+						<option value="">동원리더스아카데미</option>
+						<option value="">동부익스프레스</option>
+					</select>
+					<div class="go go2">GO</div>
+				</div>
+			</div>
+			<div  class="left_foot">
+				<ul>
+					<li><a href="#"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="#">이메일주소무단수집거부</a></li>
+					<li><a href="#">정도경영 신고센터</a></li>
+					<li><a href="#">오시는 길</a></li>
+					<li><a href="#">사이트맵</a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="bottom_foot">
+			<p>
+				<span>경기도 부천시 오정로 39번길 49 동원팜스㈜</span>
+				<span>TEL. 032-680-3114</span>
+				<span>FAX. 032-681-0104</span>
+			</p>
+			<p>
+				COPYRIGHT &copy;2019 HITE-Dongwon Farms. ALL RIGHTS RESERVED
+			</p>
+		</div>
+	</footer>
+
+</div>
+</body>
+</html>

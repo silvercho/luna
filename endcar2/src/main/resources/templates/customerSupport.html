@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="|${pageName}|"></title>
+
+  <!-- 외부 스타일 시트 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- 내부 스타일 시트 -->
+  <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+  <!-- 외부 스크립트 -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- 내부 스크립트 -->
+  <script src="/js/footer.js"></script>
+</head>
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+  <style>
+      .userSound{text-align: center;}
+      .bg {
+        width: 100%;
+        height: 300px;
+        background: url(/img/carBg.jpg) no-repeat 50% #494949;
+        background-size: contain;
+        color: #fff;
+        margin-bottom: 150px;
+      }
+      .bg-txt {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+      .bg h1 {font-size: 3.5rem;
+      margin-bottom: 20px;}
+      .bg h4 {font-size: 1.8rem;}
+    .htxt {margin-bottom: 150px;}
+    .htxt h2 {margin-bottom: 50px;
+    font-size: 4rem;}
+    .htxt h3 {
+      color: #777;
+    font-size: 2.7rem;}
+    .usWrap {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 150px;
+    }
+    .usWrap .usBox {
+      padding: 40px;
+      width: 320px;
+      height: 350px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+    .usWrap .usBox i {
+      display: block;
+      font-size: 6rem;
+      margin-bottom: 20px;
+    }
+    .usWrap .usBox b{
+      font-size: 2.4rem;
+    }
+    .usWrap .usBox a {
+      text-decoration: none;
+      color: #777;
+      display: block;
+      font-size: 2.7rem;
+    }
+    .usWrap .usBox p {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+    .usWrap .usBox button{
+      margin-top: 20px;
+      border: 1px solid #C4C4C4;
+      font-size: 1.6rem;
+      border-radius: 15px;
+      background: #000;
+      color: #fff;
+      width: 150px;
+      height: 35px;
+      cursor: pointer;
+    }
+    .usPrcbg {
+      font-size: 1.6rem;
+      background:rgba(0, 0, 0, 0.2);
+      height: 500px;
+      margin-bottom: 150px;
+    }
+    .usPrc {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .usPrcbg h3 {padding: 70px;
+    font-size: 2.8rem;}
+    
+    .usBox2 {
+      padding: 40px;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+    .usBox2 i {display: block;
+      font-size: 3rem;
+      margin-bottom: 20px;}
+      .usBox2 b{
+      font-size: 2.4rem;
+    }
+    .usBox2 p {
+      font-size: 1.6rem;
+    }
+  </style>
+</th:block>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+  <div layout:fragment="content" class="userSound">
+    <div class="bg">
+    <div class="bg-txt">
+      <h1>고객의 소리</h1>
+      <h4>엔드카는 고객의 의견을 가장 소중히 생각합니다.</h4>
+    </div>
+    </div>
+    <div class="htxt">
+      <h2>고객의 소리 접수채널</h2>
+      <h3>1. 인터넷, 전화 등 다양한 채널을 통해 접수</h3>
+      <h3>2. 고객의 소리 접수 , 관할 부서/ 담당자에게 통보</h3>
+      <h3>3. 공정거래 위원회 고시 소비자 분쟁해결 기준에 의거하여 처리 </h3>
+    </div>
+    <div class="usWrap">
+      <div class="usBox">
+        <i class="fa-solid fa-store"></i>
+        <b>FAQ</b>
+        <p>자주하는 질문을<br>확인해보세요.</p>
+        <button>확인하기</button>
+      </div>
+      <div class="usBox">
+        <i class="fa-solid fa-desktop"></i>
+        <b>인터넷</b>
+        <a href="#">www.endcar.com</a>
+        <p>상담접수 시간 : 24시간 </p>
+        <button>접수하기</button>
+      </div>
+      <div class="usBox">
+        <i class="fa-solid fa-phone-volume"></i>
+        <b>전화</b>
+        <p class="callNm"></p>
+        <b>고객의 소리 운영시간</b>
+        <p>09:00~18:00 <br>(주말*공휴일 휴무)</p>
+      </div>
+    </div>
+    <div class="usPrcbg">
+    <h3>고객의 소리 처리 프로세스</h3>
+      <div class="usPrc">
+        <div class="usBox2">
+          <i class="fa-solid fa-list-check"></i>
+          <b>STEP1</b>
+          <p>고객소리 접수</p>
+        </div>
+        <div class="usBox2">
+          <i class="fa-solid fa-headset"></i>
+          <b>STEP2</b>
+          <p>고객상담</p>
+        </div>
+        <div class="usBox2">
+          <i class="fa-solid fa-comment-dots"></i>
+          <b>STEP3</b>
+          <p>개선대책</p>
+        </div>
+        <div class="usBox2">
+          <i class="fa-regular fa-lightbulb"></i>
+          <b>STEP4</b>
+          <p>개선 및 반영</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>

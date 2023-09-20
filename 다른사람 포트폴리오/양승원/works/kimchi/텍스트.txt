@@ -1,0 +1,46 @@
+<div class="notice bottom_section">
+			<div class="title">
+				<h3>공지사항</h3>
+				<a href="#">
+					<img src="./images/icon_plus.png" alt=""/>
+				</a>
+			</div>
+			<div class="text">
+				<ul>
+					<li><a href="#"><img src="./images/icon_new.gif"/>'기업공감원스톱서비스(SOS1379)'개소1주년 기념 이벤트</a></li>
+					<li><a href="#">'김치발효산업 정보인프라 고도화 기술개발사업'</a></li>
+					<li><a href="#">2018년 중소·중견기업 맞춤형 석·박사 양상사업 공고</a></li>
+					<li><a href="#">In Vivo Optical System and X-ray Imager 입찰 공고</a></li>
+					<li><a href="#">연구회-프라운호퍼 국제공동워크숍 안내</a></li>
+					<li><a href="#">2017년도 첨단기술정보 해외협력사업 시행 공고</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="recruit bottom_section">
+			<div class="title">
+				<h3>채용공고</h3>
+				<a href="#"><img src="./images/icon_plus.png" alt=""/></a>
+			</div>
+			<div class="text">
+				<ul>
+					<li><a href="#"><img src="./images/icon_new.gif"/>세계김치연구소 직원 모집 2차 시험 합격자 발표 및 3차 시험 일정 안내</a></li>
+					<li><a href="#"><img src="./images/icon_new.gif"/>세계김치연구소 직원 모집 2차 시험 세부 일정 안내</a></li>
+					<li><a href="#">세계김치연구소 직원 모집 1차 시험 합격자 발표 및 2차 시험 일정 안내</a></li>
+					<li><a href="#">세계김치연구소 중소·중견기업 맞춤형 석·박사 양성사업 인턴연구원 최종합격자 안내</a></li>
+					<li><a href="#">세계김치연구소 중소·중견기업 맞춤형 석·박사 양성사업 인턴연구원 1차 시험 합격자 발표 및 2차 시험 일정 안내</a></li>
+					<li><a href="#">세계김치연구소 직원 모집 공고</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="event bottom_section">
+			<div class="title">
+				<h3>주요행사</h3>
+				<a href="#"><img src="./images/icon_plus.png" alt=""/></a>
+			</div>
+			<div class="event_img"></div>
+			<div class="text">
+				<ul>
+					<li><a href="#">「융합 바이오기술 기반 유산균 프로바이오틱스 산업 고도화 사업」지원 대상 기업 공고</a></li>
+				</ul>
+			</div>
+		</div>

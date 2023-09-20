@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<style>
+		ul {
+			list-style: none;
+		}
+
+		ul li {
+			float: left;
+		}
+	</style>
+	<script>
+		$(function () {
+			$(".gnb li a").hover(function () {
+				var imgcg = $("img", this).attr("src").replace("out", "over");
+				//menu01_out.png - menu01_over.png 파일명만 바꾼다.
+				//alert(imgcg);
+				$("img", this).attr("src", imgcg);
+				//바꾼 파일 명을 현재이미지에 대입(변경)시킨다.
+
+			}, function () {
+				var imgcg = $("img", this).attr("src").replace("over", "out");
+				$("img", this).attr("src", imgcg);
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<ul class="gnb">
+		<li><a href="#"><img src="images/menu01_out.png"></a></li>
+		<li><a href="#"><img src="images/menu02_out.png"></a></li>
+		<li><a href="#"><img src="images/menu03_out.png"></a></li>
+		<li><a href="#"><img src="images/menu04_out.png"></a></li>
+	</ul>
+</body>
+
+</html>

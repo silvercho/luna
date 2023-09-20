@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- 사용자 CSS 추가 -->
+    <th:block layout:fragment="css">
+        <style>
+         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+          body{font-family: 'Noto Sans KR', sans-serif;}
+
+          a{color:#000}
+          h1{ display: none;}
+          h2{
+              font-size: 4.8rem;
+              font-weight: bold;
+              text-align: center;
+              margin: 40px 20px;
+          }
+          .loginTab{
+              width: 50%;
+              margin: 0 auto;
+              height: 600px;
+          }
+          .loginForm {
+              text-align: center;
+          }
+          .loginForm label {
+              width: 50px;
+              height: 50px;
+              display: block;
+              font-size: 2rem;
+              font-weight: bold;
+              margin-right: 20px;
+          }
+          .loginForm .loginPut {
+              font-size: 1.6rem;
+              width: 350px;
+              height: 40px;
+              border: 1px solid #C4C4C4;
+              padding: 8px;
+          }
+          .check-wrap{
+              display: flex;
+              justify-content: center;
+              margin-bottom: 10px;
+          }
+         .check-wrap .check{width: 5px}
+          .check-wrap .keep-txt {
+              margin-right: 30px;
+              margin-top: 10px;
+          }
+          .check-wrap .check-keep{
+              display: block;
+          }
+          .check-wrap p{
+              margin-top: 10px;
+              margin-left: 100px;
+              font-size: 1.6rem;
+              display: inline-block;
+          }
+          .loginBtn {
+              display: block;
+              text-align: center;
+              background: #222;
+              color: #fff;
+              width: 350px;
+              height: 40px;
+              border: #fff;
+              border-radius: 15px;
+              font-size: 1.9rem;
+              font-weight: bold;
+          }
+          .line {
+              display: flex;
+              justify-content: center;
+          }
+          .line img{
+              text-align: center;
+              width:450px;
+              margin-bottom: 20px;
+          }
+          .simple {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+          }
+          .simple img{
+              margin-right: 35px;
+              width: 50px;
+              height: 50px;
+          }
+
+          #loginBtn {
+              display: flex;
+              justify-content: center;
+          }
+
+          .loginForm > div{
+              width: 500px;
+              height: 100%;
+              margin: 0 auto;
+              display: flex;
+          }
+
+          .error-class {
+            color: red;
+          }
+
+          .joinBtn{
+              margin-left: 50px;
+              font-size: 1.6rem;
+              border: none;
+              background: #fff;
+          }
+
+
+      </style>
+    </th:block>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="loginTab">
+    <h1><a th:href="|/${loginType}|">[[${pageName}]]</a></h1>
+    <h2> E N D C A R</h2>
+    <form th:method="post" th:action="|@{/{loginType}/login (loginType=${loginType})}|" th:object="${loginRequest}" class="loginForm" >
+        <div>
+            <label th:for="loginId">ID </label>
+            <input class="loginPut" type="text" th:field="*{loginId}" placeholder="이메일 또는 아이디"/>
+        </div>
+        <br/>
+        <div>
+            <label th:for="password">PW</label>
+            <input class="loginPut" type="password" th:field="*{password}" placeholder="비밀번호"/>
+        </div>
+        <div th:if="${#fields.hasGlobalErrors()}">
+            <br/>
+            <div class="error-class" th:each="error : ${#fields.globalErrors()}" th:text="${error}" />
+        </div>
+        <div class="check-wrap">
+            <input class="check-keep" type="checkbox" id="check" name="로그인 상태유지">
+            <label class="check" for="check"> </label>
+            <span class="keep-txt">로그인 상태 유지</span>
+            <button type="button" th:onclick="|location.href='@{/{loginType}/join (loginType=${loginType})}'|" class="joinBtn">회원 가입</button>
+        </div>
+        <div id="loginBtn">
+            <button type="submit" class="loginBtn">로그인</button>
+        </div>
+    </form>
+    <div class="line" ><img src="/img/Line1.png"></div>
+
+    <th:if th:if="${loginType == 'security-login'}">
+        <div class="simple">
+            <a href="/oauth2/authorization/google"><img src="/img/google_logo.png"></a>
+            <a href="/oauth2/authorization/kakao"><img src="/img/kakao_logo.png"></a>
+            <a href="/oauth2/authorization/naver"><img src="/img/naver_logo.png"></a>
+            <a href="/oauth2/authorization/facebook"><img src="/img/facebook_logo.png"></a>
+        </div>
+    </th:if>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>
+

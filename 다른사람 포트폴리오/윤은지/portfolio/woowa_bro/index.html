@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="shortcut icon" href="./images/favicon.ico"/>
+	<link rel="stylesheet" href="./css/style_woowa_nike.css"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>우아한형제들</title>
+	<script>
+	
+	$(function(){
+		
+		$(".logo img").click(function(){
+			$(".gnb2").addClass("on");
+			$(".logo2").addClass("on");
+		});
+	
+		$(".logo2").click(function(){
+			$(".gnb2").removeClass("on");
+			$(".logo2").removeClass("on");
+		});
+	});
+	
+	</script>
+</head>
+<body>
+
+	<div class="wrap">
+		<!--video -->
+		<div class="vid">
+			<video autoplay muted loop playsinline>
+				<source src="./media/woowa_cf.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<h1 class="logo">
+			<a href="#"><img src="./images/header-logo.png" alt=""/></a>
+		</h1>
+		<h1 class="logo2"><img src="./images/menu-btn-close.png" alt=""/></h1>
+		<div class="gnb2">
+			<ol>
+				<li><a href="#">인재채용</a></li>
+				<li><a href="#">언론보도</a></li>
+				<li><a href="#">글꼴</a></li>
+				<li><a href="#">배달의민족</a></li>
+				<li><a href="#">히스토리</a></li>
+			</ol>
+		</div>
+		<header>
+			<ul class="gnb">
+				<li><a href="#"><span>인재채용</span></a>
+					<ul>
+						<li><a href="#"><span>개발직군 채용</span></a></li>
+						<li><a href="#"><span>비개발직군 채용</span></a></li>
+						<li><a href="#"><span>병영특례 채용</span></a></li>
+					</ul>
+				</li>
+				<li><a href="#"><span>언론보도</span></a></li>
+				<li><a href="#"><span>글꼴</span></a></li>
+				<li><a href="#"><span>배달의민족</span></a></li>
+				<li><a href="#"><span>히스토리</span></a></li>
+			</ul>
+		</header>
+
+		<div class="main">
+			<div class="arrow"><a href="#"><img src="./images/main-cover-arrowblack.png"></a></div>
+			<ul class="outlink">
+				<li>
+					<a href="https://www.woowahan.com/" target="blank">
+						<p>어르신의 안부를 묻는 우유배달</p>
+						<img src="./images/main-outlink-milkhello.png" alt=""/>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.woowahan.com/" target="blank">
+						<p>배민문방구</p>
+						<img src="./images/main-outlink-store.png" alt=""/>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.woowahan.com/" target="blank">
+						<p>우아한 크리에이티브</p>
+						<img src="./images/main-outlink-wc.png" alt=""/>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<section class="side">
+			<div class="sub">
+					<div class="content"></div>
+					<div class="notice">
+						<p class="title">공지사항</p>
+						<div class="divider">
+							<img src="./images/main-divider1.png" alt=""/>
+						</div>
+						<ul>
+							<li><img src="./images/main-font-btnArrow.png" alt=""/><a href="#">우아한형제들과 함께 성장할 수 있는 기회!</a></li>
+							<li><img src="./images/main-font-btnArrow.png" alt=""/><a href="#">모두가 제약 없이 아름다운 한글을 쓸 수 있도록 배달의 민족 글꼴을..</a></li>
+							<li><img src="./images/main-font-btnArrow.png" alt=""/><a href="#">누군가는 하찮게 생각할지 모르는 음식배달도 이렇게 매일매일 더 좋아지고 있습니다.</a></li>
+							<li><img src="./images/main-font-btnArrow.png" alt=""/><a href="#">미래를 알려거든 먼저 지나간일을 살피라!</a></li>
+						</ul>
+					</div>
+			</div>
+			<div class="baedalee">
+				<img src="./images/baedalee.png" alt=""/>
+				<img src="./images/baedalee.png" alt=""/>
+				<img src="./images/baedalee.png" alt=""/>
+			</div>
+		</section>
+
+		<footer>
+			<img src="./images/common-logo.png" alt=""/>
+			<span>&copy; Woowa-Nike-YEJ Brothers Corp.</span>
+		</footer>
+	</div>
+</body>
+</html>

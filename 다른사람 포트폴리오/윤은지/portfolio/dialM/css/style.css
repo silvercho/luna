@@ -1,0 +1,294 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Open+Sans&display=swap');
+
+*{margin: 0; padding: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: #000;}
+.cf:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+body{
+	font-family:"Open Sans", "Noto Sans KR", sans-serif;
+}  /*1번 폰트가 적용이 안되면 2번 폰트로 대체*/
+
+.wrap{
+	width: 100%; height: auto;
+}
+.video_wrap{
+	width: 100%; height: 900px; /*임시높이 jquery 지정해서 삭제됨*/
+	position: relative;
+	overflow: hidden;
+}
+	.video_wrap video{
+		position: absolute;
+		left: 50%; top: 50%; 
+		transform: translate(-50%, -50%);
+		width: auto; height: auto;
+		min-width: 100%; min-height: 100%;
+	}
+	.video_wrap .main_logo{
+		position: absolute;
+		left: 50%; top: 50%; 
+		transform: translate(-50%, -50%);
+		width: 10%;
+		min-width: 70px; max-width: 150px;
+	}
+		.video_wrap .main_logo > img{
+			width: 100%; height: auto;
+			display: block;
+		}
+		.video_wrap .main_logo .ani_logo{
+			position: absolute;
+			width: 100%; height: auto;
+			left: 0;
+			overflow: hidden;
+		}
+		.video_wrap .main_logo .ani_logo img{
+			width: 100%; height: auto;
+			display: block;
+		}
+			.video_wrap .main_logo .ani_logo.motion1{
+				bottom: 0;
+				height: 0;
+				animation: logo 0.7s 0.1s forwards;
+			}
+			.video_wrap .main_logo .ani_logo.motion1 img{
+				position: absolute;
+				bottom: 0; left: 0;
+			}
+			.video_wrap .main_logo .ani_logo.motion2{
+				top: 0;
+				height: 0;
+				animation: logo 0.7s 0.6s forwards;
+			}
+			@keyframes logo{
+				0%{height: 0;}
+				100%{height: 100%;}
+			}
+			.video_wrap .main_logo .ani_logo.motion3{
+				top: 0;
+				transform: scale(0);
+				transform-origin: 85% 65%;
+				animation: logo_scale 0.6s 1s forwards cubic-bezier(.05, -0.01, .32, 1.82);
+			}
+			@keyframes logo_scale{
+				0%{transform: scale(0);}
+				100%{transform: scale(1);}
+			}
+			.video_wrap .main_logo .ani_logo.motion4{
+				top: 0;
+				opacity: 0;
+				animation: logo_fade 0.8s 2s forwards;
+			}
+			@keyframes logo_fade{
+				0%{opacity: 0;}
+				100%{opacity: 1;}
+			}
+			.video_wrap .black_cover{
+				width: 100%; height: 100%;
+				position: absolute;
+				left: 0; top: 0;
+				background-color: #000;
+				opacity: 1;
+				animation: black_fade 0.6s 1.8s forwards;				
+			}
+			@keyframes black_fade{
+				0%{opacity: 1;}
+				100%{opacity: 0;}
+			}
+			
+	.video_wrap .scr_btn{
+		position: absolute;
+		left: 50%; bottom: 50px;
+		transform: translateX(-50%) scale(0.7, 1.1);
+		font-size: 60px; 
+		color: #fff;
+		cursor: pointer;
+	}		
+		.video_wrap .scr_btn i{
+			animation: btn_ani 0.6s alternate infinite ease-in;
+		}
+		@keyframes btn_ani{
+			0%{transform: translateY(-10px);}
+			100%{transform: translateY(10px);}
+		}
+		
+header{
+	width: 100%; height: 130px; 
+	background-color: #fff;
+	position: absolute;
+	left: 0; top: 100%;
+	z-index: 1;
+}		
+	header .logo{
+		position: absolute;
+		width: 120px; 
+		top: 50%; left: 5%;
+		transform: translateY(-50%);
+	}
+	header .logo img{
+		width: 100%; height: auto;
+		display: block;
+	}
+			
+	header .gnb{
+		position: absolute;
+		right: 5%; top: 50%;
+		transform: translateY(-50%);
+	}		
+	header .gnb li{
+		float: left;
+		margin-left: 40px; 
+		font-size: 1.05em;
+		position: relative;
+		text-transform: uppercase;
+	}
+	header .gnb li a{
+		display: block;
+		padding: 5px 0;
+	}
+	header .gnb li a:after{
+		content: '';
+		display: block;
+		width: 0%; height: 1px; 
+		background-color: #000;
+		position: absolute;
+		bottom: 0; left: 50%; 
+		transform: translateX(-50%);
+		transition: all 0.6s;
+	}
+	header .gnb li:hover a:after{
+		width: 100%;
+	}
+	
+	header .mobile_menu_btn{
+		position: absolute;
+		right: 5%; top: 50%;
+		transform: translateY(-50%);
+		width: 30px; height: 30px;
+		cursor: pointer;
+		display: none;
+	}
+		header .mobile_menu_btn .bar{
+			width: 100%; height: 2px; 
+			background-color: #000;
+			border-radius: 1.5px;
+			margin: 6px 0;
+		}
+			
+			
+.fake_header{
+	width: 100%; height: 130px; 
+}			
+			
+section{
+	width: 100%; height: auto;
+}			
+section .main_thumb{  /*firefox에선 안되네 -> 해결. 표준어로 작성*/
+	width: calc(50% - 1px);
+	height: auto;
+	position: relative;
+	margin-top: 2px;
+	float: left;
+	overflow: hidden;
+}
+section .main_thumb:nth-child(even){
+	float: right;
+}
+	section .main_thumb img{
+		width: 100%; height: auto;
+		display: block;
+		transition: all 0.6s;
+	}
+	section .main_thumb .txt_box{
+		display: block;
+		position: absolute;
+		left: 20px; top: 10px;
+		color: #fff;
+		transition: all 0.4s;
+		text-transform: uppercase;
+	}
+		section .main_thumb .txt_box span{
+			display: block;
+		}
+		section .main_thumb .txt_box .title{
+			font-weight: bold;
+			font-size: 2em;
+		}
+		section .main_thumb .txt_box .client{
+			font-size: 1.05em;
+			font-weight: 400;
+		}
+		section .main_thumb:nth-child(1) .txt_box,
+		section .main_thumb:nth-child(4) .txt_box{
+			color: #000;
+		}
+			
+		section .main_thumb a:hover img{
+			transform: scale(1.2);
+		}
+		section .main_thumb a:hover .txt_box{
+			top: -50px; 
+			opacity: 0;
+		}
+
+footer{
+	width: 100%; height: auto;
+	padding: 130px 0;
+}		
+	.footer_box{text-align: center;}
+	.footer_box img{width: 100px;}
+	.footer_box p span{
+		display: block;
+	}		
+	.footer_box p span.site{
+		text-transform: uppercase;
+		font-size: 1.1em;
+	}		
+	.footer_box p span.copy{
+		text-transform: uppercase;
+		font-size: 0.8em;
+	}		
+	.footer_box p.address{
+		margin-top: 15px;
+	}
+	.footer_box p.address .phone{
+		font-size: 1.1em;
+	}	
+	.footer_box p.address .mail{
+		font-size: 1.1em;
+	}
+	
+	
+@media screen and (max-width: 800px){
+	header, .fake_header{height: 60px;}
+	
+	header .logo{width: 60px;}
+	header .gnb{display: none;}
+	header .mobile_menu_btn{display: block;}
+			
+	section .main_thumb{
+		width: 100%;
+		float: none;
+		box-sizing: border-box;
+		padding: 0 2px;
+		margin: 2px 0;
+	}		
+	section .main_thumb .txt_box .title{font-size: 1.5em;}		
+	section .main_thumb .txt_box .client{font-size: 0.9em;}
+			
+	.footer_box img{width: 80px;}		
+	.footer_box p span.site{font-size: 1em;}
+	.footer_box p span.copy{font-size: 0.8em;}
+	.footer_box p.address .mail{font-size: 0.9em;}
+}		
+			
+			
+			
+			
+			
+			
+			

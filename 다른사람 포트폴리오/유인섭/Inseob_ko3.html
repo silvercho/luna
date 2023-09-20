@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>In-seob</title>
+	<link rel="shortcut icon" href="./icon/favicon.png">
+	<link rel="stylesheet" href="./css/logo_wrap_style.css"/>
+	<link rel="stylesheet" href="./css/full_page_style.css"/>
+	<link rel="stylesheet" href="css/snow.css" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./js/jquery.shuffleLetters.js"></script>
+	<script src="./js/snow.js"></script>
+	<script src="./js/jquery.easing.1.3.js"></script>
+	<script src="./js/full_page.js"></script>
+	<script src="./js/script.js"></script>
+	
+		<script>
+$(function(){
+	
+
+	
+});	
+	</script>
+
+	
+
+
+
+	
+	<style>
+	@font-face{
+			font-family:a_headM;
+			src:url(./fonts/a_headM.ttf) format('truetype'),
+			url(./fonts/a_headM.eot) format('embedded-opentype'),
+			url(./fonts/a_headMg.woff) format('woff');
+}
+
+	@font-face{
+		font-family:jua;
+		src:url(./fonts/Jua-Regular.ttf) format('truetype'),
+		url(./fonts/Jua-Regular.eot) format('embedded-opentype'),
+		url(./fonts/Jua-Regularg.woff) format('woff');
+}
+	
+	@font-face{
+			font-family:poiret;
+			src:url(./fonts/PoiretOne-Regular.ttf) format('truetype'),
+			url(./fonts/PoiretOne-Regular.eot) format('embedded-opentype'),
+			url(./fonts/PoiretOne-Regular.woff) format('woff');
+	}
+	
+	
+	@font-face{
+			font-family:NanumSquareR;
+			src:url(./fonts/NanumSquareR.ttf) format('truetype'),
+			url(./fonts/NanumSquareR.eot) format('embedded-opentype'),
+			url(./fonts/NanumSquareR.woff) format('woff');
+	}
+	
+	
+	*{margin:0;padding:0;box-sizing:border-box;}
+	ul,li{list-style:none;}
+	a{text-decoration:none;color:#000;}
+	img{border:0;}
+	.cf:after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+	
+	body{	
+			letter-spacing:1px;
+	}
+	
+	@media screen and (max-width:1024px){
+		
+	
+		#img_slide{
+			display:block;
+		}
+		.anime-btn{
+			width:50px;
+			right:2.5%;
+		}
+			
+	@-webkit-keyframes btn{
+    from{
+        bottom:60px;
+    }
+    to{
+        bottom:40px;
+    } 
+	}
+	@keyframes btn{
+    from{
+        bottom:60px;
+    }
+    to{
+        bottom:40px;
+    } 
+}
+	
+		
+		#logowrap .next-btn{
+			right:0;
+			width:80px;
+			
+		}
+		#logowrap .seconds{
+			width:100%;
+			text-align:center;
+			font-size:15px;
+			bottom:130px;
+			font-weight:bold;
+		}
+		.seconds>span{
+		font-size:20px;
+		}
+	
+		header .h_logo{
+			display:none;
+		}
+		.gnb_cover{
+			width:100%;
+		}
+		.gnb span{
+			font-size:12px;
+			
+		}
+		.global a{
+			font-size:13px;
+		}
+		
+		.ani_text{
+			height:10%;
+		}
+		.ani_text span{
+			font-size:18px;
+			padding:5px;
+		}
+		.main_text_cover{
+			width:100%;
+			position:absolute;
+			left:10%;
+			top:40%;
+			transform:translateY(-50%);
+		}
+		.txt1{
+			font-size:11vw;
+		}
+		.txt2{
+			font-size:20vw;
+			color: #8941FF;
+		}
+		.txt3{
+			font-size:11vw;
+		}
+		
+		.slogan_cover{
+			width:100%;
+			margin:5px auto;
+		}
+		.slogan_partition{
+			width:50%;
+			font-size:14px;
+		}
+		
+	
+	
+		.img_slide_wrap{
+			display:none;
+		}
+		
+		
+		
+		
+		.con_cover .con{
+			line-height:2;
+		}
+		.con_cover{
+			margin-top:0;
+		}
+		.con_cover .con span{
+		font-size:14px;
+		}
+		.con_cover .con img{
+			width:30px;
+		}
+		
+		.foot_cover{
+			height:120px;
+			padding:10px;
+		}
+		.foot_cover span{
+			font-size:10px;
+			margin:0;
+		}
+		
+	#img_slide{
+		width:100%;
+		height:90%;
+		margin:0 auto;
+		position:relative;
+		transform:translateY(50%);
+		transition:all 1.5s 0.6s;
+		opacity:0;
+	}
+	.section.on #img_slide{
+		transform:translateY(0%);
+		opacity:1;		
+	}
+	#img_slide .imgs{
+		width:100%;
+		height:100%;
+		position:relative;
+		overflow:hidden;
+	}
+	
+	#img_slide .imgs li{
+		position:absolute;
+		width:100%;
+		height:100%;
+		left:100%;
+		top:0;
+	}
+	#img_slide .imgs li:first-child{
+		left:0;
+	}
+	#img_slide .imgs li img{
+		width:100%;
+		height:auto;
+		display:block;
+	}
+	
+	
+	.pager{
+		width:80%;
+		position:absolute;
+		left:50%;
+		transform:translateX(-50%);
+		top:0;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+	
+	.pager li a{
+		display:block;
+		width:30px;
+		height:5px;
+		background-color:#888;
+
+	}
+	.pager li.on a{
+		background-color:aqua;
+	}
+	
+	#img_slide .btn{
+		position:absolute;
+		top:50%;
+		transform:translateY(-50%);
+		color:skyblue;
+		font-size:35px;
+		display:block;
+	}
+	#img_slide .btn.next{
+		right:10px;
+	}
+	#img_slide .btn.prev{
+		left:10px;
+	}
+			
+		
+}
+	</style>
+	
+	
+	
+</head>
+<body>
+
+<!-- logo 영역 -->
+	<div id="logowrap" class="background">
+		<div class="logo">
+			<img src="./images/alogo2.png" alt=""/>
+			<div class="logo2">
+				<img src="./images/alogo.png" alt=""/>
+			</div>
+		</div>
+	
+		
+		<div class="anime-btn">
+			<img src="./images/data_image_pngbase(4).png" alt="">
+		</div>
+		<div class="next-btn">
+			<a href="#"><img src="./images/next.png" alt=""></a>
+		</div>
+		
+		<span class="hidden" id="snowflake">
+		
+			<img src="./images/02.png" alt=""/>
+		
+		</span>
+		
+		<p class="seconds"><span>10</span> 초 뒤에 자동으로 페이지가 이동합니다.</p>
+	</div>
+
+
+
+<!-- 컨텐츠 영역 -->
+	<div id="wrap" class="background">
+	
+			
+	
+		<div id="home" class="section">
+					
+					<div class="main_text_cover">
+						<span class="main_text txt1">WELCOME TO</span>
+						<span class="main_text txt2">IN-SEOB</span>
+						<span class="main_text txt3">PORTFOLIO</span>
+					</div>
+					
+				
+				  <div class="mouse"><img src="images/scroll.png" alt="마우스"></div>
+				
+		</div>
+		<div id="about" class="section">
+			
+			<div class="ani_text">
+				<span>About</span>
+			</div>
+			<div class="aboutme">
+				<div class="slogan_cover cf">
+					<div class="slogan_partition part1">
+						<div class="slogan_article slo2">
+							<div class="sloganimg">
+								<img src="./images/people1.png" alt="">
+							</div>
+						</div>
+						<h2>Community</h2>
+						<h3>
+						공동체를 중시하고,<br/>
+						팀을 생각하고 행동합니다.
+						</h3>
+					</div>
+					<div class="slogan_partition part2">
+						<div class="slogan_article slo2">
+							<div class="sloganimg qq">
+								<img src="./images/noun_play_2453642.png" alt="">
+							</div>
+						</div>
+						<h2>Speedy</h2>
+						<h3>
+						빠르고 정확한 작업으로<br/>
+						좋은 능률을 보여줍니다.
+						</h3>
+					</div>
+					<div class="slogan_partition part3">
+						<div class="slogan_article slo3">
+							<div class="sloganimg">
+								<img src="./images/noun_programming_1716214.png" alt="">
+							</div>
+						</div>
+						<h2>Good</h2>
+						<h3>
+							사용자에게 적합한<br/>
+							웹 페이지를 구축합니다.<br/>
+						</h3>
+					</div>
+					<div class="slogan_partition part4">
+						<div class="slogan_article slo4">
+							<div class="sloganimg">
+								<img src="./images/noun_Mobile_2969970.png" alt="">
+							</div>
+						</div>
+						<h2>Responsive</h2>
+						<h3>
+							깔끔하고,조화로운 반응형을<br/>
+							생각합니다.<br/>
+						</h3>
+					</div>
+				</div>
+				
+				<div class="profile_cover">
+					<div class="profile p1">
+						<div class="photo">
+							<img src="./images/333.jpg" alt="">
+						</div>
+					</div>
+					<div class="profile p2">
+						<table>
+							<tr>
+								<td><i class="fa fa-user-circle-o" aria-hidden="true"></i> 유인섭 (age:27)</td>
+							</tr>
+						
+							<tr>
+								<td><i class="fa fa-home" aria-hidden="true"></i> 경기도 성남시 수정구</td>
+							</tr>
+							<tr>
+								<td class="q1"><i class="fa fa-star" aria-hidden="true"></i> 부영주택 위례,동탄 안전팀2년</td>
+							</tr>
+							<tr>
+								<td class="q1"><i class="fa fa-star" aria-hidden="true"></i> 포스코건설 산성 포레스티아 안전팀 1년</td>
+							</tr>
+							<tr>
+								<td class="q1"><i class="fa fa-star" aria-hidden="true"></i> 현대건설 송파 헬리오시티 안전팀 4개월</td>
+							</tr>
+						</table>
+					</div>
+					<div class="profile p3">
+						<table>
+							<tr>
+								<td><i class="fa fa-graduation-cap" aria-hidden="true"></i> 서울 휘문고등학교 졸업</td>
+							</tr>
+							
+							<tr>
+								<td><i class="fa fa-paw" aria-hidden="true"></i> 육군 병장 만기 전역</td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-certificate" aria-hidden="true"></i> 운전면허증 1종 보통</td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-certificate" aria-hidden="true"></i> 웹디자인 기능사</td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-certificate" aria-hidden="true"></i> GTQ 1급</td>
+							</tr>
+							
+						</table>
+					
+					</div>
+				</div>
+			</div>
+				
+			
+		</div>
+		<div id="ability" class="section">
+			
+				<div class="ani_text">
+					<span>Ability</span>
+				</div>
+				<div class="Ability_cover">
+					<div class="bar_wrap">
+						<div id="bar">
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/1216733.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="95%">
+									<div class="skillbar_title">
+										<span>HTML5</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">95</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/121-css3-512.png" alt="" >
+								</div>
+								<div class="skillbar" data-percent="95%">
+									<div class="skillbar_title">
+										<span>CSS3</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">95</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/jquery-logo-png-4.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="85%">
+									<div class="skillbar_title">
+										<span>jQuery</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">85</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/photoshop.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="90%">
+									<div class="skillbar_title">
+										<span>Photoshop</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">90</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/illust.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="95%">
+									<div class="skillbar_title">
+										<span>Illustrator</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">95</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/c,cpp.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="80%">
+									<div class="skillbar_title">
+										<span>C,C++</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">80</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/premiere.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="85%">
+									<div class="skillbar_title">
+										<span>Premiere Pro</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">85</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/vegas.png" alt="">
+								</div>
+								<div class="skillbar" data-percent="85%">
+									<div class="skillbar_title">
+										<span>Vegas Pro</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">85</div>
+								</div>
+							</div>
+							<div class="skillbar_cover cf">
+								<div class="skill_left">
+									<img src="./icon/clip.jpg" alt="">
+								</div>
+								<div class="skillbar" data-percent="90%">
+									<div class="skillbar_title">
+										<span>Clip Studio</span>
+									</div>
+									<div class="skill_bar"></div>
+									<div class="skill_bar_percent Count">90</div>
+								</div>
+							</div>
+						</div>
+					</div>
+									
+				</div>
+								
+				
+			
+		</div>
+		<div id="work" class="section">
+			
+				<div class="ani_text">
+					<span>Work</span>
+				</div>
+				
+				<div class="img_slide_wrap">
+					<div class="img_slide2">
+						<div class="imgs2 cf">
+							<img src="./images/blank2.jpg" alt="" class="blank"/>
+							<div class="li_cover">
+								<div class="li">
+									<img src="./images/work1.png" alt="">
+									<a target="blank" href="./work/work1/index.html">
+										<span>PLYERUNKNOWN'S BATTLEGROUNDS<br/>
+											(Custom)
+										</span>
+									</a>
+									
+								</div>
+								<div class="li">
+									<img src="./images/work2.png" alt="">
+									<a target="blank" href="./work/work2/index.html">
+										<span>Gigabyte Technology<br/>
+											(Custom)
+										</span>
+									</a>
+									
+									
+								</div>
+								<div class="li">
+									<img src="./images/work3.png" alt="">
+									<a target="blank" href="./work/work3/index.html">
+										<span>리니지 레볼루션</span>
+									</a>
+									
+								</div>
+								<div class="li">
+									<img src="./images/work4.png" alt="">
+									<a target="blank" href="./work/work4/index.html">
+										<span>Micro-Star International</span>
+									</a>
+									
+								</div>
+								<div class="li">
+									<img src="./images/work5.png" alt="">
+									<a target="blank" href="./work/work5/index.html">
+										<span>하이트 진로</span>
+									</a>
+									
+								</div>
+								<div class="li">
+									<img src="./images/work6.png" alt="">
+									<a target="blank" href="./work/work6/index.html">
+										<span>허쉬초콜릿</span>
+									</a>
+									
+								</div>
+								
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+				<div id="img_slide">
+					<ul class="imgs">
+						<li><a href="#"><img src="./images/work1.png" alt=""/></a></li>
+						<li><a href="#"><img src="./images/work2.png" alt=""/></a></li>
+						<li><a href="#"><img src="./images/work3.png" alt=""/></a></li>
+						<li><a href="#"><img src="./images/work4.png" alt=""/></a></li>
+						<li><a href="#"><img src="./images/work5.png" alt=""/></a></li>
+						<li><a href="#"><img src="./images/work6.png" alt=""/></a></li>
+					</ul>
+			<!--		<ol class="pager">
+						<li class="on"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ol>-->
+					<div class="btn next">&gt;</div>
+					<div class="btn prev">&lt;</div>
+				</div>
+
+				
+				
+				
+			
+		</div>
+		<div id="Contact" class="section">
+				
+				<div class="ani_text">
+						<span>Contact</span>
+					</div>
+				
+					<div class="con_cover cf">
+					
+						<div class="con beta1">
+							<img src="./images/phone.png" alt="">  <span><a href="tel:010-2425-9303">010-2425-9303</a></span>
+						</div>
+						<div class="con beta2">
+							<img src="./images/noun_Mail_1707180.png" alt="">  <span>you7524@naver.com</span>
+						</div>
+						<div class="con beta5">
+							<img src="./images/line.png" alt="">  <span>you7524@naver.com</span>
+						</div>
+						
+						<div class="con beta4">
+							<img src="./images/qq.png" alt="">  <span>QQ3369804760</span>
+						</div>
+						<div class="con beta3">
+							<img src="./images/kakao.png" alt="">  <span>yis9303</span>
+						</div>
+						<div class="beta6">
+							<img src="./images/KakaoTalk_20191227_111947514.jpg" alt="">
+						</div>
+	
+					</div>
+					
+				
+					<div class="foot_cover">
+						<span>Copyright &copy; 2019. inseob, Yoo All right reserced.<br/>
+							 Thanks for :Teacher and Professional SEONG-EUN, KIM &amp; Himedia Four class
+						</span>
+					</div>
+				
+			
+		</div>
+		
+	</div>
+	<header>
+		<div class="header_wrap">
+			<h1 class="h_logo">
+				<a href="#"><span>In-Seob Yoo</span></a>
+			</h1>
+				
+			<div class="gnb_cover">
+				<ul class="gnb">
+					<li><span>HOME</span></li>
+					<li><span>ABOUT</span></li>
+					<li><span>ABILITY</span></li>
+					<li><span>WORKS</span></li>
+					<li><span>CONTACT</span></li>
+				</ul>
+			</div>
+			
+			<div class="global">
+				<div class="lang1"><a href="#">ENGLISH</a></div>
+				<div class="lang1"><a href="#">日本語</a></div>
+				<div class="lang1"><a href="#">中國語</a></div>
+			</div>
+		</div>	
+	</header>
+	<div id="pager">
+		<ul class="cf">
+			<li class="on"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

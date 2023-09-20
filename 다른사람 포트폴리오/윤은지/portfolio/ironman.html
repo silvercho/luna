@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>IRONMAN</title>
+	<style>
+	*{margin: 0; padding: 0;}
+	
+body{background-color: #2D313D;}
+
+.ironman_wrap{
+	width: 15vw; height: 15vw;
+	position: fixed;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+	.window{
+		width: 100%; height: 100%;
+		position: absolute;
+		animation: jump 6s ease-out infinite;
+	}
+	
+		@keyframes jump{
+			0%{top:0;left:0}
+			
+			
+			71%{top:0;left:-2px}
+			72%{top:0;left:3px}
+			73%{top:0;left:-2px}
+			74%{top:0;left:3px}
+			75%{top:0;left:-2px}
+			76%{top:0;left:3px}
+			77%{top:0;left:-2px}
+			78%{top:0;left:3px}
+			79%{top:0;left:-2px}
+			80%{top:0;left:0px}
+			
+			100%{top:-100px;}
+		}	/*0%{top: 0; left: 0;}
+			
+			71%,75%,79%,83%,87%,91%,95%{top: 3px; left: 3px;}
+			70%,73%,77%,81%,85%,89%,93%{top: 0px; left: -2px;}
+			95%{top:0;left:0;}
+			100%{top: -100px;}*/
+		.window .helmet{
+			width: 46px; height: 50px;
+			background: linear-gradient(to left, #C11B31 , #660000);
+			border-radius: 40% 40% 30% 30% / 40% 40% 50% 50%;
+			position: absolute;
+			top: 10px; left: 50%;
+			transform: translateX(-50%);
+		}
+		.window .helmet:after{
+			content: '';
+			display: block;
+			width: 10px; height: 4px;
+			background: linear-gradient(to left, #C11B31 , #660000);
+			border-radius: 60%;
+			position: absolute;
+			top: 6.8px; left: 50%;
+			transform: translateX(-50%);
+		}
+			.helmet .helmet_in{
+				width: 35px; height: 35px;
+				background-color: #F4ED5E;
+				border-radius: 37%;
+				position: absolute;
+				top: 18%; left: 50%;
+				transform: translateX(-50%);
+			}
+			.helmet .helmet_in:before,
+			.helmet .helmet_in:after{
+				content: '';
+				display: block;
+				width: 12px; height: 3.5px;
+				background-color: #000;
+				position: absolute;
+				top: 12px;
+				animation: angry 6s infinite;
+			}
+			.helmet .helmet_in:before{left: 3px; transform: rotate(15deg);}
+			.helmet .helmet_in:after{right: 3px; transform: rotate(-15deg);}
+
+			@keyframes angry{
+				80%{background-color: #000;}
+				100%{background-color: #0FF7E3;}
+			}
+			.helmet .helmet_mouth{
+				width: 15px; height: 5px;
+				background: linear-gradient(to left, #C11B31 , #660000);
+				border-radius: 40%;
+				position: absolute;
+				bottom: 4px; left: 50%;
+				transform: translateX(-50%);
+			}
+
+		.window .armor{
+			width: 100px; height: 60px;
+			background: linear-gradient(to left, #C11B31 , #660000);
+			border-radius: 0 0 50% 50% / 0 0 80% 80%;
+			position: absolute;
+			top: 63px; left: 50%;
+			transform: translateX(-50%);
+		}
+		.window .armor:after,
+		.window .armor:before{
+			content:'';
+			display: block;
+			width: 30px; height: 30px;
+			border-radius: 50%;
+			background: linear-gradient(to left, #C11B31 , #660000);
+			position: absolute;
+			top: -5px;
+		}
+		.window .armor:after{left:-10px;}
+		.window .armor:before{right:-10px;}
+
+			.armor .acro{
+				width: 18px; height: 18px;
+				border-radius: 50%;
+				background-color: #fff;
+				position: absolute;
+				top: 14px; left: 50%;
+				transform: translateX(-50%);
+				animation: acro 300ms infinite;
+			}
+			@keyframes acro{
+				100%{background-color: #B3EBEF; }
+			}
+
+			.armor .acro:before{
+				content: ''; display: block;
+				width: 18px; height: 18px;
+				border-radius: 50%;
+				position: absolute;
+				top: -2px; left: 50%;
+				transform: translateX(-50%);
+				border: 2px solid #F4ED5E;}
+
+			.armor .forearm{
+				width: 65px; height: 15px;
+				background-color: #F4ED5E;
+				position: absolute;
+				top: 0px;
+				z-index: -1;
+
+			}
+			.armor .forearm.right{
+				transform: rotate(55deg); right: -60px;
+				animation: up1 6s ease-out infinite;
+				transform-origin: top left;
+			}
+			.armor .forearm.left{
+				transform: rotate(-55deg); left: -60px;
+				animation: up2 6s ease-out infinite;
+				transform-origin: top right;
+			}
+				@keyframes up1{
+				80%{transform: rotate(55deg);}
+				100%{transform: rotate(-70deg); }
+			}
+				@keyframes up2{
+				80%{transform: rotate(-55deg);}
+				100%{transform: rotate(70deg); }
+			}
+			.armor .forearm:after{
+				content:'';
+				display: block;
+				width: 30px; height: 25px;
+				background: linear-gradient(to left, #C11B31 , #660000);
+				position: absolute;
+
+			}
+			.armor .forearm.left:after{
+				border-radius: 0 0 0 80% / 0 0 0 80%;
+				top: -5px; left: -25px;
+			}
+			.armor .forearm.right:after{
+				border-radius: 0 0 80% 0 / 0 0 80% 0;
+				top: -5px; right: -25px;
+			}
+
+		.window .thigh{
+			width: 45px; height: 32px;
+			background: linear-gradient(to left, #C11B31 , #660000);
+			position: absolute;
+			top: 115px; left: 50%;
+			transform: translateX(-50%);
+		}
+
+			.thigh .calf{
+				width: 10px; height: 50px;
+				background-color: #F4ED5E;
+				position: absolute;
+				top: 100%;
+
+			}
+			.thigh .calf.left{left: 0;}
+			.thigh .calf.right{right: 0;}
+
+			.calf:after{
+				content:'';
+				display: block;
+				width: 25px; height: 50px;
+				background: linear-gradient(to left, #C11B31 , #660000);
+				position: absolute;
+				top: 20px;
+				z-index:2;
+			}
+			.calf.left:after{border-radius: 50% 0 0 0 / 50% 0 0 0; left: 24px;}
+			.calf.right:after{border-radius: 0 50% 0 0 / 0 50% 0 0; right: 24px;}
+
+			/*.fire{
+				width: 17px; height: 30px;
+				background-color: transparent;
+				position: absolute;
+				top: 100%; left: 50%;
+				transform: translateX(-50%);
+				border-style: solid;
+				border-color: #fff transparent transparent transparent;
+				border-width: 30px 8.5px 0 8.5px;
+				animation: fire 6s infinite;
+				opacity: 0;
+			}
+			@keyframes fire {
+				80%{opacity: 0;}
+				100%{opacity: 0.5;}
+			}*/
+	</style>
+</head>
+<body>
+	<div class="ironman_wrap">
+		<div class="window">
+
+			<div class="helmet">
+				<div class="helmet_in"></div>
+				<div class="helmet_mouth"></div>
+			</div>
+
+			<div class="armor">
+				<div class="acro"></div>
+				<div class="forearm left"></div>
+				<div class="forearm right"></div>
+			</div>
+			<div class="thigh">
+				<div class="calf left"></div>
+				<div class="calf right"></div>
+			</div>
+			<div class="fire left"></div>
+		</div>
+	</div>
+
+</body>
+</html>

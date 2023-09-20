@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;border:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#fff;}
+img{border:0;}
+.cf:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500|Roboto:500');

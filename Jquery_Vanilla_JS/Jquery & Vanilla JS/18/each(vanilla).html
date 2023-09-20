@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>each</title>
+	<script>
+		addEventListener('DOMContentLoaded',function(){ //'DOMContentLoaded'는 'load'보다 빠르고 'defer'보다 느리게 스크립트를 로딩한다.
+			const listLi = document.querySelectorAll('.list li');
+
+			for (let i = 0; i < listLi.length; i++) {
+				listLi[i].classList.add(`li_0${i}`)
+			}
+		})
+	</script>
+
+</head>
+
+<body>
+	<ul class='list'>
+		<li>내가 첫번째 입니다.</li>
+		<li>내가 두번째 입니다.</li>
+		<li>내가 세번째 입니다.</li>
+		<li>내가 네번째 입니다.</li>
+		<li>내가 다섯번째 입니다.</li>
+	</ul>
+</body>
+
+</html>

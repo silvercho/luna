@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="./css/style2.css"/>
+	<link rel="shortcut icon" href="./images/favicon.png"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>Spider</title>
+	<script>
+		$(function(){
+				
+			$(".imgs li").eq(0).find(".title").addClass("on");
+			
+			
+			
+			var clone=$(".imgs li").eq(0).clone();
+					$(".imgs").append(clone);
+			var i=0;
+			
+			$(".pager li").click(function(){
+					i = $(this).index();
+					$(".imgs").stop().animate({
+							"margin-left":-i*100+"%"
+					},1000,function(){
+									$(".imgs li").find(".title").removeClass("on");
+									$(".imgs li").eq(i).find(".title").addClass("on");
+							
+							});
+				
+				$(".pager li").removeClass("on");
+				$(this).addClass("on");
+			});
+			
+			$(".slide_button .right").click(function(){
+					if(i==6){
+							i=0;
+							$(".imgs").css("margin-left",0);
+					}
+					
+					i++;	
+					$(".imgs").stop().animate({
+							"margin-left":-i*100+"%"
+					},1000,function(){
+									$(".imgs li").find(".title").removeClass("on");
+									$(".imgs li").eq(i).find(".title").addClass("on");
+							
+							});
+					
+					if(i==6){
+							i=0;
+							$(".pager li").removeClass("on").eq(0).addClass("on");
+					}else{
+							$(".pager li").removeClass("on").eq(i).addClass("on");
+					}
+			});
+			
+				$(".slide_button .left").click(function(){
+					if(i==0){
+							i=6;
+							$(".imgs").css("margin-left",-i*100+"%");
+					}
+					
+					i--;	
+					$(".imgs").stop().animate({
+							"margin-left":-i*100+"%"
+					},1000,function(){
+									$(".imgs li").find(".title").removeClass("on");
+									$(".imgs li").eq(i).find(".title").addClass("on");
+							
+							});
+					
+					$(".pager li").removeClass("on").eq(i).addClass("on");
+			});
+			
+			var repeat;
+			timer();
+			function timer(){
+					repeat = setInterval(function(){
+							if(i==6){
+									i=0;
+									$(".imgs").css("margin-left",0);
+							}
+					
+							i++;
+							$(".imgs").stop().animate({
+									"margin-left":-i*100+"%"
+							},1000,function(){
+									$(".imgs li").find(".title").removeClass("on");
+									$(".imgs li").eq(i).find(".title").addClass("on");
+							
+							});
+							
+							if(i==6){
+									$(".pager li").removeClass("on").eq(0).addClass("on");
+							}else{
+									$(".pager li").removeClass("on").eq(i).addClass("on");
+							}
+					},5000);
+			};
+			
+			$(".pager").mouseover(function(){
+					clearInterval(repeat);
+			});
+			$(".pager").mouseleave(function(){
+					timer();
+			});
+			
+			
+			
+			
+			$(".menu_btn").click(function(){
+				$("#m_menu").fadeIn();
+			});
+			
+			$(".m_menu_btn").click(function(){
+				$("#m_menu").fadeOut();
+			});
+			
+
+			$(" .m_gnb > li ").click(function(){
+				var d = $(this).children("ul").css("display");
+				
+				if(d=="none"){
+					$(" .m_gnb > li > ul").slideUp();
+					$(this).children("ul").slideDown();
+				}else{
+						$(this).children("ul").slideUp();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div class="header_top">
+			<div class="crum_top cf">
+				<ul class="cf">
+					<li><a href="#">login</a></li>
+					<li><a href="#">sign up</a></li>
+				</ul>
+			</div>
+			<div class="crum_bottom cf">
+				<div class="search">	
+					<input type="text" placeholder="검색"/>
+					<input type="image" src="./images/search.png" id="img_input"/>
+				</div>
+				<h1 class="logo">
+					<img src="./images/spyder.png" alt=""/>
+				</h1>
+				<div class="menu_btn">
+					<div class="menu_btna menu_btn1"></div>
+					<div class="menu_btna menu_btn2"></div>
+					<div class="menu_btna menu_btn3"></div>
+				</div>
+			</div>
+		</div>
+		<div class="header_bottom">
+			<nav>
+				<ul>
+				
+					<li><a href="#">BEST</a>
+						<div class="fulldown BEST">
+							<div class="full_center best">
+								<ul>
+									<li class="t"><a href="#" class="c">BEST</a></li>
+								</ul>
+								<ul>
+									<li class="t tt"><a href="#" class="c">SUMMER</br>COLLECTION</a></li>
+									<li><a href="#">Men</a></li>
+									<li><a href="#">Women</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">WATER</a></li>
+									<li><a href="#">Rashguard</a></li>
+									<li><a href="#">Water Shorts</a></li>
+								</ul>
+								
+								<div class="blank_box"></div>
+								
+								<ul>
+									<li class="t"><a href="#" class="c">TRAINING SET</a></li>
+									<li><a href="#">Men</a></li>
+									<li><a href="#">Women</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">SHOES</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">19SS CYCLE</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+					<li><a href="#">MEN</a>
+						<div class="fulldown MEN">
+							<div class="full_center men">
+								<ul>
+									<li class="t"><a href="#" class="c">SHOES</a></li>
+									<li><a href="#">Running</a></li>
+									<li><a href="#">Lifestyle</a></li>
+									<li><a href="#">Cycle</a></li>
+									<li><a href="#">Baseball</a></li>
+									<li><a href="#">Wrestling</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">CLOTHING</a></li>
+									<li><a href="#">3XL Size</a></li>
+									<li><a href="#">Training Set</a></li>
+									<li><a href="#">Top &amp; T-shirts</a></li>
+									<li><a href="#">Pants &amp; Leggings</a></li>
+									<li><a href="#">Sweat Shirts &amp;</br>Hoodie</a></li>
+									<li><a href="#">Outer</a></li>
+									<li><a href="#">Sleeveless</a></li>
+									<li><a href="#">Compression</a></li>
+									<li><a href="#">Rashguard</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">ACCESSORIES</a></li>
+									<li><a href="#">Bags</a></li>
+									<li><a href="#">Hats</a></li>
+									<li><a href="#">Socks</a></li>
+									<li><a href="#">ETC</a></li>
+								</ul>
+							</div>
+								<div class="menu_img men_menu_img">
+										<a href="#"><img src="./images/new3.jpg" class="menu_img_1" alt=""/></a>
+										<a href="#"><img src="./images/new7.jpg" alt=""/></a>
+								</div>
+						</div>
+					</li>
+					
+					<li><div id="blank"></div></li>
+					
+					<li><a href="#">WOMEN</a>
+						<div class="fulldown WOMEN">
+							<div class="full_center women">
+								<ul>
+									<li class="t"><a href="#" class="c">SHOES</a></li>
+									<li><a href="#">Running</a></li>
+									<li><a href="#">Lifestyle</a></li>
+									<li><a href="#">Cycle</a></li>
+									<li><a href="#">Baseball</a></li>
+									<li><a href="#">Wrestling</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">CLOTHING</a></li>
+									<li><a href="#">Training Set</a></li>
+									<li><a href="#">Top &amp;T-shirts</a></li>
+									<li><a href="#">Pants &amp;Leggings</a></li>
+									<li><a href="#">Sweat Shirts &amp;</br>Hoodie</a></li>
+									<li><a href="#">Outer</a></li>
+									<li><a href="#">Bra Top</a></li>
+									<li><a href="#">Rashguard</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">ACCESSORIES</a></li>
+									<li><a href="#">Bags</a></li>
+									<li><a href="#">Hats</a></li>
+									<li><a href="#">Socks</a></li>
+									<li><a href="#">ETC</a></li>
+								</ul>
+							</div>
+							<div class="menu_img women_menu_img">
+										<a href="#"><img src="./images/new10.jpg" class="menu_img_1" alt=""/></a>
+										<a href="#"><img src="./images/new12.jpg" alt=""/></a>
+								</div>
+						</div>
+					</li>
+					
+					<li><a href="#">SPORTS</a>
+						<div class="fulldown SPORTS">
+							<div class="full_center sports">
+								<ul>
+									<li class="t"><a href="#" class="c">TRAINING</a></li>
+									<li><a href="#">Training Set</a></li>
+									<li><a href="#">Top &amp;T-Shirts</a></li>
+									<li><a href="#">Outer</a></li>
+									<li><a href="#">Pants &amp;Leggings</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">RUNNING</a></li>
+									<li><a href="#">Running Set</a></li>
+									<li><a href="#">Top &amp;T-Shirts</a></li>
+									<li><a href="#">Outer</a></li>
+									<li><a href="#">Pants &amp;Leggings</a></li>
+									<li><a href="#">Shoes &amp;ACC</a></li>
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">CYCLING</a></li>
+									<li><a href="#">Top &amp;Jersey</a></li>
+									<li><a href="#">Outer</a></li>
+									<li><a href="#">Bib &amp;Pants</a></li>
+									<li><a href="#">Shoes &amp;ACC</a></li>
+								</ul>
+								
+										<div class="blank_box"></div>
+								
+								<ul>
+									<li class="t"><a href="#" class="c">JIUJITSU</a></li>
+									<li><a href="#">Compression Top</a></li>
+									<li><a href="#">Compression Pants</a></li>	
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">BASEBALL</a></li>
+									<li><a href="#">Baselayer &amp;Top</a></li>
+									<li><a href="#">Compression Pants</a></li>	
+								</ul>
+								<ul>
+									<li class="t"><a href="#" class="c">WATER</a></li>
+									<li><a href="#">Rashguard</a></li>
+									<li><a href="#">Shorts</a></li>	
+									<li><a href="#">Accessory</a></li>	
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<div id="fake_header"></div>
+	
+	<div id="m_menu">
+		<div class="m_header">
+			<div class="m_logo"><a href="#"><img src="./images/spyder.png" alt=""></a></div>
+		
+		<div class="m_menu_btn">
+					<div class="menu_btna menu_btn1"></div>
+					
+					<div class="menu_btna menu_btn3"></div>
+		</div>
+		</div>
+		<div class="m_search">	
+					<input type="text" placeholder="검색"/>
+					<input type="image" src="./images/search.png" id="img_input"/>
+		</div>
+		<ul class="m_gnb">
+			<li class="m_best"><a href="#">BEST</a>
+				<ul>
+					<li><a href="#">BEST20</a></li>
+					<li><a href="#">SUMMER<br/>COLLECTION</a></li>
+					<li><a href="#">WATER</a></li>
+					<li><a href="#">TRANINIG SET</a></li>
+					<li><a href="#">SHOES</a></li>
+					<li><a href="#">19SS CYCLE</a></li>
+				</ul>
+			</li>
+			<li class="m_men"><a href="#">MEN</a>
+			<ul>
+					<li><a href="#">SHOES</a></li>
+					<li><a href="#">CLOTHING</a></li>
+					<li><a href="#">ACCESSORIES</a></li>
+				</ul>
+				</li>
+			<li class="m_women"><a href="#">WOMEN</a>
+				<ul>
+					<li><a href="#">SHOES</a></li>
+					<li><a href="#">CLOTHING</a></li>
+					<li><a href="#">ACCESSORIES</a></li>
+				</ul>
+			</li>
+			<li class="m_sports"><a href="#">SPORTS</a>
+				<ul>
+					<li><a href="#">TRAINING</a></li>
+					<li><a href="#">RUNNING</a></li>
+					<li><a href="#">CYCLING</a></li>
+					<li><a href="#">LIFESTYLE</a></li>
+					<li><a href="#">JIUJITSU</a></li>
+					<li><a href="#">BASEBALL</a></li>
+					<li><a href="#">WATER</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	
+<section>
+
+	<div id="section_1">
+		<div class="img_slide cf">
+			<ul class="imgs cf">
+				<li><a href="#"><img src="./images/bg_first.jpg" alt=""></a>
+					<div class="bg_cover">
+						<div class="title title1">SPYDER<br/>RUNNING</div>
+						<div class="button">
+							<div class="btn"><a href="#">SHOP</a></div>
+							<div class="btn"><a href="#">MORE</a></div>
+					</div>
+				</li>
+				<li><a href="#"><img src="./images/bg_5.jpg" alt=""></a>
+					<div class="bg_cover">
+						<div class="title title2">HYPER<br/>BOLT</div>
+						<div class="button">
+							<div class="btn"><a href="#">SHOP</a></div>
+							<div class="btn"><a href="#">MORE</a></div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#"><img src="./images/bg_7.jpg" alt=""></a>
+					<div class="bg_cover">
+						<div class="title title3">19SS<br/>LASHGAURD</div>
+						<div class="button">
+							<div class="btn"><a href="#">SHOP</a></div>
+							<div class="btn"><a href="#">MORE</a></div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#"><img src="./images/bg_2.jpg" alt=""></a>
+					<div class="bg_cover">
+						<div class="title title4">19SS<br/>LASHGAURD</div>
+						<div class="button">
+							<div class="btn"><a href="#">SHOP</a></div>
+							<div class="btn"><a href="#">MORE</a></div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#"><img src="./images/bg_3.jpg" alt=""></a>
+					<div class="bg_cover">
+						<div class="title title5">19SS<br/>LASHGAURD</div>
+						<div class="button">
+							<div class="btn"><a href="#">SHOP</a></div>
+							<div class="btn"><a href="#">MORE</a></div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#"><img src="./images/bg_4.jpg" alt=""></a>
+					<div class="bg_cover">
+						<div class="title title6">19SS<br/>LASHGAURD</div>
+						<div class="button">
+							<div class="btn"><a href="#">SHOP</a></div>
+							<div class="btn"><a href="#">MORE</a></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<ul class="pager cf">
+			<li class="on"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+		
+		<div class="slide_button">
+			<div class="right">
+				<a href="#"><img id="right_button" src="./images/button_r.png" alt="right"/></a>
+			</div>
+			<div class="left">
+				<a href="#"><img id="left_button" src="./images/button_l.png" alt="left"/></a>
+			</div>
+		</div>
+	</div>	
+
+
+	
+	<div id="section_2" class="cf">
+		<div class="section_2 section_men">
+				<div class="img_cover"><img class="img1"src="./images/men.png" alt="men"/><img class="img2" src="./images/m_men.jpg" alt="">
+					<span>MEN</span>
+					<div class="text text_men">
+						<a href="#">
+							<span>MEN</span>
+							<p class="text_right">TOP &amp; T-SHIRTS<br/>
+							SHORTS &amp; PANTS<br/>
+							SWEAT SHIRTS &amp; HOODIE<br/>
+							OUTER<br/>
+							COMPRESSION<br/>
+							SHOES<br/>
+							ACCESSORIES<br/>
+							</p>
+							<p class="text_left">
+							WATER<br/>
+							TRANING<br/>
+							RUNNING<br/>
+							CYCLE<br/>
+							JIUJITSU<br/>
+							BASEBALL<br/>
+							</p>
+						</a>
+				</div>
+			</div>
+</div>
+
+		<div class="section_2 section_women">
+				<div class="img_cover"><img class="img1" src="./images/women.png" alt="women"/><img class="img2" src="./images/m_women.jpg" alt="">
+					<span>WOMEN</span>
+					<div class="text text_women">
+						<a href="#">
+							<span>WOMEN</span>
+							<p class="text_right">TOP &imp; T-SHIRTS<br/>
+							SHORTS &amp; PANTS<br/>
+							SWEAT SHIRTS &amp; HOODIE<br/>
+							OUTER<br/>
+							SLEEVELESS<br/>
+							SHOES<br/>
+							ACCESSORIES<br/>
+							</p>
+							<p class="text_left">
+							WATER<br/>
+							TRANING<br/>
+							RUNNING<br/>
+							CYCLE<br/>
+							BASEBALL<br/>
+							</p>
+						</a>
+				</div>
+			</div>
+	</div>
+</section>
+
+<aside>
+	<div class="aside BEST cf">
+		<span>BEST SELLERS</span>
+		<ul class="mer best">
+			<li><a href="#">
+				<img src="./images/best1.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)    095(M)    100(L)    105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">UNISEX DIAGONAL V T-SHIRT</p>
+					<p class="b_title">유니섹스 다이애고널 브이 티셔츠<br/>59,000원</p>
+				</div>
+			</li>
+			
+			
+				<li><a href="#">
+				<img src="./images/best2.jpg" alt=""/></a>
+				<div class="tag">
+					<p>095(M)    100(L)    105(XL)    110(XXL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">MEN'S LOGO POINT SHORT SLEEVE T-SHIRT</p>
+					<p class="b_title">맨즈 로고 포인트 숏슬리브 티셔츠<br/>69,000원</p>
+				</div>
+			</li>
+				<li><a href="#">
+				<img src="./images/best3.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)    090(M)    095(L)    100(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">WOMEN'S LATERAL LOGO T-SHIRT</p>
+					<p class="b_title">우먼스 래터럴 로고 티셔츠<br/>69,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/best4.jpg" alt=""/></a>
+				<div class="tag">
+					<p>080(S)    085(M)    090(L)    095(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">MEN'S MESH BACK LOGO SHORTS</p>
+					<p class="b_title">맨즈 메시백 로고 쇼츠<br/>79,000원</p>
+				</div>
+				</li>
+					</li>
+				<li><a href="#">
+				<img src="./images/best5.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)    095(M)    100(L)    105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">UNISEX LETTERING T-SHIRT</p>
+					<p class="b_title">유니섹스 레터링 티셔츠<br/>79,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/best6.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)    095(M)    100(L)    105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">UNISEX BIG LOGO T-SHIRTS</p>
+					<p class="b_title">유니섹스 빅 로고 티셔츠<br/>98,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/best7.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)    090(M)    095(L)    100(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">MEN'S HEXAGONAL SHORTS</p>
+					<p class="b_title">맨즈 헥사고널 쇼츠<br/>89,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/best8.jpg" alt=""/></a>
+				<div class="tag">
+					<p>095(M)    100(L)    105(XL)    110(XXL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">MEN'S VERTICAL LOGO T-SHIRT</p>
+					<p class="b_title">맨즈 버티컬 로고 티셔츠<br/>79,000원</p>
+				</div>
+				</li>
+		</ul>
+	</div>
+	
+	
+	
+	
+	<div class="aside NEW cf">
+		<span>NEW ARRIVALS</span>
+		<ul class="mer new">
+			<li><a href="#">
+				<img src="./images/new1.jpg" alt=""/></a>
+				<div class="tag bigger_tag">
+					<p>230  235  240  245<br/>250  255  260  265<br/>270  275  280  285</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">HYPER-BOLT</p>
+					<p class="b_title">하이퍼 볼트<br/>359,000원</p>
+				</div>
+			</li>
+				<li><a href="#">
+				<img src="./images/new2.jpg" alt=""/></a>
+				<div class="tag bigger_tag">
+					<p>230  235  240  245<br/>250  255  260  265<br/>270  275  280  285</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">HYPER-BOLT</p>
+					<p class="b_title">하이퍼 볼트<br/>359,000원</p>
+				</div>
+			</li>
+			<li><a href="#">
+				<img src="./images/new3.jpg" alt=""/></a>
+				<div class="tag bigger_tag">
+					<p>230  235  240  245<br/>250  255  260  265<br/>270  275  280  285</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">HYPER-BOLT</p>
+					<p class="b_title">하이퍼 볼트<br/>359,000원</p>
+				</div>
+			</li>
+				<li><a href="#">
+				<img src="./images/new4.jpg" alt=""/></a>
+				<div class="tag bigger_tag">
+					<p>230  235  240  245<br/>250  255  260  265<br/>270  275  280  285</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">BLACK WIDOW RUN</p>
+					<p class="b_title">블랙 위도우 런<br/>169,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new5.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)  095(M)  100(L)  105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">UNISEX LETTERING T-SHIRT</p>
+					<p class="b_title">유니섹스 레터링 티셔츠<br/>79,000원</p>
+				</div>
+				</li>
+					</li>
+				<li><a href="#">
+				<img src="./images/best5.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)  095(M)  100(L)  105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">UNISEX LETTERING T-SHIRT</p>
+					<p class="b_title">유니섹스 레터링 티셔츠<br/>79,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new7.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)  095(M)  100(L)  105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">UNISEX LETTERING T-SHIRT</p>
+					<p class="b_title">유니섹스 레터링 티셔츠<br/>79,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new8.jpg" alt=""/></a>
+				<div class="tag">
+					<p>090(S)  095(M)  100(L)  105(XL)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">UNISEX LETTERING T-SHIRT</p>
+					<p class="b_title">유니섹스 레터링 티셔츠<br/>79,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new9.jpg" alt=""/></a>
+				<div class="tag">
+					<p>065(S)  070(M)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">WOMEN'S NEO BIKINI SHORTS</p>
+					<p class="b_title">우먼스 네오 비키니 쇼츠<br/>99,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new10.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+				<div class="title">
+					<p class="t_title">WOMEN'S NEO BIKINI TOP</p>
+					<p class="b_title">우먼스 네오 비키니 탑<br/>109,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new11.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">WOMEN'S NEO BIKINI TOP</p>
+					<p class="b_title">우먼스 네오 비키니 탑<br/>109,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new12.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">WOMEN'S NEO ONE-PIECE SWIMSUIT</p>
+					<p class="b_title">우먼스 네오프렌 원피스 스윔슈트<br/>169,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new13.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">WOMEN'S NEO ONE-PIECE SWIMSUIT</p>
+					<p class="b_title">우먼스 네오프렌 원피스 스윔슈트<br/>169,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new14.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)  095(L)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">WOMEN'S BODY SUIT RASHGUARD</p>
+					<p class="b_title">우먼스 바디 수트 래시가드<br/>169,000원</p>
+				</div>
+				</li>
+				<li><a href="#">
+				<img src="./images/new15.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)  095(L)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">WOMEN'S BODY SUIT RASHGUARD</p>
+					<p class="b_title">우먼스 바디 수트 래시가드<br/>169,000원</p>
+				</div>
+				</li>
+					<li><a href="#">
+				<img src="./images/new16.jpg" alt=""/></a>
+				<div class="tag">
+					<p>085(S)  090(M)</p>
+					<div class="cart"><a href="#">Add to Cart</a></div>
+				</div>
+					<div class="title">
+					<p class="t_title">WOMEN'S CROPPED RASHGUARD</p>
+					<p class="b_title">우먼스 크롭 래시가드<br/>109,000원</p>
+				</div>
+				</li>
+		</ul>
+	</div>
+</aside>
+
+<footer>
+	<div class="footer_bar">
+		<div class="co">
+			<ul class="site cf">
+					<li><a href="#">브랜드 |</a></li>
+					<li><a href="#">회원혜택 |</a></li>
+					<li><a href="#">공지사항 |</a></li>
+					<li><a href="#">이벤트 |</a></li>
+					<li><a href="#">고객센터 |</a></li>
+					<li><a href="#">이용약관 |</a></li>
+					<li><a href="#">개인정보처리방침 |</a></li>
+					<li><a href="#">윤리경영 |</a></li>
+				</a>
+			</ul>
+		<div class="p_cover">
+		<p>상호명 : 글로벌브랜드그룹코리아유한회사 | </p> 
+		<p>통신판매신고 : 제 2015-서울강남-03421호 | </p>
+		<p>사업자등록번호 : 261-81-11120</p>
+		<p>대표자 : HOROWITZ MICHAEL RANDY | </p>
+		<p>서울시 강남구 언주로709 | 대표번호 : 1588-5863 |</p>
+		<p>FAX : 02-3442-6991 |</p>
+		<p>개인정보관리책임자 : 이상문 차장</p>
+		<p>COPYRIGHT 2015 SPYDER KOREA - ALL RIGHT RESERVED</p></div>	
+	</div>
+	<div class="icon">
+		<a href="#"><img src="./images/facebook.png" alt="페이스북"/></a>
+		<a href="#"><img src="./images/instagram.png" alt="페이스북"/></a>
+		<a href="#"><img src="./images/youtube.png" alt="페이스북"/></a>
+	</div>
+</div>
+</footer>
+</body>
+</html>
+
+
+
+

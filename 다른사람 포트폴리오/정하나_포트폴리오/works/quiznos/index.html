@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/media.css"/>
+	<link rel="shortcut icon" href="./img/favicon.png"/>
+	<script src="./js/jquery-3.1.1.js"></script>
+	<title>Quiznos</title>
+	<script>
+		$(function(){
+			
+			var i = 0 ;
+			
+			function timer(){
+			
+			repeat = setInterval(function(){
+			i++;
+			
+			if(i==3){
+			i=0;}
+		
+			$(".slide input").eq(i).trigger("click");
+
+			},3000);
+			}
+			timer();
+			
+			
+			setInterval(function(){
+			
+			if(i>2){
+			i=0;
+			}
+			
+			$(".notice_auto ul li").eq(i).css("top","100%").animate({
+				"top":"0"
+			},600);
+			
+			$(".notice_auto ul li").eq(i-1).animate({
+				"top":"-100%"
+			},600);
+			},3000);
+			
+			$(".slide").mouseover(function(){
+			clearInterval(repeat);
+			});
+			
+			$(".slide").mouseleave(function(){
+				timer();
+			});
+			
+			
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div class="header_cover">
+			<div id="logo"><a href="#"><img src="./img/logo_tran2.png" alt=""></a></div>
+			<div id="login"><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>
+				로그인</a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#"><span>퀴즈노스 소개</span></a>
+						<ul>
+							<li><a href="#">CEO 인사말</a></li>
+							<li><a href="#">브랜드 소개</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">뉴스룸</a></li>
+							<li><a href="#">퀴즈노스 In SNS</a></li>
+							<li><a href="#">채용안내</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>메뉴안내</span></a>
+						<ul>
+							<li><a href="#">Quiznos Food Concept</a></li>
+							<li><a href="#">신제품</a></li>
+							<li><a href="#">샌드위치</a></li>
+							<li><a href="#">Q-Cafe Menu</a></li>
+							<li><a href="#">샐러드&amp;피자</a></li>
+							<li><a href="#">스프&amp;프래드볼</a></li>
+							<li><a href="#">세트메뉴</a></li>
+							<li><a href="#">사이드 메뉴</a></li>
+							<li><a href="#">Catering</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>매장찾기</span></a>
+						<ul>
+							<li><a href="#">가까운 매장 검색</a></li>
+							<li><a href="#">신규 매장</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>이벤트</span></a>
+						<ul>
+							<li><a href="#">전사 이벤트</a></li>
+							<li><a href="#">매장별 이벤트</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>프랜차이즈</span></a>
+						<ul>
+							<li><a href="#">왜 퀴즈노스인가?</a></li>
+							<li><a href="#">가맹유형 및 조건</a></li>
+							<li><a href="#">가맹절차</a></li>
+							<li><a href="#">입지제안</a></li>
+							<li><a href="#">가맹상담 신청</a></li>
+							<li><a href="#">창업설명회 안내</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>MEMBERSHIP</span></a>
+						<ul>
+							<li><a href="#">마이퀴즈노스</a></li>
+							<li><a href="#">퀴즈노스 앱 소개</a></li>
+							<li><a href="#">멤버쉽&amp;제휴카드 안내</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">고객의 소리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div class="menu mobile">
+				<img src="./img/menu.png" alt=""/>
+			</div>
+			<div class="menu_bar mobile">
+				<ul>
+					<li><a href="#"><span>퀴즈노스 소개</span></a>
+						<ul>
+							<li><a href="#">CEO 인사말</a></li>
+							<li><a href="#">브랜드 소개</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">뉴스룸</a></li>
+							<li><a href="#">퀴즈노스 In SNS</a></li>
+							<li><a href="#">채용안내</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>메뉴안내</span></a>
+						<ul>
+							<li><a href="#">Quiznos Food Concept</a></li>
+							<li><a href="#">신제품</a></li>
+							<li><a href="#">샌드위치</a></li>
+							<li><a href="#">Q-Cafe Menu</a></li>
+							<li><a href="#">샐러드&amp;피자</a></li>
+							<li><a href="#">스프&amp;프래드볼</a></li>
+							<li><a href="#">세트메뉴</a></li>
+							<li><a href="#">사이드 메뉴</a></li>
+							<li><a href="#">Catering</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>매장찾기</span></a>
+						<ul>
+							<li><a href="#">가까운 매장 검색</a></li>
+							<li><a href="#">신규 매장</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>이벤트</span></a>
+						<ul>
+							<li><a href="#">전사 이벤트</a></li>
+							<li><a href="#">매장별 이벤트</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>프랜차이즈</span></a>
+						<ul>
+							<li><a href="#">왜 퀴즈노스인가?</a></li>
+							<li><a href="#">가맹유형 및 조건</a></li>
+							<li><a href="#">가맹절차</a></li>
+							<li><a href="#">입지제안</a></li>
+							<li><a href="#">가맹상담 신청</a></li>
+							<li><a href="#">창업설명회 안내</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span>MEMBERSHIP</span></a>
+						<ul>
+							<li><a href="#">마이퀴즈노스</a></li>
+							<li><a href="#">퀴즈노스 앱 소개</a></li>
+							<li><a href="#">멤버쉽&amp;제휴카드 안내</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">고객의 소리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div id="fake_header"></div>
+	<section>
+		<div class="slide">
+			<input type="radio" name="slide" id="slide1" checked>
+			<label for="slide1" class="slide1"></label>
+			<input type="radio" name="slide" id="slide2">
+			<label for="slide2" class="slide2"></label>
+			<input type="radio" name="slide" id="slide3">
+			<label for="slide3" class="slide3"></label>
+			
+			<ul class="slide_img">
+				<li><a href="#"><img src="./img/jesti.jpg" alt=""><span>제스티 그릴드 스테이크</span></a></li>
+				<li><a href="#"><img src="./img/ultumatedal.jpg" alt=""><span>클래식 이탈리안</span></a></li>
+				<li><a href="#"><img src="./img/qqqw.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="notice">
+			<div class="notice_left">
+				<dl>
+					<dt>공지사항</dt>
+					<dd>
+						<div class="notice_auto">
+							<ul>  
+								<li><a href="#">퀴즈노스X봄밤 순간포착 이벤트</a></li>
+								<li><a href="#">퀴즈노스 'MBC 미니시리즈 '봄밤' 제작지원</a></li>
+								<li><a href="#">퀴즈노스 'KBS2 TV 수목드라마 '닥터프리즈너'제작지원</a></li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+				<p><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a></p>
+			</div>
+			<div class="notice_right">
+				<a href="#">
+				<p>매장찾기</p>
+				<span><i class="fa fa-search" aria-hidden="true"></i></span>
+				</a>
+			</div>
+		</div>
+		<div class="article_box">
+			<article><img src="./img/0twosubs1copy.jpg"><a href="#"><h1><p>퀴즈노스 샌드위치</p></h1><div class="line"><span>메뉴안내</span></div></a></article>
+			<article><img src="./img/location-based-services.jpg"><a href="#"><h1><p>가까운 매장찾기</p></h1><div class="line"><span>매장찾기</span></div></a></article>
+			<article><img src="./img/538055_145052_2133.jpg"><a href="#"><h1><p>신규매장 보기</p></h1><div class="line"><span>매장찾기</span></div></a></article>
+			<article><img src="./img/12961337_948383751898198_3298655127940952096_o.jpg"><a href="#"><h1><p>QUIZNOS FOOD CONCEPT</p></h1><div class="line"><span>Story</span></div></a></article>
+			<article><img src="./img/7928_o.jpg"><a href="#"><h1><p>Q-CAFE</p></h1><div class="line"><span>메뉴안내</span></div></a></article>
+			<article><img src="./img/13238882_968286096574630_188749527071602567_n.jpg"><a href="#"><h1><p>신제품안내</p></h1><div class="line"><span>Picnic Set</span></div></a></article>
+		</div>
+	</section>
+	<aside>
+		<div class="aside_title"><p>퀴즈노스에 대해 알아볼까요?</p><h2>QUIZNOS STORY</h2></div>
+		<div class="aside">
+			<div class="aside_box">
+				<img src="./img/072351_936916279711612_7731189847690643774_n.jpg">
+				<span>퀴즈노스 브랜드 소개</span>
+				<p>미국내 외식산업분야에서 점포수와 점포수 매출 증가 모두 최상위에 속하며 성장성에 모두가 주목하는 브랜드입니다.</p>
+				<a href="#">read more</a>
+			</div>
+			<div class="aside_box">
+				<img src="./img/13002616_951139914955915_6225449135453890384_o.jpg">
+				<span>퀴즈노스 앱 다운로드</span>
+				<p>퀴즈노스앱 더욱 간편하고 빠르게 다양한 샌드위치를 주문하세요. 애플과 구글 앱스토어에서 지금바로 다운가능합니다.</p>
+				<a href="#">read more</a>
+			</div>
+			<div class="aside_box">
+				<img src="./img/0114319.jpg">
+				<span>인재채용</span>
+				<p>퀴즈노스와 함께하실 성실하고 참신한 새가족을 모집합니다.</p>
+				<a href="#">read more</a>
+			</div>
+		</div>
+	</aside>
+	<div class="membership">
+		<div class="mbs_cover">
+		<p>퀴즈노스 회원으로 등록하여 포인트 적립, 쿠폰등 다양한 혜택을 누리세요!</p>
+		<a href="#"><div class="white"><span>멤버쉽 안내</span></div></a>
+		</div>
+	</div>
+	<footer>
+		<div class="footer">
+			<div class="footer_logo">
+				<a href="#"><img src="./img/logo_tran2.png"></a><span>“지금까지 먹어보지 못한 최상의 샌드위치 (The Best Sandwich you’ll ever eat!)</span>
+			</div>
+			<div class="footer_title">
+				<div class="footer_title_content">
+					<h4>연락처</h4><span class="line"></span>
+				</div>
+				<div class="footer_title_content">
+					<h4>카테고리</h4><span class="line"></span>
+				</div>
+				<div class="footer_title_content">
+					<h4>온라인 커뮤니티</h4><span class="line"></span>
+				</div>
+			</div>
+			<div class="footer_content">
+				<div class="footer_3_box">
+					<div class="footer_box">
+						<ul class="margin">
+							<li><i class="fa fa-location-arrow" aria-hidden="true"></i><p>서울시 강남구 테헤란로 금강빌딩 15층</p></li>
+							<li><i class="fa fa-phone" aria-hidden="true"></i><p>일반문의 02-425-3131 <br>
+								event@quiznos.co.kr</p></li>
+							<li><i class="fa fa-envelope" aria-hidden="true"></i><p>가맹문의 1899-9795​<br>
+								 franchise@quiznos.co.kr</p></li>
+						</ul>
+					</div>
+					<div class="footer_box">
+						<ul class="floatleft">
+							<li><a href="#">&gt; 메뉴안내</a></li>
+							<li><a href="#">&gt; 메장안내</a></li>
+							<li><a href="#">&gt; 이벤트</li>
+							<li><a href="#">&gt; 브랜드소개</li>
+							<li><a href="#">&gt; 제휴할인</li>
+							<li><a href="#">&gt; 고객센터</li>
+							<li><a href="#">&gt; 회원가입</li>
+							<li><a href="#">&gt; 가맹안내</li>
+							<li><a href="#">&gt; 로그인</li>
+							<li><a href="#">&gt; 가맹점주 전용</li>
+						</ul>
+					</div>
+					<div class="footer_box">
+						<ul class="floatleft">
+							<li><a href="#">&gt; 페이스북</a></li>
+							<li><a href="#">&gt; 인스타그램</a></li>
+							<li><a href="#">&gt; 트위터</a></li>
+							<li><a href="#">&gt; 유투브</a></li>
+							<li><a href="#">&gt; 블로그</a></li>
+						</ul>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<div class="footer_bottom">
+			<p>Copyright © 2016 USUMB Quiznos korea. All rights reserved.</p>
+			<div class="copyright"><a href="#">개인정보 취급방침</a><span>|</span>
+			<a href="#">회원약관</a></div>
+		</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

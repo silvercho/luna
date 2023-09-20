@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/footer.js"></script>
+    <style>
+    .out {
+        width: 1903px;
+        height: 100%;
+        padding : 50px 0;
+        }
+    .section_ask {
+        width: 800px;
+        border: 1px solid #111;
+        margin: 0 auto;
+    }
+    .ask_wrap {
+        width: 800px;
+        padding: 40px;
+    }
+    .ask_wrap h1{ font-size: 2rem; border-bottom: 1px solid #111; }
+    .ask_table  .askCont {width: 500px; }
+    .ask_tit { font-size: 1.6rem; }
+    .ask_writer td , .ask_writer th{ font-size: 1.2rem; border-bottom: 1px solid #E9ECEF;}
+    .ask_cont { font-size: 1.6rem; height: 400px; }
+    .ask_cont td { padding : 20px;}
+    .ask_btn {
+        display: flex;
+        justify-content: flex-end;
+        margin: 40px 0;
+        border-top:1px solid #E9ECEF;
+        border-bottom:1px solid #E9ECEF;
+    }
+    .ask_btn button {
+        background: #fff;
+        color: #000;
+        width: 80px;
+        height: 20px;
+        border: #fff;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #reply-write {
+        border-top: 1px solid #111;
+        border-bottom: 1px solid #111;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 0;
+    }
+    #reply-write input[type="text"] {
+        border: 1px solid #E9ECEF;
+        font-size: 1.6rem;
+    }
+    #reply-write .comTit {
+        width: 100px;
+        height: 100px;
+        margin-right: 5px;
+    }
+    #reply-write .comTxt {
+        width: 600px;
+        height: 100px;
+        margin-right: 5px;
+    }
+    #reply-write-btn {
+        background: #222;
+        color: #fff;
+        width: 100px;
+        height: 100px;
+        border: #fff;
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    #reply-list {
+        margin-top: 40px;
+    }
+    #reply-list th, td{
+        width: 800px;
+    }
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div layout:fragment="content">
+    <div class="out">
+        <div class="section_ask">
+            <div class="ask_wrap">
+                <h1>질문글 작성</h1>
+    <table class="ask_table">
+        <tr>
+            <th>번호</th>
+            <td th:text="${ask.id}"></td>
+        </tr>
+        <tr class="ask_tit">
+            <th>제목</th>
+            <td th:text="${ask.askTitle}"></td>
+        </tr>
+        <tr class="ask_writer">
+            <th>작성자</th>
+            <td th:text="${ask.askWriter}"></td>
+        </tr>
+        <tr>
+            <th>날짜</th>
+            <td th:text="${#temporals.format(ask.askCreatedTime, 'yyyy-MM-dd HH:mm')}"></td>
+        </tr>
+        <tr>
+            <th>조회수</th>
+            <td th:text="${ask.askHits}"></td>
+        </tr>
+        <tr class="ask_cont">
+            <th>내용</th>
+            <td th:text="${ask.askContents}"></td>
+        </tr>
+    </table>
+    <div class="ask_btn">
+    <button onclick="listReq()">목록</button>
+    <button onclick="updateReq()">수정</button>
+    <button onclick="deleteReq()">삭제</button>
+    </div>
+
+    <!-- 댓글 작성 부분 -->
+    <div id="reply-write">
+        <input type="text" id="replyWriter" placeholder="작성자">
+        <input type="text" id="replyContents" placeholder="내용">
+        <button id="reply-write-btn" onclick="replyWrite()">댓글작성</button>
+    </div>
+
+    <!-- 댓글 출력 부분 -->
+    <div id="reply-list">
+        <table>
+            <tr>
+                <th>댓글번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성시간</th>
+            </tr>
+            <tr th:each="reply: ${replyList}">
+                <td th:text="${reply.id}"></td>
+                <td th:text="${reply.replyWriter}"></td>
+                <td th:text="${reply.replyContents}"></td>
+                <td th:text="${#temporals.format(reply.replyCreatedTime, 'yyyy-MM-dd HH:mm').substring(0, 16)}"></td>
+                <!--            <td th:text="${reply.replyCreatedTime}"></td>-->
+            </tr>
+        </table>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+<script th:inline="javascript">
+    const replyWrite = () => {
+        const writer = document.getElementById("replyWriter").value;
+        const contents = document.getElementById("replyContents").value;
+        console.log("작성자: ", writer);
+        console.log("내용: ", contents);
+        const postId = [[${ask.id}]];
+$.ajax({
+   type: "post",
+   url: "/security-login/ask/reply/save",
+   data: {
+       "replyWriter": writer,
+       "replyContents": contents,
+       "postId": postId
+   },
+           success: function (res) {
+               console.log("요청성공", res);
+               let output = "<table>";
+               output += "<tr><th>댓글번호</th>";
+               output += "<th>작성자</th>";
+               output += "<th>내용</th>";
+               output += "<th>작성시간</th></tr>";
+               for (let i in res) {
+                   output += "<tr>";
+                   output += "<td>" + res[i].id + "</td>";
+                   output += "<td>" + res[i].replyWriter + "</td>";
+                   output += "<td>" + res[i].replyContents + "</td>";
+                   output += "<td>" + res[i].replyCreatedTime.substring(0, 16) + "</td>";
+                   output += "</tr>";
+               }
+               output += "</table>";
+               document.getElementById('reply-list').innerHTML = output;
+               document.getElementById('replyWriter').value = '';
+               document.getElementById('replyContents').value = '';
+           },
+           error: function (err) {
+               console.log("요청실패", err);
+           }
+        });
+
+    }
+    const listReq = () => {
+        console.log("목록 요청");
+        const page = [[${page}]];
+        location.href = "/security-login/ask/?page="+page;
+    }
+    const updateReq = () => {
+        console.log("수정 요청");
+        const id = [[${ask.id}]];
+        location.href = "/security-login/ask/update/" + id;
+    }
+    const deleteReq = () => {
+        console.log("삭제 요청");
+        const id = [[${ask.id}]];
+        location.href = "/security-login/ask/delete/" + id;
+    }
+</script>
+</body>
+
+
+</html>

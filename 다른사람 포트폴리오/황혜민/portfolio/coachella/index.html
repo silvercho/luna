@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="shortcut icon" href="./images/logo/coachella_fa.png"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script src="./js/jquery.mousewheel.min.js"></script>
+	<script src="./js/jquery.easing.1.3.js"></script>
+	
+	<style>
+	
+
+	
+	
+	</style>
+	<title>coachella 2020</title>
+	<script>
+		$(function(){
+			var h = $(window).height();
+			$("#video_wrap, #wrap").height(h);
+			
+			$(window).resize(function(){
+				var h = $(window).height();
+				$("#video_wrap, #wrap").height(h);
+			});
+		
+		
+		
+		$("#video_wrap, #wrap").mousewheel(function(event, d){
+				var s = $(this).index();
+				
+				if(d>0){
+					if(s==0) return;
+					var off = $(this).prev().offset().top;
+				}else if(d<0){
+					if(s==1) return;
+					var off = $(this).next().offset().top;
+				}
+				
+				$("html,body").stop().animate({
+					"scrollTop":off
+				},1200,"easeOutCirc");
+			});
+		
+		
+		
+		
+		setInterval(function(){
+				var p = new Date();
+				var y = p.getFullYear();//2019
+				var m = p.getMonth();//5
+				var d = p.getDate();//14
+				
+				var zip = new Date(2020,3,10,00,00,0);
+				var time = zip.getTime()-p.getTime();
+				
+				var day;
+				var hour;
+				var min;
+				var sec;
+				
+				if(p<zip){
+				day = Math.floor(time/(1000*60*60*24));
+				
+					$(".tit").text("We have");
+					$(".day").text(day);
+					$(".text").text("left");
+					
+				}else if(p>zip){
+					day = Math.ceil(time/(100*60*60*24));
+					
+						$(".tit").text("We have");
+						$(".day").text(Math.abs(day));
+						$(".text").text("left");
+				}
+				
+			},1000);
+		
+		
+		
+		
+		
+		
+		
+		
+		var i = 0;
+			$(".btn").click(function(){
+				var t = $(this).children("a").attr("href");
+				var target = $(t);
+				
+				i++;
+				
+				if(t=="#music"){
+					target.css({
+					"top":"-100%",
+					"z-index":i
+					}).stop().animate({
+						"top":0
+					},2000,"easeOutElastic");
+				}else if(t=="#passes"){
+					target.css({
+					"left":"-100%",
+					"z-index":i
+					}).stop().animate({
+						"left":0
+					},2000,"easeOutElastic");
+				}else if(t=="#experience"){
+					target.css({
+					"top":"100%",
+					"z-index":i
+					}).stop().animate({
+						"top":0
+					},2000,"easeOutElastic");
+				}else if(t=="#plan"){
+					target.css({
+					"left":"100%",
+					"z-index":i
+					}).stop().animate({
+						"left":0
+					},2000,"easeOutElastic");
+				}else if(t=="#main"){
+					$("#music").stop().animate({
+						"top":"-100%"
+					},2000,"easeOutExpo");
+					$("#passes").stop().animate({
+						"left":"-100%"
+					},2000,"easeOutExpo");
+					$("#experience").stop().animate({
+						"top":"100%"
+					},2000,"easeOutExpo");
+					$("#plan").stop().animate({
+						"left":"100%"
+					},2000,"easeOutExpo");
+				}
+				
+				return false;
+			});
+		
+			$("#passes > #buy_p > dl > dt").click(function(){
+			
+				var n = $(this).next("dd").css("display");
+				
+				if(n=="none"){
+					$("#passes > #buy_p > dl > dd").stop().slideUp();
+					$(this).next("dd").stop().slideDown();
+					$("#passes > #buy_p > dl > dt > a > i").removeClass("on");
+					$(this).find("i").addClass("on");
+				}else{
+					$(this).next("dd").stop().slideUp();
+					$(this).find("i").removeClass("on");
+				}
+				return false;
+			});
+			
+		//1번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(3) > ul > li:first-child > a").click(function(){
+					$(".pop1").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close1").click(function(){
+					$(".pop1").fadeOut();
+				});
+		//2번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(3) > ul > li:nth-child(2) > a").click(function(){
+					$(".pop2").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close2").click(function(){
+					$(".pop2").fadeOut();
+				});
+		//3번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(3) > ul > li:nth-child(3) > a").click(function(){
+					$(".pop3").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close3").click(function(){
+					$(".pop3").fadeOut();
+				});
+		//4번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(5) > ul > li:nth-child(1) > a").click(function(){
+					$(".pop4").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close4").click(function(){
+					$(".pop4").fadeOut();
+				});
+		//5번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(5) > ul > li:nth-child(2) > a").click(function(){
+					$(".pop5").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close5").click(function(){
+					$(".pop5").fadeOut();
+				});
+		//6번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(7) > ul > li:nth-child(1) > a").click(function(){
+					$(".pop6").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close6").click(function(){
+					$(".pop6").fadeOut();
+				});
+		//7번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(7) > ul > li:nth-child(2) > a").click(function(){
+					$(".pop7").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close7").click(function(){
+					$(".pop7").fadeOut();
+				});
+		//8번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(7) > ul > li:nth-child(3) > a").click(function(){
+					$(".pop8").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close8").click(function(){
+					$(".pop8").fadeOut();
+				});
+		//9번팝업
+				$("#passes > #buy_p > dl > dd:nth-child(9) > ul > li:nth-child(1) > a").click(function(){
+					$(".pop9").fadeIn();
+					
+					return false;
+					
+				});
+				
+				$("#pop_close9").click(function(){
+					$(".pop9").fadeOut();
+				});
+		
+		
+		});
+		
+		
+	</script>
+	
+</head>
+<body>
+	<div id="video_wrap" >
+		<!-- video -->
+		<video autoplay loop muted>
+			<source src="./media/index_video.mp4" type="video/mp4"/>
+		</video>
+		
+		<div class="main_cover"></div>
+		<!-- logo -->
+		<h1 class="main_logo">
+			<img src="./images/logo/blank.png" alt=""/>
+			
+			<div class="animation-logo motion1">
+				<img src="./images/logo/main1.png" alt=""/>
+			</div>
+			<div class="animation-logo motion2">
+				<img src="./images/logo/main2.png" alt=""/>
+			</div>
+			<div class="animation-logo motion3">
+				<img src="./images/logo/main3.png" alt=""/>
+			</div>
+			<div class="animation-logo motion4">
+				<img src="./images/logo/main4.png" alt=""/>
+			</div>
+		</h1>
+		
+	</div>
+	
+	
+	
+	<div id="wrap">
+	
+		<!-- music -->
+		<div id="music" class="section">
+			<div id="art_wrap">
+					
+					<div id="box_wrap">
+						<div class="cover">
+							<a href="#">
+								<div class="box1"><span>view more</span></div>
+							</a>
+						</div>
+						<div class="line"><a href="#" class="glich1">LINE UP </a></div>
+					</div>
+					
+					
+					
+					
+					<div id="box_wrap2">
+						<div class="cover">
+							<a href="#">
+								<div class="box2"><span>view more</span></div>
+							</a>
+						</div>
+						<div class="you">
+							<a href="#" class="glich2">YOUTUBE</a>
+							<a href="#" class="glich3">MUSIC</a>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+		<!-- passes -->
+		<div id="passes" class="section">
+			<div id="p_type_wrap">
+				<div class="type type1">
+					<p class="festival">FESTIVAL PASSES</p>
+					<ul><p>Learn more</p></ul>
+				</div>
+				
+				<div class="type type2">
+					<p class="caping">CAMPING</p>
+					<ul><p>Learn more</p></ul>
+				</div>
+				
+				<div class="type type3">
+					<p class="add">ADD-ONS</p>
+					<ul><p>Learn more</p></ul>
+				</div>
+				
+				<div class="type type4">
+					<p class="travel">TRAVEL</p>
+					<ul><p>Learn more</p></ul>
+				</div>
+			</div>
+			
+			<div id="buy_p">
+				<p class="buying">2020 Buying Passes</p>
+				<dl>
+					<dt><a href="#">WHEN DO PASSES GO ON SALE?</a></dt>					
+					<dt class="white_bg"><a href="#">PREPARE FOR SALE<i class="fa fa-angle-down" aria-hidden="true"></i></a></dt>
+					<dd>					
+						<ul>
+							<li><a href="#">SELECT YOUR PASSES</a></li>
+							<li><a href="#">PLAN PAYMENT & SHIPPING</a></li>
+							<li><a href="#">UPDATE YOUR ACCOUNT</a></li>
+						</ul>
+					</dd>
+					<dt><a href="#">PLACING YOUR ORDER<i class="fa fa-angle-down" aria-hidden="true"></i></a></dt>
+					<dd>	
+						<ul>
+							<li><a href="#">GET IN LINE</a></li>
+							<li><a href="#">NO MORE PASSES?</a></li>
+						</ul>
+					</dd>
+					<dt class="white_bg"><a href="#">ONCE YOU'VE PURCHASED<i class="fa fa-angle-down" aria-hidden="true"></i></a></dt>
+					<dd>	
+						<ul>
+							<li><a href="#">GETTING YOUR ORDER</a></li>
+							<li><a href="#">TICKET PURCHASE SUPPORT</a></li>
+							<li><a href="#">CHECK YOUR ORDER</a></li>
+						</ul>
+					</dd>
+					<dt><a href="#">OFFICIAL WEEKEND EXCHANGE<i class="fa fa-angle-down" aria-hidden="true"></i></a></dt>
+					<dd>	
+						<ul>
+							<li><a href="#">POWERED BY LYTE</a></li>
+						</ul>
+					</dd>
+					<dt class="white_bg"><a href="#">RULES (READ BEFORE ORDERING)</a></dt>
+					
+					<dt><a href="#">PASSES</a></dt>
+					<dt class="white_bg"><a href="#">ORDERING</a></dt>
+					<dt><a href="#">SHIPPING</a></dt>
+					<dt class="white_bg"><a href="#">WILL CALL & BOX OFFICE</a></dt>
+				</dl>
+			</div>
+			
+			<div class="pop pop1">
+				<div class="pop_cover1">
+					<div id="pop_close1"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/2_1.jpg" alt=""/>
+					<img class="te_1" src="./images/te1.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop2">
+				<div class="pop_cover2">
+					<div id="pop_close2"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/2_2.jpg" alt=""/>
+					<img class="te_2" src="./images/te2.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop3">
+				<div class="pop_cover3">
+					<div id="pop_close3"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/2_3.jpg" alt=""/>
+					<img class="te_3" src="./images/te3.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop4">
+				<div class="pop_cover4">
+					<div id="pop_close4"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/3_1.jpg" alt=""/>
+					<img class="te_4" src="./images/te4.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop5">
+				<div class="pop_cover5">
+					<div id="pop_close5"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/3_2.jpg" alt=""/>
+					<img class="te_5" src="./images/te5.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop6">
+				<div class="pop_cover6">
+					<div id="pop_close6"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/4_1.jpg" alt=""/>
+					<img class="te_6" src="./images/te6.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop7">
+				<div class="pop_cover7">
+					<div id="pop_close7"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/4_2.jpg" alt=""/>
+					<img class="te_7" src="./images/te7.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop8">
+				<div class="pop_cover8">
+					<div id="pop_close8"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/4_3.jpg" alt=""/>
+					<img class="te_8" src="./images/te8.png" alt=""/>
+				</div>
+			</div>
+			<div class="pop pop9">
+				<div class="pop_cover9">
+					<div id="pop_close9"><i class="fa fa-times" aria-hidden="true"></i></div>
+					<img src="./images/5_1.jpg" alt=""/>
+					<img class="te_9" src="./images/te9.png" alt=""/>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- experience -->
+		<div id="experience" class="section">
+			<section class="contain">
+				<div class="l_nav">
+					<span class="t1">Mobile</span>
+					<div></div>
+						<img src="./images/e2_2.jpg" alt=""/>
+					<p></p>
+				</div>
+				<div class="l_nav">
+					<span class="t1">Eat Drink</span>
+					<div></div>
+						<img src="./images/e3.jpg" alt=""/>
+					<p></p>
+				</div>
+				<div class="l_nav">
+					<span class="t1">Activities</span>
+					<div></div>
+						<img src="./images/e4.jpg" alt=""/>
+					<p></p>
+				</div>
+				<div class="r_nav">
+					<span class="t1">Art</span>
+					<div></div>
+						<img src="./images/e5.jpg" alt=""/>
+					<p></p>
+				</div>
+				<div class="r_nav">
+					<span class="t1">Past Festivals</span>
+					<div></div>
+						<img src="./images/erer.jpg" alt=""/>
+					<p></p>
+				</div>
+				<div class="r_nav">
+					<span class="t1">Sustainability</span>
+					<div></div>
+						<img src="./images/e7.jpg" alt=""/>
+					<p></p>
+				</div>
+			</section>
+		
+		</div>
+		
+		<!-- plan -->
+		<div id="plan" class="section">
+			
+			<div id="left_wrap">
+					<div class="plan_s plan1">
+						<p class="camping">Camping</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+					
+					<div class="plan_s plan2">
+						<p class="getting">Getting Here</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+					
+					<div class="plan_s plan3">
+						<p class="maps">Maps</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+					
+					<div class="plan_s plan4">
+						<p class="rules">Rules</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+			</div>
+			<div id="right_wrap">
+					<div class="plan_s2 plan5">
+						<p class="questions">Questions</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+					
+					<div class="plan_s2 plan6">
+						<p class="services">Services</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+					
+					<div class="plan_s2 plan7">
+						<p class="ada">ADA</p>
+						<ul><p>Learn more</p></ul>
+					</div>
+					<div class="plan_s2 plan8">
+						<p class="ada"></p>
+						<ul><p></p></ul>
+					</div>
+			</div>
+		</div>
+		<!-- main -->
+		<div id="main" class="section">
+				
+				
+				<div id="left_btn" class="btn">
+					
+					<a href="#passes">
+						<span>PASSES</span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</a>
+				</div>
+				
+				<div id="right_btn" class="btn">
+					<a href="#plan">
+						<span>PLAN</span>
+						<i class="fa fa-angle-left" aria-hidden="true"></i>
+						<i class="fa fa-angle-left" aria-hidden="true"></i>
+						<i class="fa fa-angle-left" aria-hidden="true"></i>
+					</a>
+				</div>
+				
+				
+				
+				
+				
+				<div id="top_btn" class="btn">
+					<a href="#music">
+						<span>MUSIC</span>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+				</div>
+				
+				
+				<div id="bottom_btn" class="btn">
+					<a href="#experience">
+						<span>EXPERIENCE</span>
+						<i class="fa fa-angle-up" aria-hidden="true"></i>
+						<i class="fa fa-angle-up" aria-hidden="true"></i>
+						<i class="fa fa-angle-up" aria-hidden="true"></i>
+					</a>
+				</div>
+				
+				
+				
+				<div id="main_btn" class="btn" title="main">
+					<a href="#main"><img src="./images/fdsds.png"></a>
+				</div>
+				
+				
+				<div id="acc_1"><img src="./images/acc1.png"></div>
+				<div id="acc_2"><img src="./images/acc2.png"></div>
+				
+				<div id="days">APRIL &nbsp 10~12 , 17~19 &nbsp 2020</div>
+				<div id="dday">
+					<span>"</span>
+					<span class="tit"></span>&nbsp &nbsp
+					<span class="day">00</span><span>Day</span>&nbsp
+					<span class="text"></span>
+					<span>"</span>
+				</div>
+				
+				<p>COACHELLA 2020 ADVANCE SALE</p>
+				<p class="text_2">ADVANCE SALE PASSES NO LONGER AVAILABLE</p>
+				
+				
+				<div id="button_wrap">
+					<div class="button left test">
+						<a href="#">WK1-JOIN WAITLIST</a>
+					</div>
+					<div class="button right test">
+						<a href="#">WK2-JOIN WAITLIST</a>
+					</div>
+				</div>
+				
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

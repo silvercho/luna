@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="index세로자동(vanilla).js" defer></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			border: none;
+			vertical-align: top;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		#wrap {
+			width: 960px;
+			margin: 0 auto;
+		}
+
+		header {
+			height: 200px;
+			background-color: #ccc;
+		}
+
+		section {
+			width: 960px;
+			height: 900px;
+			border: 1px solid #333;
+		}
+
+		article {
+			width: 960px;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+
+		}
+
+		#banner {
+			width: 960px;
+			float: left;
+		}
+
+		#banner li {
+			height: 400px;
+		}
+
+		.prev {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			left: 10px;
+			top: 50%;
+			margin-top: -50px;
+			z-index: 10;
+		}
+
+		.next {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			right: 10px;
+			top: 50%;
+			margin-top: -50px;
+			z-index: 10;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<header></header>
+		<section>
+			<article>
+				<ul id="banner">
+					<li><a href="#"><img src="img/p1.jpg" alt="사진1"></a></li>
+					<li><a href="#"><img src="img/p2.jpg" alt="사진2"></a></li>
+					<li><a href="#"><img src="img/p3.jpg" alt="사진3"></a></li>
+					<li><a href="#"><img src="img/p4.jpg" alt="사진3"></a></li>
+
+				</ul>
+
+				<p>
+					<a href="#" class="prev">
+						<img src="img/left1.png" alt="이전 버튼">
+					</a>
+					<a href="#" class="next">
+						<img src="img/right1.png" alt="다음 버튼">
+					</a>
+				</p>
+			</article>
+		</section>
+
+	</div>
+</body>
+
+</html>

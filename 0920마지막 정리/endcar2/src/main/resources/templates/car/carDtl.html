@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- 내부 스타일 시트 -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- 외부 스크립트 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- 내부 스크립트 -->
+    <script src="/js/footer.js"></script>
+    <style>
+        .section {
+            position: relative;
+            width: 100%;
+            padding: 32px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section .innerContent {
+            position: relative;
+            margin: 0 auto;
+            border: 1px solid #E9ECEF;
+            width: 1320px;
+            min-height: 630px;
+            padding: 32px 120px;
+            border-radius: 10px;
+        }
+
+        .section .innerContent .carBoxTop {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #E9ECEF;
+        }
+
+        .section .innerContent .carImgBox:not(:nth-of-type(6)),
+        .section .innerContent .carBoxText {
+            margin-bottom: 32px;
+        }
+
+        .section .innerContent .carImgBox img {
+            width: 500px;
+            height: 500px;
+            display: block;
+            border: 1px solid #E9ECEF;
+            border-radius: 10px;
+        }
+
+        .section .innerContent .carBoxText {
+            width: 500px;
+            height: 500px;
+            padding: 16px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #E9ECEF;
+            border-radius: 10px;
+            background: white;
+            position: fixed;
+            z-index: 3;
+            top: 214px;
+            right: 420px;
+        }
+
+        .section .innerContent .carBoxText button {
+            background: rgb(29, 29, 29);
+            color: #fff;
+            width: 436px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+        }
+
+        .section .innerContent .carBoxText .carBoxTextFlex {
+            width: 436px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section .innerContent .carBoxText .carBoxTextFlex,
+        .section .innerContent .carBoxBottom .carBoxBottomFlex {
+            height: 50px;
+            line-height: 50px;
+            padding-left: 8px;
+        }
+
+        .section .innerContent .carBoxText .carBoxTextFlex p,
+        .section .innerContent .carBoxText .carBoxTextFlex span
+        {
+            font-size: 2.5rem;
+        }
+
+        .section .innerContent .carBoxText .carBoxTextFlex span {
+            width: 326px;
+        }
+
+
+        .section .innerContent .carBoxText .carBoxTextFlex p,
+        .section .innerContent .carBoxBottom .carBoxBottomFlex p {
+            width: 100px;
+        }
+
+        .section .innerContent .carBoxBottom {
+            margin: 32px 0;
+        }
+
+
+        .section .innerContent .carBoxBottom .carBoxBottomFlex {
+            display: flex;
+        }
+
+        .section .innerContent .carBoxBottom .carBoxBottomFlex p,
+        .section .innerContent .carBoxBottom .carBoxBottomFlex span {
+            font-size: 2rem;
+        }
+
+        .section .innerContent .carBoxBottom .carBoxBottomFlex:nth-of-type(11) {
+            margin-bottom: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<input type="hidden" id="carId" th:value="${car.id}">
+<div class="section">
+    <div class="innerContent">
+        <div class="carBoxTop">
+            <div class="carImgBox">
+                <img th:src="${car.carImgDtoList[0].imgUrl}" alt="Image">
+            </div>
+            <div class="carBoxText">
+                <div class="carBoxTextFlex">
+                    <p><b>브랜드</b></p>
+                    <span th:text="${car.carBrand}"></span>
+                </div>
+                <div class="carBoxTextFlex">
+                    <p><b>차량명</b></p>
+                    <span th:text="${car.carName}"></span>
+                </div>
+                <div class="carBoxTextFlex">
+                    <p><b>차번호</b></p>
+                    <span th:text="${car.carNumber}"></span>
+                </div>
+                <div class="carBoxTextFlex">
+                    <p><b>가격</b></p>
+                    <span th:text="${car.carPrice} + '원'"></span>
+                </div>
+                <button type="button" onclick="location.href = '#'">관심차량 등록</button>
+                <a th:href="'/payment/buy/' +${car.id}">
+                    <button type="button">구매하기</button>
+                </a>
+            </div>
+        </div>
+        <div class="carBoxBottom">
+            <div class="carBoxBottomFlex">
+                <p><b>차량명:</b></p> <span th:text="${car.carName}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>브랜드:</b></p> <span th:text="${car.carBrand}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>차종</b></p> <span th:text="${car.carType}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>변속기</b></p> <span th:text="${car.carTransmission}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>연료</b></p> <span th:text="${car.carTransmission}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>색상</b></p> <span th:text="${car.carColor}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>연식</b></p> <span th:text="${car.carManufacturingDate}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>주행거리</b></p> <span th:text="${car.carOdometer}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>옵션</b></p> <span th:text="${car.carOption}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>사용내역</b></p> <span th:text="${car.carOpinion}"></span>
+            </div>
+            <div class="carBoxBottomFlex">
+                <p><b>사고이력</b></p> <span th:text="${car.carAccidentHistory}"></span>
+            </div>
+            <div th:each="carImg : ${car.carImgDtoList}" class="carImgBox">
+                <img th:if="${not #strings.isEmpty(carImg.imgUrl)}" th:src="${carImg.imgUrl}" alt="Image">
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+<script>
+
+     // carBoxText 요소 선택
+    const carBoxText = document.querySelector('.carBoxText');
+
+    // 스크롤 이벤트 리스너 등록
+    window.addEventListener('scroll', function() {
+        // 현재 스크롤 위치 가져오기
+        const scrollY = window.scrollY;
+
+        // 스크롤이 200px 아래에 있을 때
+        if (scrollY >= 200) {
+            // carBoxText를 고정 상태로 변경
+            carBoxText.style.position = 'fixed';
+            carBoxText.style.top = '16px'; // 10px 위치로 고정
+            carBoxText.style.right = '420px'; // 좌측 정렬
+        } else {
+            // 스크롤이 200px 미만에 있을 때 초기 상태로 되돌림
+            carBoxText.style.position = 'relative';
+            carBoxText.style.top = '0';
+            carBoxText.style.right = '0';
+        }
+
+
+    });
+</script>
+</body>
+
+</html>

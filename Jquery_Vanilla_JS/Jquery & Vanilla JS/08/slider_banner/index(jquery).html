@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>	
+
+<script>
+	$(function(){
+		$(".a li").click(function(){
+			var i = $(this).index();
+			$(".a li").removeClass('on');
+			$(this).addClass("on");
+			//$(".a li").eq(i).addClass("on");
+			$(".b li").removeClass('on');
+			$(".b li").eq(i).addClass("on")
+			
+		});
+	
+	});
+
+</script>
+<style>
+.a li.on{background-color:red;}
+.b li.on{background-color:yellow;}
+
+</style>
+
+</head>
+<body>
+		<ul class="a">
+			<li class="on">aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+		</ul>
+		<ul class="b">
+			<li class="on">AAA</li>
+			<li>BBB</li>
+			<li>CCC</li>
+		</ul>
+</body>
+</html>

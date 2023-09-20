@@ -1,0 +1,191 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- 내부 스타일 시트 -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- 외부 스크립트 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://js.tosspayments.com/v1/payment"></script>
+
+    <!-- 내부 스크립트 -->
+    <script src="/js/footer.js"></script>
+</head>
+<style>
+css
+Copy code
+/* 전체 컨테이너 스타일 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 결제 정보 섹션 스타일 */
+.contact-inner-title {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.contact-inner-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* 각 항목 스타일 */
+.contact-inner-title > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* 항목 이름 스타일 */
+.contact-inner-title > div > div:first-child {
+    font-weight: bold;
+    width: 150px;
+}
+
+/* 항목 값 스타일 */
+.contact-inner-title > div > div:last-child {
+    font-weight: normal;
+    flex: 1;
+}
+
+/* 금액 스타일 */
+#amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3182F6; /* 금액을 강조할 색상 */
+}
+
+.btn {
+    padding: 0;
+    margin: 0;
+}
+/* 구매하기 버튼 */
+#payment_card_button {
+    background-color: #3182F6;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* 취소하기 버튼 */
+#payment_cancel_button {
+    background-color: #F2F4F6;
+    color: #4E5968;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 주문 정보 간격 늘리기 */
+.contact-inner-title span span {
+   font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+</style>
+<!-- Start Contact Area -->
+<section id="contact-us" class="contact-us section">
+    <input type="hidden" id="carId" th:value="${car.id}">
+    <div class="container">
+        <div class="contact-inner-title">
+            <h2>결제 정보</h2>
+            <div>
+                <div>주문번호:</div><div id="orderId">post-1</div>
+            </div><br>
+            <div>
+                <div>차량명:</div><div id="orderName" th:text="${car.carBrand + ' ' + car.carName}"></div>
+            </div><br>
+            <div>
+                <div>차량번호:</div><div id="customerName" th:text="${car.carNumber}"></div>
+            </div><br>
+            <div>
+                <div>금액:</div><div id="amount" th:text="${car.carPrice} + '원'"></div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button id="payment_card_button" class="btn btn-warning size-h-65 payment-btn" type="submit">
+                구매하기
+            </button>
+            <button id="payment_cancel_button" onclick="/localhost:8080/security-login/"
+                    class="btn btn-warning size-h-65 payment-btn" type="submit">
+                취소하기
+            </button>
+        </div>
+    </div>
+</section>
+</body>
+
+<script type="text/javascript" th:inline="javascript">
+    var clientKey = 'test_ck_DLJOpm5QrlxP14voEWerPNdxbWnY';
+    var tossPayments = TossPayments(clientKey);
+    var button = document.getElementById('payment_card_button');
+    var cancelButton = document.getElementById('payment_cancel_button');
+    let amount = parseInt(document.getElementById('amount').innerText);
+    let orderId = document.getElementById('orderId').innerText;
+    let orderName = document.getElementById('orderName').innerText;
+    let customerName = document.getElementById('customerName').innerText;
+
+    button.addEventListener('click', function () {
+        tossPayments.requestPayment('카드', { // 결제 수단 파라미터
+            amount: amount,
+            orderId: orderId,
+            orderName: orderName,
+            customerName: customerName,
+            successUrl: 'http://localhost:8080/security-login',
+            failUrl: 'http://localhost:8080/fail',
+        })
+            .catch(function (error) {
+                if (error.code === 'USER_CANCEL') {
+                    // 결제 고객이 결제창을 닫았을 때 에러 처리
+                } else if (error.code === 'INVALID_CARD_COMPANY') {
+                    // 유효하지 않은 카드 코드에 대한 에러 처리
+                }
+            })
+    });
+        document.addEventListener('DOMContentLoaded', function () {
+        var cancelButton = document.getElementById('payment_cancel_button');
+
+        // 버튼이 클릭되었을 때 이벤트 핸들러 등록
+        cancelButton.addEventListener('click', function () {
+        // 새로운 주소로 이동
+        window.location.href = 'http://localhost:8080/security-login/car/1';
+        });
+    });
+</script>
+
+</html>

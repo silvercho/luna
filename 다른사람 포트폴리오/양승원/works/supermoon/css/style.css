@@ -1,0 +1,320 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+
+
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#000;}
+
+.cf:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+body{
+	font-family:"Poiret One", "Hanna", sans-serif;
+}
+
+header{
+	position:fixed;
+	width:15%;
+	height:100%;
+	left:0;
+	top:0;
+	background-color:#00116d;
+}
+
+header .logo{
+	position:absolute;
+	top:10%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:80%;
+	height:auto;
+}
+header .logo img{
+	display:block;
+	width:100%;
+	height:auto;
+}
+
+header .gnb{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+header .gnb a{
+	display:block;
+	color:#fff;
+	font-size:17px;
+	line-height:1.8;
+	padding:8px 30px;
+	transition:all 0.4s;
+}
+header .gnb a:hover{
+	color:skyblue;
+}
+
+
+header .bottom{
+	position:absolute;
+	left:50%;
+	transform:translateX(-50%);
+	bottom:50px;
+	width:50%;
+}
+
+header .bottom .snsSet li{
+	float:left;
+	width:50%;
+	font-size:0.8em;
+	text-align:center;
+	box-sizing:border-box;
+}
+header .bottom .snsSet li a{
+	color:#fff;
+}
+header .bottom .snsSet li:nth-child(1){
+	border-right:1px solid #fff;
+}
+header .bottom .sns li{
+	float:left;
+	width:33.33%;
+	text-align:center;
+	font-size:1.1em;
+}
+
+header .bottom .sns li a{
+	color:#fff;
+}
+
+
+/*section start*/
+section{
+	width:85%;
+	margin-left:15%;
+	height:auto;
+}
+
+section article{
+	float:left;
+	height:280px;
+	animation:scale 1s;
+}
+@keyframes scale{
+	0%{transform:scale(0);}
+	100%{transform:scale(1);}
+}
+
+section article:nth-child(1){
+	width:60%;
+	height:560px;
+	background-color:tan;
+}
+section article:nth-child(2){
+	width:40%;
+	background-color:plum;
+}
+section article:nth-child(3){
+	width:20%;
+	background-color:tomato;
+}
+section article:nth-child(4){
+	width:20%;
+	background-color:skyblue;
+}
+section article:nth-child(4){
+	width:20%;
+	background-color:skyblue;
+}
+section article:nth-child(5){
+	width:20%;
+	background-color:yellow;
+}
+section article:nth-child(6){
+	width:40%;
+	background-color:coral;
+}
+section article:nth-child(7){
+	width:20%;
+	background-color:lightblue;
+}
+section article:nth-child(8){
+	width:20%;
+	background-color:lavender;
+}
+section article:nth-child(9){
+	width:40%;
+	background-color:aqua;
+}
+section article:nth-child(10){
+	width:20%;
+	background-color:seagreen;
+}
+section article:nth-child(11){
+	width:20%;
+	background-color:blueviolet;
+}
+section article:nth-child(12){
+	width:20%;
+	background-color:yellowgreen;
+}
+
+article > div{
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+}
+article .bg{
+	background:no-repeat center /cover;
+}
+article .bg1{
+	background-image:url(../images/1.png);
+	background-color:#00116d;
+}
+article .bg2{
+	background-image:url(../images/3.png);
+}
+article .bg3{
+	background-image:url(../images/4.jpg);
+}
+article .bg4{
+	background-image:url(../images/5.jpg);
+}
+article .bg5{
+	background-image:url(../images/6.jpg);
+}
+article .bg6{
+	background-image:url(../images/7.jpg);
+}
+article .bg7{
+	background-image:url(../images/8.png);
+}
+
+article .bg span{
+	position:absolute;
+	right:20px;
+	bottom:0;
+	font-family:"Hanna",sans-serif;
+	font-size:60px;
+	color:#666;
+	transform:scale(10);
+	opacity:0;
+	transition:all 0.6s;
+}
+article .bg:hover span{
+	transform:scale(1);
+	opacity:1;
+}
+article .bg span{
+	/* cursor:default; */
+	pointer-events:none;
+}
+
+
+article .bg.bg1 span{
+	font-size:100px;
+	transform:rotateY(360deg);
+	color:#222;
+}
+
+article .bg.bg1:hover span{
+	transform:rotateY(0deg);
+}
+
+
+article .txt{
+	background-color:#fff;
+	transition:all 0.6s;
+}
+article .txt p{
+	padding:30px 40px 0;
+	box-sizing:border-box;
+	font-family:"Hanna",sans-serif;
+	word-break:keep-all;
+	position:relative;
+}
+
+article .txt p > *{
+	display:block;
+}
+
+article .txt p strong{
+	font-size:30px;
+	color:#333;
+	line-height:1.6;
+	margin-bottom:20px;
+	transition:all 0.6s;
+}
+article .txt p em{
+	transition:all 0.6s;
+}
+
+article .txt i{
+	position:absolute;
+	font-size:200px;
+	opacity:0.5;
+	bottom:-20px;
+	right:-500px;
+	transition:all 0.6s;
+}
+article .txt:hover i{
+	right:-15px;
+}
+article .txt.txt2 i{
+	right:-15px;
+} 
+
+article .txt.txt1 img{
+	position:absolute;
+	width:40%;
+	height:auto;
+	top:20px;
+	right:-300px;
+	opacity:0.4;
+	transition:all 0.6s;
+}
+article .txt.txt1:hover img{
+	right:10px;
+}
+
+
+article .txt.txt1:hover{
+	background-color:skyblue;
+}
+article .txt.txt2:hover{
+	background-color:#00b3ff;
+}
+article .txt.txt2:hover p strong,
+article .txt.txt2:hover i{
+	color:#fff;
+}
+
+article .txt.txt3:hover{
+	background-color:#ffff33;
+}
+article .txt.txt4:hover{
+	background-color:#00be3c;
+}
+article .txt.txt4:hover p strong,
+article .txt.txt4:hover p em,
+article .txt.txt4:hover i{
+	color:#fff;
+}
+
+article .txt.txt5:hover{
+	background-color:#3d3332;
+}
+article .txt.txt5:hover p strong,
+article .txt.txt5:hover p em,
+article .txt.txt5:hover i{
+	color:#fff;
+}
+
+
+

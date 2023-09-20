@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/jquery.bxslider.css"/>
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
+	<title>CU</title>
+	<script>
+		$(function(){
+		
+			/*var i = 0;
+			var repeat;
+			function timer(){
+				repeat = setInterval(function(){
+					i++;
+					
+					if(i==5){
+					i=0;}	
+					
+					$(".slide input").eq(i).stop().trigger("click");
+					
+				},3000);
+				
+			}
+			timer();
+			
+			$("label").click(function(){
+				i = $(this).index();
+				
+				timer();
+			});
+			
+			$(".slide").mouseover(function(){
+				clearInterval(repeat);
+			});
+			$(".slide").mouseleave(function(){
+				timer();
+			});
+			*/
+			setTimeout(function(){
+				$(".slide_img li .box0").addClass("on");
+			},500);
+			
+			var slide = $(".slide_img").bxSlider({
+				auto:true,
+				pause:3000,
+				autoHover:true,
+				speed:400,
+				mode:"vertical",
+				onSlideAfter:function(){
+					var i = slide.getCurrentSlide();
+					
+					$(".slide_img li .span_box").removeClass("on");
+					$(".slide_img li .box"+i).addClass("on");
+					
+				}
+			});
+		});
+			
+		
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="top_menu">
+			<div class="top_cover">
+				<div class="sns">
+					<a href="#"><img src="./img/btn_en.gif" alt=""></a>
+					<a href="#"><img src="./img/btn_ch.gif" alt=""></a>
+				</div>
+				<div class="gnb">
+					<ul>
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">CU회원가입</a></li>
+						<li><a href="#">고객센터</a></li>
+						<li class="search">
+							<form action="#" method="post">
+								<label for="sch">매장안내</label>
+								<input type="text" id="sch" name="search" value="" placeholder="검색"/>
+								<input type="image" src="./img/icon_search.png"/>
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="header">
+			<div class="header_cover">
+				<h1 class="logo">
+					<a href="#">
+						<img src="./img/logo (1).gif" alt=""/>
+					</a>
+				</h1>
+				<ul class="nav">
+					<li><a href="#">행사안내</a></li>
+					<li><a href="#">상품안내</a></li>
+					<li><a href="#">서비스안내</a></li>
+					<li><a href="#">CU소개</a></li>
+					<li><a href="#">CU 멤버쉽</a></li>
+					<li><a href="#">창업안내</a></li>
+					<li><a href="#">상생혜택</a></li>
+					<li><a href="#">이거어때</a></li>
+				</ul>
+				<div class="fulldown">
+					<div class="full_cover">
+						<div class="empty"></div>
+						<div class="lnb_menu">
+							<ul>
+								<li><a href="#">플러스 행사</a></li>
+								<li><a href="#">아침愛 행사</a></li>
+								<li><a href="#">증정 행사</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">PB상품</a></li>
+								<li><a href="#">BEST상품</a></li>
+								<li><a href="#">더 맛있CU</a></li>
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">HEYROO 소개</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">생활편의서비스</a></li>
+								<li><a href="#">제휴카드</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">BRAND STORY</a></li>
+								<li><a href="#">FRESH STORY</a></li>
+								<li><a href="#">CU 갤러리</a></li>
+								<li><a href="#">디지털 사보</a></li>
+								<li><a href="#">CU 소식</a></li>
+								<li><a href="#">소셜라이브</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">CU멤버십서비스</a></li>
+								<li><a href="#">포켓CU</a></li>
+								<li><a href="#">이벤트</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">사업의 이해</a></li>
+								<li><a href="#">창업 가이드</a></li>
+								<li><a href="#">창업 설명회</a></li>
+								<li><a href="#">창업 상담</a></li>
+								<li><a href="#">창업 성공기</a></li>
+								<li><a href="#">점포물건</a></li>
+							</ul>
+							<ul>
+								<li><a href="#">상상혜택제도?</a></li>
+								<li><a href="#">CU몰</a></li>
+								<li><a href="#">특별한 혜택</a></li>
+								<li><a href="#">공감 혜택</a></li>
+								<li><a href="#">활력소 혜택</a></li>
+								<li><a href="#">STEFF 혜택</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide">
+			<!--<input type="radio" name="slide" id="slide1" checked>
+			<label for="slide1" class="slide1"></label>
+			<input type="radio" name="slide" id="slide2">
+			<label for="slide2" class="slide2"></label>
+			<input type="radio" name="slide" id="slide3">
+			<label for="slide3" class="slide3"></label>
+			<input type="radio" name="slide" id="slide4">
+			<label for="slide4" class="slide4"></label>
+			<input type="radio" name="slide" id="slide5">
+			<label for="slide5" class="slide5"></label>
+			
+			<ul class="slide_img cf">
+				<li><img src="img/E3A06F9249C64D14AA23AE4D98DCF4CB.jpg"><div class="span_box"><img src="img/C17E38361922440C8C0BCD8BCC1002D6.png"></div></li>
+				<li><img src="img/3BA6C551D71E492C8F589E823A8AB014.jpg"><div class="span_box"><img src="img/99CF57203AAA4BA4872A4E31673621B3.png"></div></li>
+				<li><img src="img/F9A2463821DA46BEB210AAE99D932274 (1).jpg"><div class="span_box"><img src="img/AC8026A1AED840BBA5B0669F0D29A495.png"></div></li>
+				<li><img src="img/3699C2B5CE9B406F8A3999E289BBCC99.jpg"><div class="span_box"><img src="img/52EC72F360754C438E912B3DD294EC6E.png"></div></li>
+				<li><img src="img/00D6C74A55BB40089D5C0D59C35BF7C0.jpg"><div class="span_box"><img src="img/C17E38361922440C8C0BCD8BCC1002D6.png"></div></li>
+			</ul>-->
+			<ul class="slide_img">
+				<li><img src="img/E3A06F9249C64D14AA23AE4D98DCF4CB.jpg"><div class="span_box box0"><img src="img/C17E38361922440C8C0BCD8BCC1002D6.png"></div></li>
+				<li><img src="img/3BA6C551D71E492C8F589E823A8AB014.jpg"><div class="span_box box1"><img src="img/99CF57203AAA4BA4872A4E31673621B3.png"></div></li>
+				<li><img src="img/F9A2463821DA46BEB210AAE99D932274 (1).jpg"><div class="span_box box2"><img src="img/AC8026A1AED840BBA5B0669F0D29A495.png"></div></li>
+				<li><img src="img/3699C2B5CE9B406F8A3999E289BBCC99.jpg"><div class="span_box box3"><img src="img/52EC72F360754C438E912B3DD294EC6E.png"></div></li>
+				<li><img src="img/00D6C74A55BB40089D5C0D59C35BF7C0.jpg"><div class="span_box box4"><img src="img/C17E38361922440C8C0BCD8BCC1002D6.png"></div></li>
+			</ul>
+		</div>
+		<div id="section_cover">
+			<div id="section">
+				<div class="section_img">
+					<a href="#"><img src="./img/top_bnr_01.jpg"/></a>
+				</div>
+				<div class="section_ikon">
+					<ul>
+						<li class="title"><a href="#"><img src="./img/tit_main_top_01.png"/></a></li>
+						<li class="ikon first"><a href="#"><img src="./img/service_04.png"/></a><span>택배 및 픽업</span></li>
+						<li class="ikon"><a href="#"><img src="./img/service_05.png"/></a><span>GIFT카드<span></li>
+						<li class="ikon"><a href="#"><img src="./img/service_06.png"/></a><span>프리페이드 & <br>바코드캐시충전</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section_middle">
+			<div class="section_middle_cover">
+				<div class="middle_list_box">
+					<p><img src="./img/tit_middle_01.gif" alt=""/></p>
+					<ul>
+						<li><a href="#"><p>채용안내<span>&gt;</span></p></a></li>
+						<li class="none"><a href="#"><p>인사제도<span>&gt;</span></p></a></li>
+					</ul>
+				</div>
+				<div class="middle_list_box">
+					<p><img src="./img/tit_middle_02.gif" alt=""/></p>
+					<ul>
+						<li><a href="#"><p>창업안내<span>&gt;</span></p></a></li>
+						<li class="none"><a href="#"><p>거래상담<span>&gt;</span></p></a></li>
+					</ul>
+				</div>
+				<div class="middle_list_box">
+					<p><img src="./img/tit_middle_03.gif" alt=""/></p>
+					<ul>
+						<li><a href="#"><p>점주광장<span>&gt;</span></p></a></li>
+						<li class="none"><a href="#"><p>동영상 사이트<span>&gt;</span></p></a></li>
+					</ul>
+				</div>
+				<div class="middle_list_box">
+					<p><img src="./img/tit_middle_04.gif" alt=""/></p>
+					<ul>
+						<li><a href="#"><p>고객상담실<span>&gt;</span></p></a></li>
+						<li class="none"><a href="#"><p>자주 묻는 질문<span>&gt;</span></p></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="section_notice">
+			<div class="section_notice_one">
+				<div class="notice_title">
+					<h3>공지사항</h3>
+					<a href="#"><span>+더보기</span></a>
+				</div>
+				<table class="first_table">
+				<tr><td><a href="#"><span>상세건담x핫식스 프라모델 판매 점포 자세히보기</span></a></td>
+					<td><a href="#">2019.05.07</a></td>
+				</tr>
+				<tr><td><a href="#"><span>CU플러스티머니 x 도시락, 주먹밥 등 전품목 30% 할인!</span></a></td>
+					<td><a href="#">2019.04.01</a></td>
+				</tr>
+				<tr><td><a href="#"><span>삼성카드 x 과일 20% 할인 ♥</span></a></td>
+					<td><a href="#">2019.04.01</a></td>
+				</tr>
+				<tr><td><a href="#"><span>비씨카드 결제 시 냉장면 500원 할인!</span></a></td>
+					<td><a href="#">2019.04.01</a></td>
+				</tr>
+				<tr><td><a href="#"><span>샐러드 X 카카오페이 결제 시 50% 할인!</span></a></td>
+					<td><a href="#">2019.03.01</a></td>
+				</tr>
+				</table>
+			</div>
+			<div class="section_notice_two">
+				<div class="notice_title">
+					<h3>자주묻는질문</h3>
+					<a href="#"><span>+더보기</span></a>
+				</div>
+				<table class="second_table">
+					<tr>
+						<td><a href="#">142</a></td>
+						<td><a href="#">결제</a></td>
+						<td><a href="#"><b>Q. 쿠폰은 어떻게 사용하나요?</b></a></td>
+					</tr>
+					<tr>
+						<td><a href="#">141</a></td>
+						<td><a href="#">포인트</a></td>
+						<td><a href="#"><b>Q. 포인트 기부는 무엇인가요?</b></a></td>
+					</tr>
+					<tr>
+						<td><a href="#">140</a></td>
+						<td><a href="#">포인트</a></td>
+						<td><a href="#"><b>Q. 그룹 포인트는 무엇인가요?</b></a></td>
+					</tr>
+					<tr>
+						<td><a href="#">139</a></td>
+						<td><a href="#">생활편의서비스</a></td>
+						<td><a href="#"><b>Q. CU추천이 무엇인가요?</b></a></td>
+					</tr>
+					<tr>
+						<td><a href="#">142</a></td>
+						<td><a href="#">결제</a></td>
+						<td><a href="#"><b>Q.쿠폰은 어떻게 사용하나요?</b></a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="aside">
+			<ul>
+				<li><a href="#"><img src="./img/footer_rel_00.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_01.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_02.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_networks.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_04.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_08.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_06.gif"></a></li>
+				<li><a href="#"><img src="./img/footer_rel_07.gif"></a></li>
+			</ul>
+			<p>창업문의: <span>5177-8007</span></p>
+		</div>
+		<div class="footer">
+			<div class="footer_cover">
+				<div class="footer_left_box">
+					<ul class="after">
+						<li><a href="#">STAFF 구인구직</a></li>
+						<li><a href="#">거래상담</a></li>
+						<li><a href="#">매장안내</a></li>
+						<li><a href="#">발주 및 배송 데이터</a></li>
+						<li><a href="#">전자세금계산서</a></li>
+					</ul>
+					<ul class="after">
+						<li class="violet"><a href="#">개인정보처리방침</a></li>
+						<li><a href="#">점주인증</a></li>
+						<li><a href="#">임직원인증</a></li>
+						<li><a href="#">계열사인증</a></li>
+						<li><a href="#">지주사인증</a></li>
+					</ul>
+					<ul>
+						<li>BGF리테일 서울시 강남구 테헤란로 405(삼성동)</li>
+						<li>TEL: 1577-8007</li>
+					</ul>
+					<p>COPYRIGHT © BGFretail ALL RIGHT RESERVED</p>
+					<ul class="footer_sns">
+						<li><a href="#"><img src="./img/footer_facebook.gif"></a></li>
+						<li><a href="#"><img src="./img/footer_twitter.gif"></a></li>
+						<li><a href="#"><img src="./img/footer_blog.gif"></a></li>
+					</ul>
+				</div>
+				<div class="footer_right_box">
+					<ul class="footer_right">
+						<li><img src="./img/footer_ccm.gif" alt=""/></li>
+						<li><img src="./img/footer_isms.gif" alt=""/></li>
+					</ul>
+					<div class="footer_right_box_middle">
+						<h1><img src="./img/footer_phone.gif" alt=""/></h1>
+						<p>평일 09:00~21:00</p>
+					</div>
+					<ul class="footer_right_box_img">
+						<li><a href="#"><img src="./img/footer_faq.gif" alt=""/></a></li>
+						<li><a href="#"><img src="./img/footer_1x1.gif" alt=""/></a></li>
+						<li><a href="#"><img src="./img/footer_notice.gif" alt=""/></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+</body>
+</html>

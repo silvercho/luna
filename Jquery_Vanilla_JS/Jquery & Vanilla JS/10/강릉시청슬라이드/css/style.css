@@ -1,0 +1,89 @@
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#333;}
+
+.main2{
+	position:relative;
+	width:1200px;
+	height:450px;
+	margin:0 auto;
+}
+
+.main2 #slide{
+	width:795px;
+	height:450px;
+	
+}
+
+.main2 #slide #banner{
+	width:13000px;
+	height:450px;
+}
+.main2 #slide #banner li{
+	float:left;
+	width:795px;
+}
+
+/*메인슬라이드 버튼*/
+.controler{
+	z-index:100;
+	position:absolute;
+	bottom:0;
+}
+.controler .btn_prev{
+	display:block;
+	float:left;
+	width:47px;
+	height:47px;
+	background:url(../images/bprev.png) no-repeat 50% 50%;
+	border:1px solid  #878585;
+	border-left-color:#a1a1a1;
+	background-color:rgba(213,213,213,0.9);
+	cursor:pointer;
+	
+}
+.controler .btn_stop{
+	display:block;
+	float:left;
+	width:47px;
+	height:47px;
+	background:url(../images/bstop.png) no-repeat 50% 50%;
+	border:1px solid  #878585;
+	border-left-color:#a1a1a1;
+	background-color:rgba(213,213,213,0.9);
+	cursor:pointer;
+	
+}
+.controler .btn_stop.on{
+	background:url(../images/bstart.png) no-repeat 50% 50%;
+	background-color:rgba(213,213,213,0.9);
+}
+
+.controler .btn_next{
+	display:block;
+	float:left;
+	width:47px;
+	height:47px;
+	background:url(../images/bnext.png) no-repeat 50% 50%;
+	border:1px solid  #878585;
+	border-left-color:#a1a1a1;
+	background-color:rgba(213,213,213,0.9);
+	cursor:pointer;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

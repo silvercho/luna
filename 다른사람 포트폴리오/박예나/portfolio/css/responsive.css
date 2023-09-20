@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+@media screen and (max-width:1160px){
+	#main .main_text{width:200px; height:300px; left:7%;}
+	#main .main_text h1{font-size:55px;}
+}
+/**************************************************/
+@media screen and (max-width:1570px){
+	.clothes .clothes_right .cloth li{top:-13.3%;}
+}
+@media screen and (max-width:1360px){
+	.clothes .clothes_right .cloth li{top:-13.6%;}
+	.clothes .clothes_right .cloth{width:180%;}
+}
+@media screen and (max-width:1160px){
+	.clothes .clothes_right .cloth li{top:-14.2%;}
+	.clothes .clothes_right .cloth{left:-10%;}
+	.clothes .clothes_right .cloth{width:200%;}
+}
+@media screen and (max-width:1020px){
+	.clothes .clothes_right .cloth{width:220%;}
+}
+/**************************************************/
+@media screen and (max-width:1600px){
+	.graph .three_quart1 .skillbar .skill_bar img{height:250%;}
+	@keyframes skill{0%{top:-90%;} 50%{top:-60%;} 100%{top:-90%;}}
+	.graph .three_quart1 .skillbar{height:37%;}
+}
+@media screen and (max-width:1370px){
+	.graph .three_quart1 .skillbar{height:33%;}
+}
+@media screen and (max-width:1230px){
+	.graph .three_quart1 .skillbar{height:30%;}
+}
+@media screen and (max-width:1120px){
+	.graph .three_quart1 .skillbar{height:28%;}
+}
+@media screen and (max-width:1030px){
+	.graph .three_quart1 .skillbar{height:26%;}
+}
+@media screen and (max-width:980px){
+	.graph .three_quart1 .skillbar{height:24%;}
+}
+
+
+@media screen and (max-width:1600px){
+	.juice_cover{left:55%;}
+}
+@media screen and (max-width:1480px){
+	.juice_cover{left:53%;}
+}
+@media screen and (max-width:1360px){
+	.juice_cover{left:50%;}
+}
+@media screen and (max-width:1230px){
+	.juice_cover{left:47%;}
+}
+@media screen and (max-width:1100px){
+	.juice_cover{left:43%;}
+}
+@media screen and (max-width:990px){
+	.juice_cover{left:40%;}
+}
+@media screen and (max-width:930px){
+	.juice_cover{left:37%;}
+}
+
+
+@media screen and (max-width:1560px){
+#work .work1{top:37%; left:15.2%; }
+#work .work2{top:25%; left:48.5%;}
+#work .work3{top:37%; right:1%;}
+#work .work4{bottom:18%; right:-4%;}
+#work .work5{bottom:-12%; left:30%;}
+#work .work6{bottom:3%; right:31%;}
+}
+@media screen and (max-width:1440px){
+#work .work1{top:39%; left:15.2%; }
+#work .work2{top:27%; left:48.5%;}
+#work .work3{top:39%; right:1%;}
+#work .work4{bottom:20%; right:-4%;}
+#work .work5{bottom:-10%; left:30%;}
+#work .work6{bottom:5%; right:31%;}
+}
+@media screen and (max-width:1340px){
+#work .w_hover{height:18%;}
+#work .work1{top:38%; left:15.2%; }
+#work .work2{top:28%; left:48.5%;}
+#work .work3{top:38%; right:1%;}
+#work .work4{bottom:21%; right:-4%;}
+#work .work5{bottom:-3%; left:30%;}
+#work .work6{bottom:12%; right:31%;}
+}
+@media screen and (max-width:1155px){
+#work .w_hover{height:15%;}
+#work .work1{top:40%; left:15.2%; }
+#work .work2{top:32%; left:48.5%;}
+#work .work3{top:40%; right:1%;}
+#work .work4{bottom:25%; right:-4%;}
+#work .work5{bottom:5%; left:30%;}
+#work .work6{bottom:16%; right:31%;}
+}
+@media screen and (max-width:1000px){
+#work .w_hover{height:13%;}
+#work .work1{top:42%; left:15.2%; }
+#work .work2{top:34%; left:48.5%;}
+#work .work3{top:42%; right:1%;}
+#work .work4{bottom:28%; right:-4%;}
+#work .work5{bottom:11%; left:30%;}
+#work .work6{bottom:19%; right:31%;}
+}
+/**************************************************/
+@media screen and (max-width:1375px){
+	#pop_slide .w_next img{width:40px; height:auto;}
+	#pop_slide .w_prev img{width:40px; height:auto;}
+	#pop_slide .close{width:40px; height:40px; top:12%;}
+	
+	.pop_left{left:0;}
+	.pop_left .pc{width:500px; height:350px;} 
+	.pop_left .mobile{width:180px; height:260px;}
+	.pop_right .pop_text{width:300px; height:50%; left:60%;}
+	.pop_right .pop_text h1{font-size:37px;}
+	.pop_right .pop_text p{font-size:17px;}
+}
+@media screen and (max-width:1110px){
+	.pop_left .pc{width:450px; height:300px;} 
+	.pop_left .mobile{width:150px; height:230px;}
+}
+@media screen and (max-width:1000px){
+	.pop_left .pc{width:400px; height:250px;} 
+	.pop_left .mobile{width:120px; height:200px;}
+}
+/**************************************************/
+@media screen and (max-width:1040px){
+	#contact .con_left .con_cover h1{font-size:45px;}
+	#contact .con_left .con_cover p{font-size:25px;}
+}
+
+
+

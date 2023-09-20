@@ -1,0 +1,9 @@
+.sub{
+  transition:height .5s;
+  overflow:hidden;
+  height:0px;
+}
+
+.sub.on{
+  height:100px;
+}

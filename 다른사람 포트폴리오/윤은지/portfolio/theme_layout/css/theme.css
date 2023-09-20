@@ -1,0 +1,54 @@
+/*테마1 - morning*/
+#wrap.morning{background-image: url(../images/bg_morning.jpg);}
+#wrap.morning h1{background-image: url(../images/logo_b.png);}
+#wrap.morning #gnb li a,
+#wrap.morning #sns li i{color: #555;}
+#wrap.morning #frontFrame{background-image: url(../images/phone_morning.png);}
+#wrap.morning #frontFrame p{color: #333;}
+#wrap.morning article p{color: #666;}
+#wrap.morning article p strong{color: #111;}
+#wrap.morning article em{color: #333;}
+#wrap.morning > img:nth-child(1),
+#wrap.morning > img:nth-child(2){opacity: 1;}
+
+/*테마2 - afternoon*/
+#wrap.afternoon { background-image: url(../images/bg_afternoon.jpg); }
+#wrap.afternoon  h1 { background-image: url(../images/logo_b.png); }
+#wrap.afternoon #gnb a { color: #555; }
+#wrap.afternoon #sns i { color: #555; }
+#wrap.afternoon div#frontFrame { background-image: url(../images/phone_afternoon.png); }
+#wrap.afternoon article p { color: #666; }
+#wrap.afternoon article p strong { color: #111; }
+#wrap.afternoon article em { color: #333; }
+#wrap.afternoon div#frontFrame p { color: #333; }
+#wrap.afternoon > img:nth-child(1), 
+#wrap.afternoon > img:nth-child(2) { opacity: 1; }
+
+
+/*테마3 - evening*/
+#wrap.evening { background-image: url(../images/bg_evening.jpg); }
+#wrap.evening  h1 { background-image: url(../images/logo_w.png); }
+#wrap.evening #gnb a { color: #fff; }
+#wrap.evening #sns i { color: #fff; }
+#wrap.evening div#frontFrame { background-image: url(../images/phone_evening.png); }
+#wrap.evening article p { color: #444; }
+#wrap.evening article p strong { color: #fff; }
+#wrap.evening article em { color: #333; }
+#wrap.evening div#frontFrame p { color: #fff; }
+#wrap.evening > img:nth-child(1), 
+#wrap.evening > img:nth-child(2) { opacity: 0.6; }
+
+/*테마4 - night*/
+#wrap.night{background-image: url(../images/bg_night.jpg);}
+#wrap.night h1{background-image: url(../images/logo_w.png);}
+#wrap.night #gnb li a,
+#wrap.night #sns li i{color: #fff;}
+#wrap.night #frontFrame{background-image: url(../images/phone_night.png);}
+#wrap.night #frontFrame p{color: #fff;}
+#wrap.night article p{color: #bbb;}
+#wrap.night article p strong{color: #fff;}
+#wrap.night article em{color: #888;}
+#wrap.night > img:nth-child(1),
+#wrap.night > img:nth-child(2){opacity: 0.1;}
+#wrap.night #frontFrame p img.cld1,
+#wrap.night #frontFrame p img.cld2{opacity: 0.4;}

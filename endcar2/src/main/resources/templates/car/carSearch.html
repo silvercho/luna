@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- 내부 스타일 시트 -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- 외부 스크립트 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- 내부 스크립트 -->
+    <script src="/js/footer.js"></script>
+    <script th:inline="javascript">
+
+        $(document).ready(function(){
+            $("#searchBtn").on("click",function(e) {
+                e.preventDefault();
+                page(0);
+            });
+        });
+
+        function page(page){
+            var searchDateType = $("#searchDateType").val();
+            var searchSellStatus = $("#searchSellStatus").val();
+            var searchBy = $("#searchBy").val();
+            var searchQuery = $("#searchQuery").val();
+
+            location.href="/admin/cars/" + page + "?searchDateType=" + searchDateType
+            + "&searchSellStatus=" + searchSellStatus
+            + "&searchBy=" + searchBy
+            + "&searchQuery=" + searchQuery;
+        }
+
+    </script>
+
+
+    <style>
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 1320px;
+            margin: 0 auto;
+            padding: 32px 0;
+            min-height: 630px;
+            height:3000px;
+        }
+
+        .section .row {
+            width: 1320px;
+            margin: 0;
+        }
+
+        .section .row .customSelect {
+            width: 315px;
+            padding: 10px;
+            margin: 16px 16px 16px 0;
+            background: #F9FAFB;
+        }
+
+        .section .row .carCardBox{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            width: 985px;
+        }
+
+        .car-card {
+            width: 315px;
+            padding: 10px;
+            margin-bottom: 16px;
+            background: #F9FAFB;
+        }
+
+        .car-card a img{
+            width: 295px;
+            height: 295px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .section .row .customSelect,
+        .car-card,
+        .section .row .carSearchBox,
+        .section .row .carSearchBox input,
+        .section .row .carSearchBox .fontBox {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            }
+
+        .section .row .carSearchBox  {
+            width: 985px;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: #F9FAFB;
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+
+        .section .row .carSearchBox input {
+            width: 868px;
+            height: 50px;
+            font-type:4rem;
+            padding-left: 8px;
+        }
+
+        .section .row .carSearchBox .fontBox {
+            height: 50px;
+            width: 50px;
+            background: #fff;
+        }
+
+        .section .row .carSearchBox .fontBox a {
+            display: block;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section .row .carSearchBox i {
+            text-align: center;
+            font-type: 4rem;
+        }
+
+        select {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 180px;
+        }
+
+        label {
+            width: 100px;
+        }
+
+        select,label {
+            padding: 4px 8px;
+            background-color: #fff;
+            font-size: 1.5rem;
+            border: 1px solid #aaa;
+            border-radius: .5em;
+        }
+
+        .selectedCheckList {
+            width: 985px;
+            min-height: 200px;
+            background: #F9FAFB;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 16px;
+            align-cars:center
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .selectedCheckList h2 {
+            font-weight: bold;
+            padding-right: 16px;
+        }
+
+        .selectedCheckList p{
+            padding-right: 16px;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .selectedCheckList .list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .carPage {
+            width: 100%;
+        }
+
+        .carCardBox .car-card div .flex {
+            display: block;
+            display: flex;
+            width: 295px;
+        }
+
+        .carCardBox .car-card div .flex b {
+            display: block;
+            width: 70px;
+        }
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div class="row">
+        <div class="customSelect">
+            <div class="filter">
+                <div class="checkbox">
+                    <label th:for="carBrand" class="CarBrand">
+                        <b>브랜드</b>
+                    </label>
+                    <select name="brand" onchange="applyFilters()">
+                        <option value="">Select</option>
+                        <option value="현대">현대</option>
+                        <option value="제네시스">제네시스</option>
+                        <option value="기아">기아</option>
+                        <option value="쉐보레(GM대우)">쉐보레(GM대우)</option>
+                        <option value="르노코리아(삼성)">르노코리아(삼성)</option>
+                        <option value="KG모빌리티(쌍용)">KG모빌리티(쌍용)</option>
+                        <option value="벤츠">벤츠</option>
+                        <option value="BMW">BMW</option>
+                        <option value="아우디">아우디</option>
+                        <option value="폭스바겐">폭스바겐</option>
+                        <option value="미니">미니</option>
+                        <option value="볼보">볼보</option>
+                        <option value="폴스타">폴스타</option>
+                        <option value="포르쉐">포르쉐</option>
+                        <option value="렉서스">렉서스</option>
+                        <option value="도요타">도요타</option>
+                        <option value="인피니티">인피니티</option>
+                        <option value="혼다">혼다</option>
+                        <option value="닛산">닛산</option>
+                        <option value="미쯔비시">미쯔비시</option>
+                        <option value="테슬라">테슬라</option>
+                        <option value="포드">포드</option>
+                        <option value="지프">지프</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label th:for="carType" class="CarType">
+                        <b>차종</b>
+                    </label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="경차">경차</option>
+                        <option value="소형">소형</option>
+                        <option value="준중형">준중형</option>
+                        <option value="대형">대형</option>
+                        <option value="RV">RV</option>
+                        <option value="SUV">SUV</option>
+                        <option value="승합차">승합차</option>
+                        <option value="스포츠카">스포츠카</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label for="carTransmission">
+                        <b>변속기</b>
+                    </label>
+                    <select id="carTransmission" name="carTransmission" required>
+                        <option value="">Select</option>
+                        <option value="오토">오토</option>
+                        <option value="수동">수동</option>
+                        <option value="세미오토">세미오토</option>
+                        <option value="CVT">CVT</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <div class="checkbox">
+                    <label th:for="carColor" class="CarColor">
+                        <b>색상</b>
+                    </label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="흰색">흰색</option>
+                        <option value="은색">은색</option>
+                        <option value="회색">회색</option>
+                        <option value="검은색">검은색</option>
+                        <option value="빨간색">빨간색</option>
+                        <option value="파란색">파란색</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label th:for="carManufacturingDate" class="CarManufacturingDate">
+                        <b>연식</b>
+                    </label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="2023년식">2023년</option>
+                        <option value="2022년식">2022년</option>
+                        <option value="2021년식">2021년</option>
+                        <option value="2020년식">2020년</option>
+                        <option value="2019년식">2019년</option>
+                        <option value="2018년식">2018년</option>
+                        <option value="2017년식">2017년</option>
+                        <option value="2016년식">2016년</option>
+                        <option value="2015년식">2015년</option>
+                        <option value="2014년식">2014년</option>
+                        <option value="2013년식">2013년</option>
+                        <option value="2012년식">2012년</option>
+                        <option value="2011년식">2011년</option>
+                        <option value="2010년식">2010년</option>
+                        <option value="2009년식">2009년</option>
+                        <option value="2008년식">2008년</option>
+                        <option value="2007년식">2007년</option>
+                        <option value="2006년식">2006년</option>
+                        <option value="2005년식">2005년</option>
+                        <option value="2004년식">2004년</option>
+                        <option value="2003년식">2003년</option>
+                        <option value="2002년식">2002년</option>
+                        <option value="2001년식">2001년</option>
+                        <option value="2000년식">2000년</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label th:for="carOdometer" class="carOdometer">
+                        <b>주행거리</b>
+                    </label>
+                    <select id="carOdometer" name="carOdometer" required>
+                        <option value="">Select</option>
+                        <option value="10,000 km 이하">10,000 km 이하</option>
+                        <option value="20,000 km 이하">20,000 km 이하</option>
+                        <option value="30,000 km 이하">30,000 km 이하</option>
+                        <option value="40,000 km 이하">40,000 km 이하</option>
+                        <option value="50,000 km 이하">50,000 km 이하</option>
+                        <option value="60,000 km 이하">60,000 km 이하</option>
+                        <option value="70,000 km 이하">70,000 km 이하</option>
+                        <option value="80,000 km 이하">80,000 km 이하</option>
+                        <option value="90,000 km 이하">90,000 km 이하</option>
+                        <option value="100,000 km 이하">100,000 km 이하</option>
+                        <option value="110,000 km 이하">110,000 km 이하</option>
+                        <option value="120,000 km 이하">120,000 km 이하</option>
+                        <option value="130,000 km 이하">130,000 km 이하</option>
+                        <option value="140,000 km 이하">140,000 km 이하</option>
+                        <option value="150,000 km 이하">150,000 km 이하</option>
+                        <option value="160,000 km 이하">160,000 km 이하</option>
+                        <option value="170,000 km 이하">170,000 km 이하</option>
+                        <option value="180,000 km 이하">180,000 km 이하</option>
+                        <option value="190,000 km 이하">190,000 km 이하</option>
+                        <option value="200,000 km 이하">200,000 km 이하</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label th:for="carOption" class="CarOption">
+                        <b>옵션</b>
+                    </label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="선루프">선루프</option>
+                        <option value="헤드램프">헤드램프</option>
+                        <option value="파워 전동 트렁크">파워 전동 트렁크</option>
+                        <option value="고스트 도어 클로징">고스트 도어 클로징</option>
+                        <option value="전동접이 사이드 미러">전동접이 사이드 미러</option>
+                        <option value="알루미늄 휠">알루미늄 휠</option>
+                        <option value="루프랙">루프랙</option>
+                        <option value="열선 스티어링 휠">열선 스티어링 휠</option>
+                        <option value="전동 조절 스티어링 휠">전동 조절 스티어링 휠</option>
+                        <option value="패들 시프트">패들 시프트</option>
+                        <option value="스티어링 휠 리모컨">스티어링 휠 리모컨</option>
+                        <option value="하이패스">하이패스</option>
+                        <option value="파워 도어록">파워 도어록</option>
+                        <option value="파워 스티어링 휠">파워 스티어링 휠</option>
+                        <option value="파워 윈도우">파워 윈도우</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="carCardBox">
+            <div class="carSearchBox">
+                <input type="text" id="searchInput" placeholder="차량명을 입력 후 검색 버튼을 눌러주세요">
+                <div class="fontBox">
+                    <a href="#" onclick="searchCars()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="selectedCheckList">
+                <h2>세부 검색 조건 #</h2>
+                <a href="#" onclick="location.reload();">
+                    <i class="fa-solid fa-arrow-rotate-right"> 검색 조건 초기화</i>
+                </a>
+                <div class="list">
+                </div>
+            </div>
+            <div class="carCardBox">
+                <th:block th:each="car, status: ${cars.getContent()}">
+                    <div class="car-card">
+                        <a th:href="'/security-login/car/' +${car.id}">
+                            <img th:src="${car.imgUrl}" class="card-img-top" th:alt="${car.carName}">
+                            <div>
+                                <div class="flex">
+                                    <b><p>브랜드</p></b><p>[[${car.carBrand}]]</p>
+                                </div>
+                                <div class="flex">
+                                    <b><p>차량명</p></b><p>[[${car.carName}]]</p>
+                                </div>
+                                <div class="flex">
+                                    <b><p>연식</p></b><p>[[${car.carManufacturingDate}]]</p>
+                                </div>
+                                <div class="flex">
+                                    <b><p>연료</p></b><p>[[${car.carFuelType}]]</p>
+                                </div>
+                                <div class="flex">
+                                    <b><p>주행거리</p></b><p>[[${car.carOdometer}]]</p>
+                                </div>
+                                <div class="flex">
+                                    <b><p>금액</p></b><p>[[${car.price}]]원</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </th:block>
+            </div>
+            <div class="carPage">
+                <div th:with="start=${(cars.number/maxPage)*maxPage + 1}, end=(${(cars.totalPages == 0) ? 1 : (start + (maxPage - 1) < cars.totalPages ? start + (maxPage - 1) : cars.totalPages)})">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-car" th:classappend="${cars.number eq 0}?'disabled':''">
+                            <a th:href="@{'/' + '?searchQuery=' + ${carSearchDto.searchQuery}
+                                + '&page=' + ${cars.number-1}}" aria-label='Previous' class="page-link">
+                                <span aria-hidden='true'><i class="fa-solid fa-angle-left"></i></span>
+                            </a>
+                        </li>
+
+                        <li class="page-car" th:each="page: ${#numbers.sequence(start, end)}"
+                            th:classappend="${cars.number eq page-1}?'active':''">
+                            <a th:href="@{'/' +'?searchQuery=' + ${carSearchDto.searchQuery} + '&page=' + ${page-1}}"
+                               th:inline="text" class="page-link">[[${page}]]</a>
+                        </li>
+
+                        <li class="page-car" th:classappend="${cars.number+1 ge cars.totalPages}?'disabled':''">
+                            <a th:href="@{'/' +'?searchQuery=' + ${carSearchDto.searchQuery} + '&page=' + ${cars.number+1}}"
+                               aria-label='Next' class="page-link">
+                                <span aria-hidden='true'><i class="fa-solid fa-angle-right"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="~{fragments/footer::footer}"></div>
+<script th:inline="javascript">
+
+
+function searchCars() {
+    var searchText = document.getElementById("searchInput").value.toLowerCase();
+    var carCards = document.getElementsByClassName("car-card");
+
+    for (var i = 0; i < carCards.length; i++) {
+        var carCard = carCards[i];
+        var carName = carCard.querySelector("p:first-child").textContent.toLowerCase(); // 첫 번째 <p> 태그에서 차량 이름 가져오기
+
+        if (carName.includes(searchText)) {
+            carCard.style.display = "block";
+        } else {
+            carCard.style.display = "none";
+        }
+    }
+}
+
+// 모든 <select> 요소를 가져옵니다.
+var selectElements = document.querySelectorAll('select');
+
+// .selectedCheckList 요소를 가져옵니다.
+var selectedCheckList = document.querySelector('.selectedCheckList');
+
+// .list 클래스를 가진 <div> 요소를 생성합니다.
+var listContainer = document.createElement('div');
+listContainer.className = 'list';
+
+// .listContainer를 .selectedCheckList 요소의 하위 요소로 추가합니다.
+selectedCheckList.appendChild(listContainer);
+
+// 각 <select> 요소에 대한 변경 이벤트를 설정합니다.
+selectElements.forEach(function (selectElement) {
+
+    selectElement.addEventListener('change', function () {
+        // 선택된 옵션 값을 가져옵니다.
+        var selectedValue = selectElement.value;
+
+        // 선택된 값을 <p> 요소로 감싸서 추가합니다.
+        var selectedOption = document.createElement('p');
+        selectedOption.textContent = selectedValue;
+
+        // 이미 선택된 옵션이 있는지 확인합니다.
+        var existingOption = listContainer.querySelector('p[value="' + selectedValue + '"]');
+        if (!existingOption) {
+            listContainer.appendChild(selectedOption);
+        }
+    });
+
+});
+
+
+</script>
+</body>
+</html>

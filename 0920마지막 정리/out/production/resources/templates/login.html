@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/footer.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- 사용자 CSS 추가 -->
+    <th:block layout:fragment="css">
+        <style>
+
+        .section {
+            width: 100%;
+            height: 630px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .loginTab{
+            width: 500px;
+            margin: 0 auto;
+            height: 500px;
+        }
+
+        .loginForm {
+            width: 500px;
+            text-align: center;
+        }
+
+        .section .loginTab .loginForm .name {
+            font-size: 5rem;
+            font-weight: 700;
+            padding: 16px 0;
+            text-align: center;
+        }
+
+        .section .loginTab .loginForm .contents {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .section .loginTab .loginForm .contents label {
+            width: 50px;
+            height: 40px;
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .section .loginTab .loginForm .contents .loginPut {
+            font-size: 1.6rem;
+            width: 350px;
+            height: 40px;
+            border: 1px solid #C4C4C4;
+            padding: 8px;
+        }
+
+        .section .loginTab .loginForm .contents .space {
+            width: 50px;
+            height: 40px;
+            display: block;
+        }
+
+        .section .loginTab #loginBtn, #joinBtn {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .section .loginTab .loginForm .contents .loginBtn,
+        .section .loginTab .loginForm .contents .joinBtn  {
+            display: block;
+            text-align: center;
+            color: #fff;
+            width: 350px;
+            height: 40px;
+            border: #fff;
+            border-radius: 15px;
+            font-size: 1.9rem;
+            font-weight: bold;
+            background: #222;
+        }
+
+        .section .loginTab .loginForm .line {
+            display: block;
+            width: 100%;
+            margin: 16px 0;
+            align-items: center;
+        }
+
+        .section .loginTab .loginForm .line img {
+            display: block;
+            margin: 0 auto;
+            width: 450px;
+        }
+
+        .section .loginTab .loginForm .simple {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 100px;
+        }
+        .section .loginTab .loginForm .simple img{
+            width: 50px;
+            height: 50px;
+        }
+
+        .error-class {
+            color: red;
+        }
+
+        .error-input {
+            border-color: red;
+        }
+
+      </style>
+    </th:block>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+<div class="loginTab">
+    <form th:method="post" th:action="|@{/{loginType}/login (loginType=${loginType})}|" th:object="${loginRequest}" class="loginForm" >
+        <p class="name">E N D C A R</p>
+        <div class="contents">
+            <label th:for="loginId">ID</label>
+            <input class="loginPut" type="text" th:field="*{loginId}" placeholder="이메일 또는 아이디"/>
+            <div class="space"></div>
+        </div>
+        <div class="contents">
+            <label th:for="password">PW</label>
+            <input class="loginPut" type="password" th:field="*{password}" placeholder="비밀번호"/>
+            <div class="space"></div>
+        </div>
+        <div th:if="${#fields.hasGlobalErrors()}" class="contents">
+            <div class="error-class" th:each="error : ${#fields.globalErrors()}" th:text="${error}" />
+        </div>
+        <div id="loginBtn" class="contents">
+            <button type="submit" class="loginBtn">로그인</button>
+        </div>
+        <div id="joinBtn" class="contents">
+            <button type="button" th:onclick="|location.href='@{/{loginType}/join (loginType=${loginType})}'|" class="joinBtn">회원 가입</button>
+        </div>
+
+        <div class="line">
+            <img src="/img/line1.png">
+        </div>
+
+        <th:if th:if="${loginType == 'security-login'}">
+            <div class="simple">
+                <a href="/oauth2/authorization/google"><img src="/img/google_logo.png"></a>
+                <a href="/oauth2/authorization/kakao"><img src="/img/kakao_logo.png"></a>
+                <a href="/oauth2/authorization/naver"><img src="/img/naver_logo.png"></a>
+                <a href="/oauth2/authorization/facebook"><img src="/img/facebook_logo.png"></a>
+            </div>
+        </th:if>
+
+    </form>
+
+</div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+
+</body>
+</html>
+

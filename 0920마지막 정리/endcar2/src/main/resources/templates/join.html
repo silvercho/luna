@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- 내부 스타일 시트 -->
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- 외부 스크립트 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- 내부 스크립트 -->
+    <script src="/js/footer.js"></script>
+</head>
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+    <style>
+        a{color:#000}
+
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 630px;
+        }
+
+        .section .joinTab{
+            width: 50%;
+            margin: 0 auto;
+            height: 500px;
+        }
+
+        .section .joinTab .name {
+            font-size: 5rem;
+            font-weight: 700;
+            padding: 16px 0;
+            text-align: center;
+        }
+
+        .joinTab .joinForm {
+            text-align: center;
+        }
+
+        .joinTab .joinForm .joinBox {
+            display: flex;
+            flex-direction: column;
+            height: 218px;
+        }
+
+        .joinTab .joinForm .contentsBox {
+        display: flex;
+        }
+
+        .joinTab .joinForm > div{
+            width: 500px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+        }
+        .joinTab .joinForm label {
+            width: 50px;
+            height: 50px;
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .joinTab .joinForm input {
+            font-size: 1.6rem;
+            width: 350px;
+            height: 40px;
+            border: 1px solid #C4C4C4;
+            padding: 8px;
+        }
+        .joinTab .joinButton {
+            display: block;
+            text-align: center;
+            background: #222;
+            color: #fff;
+            width: 350px;
+            height: 40px;
+            border: #fff;
+            border-radius: 15px;
+            font-size: 1.9rem;
+            font-weight: bold;
+        }
+        .joinTab #joinButton {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+    </style>
+</th:block>
+<body>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div layout:fragment="content" class="joinTab">
+        <p class="name">E N D C A R</p>
+        <form th:method="post" th:action="|@{/{loginType}/join (loginType=${loginType})}|" class="joinForm"
+              th:object="${joinRequest}">
+            <div class="joinBox">
+                <div>
+                    <div class="contentsBox">
+                        <label th:for="name"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" th:field="*{name}" th:errorclass="error-input" placeholder="이름"/>
+                    </div>
+                    <div class="error-class" th:errors="*{name}"></div>
+                </div>
+                <div>
+                    <div class="contentsBox">
+                        <label th:for="loginId"><i class="fa-solid fa-user-pen"></i></label>
+                        <input type="text" th:field="*{loginId}" th:errorclass="error-input" placeholder="이메일주소"/>
+                    </div>
+                    <div class="error-class" th:errors="*{loginId}"></div>
+                </div>
+                <div>
+                    <div class="contentsBox">
+                        <label th:for="password"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" th:field="*{password}" th:errorclass="error-input" placeholder="비밀번호"/>
+                    </div>
+                    <div class="error-class" th:errors="*{password}"></div>
+                </div>
+                <div>
+                    <div class="contentsBox">
+                        <label th:for="passwordCheck"><i class="fa-solid fa-check"></i></label>
+                        <input type="password" th:field="*{passwordCheck}" th:errorclass="error-input"
+                               placeholder="비밀번호 재확인"/>
+                    </div>
+                    <div class="error-class" th:errors="*{passwordCheck}"></div>
+                </div>
+                <div id="joinButton">
+                    <button type="submit" class="joinButton">회원 가입</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>

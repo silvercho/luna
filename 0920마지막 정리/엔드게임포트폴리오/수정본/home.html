@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .section {
+            position: relative;
+            width: 100%;
+            height: 630px;
+            overflow: hidden;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .section>div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 400px;
+            height: 300px;
+            border: 10px solid #fff;
+        }
+
+        .section h2, .section p, .section .line {
+            position: absolute;
+            color: #ffffff;
+        }
+
+        /* 이미지 중앙 글씨 설정 */
+        .section h2 {
+            font-size: 7rem;
+            font-weight: bold;
+            width: 100%;
+            top: 15%;
+        }
+
+        /* 이미지 중앙하단 서브 글자 설정 */
+        .section p {
+            top: 50%;
+            font-size: 3rem;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* 라인 */
+        .section .line {
+            width: 80%;
+            border: 5px solid #fff;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        /* 슬라이드 이미지 가로 정렬, 애니메이션 설정 */
+        .section ul {
+            position: relative;
+            display: flex;
+            left: 0;
+            top: 0;
+            width: 400%;
+            animation: slide 18s infinite;
+        }
+        .section ul li img{
+            width: 100%;
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: -100%;
+            }
+
+            33.33333% {
+                left: -100%;
+            }
+
+            38% {
+                left: -200%;
+            }
+
+            66.66666% {
+                left: -200%;
+            }
+
+            71% {
+                left: -300%;
+            }
+
+            99.99999% {
+                left: -300%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+                .section img {
+        width: 1903px;
+        height: 630px;
+        }
+
+    </style>
+    <!-- 사용자 자바 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <script>
+    let btn1 = document.querySelector("button:nth-of-type(1)");
+    let btn2 = document.querySelector("button:nth-of-type(2)");
+    let btn3 = document.querySelector("button:nth-of-type(3)");
+    let btn4 = document.querySelector("button:nth-of-type(4)");
+    let no1 = document.querySelector(".name1 span");
+    let no2 = document.querySelector(".name2 span");
+    let no3 = document.querySelector(".name3 span");
+
+    btn1.onclick = function () {
+        document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM2.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM3.jpg");
+        no1.innerHTML = "디올 뉴 그랜저";
+        no2.innerHTML = "제네시스 g80";
+        no3.innerHTML = "더 뉴 쏘렌토";
+    }
+    btn2.onclick = function () {
+        document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM3.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM2.jpg");
+        no1.innerHTML = "디올 뉴 그랜저";
+        no2.innerHTML = "더 뉴 쏘렌토";
+        no3.innerHTML = "제네시스 g80";
+    }
+    btn3.onclick = function () {
+        document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM2.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM3.jpg");
+        no1.innerHTML = "디올 뉴 그랜저";
+        no2.innerHTML = "제네시스 g80";
+        no3.innerHTML = "더 뉴 쏘렌토";
+    }
+    btn4.onclick = function () {
+        document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM3.jpg");
+        document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM2.jpg");
+        no1.innerHTML = "디올 뉴 그랜저";
+        no2.innerHTML = "더 뉴 쏘렌토";
+        no3.innerHTML = "제네시스 g80";
+    }
+</script>
+</th:block>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div>
+        <h2>EndCar</h2>
+        <p>중고차 거래의 모든것</p>
+        <div class="line"></div>
+    </div>
+    <ul>
+        <li><img src="img/img1.png" alt="배너이미지1"></li>
+        <li><img src="img/img2.png" alt="배너이미지2"></li>
+        <li><img src="img/img3.png" alt="배너이미지3"></li>
+        <li><img src="img/img1.png" alt="배너이미지1"></li>
+    </ul>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>

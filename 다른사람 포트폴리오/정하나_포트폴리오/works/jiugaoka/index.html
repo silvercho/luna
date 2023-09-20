@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
+	<link rel="stylesheet" href="./css/jquery.bxslider.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/media.css"/>
+	<link rel="shortcut icon" href="./img/menu_logo.png"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<title>지유가오카</title>
+	<script>
+		$(function(){
+		
+			$(".brand_btn_prev").click(function(){
+				$(".left").fadeIn();
+				$(".right").fadeOut();
+			});
+			
+			$(".brand_btn_next").click(function(){
+				$(".right").fadeIn();
+				$(".left").fadeOut();
+			});
+			$(".franchise_prev img").click(function(){
+				$("prev_img").fadeIn();
+				$("next_img").fadeOut();
+			});
+			$(".franchise_next img").click(function(){
+				$("next_img").fadeIn();
+				$("prev_img").fadeOut();
+			});
+			
+			var hanahana = 0;
+			
+			setInterval(function(){
+			
+				hanahana++;
+				if(hanahana==2){
+					hanahana=0;
+				}
+				$(".brand_wrap_ul .brand_wrap_box").eq(hanahana-1).fadeOut();
+				$(".brand_wrap_ul .brand_wrap_box").eq(hanahana).fadeIn();
+				
+			},4000);
+			
+			
+			var hana = 0;
+			
+			setInterval(function(){
+				hana++;
+				
+				if(hana==2){
+				hana=0;
+				}
+				$(".franchise_bg ul li").eq(hana-1).fadeOut();
+				$(".franchise_bg ul li").eq(hana).fadeIn();
+				
+			},4000);
+			
+			var clone = $(".fourth_imgs").eq(0).clone();
+			$(".fourth_section_slide").append(clone);
+			
+			var i = 0;
+			var repeat;
+			
+			$(".fourth_btn_next").click(function(){
+				i++;
+				if(i==0){
+				}
+				if(i==2){
+				$(".fourth_section_slide").stop().animate({
+					"margin-left":"-200%"
+				},600, function(){
+					$(".fourth_section_slide").css("margin-left",0);
+					});
+				
+					i=0;
+				
+					}else{
+				$(".fourth_section_slide").stop().animate({
+					"margin-left":-i*100+"%"
+				},600);
+				}
+			});
+			
+			$(".fourth_btn_prev").click(function(){
+				if(i==0){i=2;
+				$(".fourth_section_slide").css("margin-left",-i*100+"%");
+				}
+				i--;
+				$(".fourth_section_slide").stop().animate({
+					"margin-left":-i*100+"%"
+				},600);
+				
+			});
+			
+			timer();
+			i=0;
+			function timer(){
+				repeat=setInterval(function(){
+				
+				if(i==2){
+					i=0;
+					$(".fourth_section_slide").css("margin-left",0);
+				}
+				i++;
+				$(".fourth_section_slide").stop().animate({
+						"margin-left":-i*100+"%"
+				});
+				
+				console.log(i);
+				
+				var q = 0;
+					$()
+				q++;
+				},3000);
+			}
+				
+		
+			
+	
+			$(".slide_section_cover ul").bxSlider({
+				auto:true,
+				//자동실행 여부 - true, false
+				pause:3000,
+				//이미지가 멈춰있는 시간을 지정.
+				speed:1300,
+				//이미지 슬라이드가 이동하는 속도
+				autoHover:true,
+				//마우스호버시에 자동실행 정지 여부 - true, false
+				controls:true,
+				//이전, 다음 버튼 출력 여부 - true, false 
+				pager:true,
+				//페이져 버튼 출력 여부 - true, false
+				mode:"horizontal",
+				//모드 설정 - "horizontal", "vertical","fade"
+				autoControls:false
+			});
+			
+			$(".slide_section_cover ul li").click(function(){
+			var n = $(this).index();
+			slide.goToSlide(n);	
+			});
+			
+			$(".bx-next").click(function(){
+				slide.goToNextSlide();
+			});
+			
+			$(".bx-prev").click(function(){
+				slide.goToPrevSlide();
+			});
+			
+	
+			
+			$(".request > a").click(function(){
+				var d = $(this).next(".request_box").css('display');
+				
+				if(d=="none"){
+					$(this).next(".request_box").stop().slideDown();
+					
+					$(this).find("img").css("transform","rotate(180deg)");
+				}else{
+					$(this).next(".request_box").stop().slideUp();
+					$(this).find("img").css("transform","rotate(0deg)");
+				}
+				return false;
+				
+				
+			});	
+			
+			$(".menu i").click(function(){
+				
+				$(".menu_cover").css("display","block");
+				
+			}); 
+			$(".sitemap i").click(function(){
+				$(".menu_cover").css("display","none");
+			}); 
+			
+			
+			$(".mobile_menu_box ul li").click(function(){
+				
+				var n = $(this).children(".mobile_menu ul").css("display");
+				
+				if(n=="none"){
+					$(".mobile_menu_box > ul > li > ul").stop().slideUp();
+					$(this).children("ul").stop().slideDown();
+				}else{
+					$(this).children("ul").stop().slideUp();
+				}
+				
+				return false;
+				
+			});
+			
+			 $(".mobile_menu .bar_area>i").click(function(){
+				 $(".mobile_menu").stop().animate({ 
+					 "right":"-100%" 
+				 },600); 
+				 $("nav .mobile_menu_bar i").fadeIn();
+			 }); 
+			
+			$("nav .mobile_menu_bar i").click(function(){
+				$("nav .mobile_menu").stop().animate({
+					"right":0
+				});
+				$("nav .mobile_menu_bar i").fadeOut();
+				
+			});
+			
+			return false;
+			
+		});
+	</script>
+	
+</head>
+<body>
+	<header>
+		<nav>
+			<h1 class="logo"><a href="#"><img src="./img/logo.png"></a></h1>
+			<ul class="pc_menu">
+				<li><a href="#">BRAND</a>
+					<ul>
+						<li><a href="#">브랜드스토리</a></li>
+						<li><a href="#">브랜드경쟁력</a></li>
+						<li><a href="#">협력사</a></li>
+						<li><a href="#">본사소개</a></li>
+						<li><a href="#">찾아오시는 길</a></li>
+					</ul>
+				</li>
+				<li><a href="#">MENU</a>
+					<ul>
+						<li><a href="#">케이크</a></li>
+						<li><a href="#">브래드</a></li>
+						<li><a href="#">음료</a></li>
+						<li><a href="#">디저트</a></li>
+					</ul>
+				</li>
+				<li><a href="#">STORE</a>
+					<ul>
+						<li><a href="#">지역별 매장정보</a></li>
+					</ul>
+				</li>
+				<li><a href="#">FRANCHISE</a>
+					<ul>
+						<li><a href="#">창업경쟁력</a></li>
+						<li><a href="#">개설절차</a></li>
+						<li><a href="#">수익성분석</a></li>
+						<li><a href="#">인테리어</a></li>
+						<li><a href="#">창업상담</a></li>
+						<li><a href="#">점주공간</a></li>
+					</ul>
+				</li>
+				<li><a href="#">NEWS</a>
+					<ul>
+						<li><a href="#">언론보도</a></li>
+						<li><a href="#">공지사항</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="menu pc_menu">
+				<a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>		
+			</div>
+			<div class="menu_cover pc_menu">
+				<div class="menu_box">
+					<div class="sitemap">
+						<span>SITEMAP</span><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+					</div>
+					<ul>
+						<li><a href="#">BRAND</a>
+							<ul>
+								<li><a href="#">브랜드스토리</a></li>
+								<li><a href="#">브랜드경쟁력</a></li>
+								<li><a href="#">협력사</a></li>
+								<li><a href="#">본사소개</a></li>
+								<li><a href="#">찾아오시는 길</a></li>
+							</ul>
+						</li>
+						<li><a href="#">MENU</a>
+							<ul>
+								<li><a href="#">케이크</a></li>
+								<li><a href="#">브래드</a></li>
+								<li><a href="#">음료</a></li>
+								<li><a href="#">디저트</a></li>
+							</ul>
+						</li>
+						<li><a href="#">STORE</a>
+							<ul>
+								<li><a href="#">지역별 매장정보</a></li>
+							</ul>
+						</li>
+						<li><a href="#">FANCHISE</a>
+							<ul>
+								<li><a href="#">창업경쟁력</a></li>
+								<li><a href="#">개설절차</a></li>
+								<li><a href="#">수익성분석</a></li>
+								<li><a href="#">인테리어</a></li>
+								<li><a href="#">창업상담</a></li>
+								<li><a href="#">점주공간</a></li>
+							</ul>
+						</li>
+						<li><a href="#">NEWS</a>
+							<ul>
+								<li><a href="#">언론보도</a></li>
+								<li><a href="#">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mobile_menu_bar">
+				<i class="fa fa-bars" aria-hidden="true"></i>
+			</div>
+			<div class="mobile_menu">
+				<div class="bar_area">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</div>
+				<div class="mobile_menu_box">
+					<ul>
+						<li><a href="#">BRAND</a>
+							<ul>
+								<li><a href="#">브랜드스토리</a></li>
+								<li><a href="#">브랜드경쟁력</a></li>
+								<li><a href="#">협력사</a></li>
+								<li><a href="#">본사소개</a></li>
+								<li><a href="#">찾아오시는 길</a></li>
+							</ul>
+						</li>
+						<li><a href="#">MENU</a>
+							<ul>
+								<li><a href="#">케이크</a></li>
+								<li><a href="#">브레드</a></li>
+								<li><a href="#">음료</a></li>
+								<li><a href="#">디저트</a></li>
+							</ul>
+						</li>
+						<li><a href="#">STORE</a>
+							<ul>
+								<li><a href="#">지역별 매장정보</a></li>
+							</ul>
+						</li>
+						<li><a href="#">FRANCHISE</a>
+							<ul>
+								<li><a href="#">창업경쟁력</a></li>
+								<li><a href="#">개설절차</a></li>
+								<li><a href="#">수익성분석</a></li>
+								<li><a href="#">인테리어</a></li>
+								<li><a href="#">창업상담</a></li>
+								<li><a href="#">점주공간</a></li>
+							</ul>
+						</li>
+						<li><a href="#">NEWS</a>
+							<ul>
+								<li><a href="#">언론보도</a></li>
+								<li><a href="#">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div id="video_wrap">
+		<video loop autoplay muted>
+			<source src="./media/Jiyugaoka FIN.mp4" type="video/mp4"/>
+		</video>
+		<div class="black_cover"></div>
+		<h1 class="main_logo">
+			<img src="./img/logo_blank.png" alt=""/>
+			<div class="animation-logo motion1">
+				<img src="./img/logo_1.png" alt=""/>
+			</div>
+			<div class="animation-logo motion2">
+				<img src="./img/logo_2.png" alt=""/>
+			</div>
+			<div class="animation-logo motion3">
+				<img src="./img/logo_3.png" alt=""/>
+			</div>
+			<div class="animation-logo motion4">
+				<img src="./img/logo_4.png" alt=""/>
+			</div>
+		</h1>
+	</div>
+	<div class="first_section">
+		<div class="left_section">
+			<p class="left_section_title">지유가오카 소개</p>
+			<h1>About<br>Jiyugaoka</h1>
+			
+			<p class="left_title_last_p">지유가오카는 숙련된 파티쉐들이<br>
+				모든 케이크와 디저트를<br>
+				정성껏 구워냅니다</p>
+		</div>
+		<ul class="right_section">
+			<li>
+				<a href="#">
+					<div class="img_box"><img src="./img/about_img_1_pc.jpg" alt=""/></div>
+					<div class="tit">
+						<h3>브랜드 스토리</h3>
+						<p class="small">고품격 디저트 카페 지유가오카를 소개합니다</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="img_box"><img src="./img/about_img_2_pc.jpg" alt=""/></div>
+					<div class="tit">
+						<h3>지역별 매장정보</h3>
+						<p class="small">지역별 매장정보를 확인하실 수 있습니다</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="img_box"><img src="./img/about_img_3_pc.jpg" alt=""/></div>
+					<div class="tit">
+						<h3>프랜차이즈</h3>
+						<p class="small">개설절차를 알아보시고 창업상담을 해보세요</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		
+	</div>
+	<div class="second_section">
+		<ul>
+			<li class="link">
+				<div class="link_img_box">
+					<img src="./img/main_fermentation_bg_pc.jpg">
+				</div>
+				<div class="link_tit_box">
+					<p>Fermentation</p>
+					<h3>업계최초 <strong>유산균 발효 공법</strong></h3>
+					<div class="link_btn"><a href="#"><p>보러가기</p></a><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+				</div>
+			</li>
+			<li class="link">
+				<div class="link_img_box">
+					<img src="./img/main_dessert_bg_pc.jpg">
+				</div>
+				<div class="link_tit_box">
+					<p>Dessert</p>
+					<h3>죽기전에 먹어봐야 할 <strong>디저트</strong></h3>
+					<div class="link_btn"><a href="#"><p>보러가기</p> <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="third_section">
+		<div class="brand_wrap">
+			<div class="brand_wrap_ul">
+				<div class="brand_wrap_box left">
+					<div class="brand_wrap_img">
+						<div class="brand_wrap_img_one">
+							<img class="before" src="./img/bread2.png">
+						</div>
+						<div class="brand_wrap_img_two">
+							<img class="later" src="./img/bread1.png">
+						</div>
+					</div>
+					<div class="brand_wrap_tit">
+						<div class="brand_tit_box">
+							<h2>Simple, Refined, Jiyugaoka</h2>
+							<p>숙련된 파티쉐들이 정성껏 구워낸 수제케이크와 디저트</p>
+							<p class="last_span">
+							<span>지유가오카는 일본 도쿄의 디저트카페로 유명한 지유가오카거리에서 영감을 받아 탄생하였습니다. </span>
+							<span>고급 주택가와 상점들이 골목골목 어우러진 지유가오카 거리의 고즈넉한 분위기를 추구하며,</span>
+							<span>남녀노소 누구나 편하게 방문하여 정성껏 구워낸 수제케이크와 디저트를 접할 수 있는</span>
+							<span>순수 대한민국의 토종 기업입니다. 지유가오카를 찾는 고객분들께</span>
+							<span>화학첨가물을 사용하지 않고100% 수제 디저트로 고객들의 입맛을 사로잡기 위해</span>
+							<span> 매장에서 매일 구워내던 1호점의 방식 그대로 오늘도 숙련된 파티시에들이 정성껏 구워내고 있습니다.</span>
+							</p>
+						</div>
+					</div>
+					<a href="#"><span>브랜드스토리 보러가기</span></a>
+				</div>
+				<div class="brand_wrap_box right">
+					<div class="brand_wrap_img">
+						<div class="brand_wrap_img_one">
+							<img class="before" src="./img/bread4.png">
+						</div>
+						<div class="brand_wrap_img_two">
+							<img class="later" src="./img/bread3.png">
+						</div>
+					</div>
+					<div class="brand_wrap_tit">
+						<div class="brand_tit_box">
+							<h2>Premium Cake Story</h2>
+							<p>디저트의 본 고장에서 전수받은 기술력과<br/>
+							일류호텔 출신 셰프들의 오랜 연구와 노하우로 만드는 수제 케이크
+							</p>
+							<span>디저트의 본 고장에서 전수받은 기술력과,</span>
+							<span>일류호텔 출신 셰프들의 오랜 연구와 노하우로 만드는 수제 케이크입니다.</span>
+							<span>화학첨가물 없이 최고의 재료로 만들어</span>
+							<span>부드러움과 적당하게 기분 좋은 달콤함을 느낄 수 있는 고품격 케이크입니다.</span>
+						</div>
+					</div>
+					<a href="#"><span>브랜드스토리 보러가기</span></a>
+				</div>
+			</div>
+			<ul>
+				<li class="brand_btn_prev"><img src="./img/main_brand_prev.png"></li>
+				<li class="brand_btn_next"><img src="./img/main_brand_next.png"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="fourth_section">
+		<div class="fourth_section_bg">
+			<img class="bg_img" src="./img/interior_bg.PNG">
+			<img class="bg_man" src="./img/man-1.png">
+		</div>
+		<div class="fourth_section_cover">
+			<div class="fourth_section_box">
+				<div class="fourth_section_h2">
+					<h2>Jiyugaoka<br/>
+					Interior</h2>
+				</div>
+				<div class="fourth_section_slide">
+					<div class="fourth_section_btn">
+						<ul class="fourth_btn">
+							<li class="fourth_btn_prev"><img src="./img/main_visual_prev.png"></li>
+							<li id="bar"></li>
+							<li class="fourth_btn_next"><img src="./img/main_visual_next.png"></li>
+						</ul>
+					</div>
+					<ul class="fourth_imgs">
+						<li><img src="./img/main_interior_img1.jpg"></li>
+						<li><img src="./img/main_interior_img2.jpg"></li>
+					</ul>
+					<ul class="fourth_imgs">
+						<li><img src="./img/main_interior_img3.jpg"></li>
+						<li><img src="./img/main_interior_img4.jpg"></li>
+					</ul>
+				</div>
+				<div class="fourth_section_tit">
+					<p>독특하고 유니크한 컨셉의 인테리어</p>
+				</div>
+				<div class="fourth_section_info">
+					<p class="info">수많은 카페 중에서 이용자의 발길이 끊기지 않는 공간으로 만들기 위해 지유가오카만의 독특하고 유니크한 컨셉으로 소품 하나까지 고객분들의 마음을 사로잡는 카페 인테리어와 효율적인 공간을 연출합니다.</p>
+				</div>
+				<a href="#"><span>인테리어 보러가기</span></a>
+			</div>
+		</div>
+	</div>
+	<div class="fifth_section">
+		<div class="fifth_section_box">
+			<div class="fifth_section_box_tit">
+				<p>메뉴소개</p>
+				<h2>Jiyugaoka<br/><span>Menu</span></h2>
+				<h6 id="last_p">지유가오카의 메뉴를<br/>
+					소개합니다</p>
+			</div>
+			<div class="fifth_section_box_right">
+				<div class="fifth_section_box_ul">
+					<li><a href="#"><img src="./img/li1.png" alt="">
+						<h3>케이크</h3>
+						<p>Cake</p>
+					</a></li>
+					<li><a href="#"><img src="./img/li2.png" alt="">
+						<h3>브레드</h3>
+						<p>Bread</p>
+					</a></li>
+					<li><a href="#"><img src="./img/li3.png" alt="">
+						<h3>디저트</h3>
+						<p>Dessert</p>
+					</a></li>
+					<li><a href="#"><img src="./img/li4.png" alt="">
+						<h3>음료</h3>
+						<p>Drinks</p>
+					</a></li>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slide_section">
+		<div class="slide_section_cover">
+			<ul>
+				<li><a href="#"><img src="./img/main_banner_1_pc.jpg"></a></li>
+				<li><a href="#"><img src="./img/main_banner_2_pc.jpg"></a></li>
+				<li><a href="#"><img src="./img/main_banner_3_pc.jpg"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="franchise">
+		<div class="franchise_bg">
+			<ul>
+				<li class="prev_img on"><img src="./img/main_franchise_bg_pc.jpg"></li>
+				<li class="next_img"><img src="./img/main_franchise_bg2_pc.jpg"></li>
+			</ul>
+			<div class="franchise_tit">
+				<p>FRANCHISE</p>
+				<h2>체계적인 시스템과 노하우로<br/>
+				성공적인 창업을 지원하는 지유가오카</h2>
+				<span>독보적인 기술력을 인정받아 업계 최초 벤처기업 인증 및 업계 유일 케이크 특허가 등록된 지유가오카는<br/>
+				체계적인 시스템과 노하우로 성공적인 창업을 지원합니다</span>
+				<a href="#"><span>창업상담</span></a>
+			</div>
+			<div class="bbtn franchise_prev"><img src="./img/franchise_prev.png"></div>
+			<div class="bbtn franchise_next"><img src="./img/franchise_next.png"></div>
+			
+		</div>
+	
+		
+	</div>
+	<div id="fake_footer"></div>
+	<footer>
+		<div class="footer_box">
+			<div class="footer_left">
+				<p>지유가오카 | 대표자 : 조종철 | 본사 : 서울특별시 성동구 뚝섬로1길 63, 영창디지털타워 11층 | 대표전화 : 1522 - 9774 | 팩스 : 02 - 540 - 2237<br/>
+				지유가오카 핫초메 사업자번호 : 261 - 81 - 15766 | 지유가오카 브레드 사업자번호 : 680 - 87 - 00452</p>
+				<span>Copyright © 지유가오카 All rights reserved.</span>
+			</div>
+			<div class="footer_right">
+				<img src="./img/download.png">
+			</div>
+		</div>
+		<div class="request">
+			<a href="">
+				<p>온라인창업문의<img src="./img/open_arrow.png"></p>
+				
+			</a>
+			<div class="request_box">
+				<div class="request_box_cover">
+					<div class="request_clear_box">
+					<div class="request_left">
+						<dl>
+							<dt><span>이름</span></dt>
+							<dd><input type="text" name="name" placeholder="이름을 입력해주세요"></dd>
+						</dl>
+						<dl>
+							<dt><span>연락처</span></dt>
+							<dd><input type="text" name="name" placeholder="ex)02-1522-9774"></dd>
+						</dl>
+						<dl>
+							<dt><span>이메일</span></dt>
+							<dd><input type="text" name="name" placeholder="ex)jiyukaoka@naver.com"></dd>
+						</dl>
+					</div>
+						<div class="request_right">
+							<span>문의하기</span>
+							<textarea name="contant" id cols="30" placeholder="(100자이내로 입력해주세요.)" maxlength="100"></textarea>
+						</div>
+					</div>
+					<div class="request_bottom">
+						<p>문의내용</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.size13 {
+  font-size: 13px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.black {
+  color: black;
+}
+
+.purple {
+  color: purple;
+}
+
+.border2px {
+  border: dashed 2px #f00;
+}
+
+.size20 {
+  font-size: 20px;
+}
+
+.bgYellow {
+  background-color: yellow;
+}
+
+.orange {
+  color: orange;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.bgCcc {
+  background-color: #ccc;
+}
+
+.border1px {
+  border: 1px solid #000;
+}

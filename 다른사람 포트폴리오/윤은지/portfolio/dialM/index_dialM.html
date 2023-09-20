@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="프로덕션 업체입니다"/> <!--포털사이트 설명-->
+	<meta name="keyword" content="다이얼엠, dialm"/>  <!--검색어-->
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="shortcut icon" href="./images/logo/dial_M_favicon.png"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script> 
+	<title>dial M</title>
+	<script>
+	$(function(){
+		$(window).resize(function(){
+			var h = $(window).height();
+			$(".video_wrap").height(h);			
+		});
+	
+		$(window).trigger("resize");
+		
+		setTimeout(function(){
+			$(".video_wrap video").trigger("play");
+			
+		},1800);
+		
+		$(".scr_btn").click(function(){
+			var s = $(".fake_header").offset().top;
+			
+			$("html,body").stop().animate({
+				"scrollTop":s
+			},1300);
+		});
+		
+		$(window).scroll(function(){
+			var ws = $(window).scrollTop();
+			var wh = $(window).height();
+			
+			if(ws>=wh){
+				$("header").css({
+					"position": "fixed",
+					"top":"0"
+				});
+			}else{$("header").css({
+					"position": "absolute",
+					"top":"100%"
+				});
+			}
+		});
+		
+	 
+	});
+	</script>
+</head>
+<body>
+	
+	<div class="wrap">
+	
+		<div class="video_wrap">
+			<video loop muted playsinline preload>
+				<source src="./media/index_video.mp4" type="video/mp4"/>
+			</video>
+			<div class="black_cover"></div>
+			<div class="main_logo">
+				<img src="./images/logo/blank_img.png"/ alt="">
+				<div class="ani_logo motion1">
+					<img src="./images/logo/main_logo1.png" alt=""/>
+				</div>
+				<div class="ani_logo motion2">
+					<img src="./images/logo/main_logo2.png" alt=""/>
+				</div>
+				<div class="ani_logo motion3">
+					<img src="./images/logo/main_logo3.png" alt=""/>
+				</div>
+				<div class="ani_logo motion4">
+					<img src="./images/logo/main_logo4.png" alt=""/>
+				</div>
+			</div>
+			<p class="scr_btn">
+				<i class="fa fa-angle-down" aria-hidden="true"></i>
+			</p>
+		</div>
+		
+		<header>
+			<h1 class="logo">
+				<a href="#"><img src="./images/logo/black_logo.png" alt=""/></a>
+			</h1>
+			<ul class="gnb">
+				<li><a href="#">ABOUT</a></li>
+				<li><a href="#">music video</a></li>
+				<li><a href="#">commercial</a></li>
+				<li><a href="#">contact</a></li>
+			</ul>
+			<div class="mobile_menu_btn">
+				<div class="bar bar1"></div>
+				<div class="bar bar2"></div>
+				<div class="bar bar3"></div>
+			</div>
+		</header>
+		
+		<div class="fake_header"></div>
+		
+		<section class="cf">		
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/YESUNG_MAIN.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">pink magic</span>
+						<span class="client">sm entertainment</span>
+					</span>
+				</a>
+			</article>
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/KYUHYUN_MAIN.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">애월리</span>
+						<span class="client">sm entertainment</span>
+					</span>
+				</a>
+			</article>		
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/01.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">너에게</span>
+						<span class="client">sm entertainment</span>
+					</span>
+				</a>
+			</article>	
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/02.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">취해</span>
+						<span class="client">sm entertainment</span>
+					</span>
+				</a>
+			</article>			
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/03.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">AKMA LIPSTICK</span>
+						<span class="client">lavavesi</span>
+					</span>
+				</a>
+			</article>
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/04.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">akma tint</span>
+						<span class="client">lavavesi</span>
+					</span>
+				</a>
+			</article>
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/05.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">ㅇㅇ</span>
+						<span class="client">luk factory</span>
+					</span>
+				</a>
+			</article>			
+			<article class="main_thumb">
+				<a href="#">
+					<img src="./images/main/06.jpg" alt=""/>
+					<span class="txt_box">
+						<span class="title">beautiful moment</span>
+						<span class="client">stonehenge</span>
+					</span>
+				</a>
+			</article>			
+		</section>
+		
+		<footer>
+			<div class="footer_box">
+				<img src="./images/logo/black_logo.png" alt=""/>
+				<p class="footer_logo">
+					<span class="site">www.dialm.co.kr</span>
+					<span class="copy">copyrights &copy; 2019 dial m</span>
+				</p>
+				<p class="address">
+					<span class="phone">+82-10-9999-9999</span>
+					<span class="mail">dialm@dialm.co.kr</span>
+				</p>
+			</div>
+		</footer>
+	</div>
+
+</body>
+</html>

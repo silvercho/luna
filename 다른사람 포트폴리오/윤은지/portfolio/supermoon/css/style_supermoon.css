@@ -1,0 +1,261 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+
+*{margin: 0; padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none; color: #000;}
+.cf:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+body{font-family: 'Poiret One', 'Hanna', sans-serif; }
+
+/*header start*/
+
+header{
+	position: fixed;
+	left: 0; top: 0;
+	width: 15%; height: 100%;
+	background-color: #00116d;
+}
+	header .logo{
+		position: absolute;
+		top: 10%; left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%; height: auto;
+	}
+	header .logo img{
+		display: block;
+		width: 100%;  height: auto;
+	}
+	header .gnb{
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%);
+	}
+		.gnb a{
+			display: block;
+			color: #fff;
+			font-size: 17px;
+			line-height: 1.8;
+			padding: 8px 30px;
+			transition: all 0.4s;
+		}
+		.gnb a:hover{
+			color: skyblue;
+		}
+	header .bottom{
+		position: absolute;
+		bottom: 50px; left: 50%;
+		transform: translateX(-50%);
+		width: 50%; 
+	}	
+		.bottom .snsset li{
+			float: left;
+			width: 50%;  
+			font-size: 0.8em; 
+			text-align: center;
+			box-sizing: border-box;
+		}
+		.bottom .snsset li:first-child{
+			border-right: 1px solid #fff;
+		}
+		.bottom .snsset li a{color: #fff;}	
+		.bottom .sns li{
+			float: left;
+			width: 33.33%;
+			text-align: center;
+			font-size: 1.1em;
+		}
+		.bottom .sns li a{color: #fff;}
+		
+/*section start*/		
+		
+section{
+	width: 85%; height: auto;
+	margin-left: 15%;
+}
+	section article{
+		float: left;
+		height: 280px;
+		animation: scale 1s;
+	}
+		@keyframes scale{
+			0%{transform: scale(0);}
+			100%{transform: scale(1);}
+		}
+	article:nth-child(1){
+		width: 60%; height: 560px; 
+		background-color: tan;
+	}
+	article:nth-child(2){
+		width: 40%; 
+		background-color: plum;
+	}
+	article:nth-child(3){
+		width: 20%; 
+		background-color: tomato;
+	}
+	article:nth-child(4){
+		width: 20%; 
+		background-color: skyblue;
+	}	
+	article:nth-child(5){
+		width: 20%; 
+		background-color: deeppink;
+	}
+	article:nth-child(6){
+		width: 40%; 
+		background-color: lime;
+	}		
+	article:nth-child(7){
+		width: 20%; 
+		background-color: chocolate;
+	}		
+	article:nth-child(8){
+		width: 20%; 
+		background-color: cyan;
+	}	
+	article:nth-child(9){
+		width: 40%; 
+		background-color: lightpink;
+	}	
+	article:nth-child(10){
+		width: 20%; 
+		background-color: lavendar;
+	}		
+	article:nth-child(11){
+		width: 20%; 
+		background-color: cornflowerblue;
+	}		
+	article:nth-child(12){
+		width: 20%; 
+		background-color: indigo;
+	}		
+		
+	article > div{
+		width: 100%; height: 100%;
+		position: relative;
+		overflow: hidden;
+	}	
+	article .bg{
+		background: no-repeat center /cover;
+	}	
+	article .bg1{
+		background-image: url(../images/1.png);
+		background-color: #00116d;
+	}
+	article .bg2{
+		background-image: url(../images/3.png);
+	}
+	article .bg3{
+		background-image: url(../images/4.jpg);
+	}	
+	article .bg4{
+		background-image: url(../images/5.jpg);
+	}			
+	article .bg5{
+		background-image: url(../images/6.jpg);
+	}		
+	article .bg6{
+		background-image: url(../images/7.jpg);
+	}			
+	article .bg7{
+		background-image: url(../images/8.png);
+	}			
+		
+	article .bg span{
+		position: absolute;
+		bottom: 0; right: 20px;
+		font-family: 'Hanna';
+		font-size: 60px;
+		color: #666;
+		transform: scale(10);
+		opacity: 0;
+		transition: all 0.6s;
+		pointer-events: none;
+	}	
+	article .bg:hover span{
+		transform: scale(1);
+		opacity: 1;
+	}		
+	article .bg.bg1 span{
+		font-size: 100px;
+		transform: rotateY(360deg);
+		color: #222;
+	}
+	article .bg.bg1:hover span{
+		transform: rotateY(0deg);
+	}
+		
+	article .txt{
+		background-color: #fff;
+		transition: all 0.6s;
+	}	
+	article .txt p{
+		padding: 30px 40px 0; /*top 양옆 bottom  ->  속성값 3개일 때 순서*/
+		box-sizing: border-box;
+		font-family: 'Hanna', sans-serif;
+		word-break: keep-all; /*내려쓰기 실행. 왤케 안외워지냐*/
+		position: relative;
+	}	
+		
+	article .txt p > *{display: block;}
+	article .txt p strong{
+		font-size: 30px; 
+		color: #333;
+		line-height: 1.6;
+		margin-bottom: 20px;
+		transition: all 0.6s;
+	}
+	article .txt p em{
+		transition: all 0.6s;
+	}
+	article .txt i{
+		position: absolute;
+		bottom: -20px; right: -500px;
+		font-size: 200px;
+		opacity: 0.5;
+		transition: all 0.6s;
+	}	
+	
+	article .txt:hover i{right: -15px;}
+		.txt.txt2 i{right: -15px;}
+		.txt.txt1 img{
+			position: absolute;
+			top: 20px; right: -300px;
+			width: 40%; height: auto;
+			opacity: 0.4;
+			transition: all 0.6s;
+		}
+		.txt.txt1:hover img{right: 10px;}
+		.txt.txt1:hover{background-color: skyblue;}
+		.txt.txt2:hover{background-color: #00b3ff;}
+		.txt.txt2:hover p strong,
+		.txt.txt2:hover i{color: #fff;}
+		.txt.txt3:hover{background-color: #ffff33;}
+		.txt.txt4:hover{background-color: #00be3c;}
+		.txt.txt4:hover p strong,
+		.txt.txt4:hover p em,
+		.txt.txt4:hover p i{color: #fff;}
+		.txt.txt5:hover{background-color: #353332;}
+		.txt.txt5:hover p strong,
+		.txt.txt5:hover p em,
+		.txt.txt5:hover i{color: #fff;}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	

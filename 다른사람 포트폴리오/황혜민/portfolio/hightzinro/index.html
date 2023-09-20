@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title></title>
+	<script>
+		$(function(){
+			var i = 0;
+			function timer(){
+				repeat = setInterval(function(){
+					i++;
+					if(i==9){
+						i=0;
+					}
+					$("#img_slide input").eq(i).trigger("click");
+				},3000);
+				
+				/*3초에 한번씩 input 태그를 0번부터 8번까지 하나씩 강제로 클릭 실행*/
+			}
+			
+			timer();
+			$("#img_slide").mouseover(function(){
+				clearInterval(repeat);
+			});
+			$("#img_slide").mouseleave(function(){
+				timer();
+			});
+			
+			$(".pager ul li").click(function(){
+				var i = $(this).index();
+				var w = $(".section2_cover > ul > li").width();
+				
+				$(".section2_cover > ul").stop().animate({
+					"margin-left":-i*w
+				},500);
+				
+				$(".pager ul li").removeClass("on").eq(i).addClass("on");
+				return false;
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	
+	<div id="side_fix">
+		<h1 class="b_logo">
+			BRAND
+		</h1>
+		<ul>
+			<li class="i_m1">
+				<a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m2">
+				<a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m3">
+				<a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m4">
+				<a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m5">
+				<a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m6"><a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="i_m7">
+				<a href="#"><span></span></a>
+				<div class="sub_menu">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<div id="wrap">
+		<header>
+			<div class="header_top">
+				<a href="#">
+					<img src="./images/logo_hitejinro.png" alt=""/>
+				</a>
+			</div>
+			<div class="nav">
+				<div class="nav_cover">
+					<div class="gnb">
+						<ul>
+							<li><a href="#">COMPANY</a>
+								<div class="full_down f1">
+									<div class="full_cover">
+										<div class="f_menu f1_1">
+											<div class="m_box half">
+												<h3><a href="#">인사말</a></h3>
+											</div>
+											<div class="m_box half">
+												<h3><a href="#">경영철학</a></h3>
+											</div>
+										</div>
+										<div class="f_menu f1_2">
+											<div class="m_box half">
+												<h3><a href="#">연혁</a></h3>
+											</div>
+											<div class="m_box half">
+												<h3><a href="#">품질경영</a></h3>
+											</div>
+										</div>
+										<div class="f_menu f1_3">
+											<div class="m_box">
+												<h3><a href="#">Introduction</a></h3>
+												<ul>
+													<li><a href="#">CI</a></li>
+													<li><a href="#">하이트진로 폰트</a></li>
+													<li><a href="#">국제화</a></li>
+													<li><a href="#">계열사안내</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f1_4">
+											<div class="m_box">
+												<h3><a href="#">Investment</a></h3>
+												<ul>
+													<li><a href="#">IR정보</a></li>
+													<li><a href="#">전자공고</a></li>
+													<li><a href="#">공시</a></li>
+													<li><a href="#">공시정보 관리규정</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f1_5">
+											<div class="m_box">
+												<h3><a href="#">Location</a></h3>
+												<ul>
+													<li><a href="#">본사</a></li>
+													<li><a href="#">지점</a></li>
+													<li><a href="#">공장</a></li>
+													<li><a href="#">계열사</a></li>
+													<li><a href="#">해외법인</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f1_6">
+											<div class="m_box">
+												<h3><a href="#">Factory</a></h3>
+												<ul>
+													<li><a href="#">공장소개</a></li>
+													<li><a href="#">견학신청</a></li>
+													<li><a href="#">신청상태</a></li>
+													<li><a href="#">견학후기</a></li>
+													<li><a href="#">견학사진</a></li>
+													<li><a href="#">기프트샵</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f1_7">
+											<div class="m_box">
+												<h3><a href="#">Recruit</a></h3>
+												<ul>
+													<li><a href="#">All about HITEJINRO</a></li>
+													<li><a href="#">인재상</a></li>
+													<li><a href="#">직무소개</a></li>
+													<li><a href="#">채용절차</a></li>
+													<li><a href="#">복리후생</a></li>
+													<li><a href="#">채용공고</a></li>
+													<li><a href="#">지원자도우미</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">SOCIAL &amp; MEDIA</a> 
+								<div class="full_down f2">
+									<div class="full_cover">
+										<div class="f_menu f2_1">
+											<div class="m_box">
+												<h3><a href="#">Social board</a></h3>
+												<a href="#" class="text">
+													당신의 인생을 더 큰 즐거움과 에너지로<br/>
+													채우는 하이트진로의 다양한 소셜채널을<br/>
+													지금 바로 확인해보세요!
+												</a>
+											</div>
+										</div>
+										<div class="f_menu f2_2">
+											<div class="m_box">
+												<h3><a href="#">Media</a></h3>
+												<ul class="float">
+													<li><a href="#">공지사항</a></li>
+													<li><a href="#">보도자료</a></li>
+													<li><a href="#">광고 자료관</a></li>
+													<li><a href="#">제품 자료관</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f2_3">
+											<div class="m_box">
+												<h3><a href="#">마케팅 성공사례</a></h3>
+												<ul>
+													<li><a href="#">하이트 성공사례</a></li>
+													<li><a href="#">참이슬 성공사례</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">CSR &amp; JOY</a>
+								<div class="full_down f3">
+									<div class="full_cover">
+										<div class="f_menu f3_1">
+											<div class="m_box">
+												<h3><a href="#">CSR</a></h3>
+												<ul>
+													<li><a href="#">&amp;JOY</a></li>
+													<li><a href="#">분야별 사회공헌</a></li>
+													<li><a href="#">꿈 바우처</a></li>
+													<li><a href="#">하이트진로 장학생</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f3_2">
+											<div class="m_box">
+												<h3><a href="#">Ethical Management</a></h3>
+												<ul>
+													<li><a href="#">동반성장</a></li>
+													<li><a href="#">청음고(부정제보)</a></li>
+													<li><a href="#">공정거래자율준수</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="f_menu f3_3">
+											<div class="m_box">
+												<h3><a href="#">Sports</a></h3>
+												<ul>
+													<li><a href="#">골프선수</a></li>
+													<li><a href="#">골프대회</a></li>
+													<li><a href="#">기타 스포츠</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li><a href="#">CUSTOMER CENTER</a>
+								<div class="full_down f4">
+									<div class="full_cover">
+										<div class="f_menu f4_1">
+											<div class="m_box half">
+												<h3><a href="#">FAQ</a></h3>
+											</div>
+											<div class="m_box half">
+												<h3><a href="#">Q &amp; A</a></h3>
+											</div>
+										</div>
+										<div class="f_menu f4_2">
+											<div class="m_box">
+												<h3><a href="#">주류상식 가이드</a></h3>
+												<ul>
+													<li><a href="#">맥주 가이드</a></li>
+													<li><a href="#">소주 가이드</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="crum">
+						<ul>
+							<li><a href="#">LOGIN</a></li>
+							<li><a href="#">JOIN</a></li>
+							<li><a href="#">RECRUIT</a></li>
+							<li><a href="#">LANGUAGE&nbsp;&or;</a>
+								<ul>
+									<li><a href="#">ENGLISH</a></li>
+									<li><a href="#">JAPANESE</a></li>
+									<li><a href="#">CHINESE</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="img_slide">
+			<input type="radio" name="btn" id="btn1" checked />
+			<label for="btn1" class="btn1"></label>
+			
+			<input type="radio" name="btn" id="btn2" />
+			<label for="btn2" class="btn2"></label>
+			
+			<input type="radio" name="btn" id="btn3" />
+			<label for="btn3" class="btn3"></label>
+			
+			<input type="radio" name="btn" id="btn4" />
+			<label for="btn4" class="btn4"></label>
+			
+			<input type="radio" name="btn" id="btn5" />
+			<label for="btn5" class="btn5"></label>
+			
+			<input type="radio" name="btn" id="btn6" />
+			<label for="btn6" class="btn6"></label>
+			
+			<input type="radio" name="btn" id="btn7" />
+			<label for="btn7" class="btn7"></label>
+			
+			<input type="radio" name="btn" id="btn8" />
+			<label for="btn8" class="btn8"></label>
+			
+			<input type="radio" name="btn" id="btn9" />
+			<label for="btn9" class="btn9"></label>
+			
+			<ul class="imgs cf">
+				<li><a href="#"><img src="./images/20190411_36285755.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20190426_67653756.png" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20190429_91088543.png" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20190306_64508411.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20190222_90122832.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20190422_73500924.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20181025_51052194.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20180612_78977812.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/20181018_96599340.jpg" alt=""/></a></li>
+			</ul>
+		</div>
+		
+		<!-- section -->
+		<div id="section">
+		
+			<div class="section_cover">
+			<h2>사용자들이 가장 많이 찾으신 컨텐츠를 소개합니다.</h2>
+			<div class="article_cover">
+					<div class="article box1">
+						<a href="#">
+							<span>
+								국내유일 청정 대나무숯으로</br>
+								4번 걸러 더 깨끗해진</br>
+								참이슬 fresh
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box2">
+						<a href="#">
+							<span>
+								청정라거</br>
+								시대개막</br>
+								TERRA
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box3">
+						<a href="#">
+							<span>
+								언론 속 하이트진로의</br>
+								다양한 소식을 알려드립니다.</br>
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box4">
+						<a href="#">
+							<span>
+								12년 내공으로 만들어진 깊고 풍부한</br>
+								Cream 生All Malt Beer!</br>
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box5">
+						<a href="#">
+							<span>
+								하이트 진로의 사회공헌 활동은</br>
+								모두가 즐겁고 행복한 세상을</br>
+								만들기위한 실천입니다.
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box6 top">
+						<a href="#">
+							<span>
+								더욱 업그레이드 된 엑스트라 콜드 공법으로 라거맥주 본연의</br>
+								시원하고 청량한 맛을 극대화한 hite</br>
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box7">
+						<a href="#">
+							<span>
+								목통숙성 원액과</br>
+								깨끗한 이슬이 만나</br>
+								은은한 맛과 향으로 태어나다.
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box8 top">
+						<a href="#">
+							<span>
+								하이트 진호의 최신 광고영상을 소개합니다.</br>
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+					
+					<div class="article box9">
+						<a href="#">
+							<span>
+								하이트 진로만의 최첨단 설비와</br>
+								친환경 이념이 담긴 생상공정을</br>
+								직접만나보세요.
+								<em>LEARN MORE</em>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="section_2">
+			
+			<div class="section2_cover">
+				<h2>최신 하이트진로 SNS</h2>
+				<ul class="cf">
+					<li class="cf">
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_52492623.png" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>facebook</h4>
+									<p>
+										필라이트 나이트🎶 신비한 가성비 이야기🎶 술 사줘? 밥 사줘? 필라이트 사줘? 
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_43639813.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>instagram</h4>
+									<p>
+										진로는 두꺼비에게 맡겨라!
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_43262751.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>blog</h4>
+									<p>
+										테라 청정 맛플 in seoul 건대 시민호프
+									</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="cf">
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_76745282.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>facebook</h4>
+									<p>
+										청정라거와 떠나는 서울 맛집 탐방 1탄🍺😋🔎
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_94891712.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>instagram</h4>
+									<p>
+										공유와 함께 리얼탄산 100% 청정라거 테라로 일찍 찾아온 더위를 날려보세요.
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_65011612.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>blog</h4>
+									<p>
+										머무는 자를 위한 공간, 동해 북스테이 &lt;단순한 진심&gt;
+									</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="cf">
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_73934952.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>facebook</h4>
+									<p>
+										Q.이유 없이 화나는 火요일에 꼭 필요한 건? 분노 조절 치료사 아이린
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_64352432.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>instagram</h4>
+									<p>
+										오늘 하루도 수고한 우리를 위해 피로를 날려줄 시원한 하이트로🍻🍻🍻
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide">
+							<a href="#">
+								<div class="slide_left">
+									<img src="./images/20190603_14585722.jpg" alt=""/>
+								</div>
+								<div class="slide_right">
+									<h4>blog</h4>
+									<p>
+										테라 청정 맛플 in seoul 영동시장 달빛주점
+									</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="pager">
+					<ul>
+						<li class="on"><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		
+		</div>
+		
+		<div id="footer1">
+			<div class="footer_cover1 cf">
+				<div class="f_menu">
+					<h3 class="f_title">company</h3>
+					<ul class="horizontal cf">
+						<li><a href="#">인사말</a></li>
+						<li><a href="#">Investment</a>
+							<ul>
+								<li><a href="#">IR정보</a></li>
+								<li><a href="#">전자공고</a></li>
+								<li><a href="#">공시</a></li>
+								<li><a href="#">공시정보</a></li>
+							</ul>
+						</li>
+						<li><a href="#">경역철학</a></li>
+						<li><a href="#">Location</a>
+							<ul>
+								<li><a href="#">본사</a></li>
+								<li><a href="#">지점</a></li>
+								<li><a href="#">공장</a></li>
+								<li><a href="#">해외법인</a></li>
+								<li><a href="#">계열사</a></li>
+							</ul>
+						</li>
+						<li><a href="#">연혁</a></li>
+						<li><a href="#">factory</a>
+							<ul>
+								<li><a href="#">공장소개</a></li>
+								<li><a href="#">견학신청</a></li>
+								<li><a href="#">신청상태</a></li>
+								<li><a href="#">견학후기</a></li>
+								<li><a href="#">견학사진</a></li>
+								<li><a href="#">기프트샵</a></li>
+							</ul>
+						</li>
+						<li><a href="#">품질경영</a></li>
+						<li><a href="#">Recruit</a>
+							<ul>
+								<li><a href="#">All about JINRO</a></li>
+								<li><a href="#">인재상</a></li>
+								<li><a href="#">직무소개</a></li>
+								<li><a href="#">채용절차</a></li>
+								<li><a href="#">복리후생</a></li>
+								<li><a href="#">채용공고</a></li>
+								<li><a href="#">지원자도우미</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Introduction</a>
+							<ul>
+								<li><a href="#">CI</a></li>
+								<li><a href="#">하이트진로 폰트</a></li>
+								<li><a href="#">국제화</a></li>
+								<li><a href="#">계열사안내</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="f_menu">
+					<h3 class="f_title">social &amp; media</h3>
+					<ul>
+						<li><a href="#">Social board</a></li>
+						<li><a href="#">media</a>
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">보도자료</a></li>
+								<li><a href="#">광고 자료관</a></li>
+								<li><a href="#">제품 자료관</a></li>
+							</ul>
+						</li>
+						<li><a href="#">마케팅 성공사례</a>
+							<ul>
+								<li><a href="#">하이트 성공사례</a></li>
+								<li><a href="#">참이슬 성공사례</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="f_menu">
+					<h3 class="f_title">csr &amp; joy</h3>
+					<ul>
+						<li><a href="#">CSR</a>
+							<ul>
+								<li><a href="#">&amp; Joy</a></li>
+								<li><a href="#">분야별 사회공헌</a></li>
+								<li><a href="#">꿈 바우처</a></li>
+								<li><a href="#">하이트진로 장학생</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Ethical Management</a>
+							<ul>
+								<li><a href="#">동반성작</a></li>
+								<li><a href="#">청음고(부정제보)</a></li>
+								<li><a href="#">공정거래자율준수</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Sports</a>
+							<ul>
+								<li><a href="#">골프선수</a></li>
+								<li><a href="#">골프대회</a></li>
+								<li><a href="#">기타 스포트</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="f_menu">
+					<h3 class="f_title">customer center</h3>
+					<ul >
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Q&amp;A</a></li>
+						<li><a href="#">주류상식 가이드</a>
+							<ul>
+								<li><a href="#">맥주가이드</a></li>
+								<li><a href="#">소주가이드</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="f_menu">
+					<h3 class="f_title">brand</h3>
+					<ul>
+						<li><a href="#">맥주</a></li>
+						<li><a href="#">소주</a></li>
+						<li><a href="#">위스키</a></li>
+						<li><a href="#">와인</a></li>
+						<li><a href="#">사케</a></li>
+						<li><a href="#">기타 주류</a></li>
+						<li><a href="#">인터내셔널</a></li>
+					</ul>
+				</div>
+			</div>
+		
+		
+		</div>
+		<div id="footer2">
+			<div class="footer_cover2 cf">
+				<div class="f_left_menu">
+					<ul>
+						<li><a href="#">개인정보처리방침</a></li>
+						<li><a href="#">회원이용약관</a></li>
+						<li><a href="#">이메일무단수집거부</a></li>
+						<li><a href="#">동반성장</a></li>
+						<li><a href="#">청음고(부정제보)</a></li>
+						<li><a href="#">공시정보 관리규정</a></li>
+						<li><a href="#">공정거래자율준수</a></li>
+					</ul>
+				</div>
+				<div class="f_right_menu">
+					<ul>
+						<li><a href="#">하이트진로SNS <span>&and;</span></a>
+							<ul>
+								<li><a href="#">페이스북</a></li>
+								<li><a href="#">트위터</a></li>
+								<li><a href="#">유튜브</a></li>
+								<li><a href="#">블로그</a></li>
+								<li><a href="#">사회공헌 블로그</a></li>
+								<li><a href="#">와인 블로그</a></li>
+								<li><a href="#">테라 인스타그램</a></li>
+								<li><a href="#">하이트 인스타그램</a></li>
+								<li><a href="#">맥스 인스타그램</a></li>
+								<li><a href="#">필라이트 인스타그램</a></li>
+								<li><a href="#">참이슬 인스타그램</a></li>
+								<li><a href="#">진로소주 인스타그램</a></li>
+								<li><a href="#">이슬톡톡 인스타그램</a></li>
+							</ul>
+						</li>
+						<li><a href="#">패밀리 사이트<span>&and;</span></a>
+							<ul>
+								<li><a href="#">하이트진로 홀딩스</a></li>
+								<li><a href="#">진로 아메리카</a></li>
+								<li><a href="#">하이트진로(주)</a></li>
+								<li><a href="#">블루헤런</a></li>
+								<li><a href="#">진로 재팬</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+		</div>
+		<div id="footer3">
+			<div class="footer_cover3">
+				<p>
+					(06075) 서울특별시 강남구 영동대로 714 하이트진로빌딩 / 대표전화 080-210-0150 / 사업자등록번호 214-81-00777<br/>
+					Copyright&copy; 2016 HITEJINRO CO.LTD. ALL RIGHTS REVERVED.
+				</p>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	
+	
+	
+</body>
+
+</html>

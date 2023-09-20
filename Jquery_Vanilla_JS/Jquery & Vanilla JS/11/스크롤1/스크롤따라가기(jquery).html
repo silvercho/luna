@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>헤더위치 변경</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 5000px;
+		}
+
+		#indicator {
+			position: absolute;
+			top: 100px;
+			width: 350px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #ccc;
+			right: 0;
+			z-index: 10;
+			text-align: center;
+			transition: all 0.5s;
+		}
+
+		#indicator.on {
+			position: fixed;
+			left: 50%;
+			transform: translate(-50%, 0);
+			top: 0;
+		}
+
+
+		article {
+			height: 900px;
+			width: 100%;
+			position: relative;
+		}
+
+		.art1 {
+			background-color: red;
+		}
+
+		.art2 {
+			background-color: green;
+		}
+
+		.art3 {
+			background-color: blue;
+		}
+
+		.art4 {
+			background-color: orange;
+		}
+
+		.art5 {
+			background-color: yellow;
+		}
+
+		ul#f_btn {
+			position: absolute;
+			top: 200px;
+			left: 50%;
+			margin-left: 600px;
+			width: 50px;
+			background-color: purple;
+			list-style: none;
+		}
+
+		ul#f_btn li {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #ccc;
+			margin: 10px auto;
+		}
+
+		ul#f_btn li a {
+			display: block;
+			text-indent: -9999px;
+		}
+	</style>
+
+	<script>
+		$(function () {
+			var top1 = $(".art1").offset().top;
+			var top2 = $(".art2").offset().top;
+			var top3 = $(".art3").offset().top;
+			var top4 = $(".art4").offset().top;
+			var top5 = $(".art5").offset().top;
+
+			//console.log(top1,"<br/>");
+			//console.log(top2,"<br/>");
+			//console.log(top3,"<br/>");
+			//console.log(top4,"<br/>");
+			//console.log(top5,"<br/>");
+
+			var f_off = $("#f_btn").offset().top;
+			//var f = parseInt($("#f_btn").css("top"));
+
+
+			$(window).scroll(function () {
+				var sct = $(this).scrollTop(); //스크롤의 현재위치
+				$("#scroll").text(sct);
+				$("#f_btn").stop().animate({
+					top: f_off + sct
+				}, 800)
+				if (sct > 100) {
+					$('#indicator').addClass('on');
+				} else {
+					$('#indicator').removeClass('on');
+				}
+			});
+
+			$("#f_btn li").click(function () {
+				var i = $(this).index();
+				$('html, body').stop().animate({
+					scrollTop: i * 900
+				}, 1300);
+				return false;
+
+			});
+		});
+	</script>
+
+
+</head>
+
+<body>
+	<h1 id="indicator">스크롤의위치 :<span id="scroll">0000</span></h1>
+	<section>
+		<article class="art1">첫번째</article>
+		<article class="art2">두번째</article>
+		<article class="art3">세번째</article>
+		<article class="art4">네번째</article>
+		<article class="art5">다섯번째</article>
+	</section>
+	<ul id="f_btn">
+		<li><a href="#">1번</a></li>
+		<li><a href="#">2번</a></li>
+		<li><a href="#">3번</a></li>
+		<li><a href="#">4번</a></li>
+		<li><a href="#">5번</a></li>
+	</ul>
+
+</body>
+
+</html>

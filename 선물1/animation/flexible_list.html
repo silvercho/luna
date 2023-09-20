@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title> jQuery </title>
+		<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+		<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+
+		<!-- 스타일 & 스크립트 -->
+		<style type="text/css">
+		#wrap { width:1200px; padding:30px 0; }
+		#wrap div.item-List { width:100%; padding-bottom:30px; }
+		#wrap div.item-List div.grid-item { margin-bottom:20px; width:285px; }
+		#wrap div.item-List div.grid-item img { display:block; cursor:pointer; border:1px solid #ddd; }
+		#wrap a.more { margin:0 auto; display:block; width:100px; padding:10px 0; border:1px solid #ddd; border-radius:30px; font-size:14px; color:#000; text-align:center; }
+
+		@media screen and (max-width:1200px) {
+			#wrap { width:100%; }
+		}
+		</style>
+		<!-- // 스타일 & 스크립트 -->
+
+	</head>
+	<body>
+
+		<a href="../index-2.html" class="home">Home</a>
+		<div id="wrap">
+			<div class="item-List">
+				<div class="grid-item"><img src="./origin/img/portfolio/mlimited.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/tokyosteak_mob.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/tokyosteak.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/duolac.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/jsjps_mobile.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/jsjps.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/theridge.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/lesmiserable_mob.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/lesmiserable.jpg" alt="" /></div>
+				<div class="grid-item"><img src="./origin/img/portfolio/youngran.jpg" alt="" /></div>
+			</div>
+			<!-- // item-List -->
+			<a href="#self" class="more">MORE</a>
+		</div>
+		<!-- // wrap -->
+
+		<!-- 스크립트 -->
+		<script type="text/javascript" src="../common/js/masonry.pkgd.min.js"></script><!-- masonry v4.2.0 -->
+		<script type="text/javascript">
+		$(window).load(function(){
+			var $grid = $('.item-List').masonry({
+				// disable initial layout
+				initLayout: false,
+				itemSelector: '.grid-item',
+				columnWidth: 285,
+				gutter:20,
+				isAnimated: true
+			});
+
+			$(".more").on("click", function() {
+				var $items = $("<div class='grid-item'><img src='/origin/img/portfolio/mlimited.jpg' alt='' /></div><div class='grid-item'><img src='/origin/img/portfolio/tokyosteak_mob.jpg' alt='' /></div>");
+				$grid.append($items).masonry("appended", $items);
+				
+			});
+
+			$grid.masonry( 'on', 'layoutComplete', function() {
+				//console.log('layout is complete');
+			});
+
+			$grid.masonry();
+		});
+		</script>
+		<!-- // 스크립트 -->
+
+	</body>
+
+</html>

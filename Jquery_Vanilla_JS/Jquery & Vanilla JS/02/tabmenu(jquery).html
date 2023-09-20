@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>	
+<script>
+$(function(){
+	$('.tab_menu li').click(function(){
+		var k = $(this).index();
+		$('.tab_menu li').eq(k).css("background-color","red");
+		//$(this).css("background-color","red");
+		$('.tab_list ul').eq(k).css("background-color","red");
+	});
+});
+</script>	
+</head>
+<body>
+	<ul class="tab_menu">
+		<li>공지사항</li>
+		<li>알림마당</li>
+		<li>보도자료</li>
+		<li>채용정보</li>
+	</ul>
+	<div class="tab_list">
+		<ul>
+			<li>공지사항입니다.</li>
+			<li>공지사항입니다.</li>
+			<li>공지사항입니다.</li>
+			<li>공지사항입니다.</li>
+		</ul>
+		<ul>
+			<li>알림마당입니다.</li>
+			<li>알림마당입니다.</li>
+			<li>알림마당입니다.</li>
+			<li>알림마당입니다.</li>
+		</ul>
+		<ul>
+			<li>보도자료입니다.</li>
+			<li>보도자료입니다.</li>
+			<li>보도자료입니다.</li>
+			<li>보도자료입니다.</li>
+		</ul>
+		<ul>
+			<li>채용정보입니다.</li>
+			<li>채용정보입니다.</li>
+			<li>채용정보입니다.</li>
+			<li>채용정보입니다.</li>
+		</ul>
+		
+	
+	</div>
+	
+	
+</body>
+</html>

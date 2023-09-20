@@ -1,0 +1,18 @@
+body header .wrap nav .nav .submenu{
+  overflow: hidden;
+  max-height: 0px;
+  display: block;
+  transition: max-height .3s;
+}
+
+body header .wrap nav .nav .submenu.on{
+  max-height: 150px;
+}
+
+body #imgslide .imgs.slideasdf img.marginLeft2000{
+  margin-left:-2000px;
+}
+
+body #imgslide .imgs.slideasdf img.marginLeft0{
+  margin-left:0px;
+}

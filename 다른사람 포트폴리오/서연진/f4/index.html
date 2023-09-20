@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script src="./js/script.js"></script>
+	<title>fullpage</title>
+	<style>
+	*{margin:0;padding:0;border:0;}
+	ul,li{list-style:none;}
+	a{text-decoration:none;}
+	.cf:after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+
+	#wrap{
+		position:fixed;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+	}
+
+	#wrap .section{
+		position:absolute;
+		width:100%;
+		height:100%;
+		left:0;
+		top:100%;
+	}
+	.footercover{
+		position:absolute;
+		height:513px;
+		top:100%;
+		left:0;
+	}
+	#wrap #home.section{
+		top:0%;
+	}
+
+	#wrap .section .section_inner_wrap{
+		width:100%;
+		height:100%;
+		overflow:hidden;
+	}
+	
+
+	#pager{
+		position:fixed;
+		right:20px;
+		top:50%;
+		transform:translateY(-50%);
+	}
+	#pager ul li{
+		width:15px;
+		margin:15px 0;
+	}
+	
+	#pager ul li a{
+		display:block;
+		width:15px;
+		height:15px;
+		border-radius:7.5px;
+		background-color:#fff;
+		transition:all 0.4s;
+	}
+	#pager ul li.on a{
+		background-color:#555;
+		height:45px;
+	}
+	
+	
+	
+	</style>
+	<script>
+	$(function(){
+		
+		var i = 0;
+		var k = null;
+		
+		function prevSlide(){
+			var length = $(".section").length;
+			if(i==0){
+				setTimeout(function(){
+					$(document).on("wheel",mousewheel);
+					$(document).on("keydown", pressKey);
+					$("#pager ul li").on("click", clickSlide);
+				},200);
+			}else{
+				if($("#work").css("top")=="-513px"||$("#work").css("top")=="-653px"){
+					$("#work").animate({"top":"0"}, function(){
+						$(document).on("wheel",mousewheel);
+						$(document).on("keydown", pressKey);
+						$("#pager ul li").on("click", clickSlide);	
+					});
+					i=length-1;
+				}else{
+					i--;
+					if(i==0){
+						
+						$("header").removeClass("on");
+							
+				
+					}
+					$("#pager ul li").removeClass("on").eq(i).addClass("on");
+					$(".section").eq(i+1).css("top","0%").animate({
+						"top":"100%"
+					},600);
+					$(".section").eq(i).css("top","-100%").animate({
+						"top":"0"
+					},600, function(){
+						$(document).on("wheel",mousewheel);
+						$(document).on("keydown", pressKey);
+						$("#pager ul li").on("click", clickSlide);
+					});
+				}
+			}
+			
+			console.log(i);
+			k=i;
+			
+		}
+		function nextSlide(){
+			var length = $(".section").length;
+			if(i==length-1){
+				var w = $(window).width();
+				if(w>680){
+					$("#work").animate({"top":"-513px"});
+				}else{
+					$("#work").animate({"top":"-653px"});
+				}
+				setTimeout(function(){
+					$(document).on("wheel",mousewheel);
+					$(document).on("keydown", pressKey);
+					$("#pager ul li").on("click", clickSlide);
+				},200);
+				
+				if($("#work").css("top")=="-513px"||$("#work").css("top")=="-653px"){
+					$(window).on("resize",function(){
+						var w = $(window).width();
+						if(w>680){
+							$("#work").css({"top":"-513px"});
+						}else{
+							$("#work").css({"top":"-653px"});
+						}
+					});
+				}else{
+					$(window).off("resize");
+				}
+			}else{
+				i++;
+				if(i>0){
+					$("header").addClass("on");
+				}else{
+					$("header").removeClass("on");
+				}
+				$("#pager ul li").removeClass("on").eq(i).addClass("on");
+				$(".section").eq(i-1).css("top","0%").animate({
+					"top":"-100%"
+				},600);
+				$(".section").eq(i).css("top","100%").animate({
+					"top":"0"
+				},600,function(){
+					$(document).on("wheel",mousewheel);
+					$(document).on("keydown", pressKey);
+					$("#pager ul li").on("click", clickSlide);
+				});
+			
+			}
+			console.log(i);
+			k=i;
+		}
+		
+		
+		
+		function mousewheel(e){
+		
+			var y = e.originalEvent.deltaY;
+				$("#pager ul li").off("click");
+				$(document).off("wheel");
+				$(document).off("keydown");
+
+				if(y>0){
+					nextSlide();
+				}
+				if(y<0){
+					prevSlide();
+				}
+		}
+		
+		function pressKey(e){
+		
+				$("#pager ul li").off("click");
+				$(document).off("wheel");
+				$(document).off("keydown");
+				if(e.keyCode==38){
+					e.preventDefault();
+					prevSlide();
+				}else if(e.keyCode==40){
+					e.preventDefault();
+					nextSlide();
+				}else{
+					setTimeout(function(){
+						$(document).on("wheel",mousewheel);
+						$(document).on("keydown", pressKey);
+						$("#pager ul li").on("click", clickSlide);
+					},200);
+				}
+		}
+		
+		
+	
+		
+		
+		
+		function clickSlide(){
+			i=$(this).index();
+			if(i==k) return;
+				$("#pager ul li").off("click");
+				$(document).off("wheel");
+				$(document).off("keydown");
+			if(k>i){
+				$(".section").eq(k).css('top',"0").animate({
+					"top":"100%"
+				},600);
+				$(".section").eq(i).css('top',"-100%").animate({
+					"top":"0"
+				},600, function(){
+					$(document).on("wheel",mousewheel);
+					$(document).on("keydown", pressKey);
+					$("#pager ul li").on("click", clickSlide);
+				});
+			}else if(k<i){
+				$(".section").eq(k).css('top',"0").animate({
+					"top":"-100%"
+				},600);
+				$(".section").eq(i).css('top',"100%").animate({
+					"top":"0"
+				},600, function(){
+					$(document).on("wheel",mousewheel);
+					$(document).on("keydown", pressKey);
+					$("#pager ul li").on("click", clickSlide);
+				});
+			}
+			$("#pager ul li").removeClass("on").eq(i).addClass("on");
+			if(i>0){
+				$("header").addClass("on");
+			}else{
+				$("header").removeClass("on");
+			}
+			k=i;
+		}
+
+		var t_start = null;
+		var y = null;
+		function handDragStart(e){
+			$("#pager ul li").off("click");
+			$(document).off("wheel");
+			$(document).off("keydown");
+		
+			y = e.originalEvent.touches[0].clientY;
+			t_start=y;
+		}
+
+		function handDragMove(e){
+			y = e.originalEvent.touches[0].clientY;
+			
+		}
+		function handDragEnd(e){
+			if(t_start-y>0){
+				nextSlide();
+			}
+			if(t_start-y<0){
+				prevSlide();
+			}
+		}
+
+		
+		$(document).on("touchstart", handDragStart);
+		$(document).on("touchmove", handDragMove);
+		$(document).on("touchend", handDragEnd);
+		
+		$(document).on("wheel",mousewheel);
+		$(document).on("keydown", pressKey);
+		$("#pager ul li").on("click", clickSlide);
+	});
+	</script>
+</head>
+<body>
+	<header class="header">
+		<div class="logo">
+			<img src="./images/logo1.png" alt="" class="img_off">
+			<img src="./images/logo.png" alt="" class="img_on">
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="">회사소개</a></li>
+				<li><a href="">글로벌 네트워크</a></li>
+				<li><a href="">비즈니스</a></li>
+				<li><a href="">홍보센터</a></li>
+				<li><a href="">인재채용</a></li>
+			</ul>
+		</div>
+		<div class="lang">
+			<span>KOR</span>
+		</div>
+	</header>
+	
+	<div class="nav_btn">
+		<div class="navb nb1"></div>
+		<div class="navb nb2"></div>
+		<div class="navb nb3"></div>
+	</div>
+	
+	<div class="nav990">
+		<ul>
+			<li><a href="">회사소개</a></li>
+			<li><a href="">글로벌 네트워크</a></li>
+			<li><a href="">비즈니스</a></li>
+			<li><a href="">홍보센터</a></li>
+			<li><a href="">인재채용</a></li>
+			<li><a href=""><span>KOR</span></a></li>
+		</ul>
+	
+	</div>
+	<div id="wrap">
+		<div id="home" class="section">
+			<div class="section_inner_wrap">
+				<div class="img_slide">
+					<ul class="imgs">
+						<li>
+							<span>
+								MOVING TOGETHER<br/>TOWARDS FUTURE<br/>
+								<em>새로운 미래로 함께 가는 글로벌 가치 창조 기업 동행입니다</em>
+							</span>
+						</li>
+						<li>
+							<span>
+								MOVING TOGETHER<br/>TOWARDS FUTURE<br/>
+								<em>새로운 미래로 함께 가는 글로벌 가치 창조 기업 동행입니다</em>
+							</span>
+						</li>
+						<li>
+							<span>
+								MOVING TOGETHER<br/>TOWARDS FUTURE<br/>
+								<em>새로운 미래로 함께 가는 글로벌 가치 창조 기업 동행입니다</em>
+							</span>
+						</li>
+					</ul>
+					<div class="pager">
+						<ul>
+							<li class="on"><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+						</ul>
+					</div>
+					
+					<img src="./images/prev-icon02.png" alt="" class="prev">
+					<img src="./images/next-icon02.png" alt="" class="next">
+					
+				</div>
+			</div>
+			<div class="header990">
+				<div class="logo2">
+					<img src="./images/logo.png" alt="" class="img_on">
+				</div>
+				
+			</div>
+		</div>
+		<div id="about" class="section">
+			<div class="section_inner_wrap">
+				<section class="con1">
+					<div class="con1cover">
+						<div class="con1textcenter">
+							<h2>ABOUT COMPANY</h2>
+							<strong>동행은 전문 무역상사로서 우리나라의 경제 발전을 더 나은 미래로 이끌어 가고 있습니다.</strong><br/>
+							<span>주요 무역 수출 국가인 아프리카, 남미, 중동, 아시아 및 주요국 네트워크를 확보하고 있으며 설립이래 자동차 부품, 농수산물, 물자 등을 비롯한 모든 부문의 무역업무를 개시하였습니다. 이 외에도 ‘국가 개발형 사업’ 을 다수 추진함은 물론 미래의 성장 사업 역시 적극 진행하고 있습니다. 꾸준히 우수한 인력과 글로벌 네트워크, 다양한 사업 경험을 발판으로 글로벌 가치 창조업으로 도약해 나갈 것입니다.</span>
+							<div class="more">
+								<a href="#">READ MORE
+									<span class="more_icon"></span>
+								</a>
+							</div>
+						</div>
+						<div class="con1imgbox">
+							<img src="./images/con1.jpg" alt="">
+							<div class="img_back"></div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div id="skill" class="section">
+			<div class="section_inner_wrap">
+				<section class="con2">
+					<div class="con2cover cf">
+						<div class="textcenter">
+							<h2>BUSINESS FILEDS</h2>
+							<strong>주요 사업으로 무역, 프로젝트 오거나이징, 물류 사업을 통해 해외로<br/>
+				뻗어나가고 있으며 수입 자동차 리테일도 진행하고 있습니다.</strong>
+						</div>
+						<div class="bbox_cover">
+							<div class="bbox cb1">
+								<div class="btextbox">
+									<div class="btext">
+									<h3>TRANDING</h3>
+									<span>자동차, 기계, 물자 트레이드 등 사업 다각화를 통해 수익 구조를 혁신하고 경쟁력을 강화해 나가고 있습니다</span>
+									</div>
+								</div>		
+									<div class="btext_btn">
+										<div>
+											<a href="#"><span>무역</span></a>
+										</div>
+									</div>
+								
+								<div class="bbox_img">
+									<img src="./images/cb1.jpg" alt="">
+								</div>
+							</div>
+							<div class="bbox cb2">
+								<div class="btextbox">
+									<div class="btext">
+										<h3>PROJECT<br/>ORGANIZING</h3>
+										<span>프로젝트 오거나이징 사업으로 플랜트 인프라와 부동산 개발에 힘씁니다</span>
+									</div>
+								</div>	
+								<div class="btext_btn">
+									<div>
+										<a href="#"><span>프로젝트 오거나이징</span></a>
+									</div>
+								</div>
+									
+								<div class="bbox_img">
+									<img src="./images/cb2.jpg" alt="">
+								</div>
+							</div>
+							<div class="bbox cb3">
+								<div class="btextbox">
+									<div class="btext">
+									<h3>LOGISTICS</h3>
+									<span>물류 부문의 지속 가능한 성장과 안정적인 수익 창출을 실현할 것입니다</span>
+									</div>
+								</div>		
+								<div class="btext_btn">
+									<div>
+										<a href="#"><span>물류</span></a>
+									</div>
+								</div>
+								<div class="bbox_img">
+									<img src="./images/cb3.jpg" alt="">
+								</div>
+							</div>
+							<div class="bbox cb4">
+								<div class="btextbox">
+									<div class="btext">
+									<h3>AUTOMOBILE<br/>RETAIL</h3>
+									<span>프리미엄 브랜드 캐딜락의 품격있고 차별화된 토탈 서비스를 제공합니다</span>
+									</div>
+								</div>		
+								<div class="btext_btn">
+									<div>
+										<a href="#"><span>수입 자동차 리테일</span></a>
+									</div>
+								</div>
+									
+								<div class="bbox_img">
+									<img src="./images/cb4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					</section>
+			</div>
+		</div>
+		<div id="work" class="section">
+			<div class="section_inner_wrap">
+				<section class="con3">
+					<div class="textcenter">
+						<div class="textcenter_cover">
+							<h2>GLOBAL NETWORK</h2>
+							<strong>
+								세계시장을 무대로 활약하고 있는 동행물산은 전 세계에 구축된<br/>
+								글로벌 비즈니스 네트워크를 통해 다양한 사업영역에서 활동하고 있습니다.
+							</strong>
+						</div>
+					</div>
+					<div class="con3cover">	
+						<img src="./images/global-img.png" alt="">
+						<div class="gname g1">
+							<span>CHILE</span>
+							<div class="tit g1tit"></div>
+						</div>
+						<div class="gname g2">
+							<span>ALGERIA</span>
+							<div class="tit g1tit"></div>
+						</div>
+						<div class="gname g3">
+							<span>U.A.E</span>
+							<div class="tit g1tit"></div>
+						</div>
+						<div class="gname g4">
+							<span>SINGAPORE</span>
+							<div class="tit g1tit"></div>
+						</div>
+						<div class="gname g5">
+							<span>SEOUL</span>
+							<div class="tit g1tit"></div>
+						</div>
+					</div>
+				<div class="footercover">
+					<div class="bottomcons cf">
+						<div class="icon_cover">
+							<a href="#">
+								<img src="./images/b1.jpg" alt="">
+								<em class="bottomimg_box">
+									<img src="./images/icon1.png" alt="">
+									<span>회사소개</span>
+								</em>
+							</a>
+						</div>
+						<div class="icon_cover">
+							<a href="#">
+								<img src="./images/b2.jpg" alt="">
+								<em class="bottomimg_box">
+									<img src="./images/icon2.png" alt="">
+									<span>사업분야</span>
+								</em>
+							</a>
+						</div>
+						<div class="icon_cover">
+							<a href="#">
+								<img src="./images/b3.jpg" alt="">
+								<em class="bottomimg_box">
+									<img src="./images/icon3.png" alt="">
+									<span>인재채용</span>
+								</em>
+							</a>
+						</div>
+						<div class="icon_cover">
+							<a href="#">
+								<img src="./images/b4.jpg" alt="">
+								<em class="bottomimg_box">
+									<img src="./images/icon4.png" alt="">
+									<span>오시는 길</span>
+								</em>
+							</a>
+						</div>
+						</div>
+						<footer>
+							<div class="f1">
+								<img src="./images/fo-logo.png" alt="">
+							</div>
+							<ul>
+								<li>서울 중구 세종대로9길 41 퍼시픽타워 17층</li>
+								<li>TEL : 02-2254-3608</li>
+								<li>FAX : 02-2254-3607</li>
+							</ul>
+							<b>COPYRIGHTS © 2019 LOGO CORP. ALL RIGHTS RESERVED.</b>
+						</footer>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+	
+		
+	</div>
+	<div id="pager">
+		<ul>
+			<li class="on"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

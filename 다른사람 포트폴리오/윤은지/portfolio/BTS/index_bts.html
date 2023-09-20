@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="./css/style_bts.css"/>
+	<link rel="stylesheet" href="./css/media_bts.css"/>
+	<link rel="shortcut icon" href="./images/favicon-32.ico"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>BTS</title>
+	<script>
+
+		$(function(){
+
+			$(".gnb").click(function(){
+				$(".gnb .bars .bar").toggleClass("on");
+				$("header .menu").toggleClass("hidden");
+			});
+
+			$(".main_menu li").click(function(){
+				var a = $(this).index();
+				var d = $(this).children("ul").css("opacity");
+
+				if(d==0){
+					$(".menu_box").addClass("center");
+					$(".main_menu li").removeClass("active");
+					$(".main_menu li a").removeClass("color");
+					$(this).addClass("active");
+					$(this).children("a").addClass("color");
+
+				}else{
+					$(".menu_box").removeClass("center");
+					$(".main_menu li").removeClass("active");
+					$(this).children("a").removeClass("color");
+				}
+
+			});
+
+
+
+			$(".lang").mouseover(function(){
+				$(".lang .kor").addClass("on");
+				$(".lang .lang_inner").addClass("hidden");
+			});
+			$(".lang").mouseout(function(){
+				$(".lang .kor").removeClass("on");
+				$(".lang .lang_inner").removeClass("hidden");
+			});
+
+			$(".family").mouseover(function(){
+				$(".family_txt").addClass("on");
+				$(".family_txt i").addClass("reverse");
+				$(".family_inner").addClass("hidden");
+			});
+			$(".family").mouseleave(function(){
+				$(".family_txt").removeClass("on");
+				$(".family_txt i").removeClass("reverse");
+				$(".family_inner").removeClass("hidden");
+			});
+
+
+			var a = null;
+			var b = 0;
+
+			
+			$(".btn > ul > li").on("click",slide);
+			$(".arrow_right").on("click",next_slide);
+			$(".arrow_left").on("click",prev_slide);
+
+			function prev_slide(){
+				$(".arrow_left").off("click");
+				$(".btn > ul > li").off("click");
+				$(".arrow_right").off("click");
+
+				a--;
+				if(a==-1){
+					$("section .img_slide li").eq(6).stop().css("left","-100%").animate({
+						"left":"0"
+					},600);
+					$("section .img_slide li").eq(0).stop().css("left","0").animate({
+						"left":"100%"
+					},600,function(){
+						$(".btn ul li").on("click",slide);
+						$(".arrow_right").on("click",next_slide);
+						$(".arrow_left").on("click",prev_slide);
+					});
+					$(".btn > ul > li").removeClass("on");
+					$(".btn > ul > li").eq(6).addClass("on");
+					a=6;
+				}else{
+					$("section .img_slide li").eq(a).stop().css("left","-100%").animate({
+						"left":"0"
+					},600);
+					$("section .img_slide li").eq(a+1).stop().css("left","0").animate({
+						"left":"100%"
+					},600,function(){
+						$(".btn > ul > li").on("click",slide);
+						$(".arrow_right").on("click",next_slide);
+						$(".arrow_left").on("click",prev_slide);
+					});
+					$(".btn > ul > li").removeClass("on");
+					$(".btn > ul > li").eq(a).addClass("on");
+
+				}
+				console.log(a);
+				b=a;
+			}
+
+			function next_slide(){
+				$(".arrow_left").off("click");
+				$(".btn > ul > li").off("click");
+				$(".arrow_right").off("click");
+				a++;
+				if(a==7){
+					a=0;
+				}
+				$("section .img_slide li").eq(a).stop().css("left","100%").animate({
+					"left":"0"
+				},600);
+				$("section .img_slide li").eq(a-1).stop().css("left","0").animate({
+					"left":"-100%"
+				},600,function(){
+					$(".btn > ul > li").on("click",slide);
+					$(".arrow_right").on("click",next_slide);
+					$(".arrow_left").on("click",prev_slide);
+				});
+				$(".btn > ul > li").removeClass("on");
+				$(".btn > ul > li").eq(a).addClass("on");
+				b=a;
+			}
+
+			function slide(){
+				$(".arrow_left").off("click");
+				$(".btn > ul > li").off("click");
+				$(".arrow_right").off("click");
+				a=$(this).index();
+				if(a==b) return;
+
+
+				if(a>b){
+					$("section .img_slide li").eq(a).stop().css("left","100%").animate({
+						"left":"0"
+					},600);
+					$("section .img_slide li").eq(b).stop().css("left","0").animate({
+						"left":"-100%"
+					},600,function(){
+						$(".btn > ul > li").on("click",slide);
+						$(".arrow_right").on("click",next_slide);
+						$(".arrow_left").on("click",prev_slide);
+					});
+				}else if(a<b){
+					$("section .img_slide li").eq(a).stop().css("left","-100%").animate({
+						"left":"0"
+					},600);
+					$("section .img_slide li").eq(b).stop().css("left","0").animate({
+						"left":"100%"
+					},600,function(){
+						$(".btn > ul > li").on("click",slide);
+						$(".arrow_right").on("click",next_slide);
+						$(".arrow_left").on("click",prev_slide);
+					});
+				}
+
+				$(".btn > ul > li").removeClass("on");
+				$(".btn > ul > li").eq(a).addClass("on");
+
+				console.log(a,b);
+
+				b=a;
+
+				return false;
+
+			}
+
+
+			$("section > ul > li").click(function(){
+				$(".music").addClass("hidden");
+				$(".music_box h2").text($(this).attr("id"));
+			});
+			$(".music .exit").click(function(){
+				$(".music").removeClass("hidden");
+			});
+
+
+
+
+
+
+
+		});
+
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+	<!-- header -->
+	<header>
+		<h1 class="logo">
+			<a href="#">
+				<img src="./images/logo.png" alt=""/>
+			</a>
+		</h1>
+		<div class="gnb">
+			<div class="bars">
+				<div class="bar bar1"></div>
+				<div class="bar bar2"></div>
+				<div class="bar bar3"></div>
+			</div>
+		</div>
+		<nav class="menu">
+			<div class="menu_box">
+					<ul class="main_menu">
+						<li><a href="#">HOME</a></li>
+						<li class="bts_menu"><a href="#">BTS</a>
+							<ul>
+								<li><a href="#">HOME</a></li>
+								<li><a href="#">PROFILE</a></li>
+								<li><a href="#">DISCOGRAPHY</a></li>
+								<li><a href="#">SCHEDULE</a></li>
+								<li><a href="#">TOUR</a></li>
+							</ul>
+						</li>
+						<li class="txt_menu"><a href="#">TOMORROW X TOGETHER</a>
+							<ul>
+								<li><a href="#">HOME</a></li>
+								<li><a href="#">PROFILE</a></li>
+								<li><a href="#">DISCOGRAPHY</a></li>
+								<li><a href="#">SCHEDULE</a></li>
+								<li><a href="#">INTRODUCTION</a></li>
+							</ul>
+						</li>
+						<li class="yej_menu"><a href="#">YOUN ENUJI</a>
+							<ul>
+								<li><a href="#">HOME</a></li>
+								<li><a href="#">PROFILE</a></li>
+								<li><a href="#">DISCOGRAPHY</a></li>
+							</ul>
+						</li>
+					</ul>
+			</div>
+
+		</nav>
+		<div class="lang">
+			<span class="kor">KOR</span>
+			<div class="lang_inner">
+				<ul>
+					<li><a href="#">KOR</a></li>
+					<li><a href="#">ENG</a></li>
+					<li><a href="#">CHN</a></li>
+					<li><a href="#">JPN</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</header>
+
+
+
+	<!--main_section-->
+	<section>
+		<ul class="img_slide">
+			<li id="Make It Right">
+				<div class="album">
+				</div>
+				<div class="title">
+					<div class="title_in">
+						<span>Make It Right</span>
+						<span>feat. Lauv</span>
+					</div>
+				</div>				
+			</li>
+			<li id="TOUR">
+				<div class="album">
+				</div>
+			</li>
+			<li id="Heart Beat">
+				<div class="album">
+				</div>
+				<div class="title">
+					<div class="title_in">
+						<span>HEARTBEAT</span>
+					</div>
+				</div>
+			</li>
+			<li id="All Night">
+				<div class="album">
+				</div>
+				<div class="title">
+					<div class="title_in">
+						<span>ALL NIGHT</span>
+					</div>
+				</div>
+			</li>
+			<li id="A Brand New Day">
+				<div class="album">
+				</div>
+				<div class="title">
+					<div class="title_in">
+						<span>A BRAND</span>
+						<span>NEW DAY</span>
+					</div>
+				</div>
+			</li>
+			<li id="Dream Glow">
+				<div class="album">
+				</div>
+				<div class="title">
+					<div class="title_in">
+						<span>DREAM GLOW</span>
+					</div>
+				</div>
+			</li>
+			<li id="Persona">
+				<div class="album">
+				</div>
+				<div class="title">
+					<div class="title_in">
+						<span>MAP OF</span>
+						<span>THE SOUL:</span>
+						<span>PERSONA</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="btn">
+			<ul>
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="arrow_left">
+		</div>
+		<div class="arrow_right">
+		</div>
+
+
+
+		<div class="music">
+			<div class="exit"><img src="./images/btn-close.png"></div>
+			<div class="music_box">
+				<h2>00</h2>
+				<ul>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>멜론</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>FLO</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>지니</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>벅스</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>APPLE MUSIC</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>SPOTIFY</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="m_box_warp">
+								<span class="m_box"></span>
+								<span>AMAZON MUSIC</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+	<!--footer-->
+	<footer>
+		<div class="footer_box">
+			<div class="sns">
+				<ul>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+				</ul>
+			</div>
+			<div class="family">
+				<div class="family_txt">
+					<span>FAMILY SITES</span>
+					<i class="fa fa-chevron-up" aria-hidden="true"></i>
+				</div>
+				<ul class="family_inner">
+					<li><a href="#">BIG HIT ENTERTAINMENT</a></li>
+					<li><a href="#">BIG HIT AUDITION</a></li>
+					<li><a href="#">WEPLY</a></li>
+					<li><a href="#">WEVERSE</a></li>
+					<li><a href="#">TOMORROW X TOGETHER<br/>OFFICIAL WEBSITE</a></li>
+					<li><a href="#">YOUN EUNJI OFFICIAL WEBSITE</a></li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<div class="copyright_box">
+					<p>COPYRIGHT &COPY; 2019 BIG HIT ENTERTAINMENT ALL RIGHTS RESERVED</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+</body>
+
+</html>

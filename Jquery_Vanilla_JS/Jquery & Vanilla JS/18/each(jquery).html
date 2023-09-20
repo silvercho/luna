@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>each</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js">	</script>
+	<script>
+	$(function(){
+		
+		$('.list li').each(function(index){
+			$(this).addClass('li_0'+index);
+		
+		});
+	
+	});
+	
+	
+	
+	</script>
+	
+	
+</head>
+<body>
+	<ul class='list'>
+		<li>내가 첫번째 입니다.</li>
+		<li>내가 두번째 입니다.</li>
+		<li>내가 세번째 입니다.</li>
+		<li>내가 네번째 입니다.</li>
+		<li>내가 다섯번째 입니다.</li>
+	</ul>
+</body>
+</html>

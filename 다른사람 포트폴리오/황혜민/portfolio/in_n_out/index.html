@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./css/media.css"/>
+	<link rel="stylesheet" href="./css/jquery.bxslider.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
+	<title>IN-N-OUT</title>
+	<script>
+	$(function(){
+		$("#btn").click(function(){
+				$(this).toggleClass("on");
+				$("nav").toggleClass("on");
+				
+			});
+		
+		$(window).resize(function(){
+			var e = $(window).width();
+			var w = $(".beverages").width();
+			if(e>1250){
+				$(".beverages, .se").height(w);
+			}
+		});
+		$(window).trigger("resize");
+		
+		$(function(){
+	
+		var slide = $(".slide").bxSlider({
+			auto:true,
+			//자동실행 여부 - true, false
+			pause:4000,
+			//이미지가 멈춰있는 시간을 지정.
+			speed:1300,
+			//이미지 슬라이드가 이동하는 속도
+			autoHover:true,
+			//마우스호버시에 자동실행 정지 여부 - true, false
+			controls:false,
+			//이전, 다음 버튼 출력 여부 - true, false 
+			pager:true,
+			//페이져 버튼 출력 여부 - true, false
+			mode:"horizontal",
+			//모드 설정 - "horizontal", "vertical","fade"
+			autoControls:false,
+			//자동실행 버튼 출력 여부 - true, false
+			
+		});		
+		
+	});
+	});
+	</script>
+</head>
+<body>
+	
+	<!-- header -->
+	<header>
+		<div id="btn">
+			<div class="bar bar1"></div>
+			<div class="bar bar2"></div>
+			<div class="bar bar3"></div>
+		</div>
+		
+		<nav>
+			<ul>
+				<li><a href="#">History</a></li>
+				<li><a href="#">Shop</a></li>
+				<li><a href="#">Download</a></li>
+				<li><a href="#">Employment</a></li>
+			</ul>
+		</nav>
+		
+		<div id="header_wrap">
+			<a href="#"><img src="./images/logo.png"></a>
+			<div class="gnb">
+				<ul>
+					<li><a href="#">History</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">Download</a></li>
+					<li class="last"><a href="#">Employment</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div id="fake_header"></div>
+	<!-- img_slide -->
+	<div id="img_slide">
+		<ul class="slide">
+			<li><img src="./images/mains.png" alt=""/></li>
+			<li><img src="./images/mains.png" alt=""/></li>
+			<li><img src="./images/mains.png" alt=""/></li>
+			<li><img src="./images/mains.png" alt=""/></li>
+			<li><img src="./images/mains.png" alt=""/></li>
+		</ul>
+	</div>
+	<!-- section -->
+	<!-- top -->
+	<div class="section cf">
+
+		
+		<div class="bur double">
+			<a href="#"><img src="./images/1_1.png"></a>
+		</div>
+		
+		<div class="bur cheese">
+			<a href="#"><img src="./images/1_2.png"></a>
+		</div>
+		
+		<div class="bur ham">
+			<a href="#"><img src="./images/1_3.png"></a>
+		</div>
+		
+		<div class="fries">
+			<a href="#"><img src="./images/fries.png"></a>
+		</div>
+	<!-- bottom -->
+
+		<div class="beverages cf">
+			<a href="#">
+				<div class="left">
+				</div>
+			</a>
+			<a href="#" class="right_cover">
+				<div class="right">
+					<img src="./images/shakes.png" alt=""/>
+				</div>
+			</a>
+		</div>
+		<div class="se s1">
+			<span>DOUBLE</br>MEAT</span>
+		</div>
+		<div class="se s2">
+			<span>3X3</span>
+		</div>
+		<div class="se s3">
+			<span>4X4</span>
+		</div>
+	
+	</div>
+	<!-- banner -->
+	<div id="banner" class="cf">
+	
+	</div>
+	<!-- footer -->
+	<div id="footer" class="cf">
+		<div class="f_wrap">
+			<a href=""><img src="./images/logo.png" alt=""/></a>
+			<p>
+				In-N-Out Burgers Corporate Office</br>
+				4199 Campus Drive, 9th Floor</br>
+				Irvine, CA 92612</br>
+				Toll-free:+1-800-786-1000
+			</p>
+			<div class="sns">
+				<p class="sn s_1">
+					<a href="#">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+				</p>
+				<p class="sn s_2">
+					<a href="#">
+						<i class="fa fa-youtube-play" aria-hidden="true"></i>
+					</a>
+				</p>
+				<p class="sn s_3">
+					<a href="#">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+				</p>
+				<p class="sn s_4">
+					<a href="#">
+						<i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

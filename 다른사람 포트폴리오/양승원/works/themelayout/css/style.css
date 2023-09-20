@@ -1,0 +1,236 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+@import url(theme.css);
+ 
+/*기본 초기화*/
+* { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+img { border: 0; }
+a { text-decoration: none; outline: 0; color: #555; }
+ 
+ 
+body { font-family: Orbitron 'Jeju Gothic'; }
+ 
+#wrap{
+	position:fixed;
+	width:100%;
+	height:100%;
+	min-width:1400px;
+	min-height:780px;
+	background-image:url(../images/bg_morning.jpg);
+	background-size:cover;
+	transition:all 2s;
+}
+
+#wrap h1{
+	position:fixed;
+	width:113px;
+	height:108px;
+	top:30px;
+	left:3%;
+	background-image:url(../images/logo_b.png);
+	background-repeat:no-repeat;
+}
+
+#gnb{
+	position:fixed;
+	top:50px;
+	right:20%;
+}
+
+#gnb li{
+	float:left;
+	margin:0 10px;
+}
+
+#gnb li a{
+	font-size:14px;
+	font-weight:bold;
+	color:#555;
+}
+
+#sns{
+	position:fixed;
+	top:50px;
+	right:2%;
+}
+
+#sns li{
+	float:left;
+	margin:0 10px;
+}
+
+#sns li i{
+	color:#555;
+	font-size:18px;
+}
+
+article{
+	position:absolute;
+	top:350px;
+	left:3%;
+	width:450px;
+}
+
+article p{
+	font-size:50px;
+	color:#555;
+	text-shadow:1px 1px 1px #aaa;
+}
+
+article p strong{
+	color:#111;
+}
+
+article em{
+	font-style:normal;
+	font-size:14px;
+	color:#222;
+	text-shadow:1px 1px 1px #ccc;
+}
+
+#frontFrame{
+	position:absolute;
+	width:1226px;
+	height:809px;
+	top:200px;
+	right:-300px;
+	background-image:url(../images/phone_morning.png);
+	transition:all 2s;
+}
+
+#frontFrame p{
+	position:absolute;
+	top:100px;
+	left:137px;
+	width:540px;
+	height:307px;
+	font-size:60px;
+	font-weight:bold;
+	color:#333;
+	line-height:4.6;
+	box-sizing:border-box;
+	padding-left:50px;
+	overflow:hidden;
+}
+
+#frontFrame p span{
+	position:relative;
+	z-index:5;
+}
+
+#themeChange{
+	position:fixed;
+	width:92%;
+	bottom:5%;
+	left:50%;
+	transform:translateX(-50%);
+}
+
+#themeChange li{
+	float:left;
+	width:25%;
+}
+
+#themeChange li{
+	float:left;
+	width:25%;
+}
+#themeChange li a{
+	display:block;
+	width:98%;
+	height:35px;
+	margin:0 auto;
+	box-sizing:border-box;
+	border:1px solid #ccc;
+	color:#ccc;
+	text-align:center;
+	line-height:35px;
+	font-size:14px;
+	font-weight:bold;
+	letter-spacing:5px;
+	opacity:0.6;
+	transition:all 0.6s;
+}
+
+#themeChange li a:hover{
+	background-color:#111;
+	color:#eee;
+	opacity:1;
+}
+
+#wrap>img:nth-child(1){
+	position:absolute;
+	top:0;
+	left:-1146px;
+	opacity:0.8;
+	animation:flow1 110s linear infinite;
+}
+
+@keyframes flow1{
+	0%{left:-1146px;}
+	100%{left:1950px;}
+}
+
+#wrap>img:nth-child(2){
+	position:absolute;
+	top:20px;
+	left:0;
+	animation:flow2 100s linear infinite;
+}
+
+@keyframes flow2{
+	0%{left:0;}
+	50%{left:1950px;opacity:0;}
+	50.001%{left:-1840px;opacity:0.8;}
+	100%{left:0;}
+}
+
+#frontFrame p img.cld1{
+	position:absolute;
+	width:600px;
+	top:30px;
+	left:-600px;
+	animation:flow3 110s linear infinite;
+}
+
+#frontFrame p img.cld2{
+	position:absolute;
+	width:700px;
+	top:20px;
+	left:0;
+	animation:flow4 100s linear infinite;
+}
+
+@keyFrames flow3{
+	0%{left:-600px;}
+	100%{left:540px;}
+}
+
+@keyFrames flow4{
+	0%{left:0;}
+	50%{left:540px;opacity:0;}
+	50.001%{left:-700px;opacity:1;}
+	100%{left:0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

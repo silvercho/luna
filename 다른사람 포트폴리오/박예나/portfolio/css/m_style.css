@@ -1,0 +1,244 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600&display=swap');
+/*font-family: 'Josefin Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css?family=Poor+Story&display=swap');
+/*font-family: 'Poor Story', cursive;*/
+
+
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+	a{text-decoration:none; color:#000;}
+	.cf:after{content:""; display:block; clear:both;}
+
+body{max-width:900px;}
+.menu{position:fixed; top:5%; left:5%; width:40px; height:30px;  z-index:10000;}
+.menu a{position:absolute; width:100%; height:100%; display:block;}
+.menu .menubar{position:absolute; width:40px; height:3px; background-color:#000; transition:all 0.3s; left:0;}
+.menu .menubar1{top:0; width:70%;}
+.menu .menubar2{top:50%; transform:translateY(-50%); height:3px;}
+.menu .menubar3{bottom:0;}
+.menu.on6 .menubar1{width:100%; transform:rotate(-45deg) translate(-9px,10px);}
+.menu.on6 .menubar2{display:none;}
+.menu.on6 .menubar3{transform:rotate(45deg) translate(-9px,-10px);}
+.menu.on7 .menubar1{background-color:#fff;}
+.menu.on7 .menubar2{background-color:#fff;}
+.menu.on7 .menubar3{background-color:#fff;}
+
+
+header{display:none; position:fixed; width:100%; height:100%; z-index:30; background:url(../m_images/header.svg) no-repeat center /cover; top:0; left:-100%;}
+header.on4{left:0; display:block;}
+header ul{position:absolute; top:50%; transform:translateY(-50%); right:8%; text-align:right;}
+header li{font-size:30px; font-weight:bold; font-family: 'Josefin Sans', sans-serif;  line-height:70px;}
+header li:nth-child(1).on3 a{color:#5C8050; font-size:50px;}
+header li:nth-child(2).on3 a{color:#EE8F2A; font-size:60px;}
+header li:nth-child(3).on3 a{color:#E8744D; font-size:55px;}
+header li:nth-child(4).on3 a{color:#5C8050; font-size:60px;}
+header li:nth-child(5).on3 a{color:#E8744D; font-size:50px;}
+
+
+section{position:fixed; width:100%; height:100%; overflow:hidden; z-index:29; perspective:900px;
+-webkit-perspective:900px;/*크롬,사파리*/ 
+-moz-perspective:900px;/*파이어폭스*/ 
+-ms-perspective:900px;/*익스플로러*/ 
+-o-perspective:900px;/*오페라*/ }
+	/************************clothes************************************/
+	.wrap{width:100%; position:fixed; top:0; left:0;}
+	.clothes{width:100%; height:800px; position:relative; background:url(../images/about_bg.svg) no-repeat center /cover; z-index:28; font-family: 'Poor Story', cursive; overflow:hidden; overflow:hidden;}
+	.clothes_left .mirror{width:80%; height:85%; background-color:#eddfde; overflow:hidden; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+	.clothes_left .mirror .face{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:auto; height:95%;}
+	.clothes_left .mirror .eyes{position:absolute; top:33%; left:50%; transform:translate(-50%,-50%); width:8%; height:20px; background:url(../images/eyes1.svg) no-repeat center /contain; animation:eyes 2s steps(1) infinite;}
+	@keyframes eyes{0%{background-image:url(../images/eyes1.svg)}  80%{background-image:url(../images/eyes4.svg)} 100%{background-image:url(../images/eyes1.svg)}}
+	
+	.clothes_right{padding-top:5%;}
+	.clothes_right .bar{width:130%; height:auto; display:block; margin-top:-4.5%;}
+	.clothes_right .next_button{position:absolute; top:50%; transform:translateY(-50%); right:2%; z-index:10;}
+	.clothes_right .cloth{width:200%; height:100%; position:absolute; top:0; left:0;}
+	.clothes_right .cloth li{position:absolute; top:-2.5%; right:-18%; transform:skew(-20deg); text-align:center; transition:all 1s; width:100%; height:100%;}
+	.clothes_right .cloth li img{width:auto; height:80%;}
+	.clothes_right .cloth li.on1{transform:skew(0); right:25%; top:-0.5%;}
+	.clothes_right .cloth li.on1 img{width:auto; height:85%;}
+	
+	.clothes_right .cloth li .cloth_text{position:absolute; top:45%; left:50%; transform:translate(-50%,-50%); width:100%; height:100%; opacity:0; transition:all 1.3s; overflow:hidden; font-family: 'Poor Story', cursive;}	
+	.clothes_right .cloth li.on1 .cloth_text{opacity:1; top:50%;}	
+	.clothes_right .cloth li:nth-child(1) h2{position:absolute; top:40%; left:50%; transform:translateX(-50%); line-height:40px;}
+	.clothes_right .cloth li:nth-child(1) h3{position:absolute; left:50%; transform:translateX(-50%);}
+	.clothes_right .cloth li:nth-child(1) h3.birth{top:55%;}
+	.clothes_right .cloth li:nth-child(1) h3.address{top:65%;}
+	.clothes_right .cloth li:nth-child(1) h3.call{top:75%;}
+	.clothes_right .cloth li:nth-child(2) h2{position:absolute; top:40%; left:51%; transform:translateX(-50%);}
+	.clothes_right .cloth li:nth-child(2) p{position:absolute; top:50%; left:51%; transform:translateX(-50%); font-size:18px; line-height:35px; white-space:nowrap;}
+	.clothes_right .cloth li:nth-child(3) h2{position:absolute; top:30%; left:50%; transform:translateX(-50%);}
+	.clothes_right .cloth li:nth-child(3) p{position:absolute; top:40%; left:50%; transform:translateX(-50%); font-size:18px; line-height:28px; white-space:nowrap;}
+	/************************door************************************/
+
+	#door{position:absolute; top:0; left:0; z-index:30; width:100%; height:100%;}
+	.door_left{width:50%; height:100%; position:absolute; left:0; bottom:0; background:url(../m_images/door_left.svg) no-repeat right center /cover;}
+	.door_right{width:50%; height:100%; position:absolute; right:0; bottom:0;  background:url(../m_images/door_right.svg) no-repeat left center /cover;}
+
+/************************main************************************/
+	#main{width:100%; height:100%; position:absolute; top:0; left:0; z-index:40; opacity:1; transition:all 0.1s; transform:translateZ(0px); font-family: 'Josefin Sans', sans-serif;}
+	#main.on1{opacity:0;}
+	#main > img{display:block; width:auto; height:auto; min-width:100%; min-height:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+	#main .main_text{position:absolute; top:10%; right:5%;text-align:center; width:280px; height:400px;}
+	#main .main_text h1{font-size:50px; padding-bottom:25px; position:relative; font-weight:700;}
+	#main .main_text h1 em{font-style:normal; position:absolute; bottom:0;}
+	#main .main_text h1 em:nth-child(1){left:0; animation:letter1 2s ease infinite;}
+	#main .main_text h1 em:nth-child(2){left:20%; animation:letter2 2s ease infinite;}
+	#main .main_text h1 em:nth-child(3){left:40%; animation:letter3 2s ease infinite;}
+	#main .main_text h1 em:nth-child(4){left:55%; animation:letter4 2s ease infinite;}
+	#main .main_text h1 em:nth-child(5){left:80%; animation:letter5 2s ease infinite;}
+	#main .main_text h1 em:nth-child(6){left:100%; animation:letter6 2s ease infinite;}
+	@keyframes letter1{0%{bottom:0;} 16%{bottom:70%;} 100%{bottom:0;}}
+	@keyframes letter2{0%{bottom:0;} 30%{bottom:70%;} 100%{bottom:0;}}
+	@keyframes letter3{0%{bottom:0;} 47%{bottom:70%;} 100%{bottom:0;}}
+	@keyframes letter4{0%{bottom:0;} 63%{bottom:70%;} 100%{bottom:0;}}
+	@keyframes letter5{0%{bottom:0;} 77%{bottom:70%;} 100%{bottom:0;}}
+	@keyframes letter6{0%{bottom:0;} 95%{bottom:70%;} 100%{bottom:0;}}
+	
+	
+	
+	#main .main_text p{display:block; width:100%; height:25px; font-size:17px;  transition:all 0.6s; position:absolute; right:0%; opacity:0; text-align:right;}
+	#main .main_text p:nth-child(2){top:30%;}
+	#main .main_text p:nth-child(2).on2{opacity:1; top:25%;}
+	
+	#main .main_text p:nth-child(3){top:40%;}
+	#main .main_text p:nth-child(3).on2{opacity:1; top:35%;}
+	
+	#main .main_text p:nth-child(4){top:50%;}
+	#main .main_text p:nth-child(4).on2{opacity:1; top:45%;}
+	
+	#main .main_text p:nth-child(5){top:60%;}
+	#main .main_text p:nth-child(5).on2{opacity:1; top:55%;}
+	
+	#main .main_text p:nth-child(6){top:70%;}
+	#main .main_text p:nth-child(6).on2{opacity:1; top:65%;}
+	
+	#main .main_text p:nth-child(7){top:80%;}
+	
+	
+	
+	
+	#main .main_text p.please{font-size:10px; display:block; text-align:center;}
+	#main .main_text p.on2.please{opacity:1;}
+	#main .main_text p.please:before{content:"scroll, please"; display:block; position:absolute; top:0%; right:0%; width:76px; height:20px; animation:please1 1s linear infinite; color:#fff;}
+	#main .main_text p.please:after{content:"scroll, please"; display:block; position:absolute; top:50%; right:0%; width:76px; height:20px; animation:please2 1s linear infinite; color:#fff;}
+@keyframes please1{0%{top:0%; opacity:1;} 100%{top:50%; opacity:0;}}
+@keyframes please2{0%{top:50%; opacity:0;} 100%{top:100%; opacity:1;}}
+
+/************************skill************************/
+
+	#m_skill{width:100%; height:auto; background-color:#eddfde;}
+	.m_three_quart{width:100%; height:750px; overflow:hidden;}
+	.m_three_quart.m_html{background:url(../images/m_grass.svg) no-repeat bottom /cover;}
+	.m_three_quart.m_illust{background:url(../images/m_illust_bg.svg) no-repeat bottom /cover;}
+	.m_three_quart.m_jquery{background:url(../images/m_juice.svg) no-repeat bottom /cover;}
+
+
+	.m_three_quart .m_graph{width:100%; height:130px; background-color:#fff;}
+	.m_three_quart .m_graph h1{display:block; font-size:30px; text-align:center; line-height:30px; padding:10px 0;}
+	.m_three_quart .m_graph .skillbar{width:100%; height:60px; position:relative;}
+	.m_three_quart .m_graph .skillbar .skill_bar{position:absolute; width:100%; height:100%; top:0; left:0;}
+	.m_three_quart .m_graph .skillbar .skill_bar .skill_bar_cover{position:absolute; width:100%; height:100%; top:0%; left:-100%; overflow:hidden;}
+	.m_three_quart .m_graph .skillbar .skill_bar .skill_bar_cover img{position:absolute; width:100%; height:500%; top:-150%; left:0; animation:skill 2s linear infinite;}
+	@keyframes skill{0%{top:-150%;} 50%{top:-100%;} 100%{top:-150%;}}
+	.m_three_quart .m_graph .skillbar .skill_percent{position:absolute; text-align:center; top:50%; left:50%; transform:translate(-50%,-50%); font-size:20px;}
+	
+	
+	
+	.m_animate{width:100%; height:80%; position:relative;}
+	.m_animate > img{width:80%; height:auto; position:absolute; bottom:10%; left:50%; transform:translateX(-50%); animation:grass 1s linear infinite;}
+	@keyframes grass{0%{transform:translateX(-50%);}50%{transform:translateX(-49%);}100%{transform:translateX(-50%);}}
+	
+	.m_animate .rain_cover{position:absolute; top:10%; left:50%; transform:translateX(-50%); width:60%; height:60%; animation:rain 1s linear infinite}
+	@keyframes rain{0%{top:50px;}50%{top:45px;}100%{top:50px;}}
+	.m_animate .rain_cover img{position:absolute; top:0; left:0; width:100%; height:auto; display:none;}
+	.m_animate .rain_cover img:nth-child(1){display:block;}
+	
+	.m_animate .juice_cover{position:absolute; bottom:10%; left:30%; transform:translateX(-50%); width:80%; height:50%;}
+	.m_animate .juice_cover > img{position:absolute; bottom:10%; left:0; width:100%; height:auto; display:none;}
+	.m_animate .juice_cover > img:nth-child(1){display:block;}
+	
+	
+	
+	
+	.m_animate .bike_cover{position:absolute; width:300px; height:300px; bottom:15%; left:-50%;}
+	.m_animate .bike_cover .bike{position:absolute; width:100%; height:100%;}
+	.m_animate .bike_cover .bike li{position:absolute; width:100%; height:100%; top:0; left:0; left:-10%;}
+	.m_animate .bike_cover .bike li img{position:absolute; top:0; left:0; width:100%; height:100%;}
+	
+	
+	.m_three_quart .m_animate.on .bike_cover{left:-50%; animation:bike_cover 3s linear forwards;}
+	@keyframes bike_cover{0%{left:-50%;}100%{left:110%;}}
+	.m_three_quart .m_animate.on .bike_cover .bike1{animation:bike1 1.5s linear;}
+	@keyframes bike1{0%{opacity:1;}99%{opacity:1;}100%{opacity:0;}}
+	.m_three_quart .m_animate.on .bike_cover .bike2{animation:bike2 1.5s 1.4s linear; opacity:0;}
+	@keyframes bike2{0%{opacity:1;}100%{opacity:1;}}
+
+	
+	.m_animate .bike_cover .bike li:nth-child(1){animation:leg2 1s linear infinite;}
+	@keyframes leg2{0%{top:0;} 50%{top:5px;} 100%{top:0;}}
+	.m_animate .bike_cover .bike li:nth-child(3){animation:hair 1s linear infinite;}
+	@keyframes hair{0%{top:0; transform:translateX(-2px);} 50%{top:1px;  transform:translateX(0px);} 100%{top:0;  transform:translateX(-2px);}}
+	.m_animate .bike_cover .bike li:nth-child(4){animation:leg1 1s linear infinite; top:5px;}
+	@keyframes leg1{0%{top:5px;} 50%{top:0;} 100%{top:5px;}}
+	.m_animate .bike_cover .bike li:nth-child(5){animation:wheel1 1s linear infinite;}
+	@keyframes wheel1{0%{transform:translateX(0px)  scale(1);} 50%{transform:translateX(-2px) scale(1.01);} 100%{transform:translateX(0px) scale(1);}}
+	.m_animate .bike_cover .bike li:nth-child(6){animation:wheel2 1s linear infinite;}
+	@keyframes wheel2{0%{transform:translateX(0px) scale(1.01);} 50%{transform:translateX(-2px) scale(1);} 100%{transform:translateX(0px) scale(1.01);}}
+
+
+
+/************************work************************/
+
+#work{width:100%; height:auto; background-color:#eddfde; }
+#work .shop{width:100%; height:100%; position:relative;}
+#work .shop2{background-color:#000;}
+#work .shop img{width:100%; height:100%; position:absolute; left:0; top:50%; transform:translateY(-50%);}
+#work .shop2 img{width:100%; height:70%;}
+
+#work .w_hover{width:20%; height:20%; z-index:10; position:absolute;transform:translate(-50%,-50%);}
+#work .w_hover a{width:100%; height:100%; display:block;}
+#work .work1{top:33%; left:42.5%; }
+#work .work2{top:34.5%; left:18%;}
+#work .work3{top:40%; right:9%;}
+#work .work4{bottom:18%; right:2%;}
+#work .work5{bottom:2%; left:52%;}
+#work .work6{bottom:7%; right:34%;}
+
+
+/************************contact************************/
+
+#contact{width:100%; height:auto; background-color:#EEB193; font-family: 'Josefin Sans', sans-serif;}
+#contact .con_left{width:50%; height:100%; float:left; text-align:center; position:relative;}
+#contact .con_left .con_cover{width:80%; height:50%; position:absolute; top:50%; right:0%; transform:translateY(-50%);}
+#contact .con_left .con_cover h1{font-size:30px; padding-bottom:8%;}
+#contact .con_left .con_cover p{font-size:20px; padding:2% 0; }
+#contact .con_left .con_cover p:nth-child(2){white-space:nowrap;}
+#contact .con_left .con_cover .sns{margin:0 auto; margin-top:5%; width:100%; border-top:1px solid #000; position:relative; height:25%;}
+#contact .con_left .con_cover .sns a{display:block; width:40px; height:40px; overflow:hidden; position:absolute; top:50%; transform:translateY(-50%);}
+#contact .con_left .con_cover .sns a:nth-child(1){left:30%;}
+#contact .con_left .con_cover .sns a:nth-child(2){right:30%;}
+#contact .con_left .con_cover .sns a img{width:80px; height:auto; position:absolute; top:0; left:0;}
+
+#contact .con_left .con_cover .sns a:hover img{transform:translateX(-50%);}
+
+
+#contact .con_right{width:50%; height:100%; float:right; position:relative;}
+#contact .con_right .me_animation{width:80%; height:80%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+#contact .con_right .me_animation img{width:100%; height:100%; position:absolute; top:0; left:0;}
+#contact .con_right .me_animation img:nth-child(2){opacity:0;}
+#contact .con_right .me_animation.on5 img:nth-child(2){animation:mirror 2s 0.5s linear infinite;}
+@keyframes mirror{0%{opacity:0;}20%{opacity:1;}80%{opacity:1;}100%{opacity:0;}}
+#contact .con_right .me_animation.on5 img:nth-child(4){animation:eyebrow 1s 0.5s linear infinite;}
+@keyframes eyebrow{0%{top:0;}50%{top:2px;}100%{top:0;}}
+#contact .con_right .me_animation.on5 img:nth-child(5){animation:arm 1s 0.5s linear infinite;}
+@keyframes arm{0%{transform:rotate(-2deg);}50%{transform:rotate(2deg);}100%{transform:rotate(-2deg);}}
+#contact .con_right .me_animation img:nth-child(6){opacity:0;}
+#contact .con_right .me_animation.on5 img:nth-child(6){animation:word 2s 0.5s linear infinite;}
+@keyframes word{0%{opacity:0;}20%{opacity:1;}80%{opacity:1;}100%{opacity:0;}}
+
+
+
+
+
+

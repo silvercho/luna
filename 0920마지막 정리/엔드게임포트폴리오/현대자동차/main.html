@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let btn1 = document.querySelector("button:nth-of-type(1)");
+        let btn2 = document.querySelector("button:nth-of-type(2)");
+        let btn3 = document.querySelector("button:nth-of-type(3)");
+        let btn4 = document.querySelector("button:nth-of-type(4)");
+        let no1 = document.querySelector(".name1 span");
+        let no2 = document.querySelector(".name2 span");
+        let no3 = document.querySelector(".name3 span");
+
+        btn1.onclick = function () {
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM2.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM3.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "제네시스 g80";
+            no3.innerHTML = "더 뉴 쏘렌토";
+        }
+        btn2.onclick = function () {
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM3.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM2.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "더 뉴 쏘렌토";
+            no3.innerHTML = "제네시스 g80";
+        }
+        btn3.onclick = function () {
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM2.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM3.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "제네시스 g80";
+            no3.innerHTML = "더 뉴 쏘렌토";
+        }
+        btn4.onclick = function () {
+            document.querySelector(".no1 img").setAttribute("src", "img/carM1.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(1)").setAttribute("src", "img/carM3.jpg");
+            document.querySelector(".img_wrap img:nth-of-type(2)").setAttribute("src", "img/carM2.jpg");
+            no1.innerHTML = "디올 뉴 그랜저";
+            no2.innerHTML = "더 뉴 쏘렌토";
+            no3.innerHTML = "제네시스 g80";
+        }
+    </script>
+    <style>
+        .section {
+            position: relative;
+            width: 100%;
+            height: 630px;
+            overflow: hidden;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .section>div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 400px;
+            height: 300px;
+            border: 10px solid #fff;
+        }
+
+        .section h2, .section p, .section .line {
+            position: absolute;
+            color: #ffffff;
+        }
+
+        /* 이미지 중앙 글씨 설정 */
+        .section h2 {
+            font-size: 7rem;
+            font-weight: bold;
+            width: 100%;
+            top: 15%;
+        }
+
+        /* 이미지 중앙하단 서브 글자 설정 */
+        .section p {
+            top: 50%;
+            font-size: 3rem;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* 라인 */
+        .section .line {
+            width: 80%;
+            border: 5px solid #fff;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* 슬라이드 이미지 가로 정렬, 애니메이션 설정 */
+        .section ul {
+            position: relative;
+            display: flex;
+            left: 0;
+            top: 0;
+            width: 400%;
+            animation: slide 18s infinite;
+        }
+        .section ul li img{
+            width: 100%;
+        }
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+            5% {
+                left: -100%;
+            }
+            33.33333% {
+                left: -100%;
+            }
+            38% {
+                left: -200%;
+            }
+            66.66666% {
+                left: -200%;
+            }
+            71% {
+                left: -300%;
+            }
+            99.99999% {
+                left: -300%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+        .section img {
+            width: 1903px;
+            height: 630px;
+        }
+        .ageCar { font-size: 2rem;
+          font-weight: bold;
+          margin-top: 50px;
+          text-align: center;}
+
+        .section2 {
+            width: 1400px;
+            height: 800px;
+            margin: 0 auto;
+            padding-top: 100px;
+            display: flex;
+            position: relative;
+        }
+
+        .section2>div {
+            width: 50%;
+            height: 800px;
+            padding: 16px;
+        }
+
+        .no1 img {
+            width: 100%;
+            height: auto;
+        }
+        .no2 img {
+            width: 320px;
+            height: auto;
+        }
+
+        .btn_wrap {
+            width: 100%;
+            display: flex;
+            /* justify-content: space-around; */
+        }
+
+        .btn_wrap button {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+        }
+
+        .name1 {margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 36px;
+        }
+
+        .img_wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .name_wrap {
+            font-size: 16px; font-weight: bold;
+            margin-top: 16px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .placetxt { font-size: 1.6rem; text-align: center;}
+        .play{display: flex; justify-content: center;}
+        .play img { width: 800px; height: auto;}
+        .playBox {background: rgba(0, 0, 0, 0.1);}
+        .playtxt {padding: 50px; font-size: 1.3rem;}
+        .playtxt button {font-size: 1rem; width: 100px; height:40px; background:#777; color: #fff; border-radius: 15px; border: #444;  margin-bottom: 70px;}
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div>
+        <h2>EndCar</h2>
+        <p>중고차 거래의 모든것</p>
+        <div class="line"></div>
+    </div>
+    <ul>
+        <li><img src="img/img1.png" alt="배너이미지1"></li>
+        <li><img src="img/img2.png" alt="배너이미지2"></li>
+        <li><img src="img/img3.png" alt="배너이미지3"></li>
+        <li><img src="img/img1.png" alt="배너이미지1"></li>
+    </ul>
+</div>
+    <h1 class="ageCar">연령대 별 자동차 선호도</h1>
+    <div class="section2">
+        <div class="no1">
+            <img src="img/carM1.jpg" alt="그랜저">
+        </div>
+        <div class="no2">
+            <div class="btn_wrap">
+                <button>전체</button>
+                <button>2-30대</button>
+                <button>40대</button>
+                <button>50대</button>
+            </div>
+            <div class="name1">1위.<span>디올 뉴 그랜저</span></div>
+            <div class="img_wrap">
+                <img src="img/carM2.jpg" alt="제네시스">
+                <img src="img/carM3.jpg" alt="쏘렌토">
+            </div>
+            <div class="name_wrap">
+                <span class="name2">2위. <span>제네시스 g80</span></span>
+                <span class="name3">3위. <span>더 뉴 쏘렌토</span></span>
+            </div>
+        </div>
+    </div>
+<div class="section3">
+    <div class="placetxt">
+        <h1>이달의 추천 장소</h1>
+        <p>차를 타고 멀리 나가보세요.</p>
+    </div>
+    <div class="play">
+        <img src="img/carP1.jpg" alt="paly">
+        <div class="playBox">
+            <div class="playtxt">
+                <h2>경상남도 남해</h2>
+                <p>편도 4시간</p>
+                <button>자세히 보기</button>
+                <h3>충전소 & 서비스 네트워크</h3>
+                <p>고객님의 계신 곳 근처의 충전소 및 서비스 네트워크를 안내해드립니다.</p>
+                <b>전기차 > 수소 전기차 ></b>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>

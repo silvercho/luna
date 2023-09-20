@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>cube</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+	$(document).ready(function(){
+		
+			$(".gnb").click(function(){
+				$(this).children().children().stop().slideDown();
+				$(".full_bg").stop().slideDown();
+			});
+			
+			$("header").mouseleave(function(){
+				$(".gnb > li >ul").stop().slideUp();
+				$(".full_bg").stop().slideUp();
+			});
+			
+			
+			var c = $(".imgs > li ").eq(0).clone();
+			$(".imgs").append(c);
+			
+			var i = 0;
+			
+			setInterval(function(){
+			//자동으로 반복하여 실행한다.	
+				i++;
+				//자동으로 반복해서 3초에 한번씩 1씩 증가
+				//ex. 3초 뒤 1 3초 뒤 2
+				if(i==6){
+				//만약에 i에 6이 된다면 
+			       i=1;
+				   //i
+				}
+				
+				$(".btn li").eq(i).trigger("click");
+			},3000);
+		
+			$(".btn li").click(function(){
+				i = $(this).index();
+				
+				$(".imgs").stop().animate({
+					marginLeft:"-"+i*100+"%"
+				},300);
+				
+				$(".btn li").removeClass("color");
+				$(this).addClass("color");
+			
+			
+			});
+				
+	
+	
+			
+	});
+	</script>
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="cover h_cover">
+			<h1 class="logo">
+				<a href="#">
+					<img src="./images/cubelogo.png" alt="">
+				</a>
+			</h1>
+			<nav>
+				<ul class="gnb">
+					<li><a href="#">COMPANY</a>
+						<ul>
+							<li><a href="#">COMPANY INFO</a></li>
+							<li><a href="#">GREETINGS</a></li>
+							<li><a href="#">HISTORY</a></li>
+							<li><a href="#">ORGANIZATION</a></li>
+							<li><a href="#">BUSINESS AREA</a></li>
+							<li><a href="#">LOCATION</a></li>
+							<li><a href="#">Investor Relations</a></li>
+						</ul>
+					</li>
+					<li><a href="#">ARTISTS</a>
+						<ul>
+							<li><a href="#">JO KWON</a></li>
+							<li><a href="#">JANG HYUN SEUNG</a></li>
+							<li><a href="#">TROUBLE MAKER</a></li>
+							<li><a href="#">BTOB</a></li>
+							<li><a href="#">CLC</a></li>
+							<li><a href="#">PENTAGON</a></li>
+							<li><a href="#">WOOSEOKXKUANLIN</a></li>
+							<li><a href="#">G-IDLE</a></li>
+							<li><a href="#">LAI KUAN LIN</a></li>
+							<li><a href="#">YOO SEONKXKUANLIN</a></li>
+							<li><a href="#">LEE HWEE JAE</a></li>
+							<li><a href="#">LEE SANG JUN</a></li>
+							<li><a href="#">HEO KYEONGWAN</a></li>
+							<li><a href="#">NA JONGCHAN</a></li>
+						</ul>
+					</li>
+					<li><a href="#">MURTIMEDIA</a>
+						<ul>
+							<li><a href="#">MUSIC VIDEO</a></li>
+							<li><a href="#">DOWNLOAD</a></li>
+						</ul>
+					</li>
+					<li><a href="#">AUDITION</a></li>
+					<li><a href="#">NOTICE</a>
+						<ul>
+							<li><a href="#">NOTICE</a></li>
+							<li><a href="#">FROM CUBE</a></li>
+							<li><a href="#">TO CUBE</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="small_menu">
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<li><a href="#">사이트맵</a></li>
+				</ul>	
+				<ul class="grobal_img">
+					<a href="#">
+						<img src="./images/cubeglobal.png" alt="">
+					</a>
+				</ul>
+			</nav>
+		</div>
+		<div class="full_bg"></div>
+	</header>
+	<div class="section">
+		<div class="img_slide">
+		<div class="s_cover">
+			<ul class="imgs">
+				<li><a href="#"><img src="./images/banner1.jpg" alt=""></a></li>
+				<li><a href="#"><img src="./images/banner2.jpg" alt=""></a></li>
+				<li><a href="#"><img src="./images/banner3.jpg" alt=""></a></li>
+				<li><a href="#"><img src="./images/banner4.jpg" alt=""></a></li>
+				<li><a href="#"><img src="./images/banner5.jpg" alt=""></a></li>
+				<li><a href="#"><img src="./images/banner6.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<ol class="btn">
+			<li class="color"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ol>	
+	</div>
+	<div class="section middle">
+		<div class="s_cover m_cover">
+		<ul class="gallery cf">
+			<li>
+				<span class="on">NEW RELEASE</span><a href="#"><img src="./images/img1.png" alt=""></a>
+			</li>
+			<li>
+				<span class="on">MUSIC VIDEO</span><a href="#"><img src="./images/img5.png" alt=""></a>
+			</li>
+			<li>
+				<span class="on">CUBE CAFE PROMOCTION</span><a href="#"><img src="./images/img8.png" alt=""></a>
+			</li>
+			<li>
+				<span class="on">NWE PRODUCT</span><a href="#"><img src="./images/img11.png" alt=""></a>
+			</li>
+			<li>
+				<span class="on">CUBE TV</span><a href="#"><img src="./images/img12.png" alt=""></a>
+			</li>
+		</ul>	
+		
+		<div class="section bottom">
+			<div class="b_cover cf">
+			<ul class="bb_cover">
+				<li>
+					<span class="on">FROM CUBE</span>
+					<div class="txt_box">
+						<span>안녕하세요.홍승성입니다.</span>
+					</div>
+				</li>
+				<li>
+					<span class="on">OFFICAL SHOP</span><a href="#"><img src="./images/cubee.png" alt=""></a>
+				</li>
+				<li>
+					<span class="on">OFFICAL CHANNEL</span>
+					<a href="#"><img src="./images/twiter.png" alt=""></a>
+												<a href="#"><img src="./images/fb.png" alt=""></a>
+												<a href="#"><img src="./images/yt.png" alt=""></a>
+				</li>
+			</ul>
+			</div>
+		</div>
+		
+
+	
+		</div>
+	</div>
+	</div>
+	<footer>
+		<div class="f_cover">
+			<h1 class="logo">
+				<img src="./images/cube.jpg" alt="">
+			</h1>
+			<p>
+				<a href="#">이용약관　 이메일주소 　무단수집거부 </a>　<span style="color:blue;font-weight:bold;">개인정보취급방침</span><br>
+				<span style="font-size:8px;">7F,83,ACHASAN-RO, SEONFDONG-GU, SEOUL.04793 KOREA TEL:82-2-3445-1045</span><br>
+				<span style="font-size:8px;">COPYRIGHT CUBE ENTERTAMENT INC, ALL RIGHT RESERVED.</span><br>
+			</p>
+		</div>		
+	</footer>
+</body>
+</html>
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+

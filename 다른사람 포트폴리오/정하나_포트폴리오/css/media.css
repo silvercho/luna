@@ -1,0 +1,230 @@
+@media screen and (max-width:1300px){
+	.header .scroll{
+		top:11%;
+	}
+	
+	.section{
+		height:auto;
+	}
+	
+	.section .profile{
+		position:relative;
+		left:0;
+		top:0;
+		width:60%;
+		left:50%;
+		transform:translate(-50%);
+		top:10%;
+	}			
+	
+	.section .skill_box{
+		position:relative;
+		top:80px;
+		width:60%;
+		left:50%;
+		transform:translate(-50%);
+		height:36%;
+	}
+	
+	.section .profile .introduce{
+		transform:none;
+	}
+	
+	.section .pursue .p{
+		font-size:14px;
+	}
+	
+	.chart .chart-center .chart-title{
+		width:100%;
+		font-size:17px;
+	}
+	
+	.works{
+		top:0;
+	}
+	
+	.demo a span{
+		font-size:20px;
+	}
+	
+	.work_box_border{
+		height:50%;
+	}
+	
+	.overflow{
+		width:25%;
+		height:35%;
+		margin-left:6%;
+		margin-top:7%;
+	}
+	
+	.contact_me p{
+		font-size:20px;
+	}
+	
+	
+@media screen and (max-width:900px){
+	
+	.header .logo{
+		width:266px;
+		height:159px;
+	}
+	
+	.header .logo .name img{
+		width:50%;
+		top:-250px;
+	}
+	
+	.header .logo .logo_2 img{
+		top:-5%;
+	}
+	
+	.overflow{
+		width:40%;
+		height:22%;
+		margin-left:6.5%;
+	}
+	
+	.work_box_border{
+		height:80%;
+	}
+	
+	.contact_me p{
+		width:70%;
+		font-size:24px;
+		text-align:left;
+	}
+	
+	.section .profile{
+		width:80%;
+	}
+	
+	.section .pursue .p{
+		font-size:15px;
+	}
+	
+	.section .skill_box{
+		top:60px;
+		width:70%;
+	}
+	
+	.chart .chart-center .chart-title{
+		width:110%;
+	}
+	
+	.contact_me p{
+		text-align:center;
+	}
+	
+	.contact_me #profile_{
+		width:70%;
+	}
+	
+	.contact_me #mail{
+		width:70%;
+	}
+	
+	.contact_me #call{
+		width:70%;
+	}
+}
+
+@media screen and (max-width:700px){
+	.section .profile .pursue{
+		width:40%;
+		margin-left:7%;
+		margin-top:4%;
+	}
+	
+	.section .profile .introduce{
+		width:100%;
+	}
+	
+	.section .pursue .p{
+		font-size:20px;
+		text-align:center;
+		top:18%;
+	}
+	
+	.works{
+		height:auto;
+	}
+	
+	.work_box_border{
+		height:1500px;
+	}
+	
+	.overflow{
+		width:100%;
+		height:15%;
+		margin:3% auto;
+		}
+	
+	.section .skill_box{
+		width:90%;
+	}
+	
+	.contact_me p{
+		font-size:16px;
+	}
+	
+	.contact_me #profile_{
+		width:80%;
+	}
+	
+	.contact_me #profile_ img{
+		width:10%;
+	}
+	
+	.contact_me #mail{
+		width:80%;
+	}
+	
+	.contact_me #mail img{
+		width:15%;
+		top:60%;
+	}
+	
+	.contact_me #call{
+		width:80%;
+	}
+	
+	.contact_me #call img{
+		width:15%;
+		top:60%;
+	}
+	
+	.section .pursue .p{
+		font-size:15px;
+	}
+	
+	.chart .chart-center .text{
+		font-size:20px;
+	}
+	
+	.chart .chart-center .chart-title{
+		width:120%;
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}

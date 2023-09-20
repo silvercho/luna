@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<link rel="stylesheet" href="./css/common.css"/>
+	<link rel="stylesheet" href="./css/side_menu.css"/>
+	<link rel="stylesheet" href="./css/popup.css"/>
+	<link rel="stylesheet" href="./css/sub3.css"/>
+
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script src="./js/script.js"></script>
+	
+	<title>중원도서관</title>
+</head>
+<body>
+	<div id="side_menu">
+		<div class="fixed_top border_bottom">
+			<div class="logo bg_efefef border_right"><img src="./images/logo1.png" alt=""/></div>
+			<div class="search">
+				<input type="text" placeholder="Search book..." class="font_14"/>
+			</div>
+			<div class="events border_left">
+				<span class="font_14"><a href="#">Seong-nam Library<i class="down_arrow"></i></a>
+					<ul class="bg_efefef">
+						<li><a class="color_999" href="https://www.snlib.go.kr/intro/index.do">성남시 도서관 사업</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/ct/index.do">중앙 도서관</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/gm/index.do">구미 도서관</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/bd/index.do">분당 도서관</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/sh/index.do">서현 도서관</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/sj/index.do">수정 도서관</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/uj/index.do">운중 도서관</a></li>
+						<li><a class="color_999" href="https://www.snlib.go.kr/pg/index.do">판교 도서관</a></li>
+					</ul>
+				</span>
+			</div>
+			<div class="alarm border_left">
+				<a href="#"><img src="./images/alarm.png" alt=""/></a>
+				<div class="alarm_circle">0</div>
+			</div>
+			<div class="m_menu"><a href="#"><img src="./images/m_menu.png" alt=""/></a></div>
+		</div>
+		
+		<div class="fixed_left bg_efefef border_right fixed">
+			<div class="inner_box">
+				<div class="log">
+					<div class="login box_light font_14"><a class="color_dark" href="#">Log In</a></div>
+					<div class="signin box_dark font_14"><a class="color_light" href="./sub1.html">Sign In</a></div>
+				</div>
+				<ul class="main_menu">
+					<li><a href="./index.html">
+						<div class="img_cover"><img src="./images/home.png" alt="" title="메인"/></div>
+						<h3 class="font_14">Home</h3>
+					</a></li>
+					<li><a href="#">
+						<div class="img_cover"><img src="./images/library.png" alt="" title="마이페이지"/></div>
+						<h3 class="font_14">My Library</h3>
+					</a></li>
+					<li><a href="#">
+						<div class="img_cover"><img src="./images/schedule.png" alt="" title="도서관일정"/></div>
+						<h3 class="font_14">Schedule</h3>
+					</a></li>
+					<li class="on"><a href="#">
+						<div class="img_cover"><img src="./images/information.png" alt="" title="도서정보"/></div>
+						<h3 class="font_14">Information</h3>
+					</a></li>
+					<li><a href="#">
+						<div class="img_cover"><img src="./images/guidence.png" alt="" title="시설안내"/></div>
+						<h3 class="font_14">Guidence</h3>
+					</a></li>
+					<li><a href="#">
+						<div class="img_cover"><img src="./images/user.png" alt="" title="이용자"/></div>
+						<h3 class="font_14">For User</h3>
+					</a></li>
+				</ul>
+				
+				<div class="sub_wrap">
+					<ul class="none"></ul>
+					<ul class="sub_menu">
+						<h2 class="font_14 medium">MY LIBRARY</h2>
+						<div class="remove bold">_</div>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">기본 정보</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">도서 이용 정보</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">관심 자료</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">신청 정보</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">나의 게시글</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">추천 서비스</h3>
+						</a></li>
+					</ul>
+					<ul class="sub_menu">
+						<h2 class="font_14 medium">SCHEDULE</h2>
+						<div class="remove bold">_</div>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">도서관 달력</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">문화 강좌</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">문화 행사</h3>
+						</a></li>
+						<li><a href="./sub2.html">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">수강 신청</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">갤러리</h3>
+						</a></li>
+					</ul>
+					<ul class="sub_menu" style="display:block">
+						<h2 class="font_14 medium">INFORMAITON</h2>
+						<div class="remove bold">_</div>
+						<li class="on"><a href="./sub3-1.html">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">추천 자료</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">신작 자료</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">도서관 소식지</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">디지털 서비스</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">서평 한마디</h3>
+						</a></li>
+					</ul>
+					<ul class="sub_menu">
+						<h2 class="font_14 medium">GUIDENCE</h2>
+						<div class="remove bold">_</div>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">도서관 소개</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">이용 안내</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">편의 시설</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">탄천 스마트 도서관</h3>
+						</a></li>
+					</ul>
+					<ul class="sub_menu">
+						<h2 class="font_14 medium">FOR USER</h2>
+						<div class="remove bold">_</div>
+						<li><a href="./sub4.html">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">공지 사항</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">QnA</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">공개 자료실</h3>
+						</a></li>
+						<li><a href="#">
+							<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+							<h3 class="medium font_14">대관 신청 안내</h3>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="closed_day">
+			<div class="month">
+				<div class="np_btn">
+					<i class="np prev"></i>
+					<i class="np next"></i>
+				</div>
+				<ul class="cf">
+					<li><span class="font_12 medium">JEN</span> <span class="font_18 medium">1</span>
+						<ul class="cf">
+							<li class="box_light">03</li>
+							<li class="box_dark">10</li>
+							<li class="box_light">17</li>
+							<li class="box_dark">24</li>
+							<li class="box_light">31</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">FEB</span> <span class="font_18 medium">2</span>
+						<ul class="cf">
+							<li class="box_light">07</li>
+							<li class="box_dark">14</li>
+							<li class="box_light">21</li>
+							<li class="box_dark">28</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">MAR</span> <span class="font_18 medium">3</span>
+						<ul class="cf">
+							<li class="box_light">06</li>
+							<li class="box_dark">13</li>
+							<li class="box_light">20</li>
+							<li class="box_dark">27</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">APR</span> <span class="font_18 medium">4</span>
+						<ul class="cf">
+							<li class="box_light">03</li>
+							<li class="box_dark">10</li>
+							<li class="box_light">17</li>
+							<li class="box_dark">24</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">MAY</span> <span class="font_18 medium">5</span>
+						<ul class="cf">
+							<li class="box_light">01</li>
+							<li class="box_dark">08</li>
+							<li class="box_light">15</li>
+							<li class="box_dark">22</li>
+							<li class="box_light">29</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">JUN</span> <span class="font_18 medium">6</span>
+						<ul class="cf">
+							<li class="box_light">05</li>
+							<li class="box_dark">12</li>
+							<li class="box_light">19</li>
+							<li class="box_dark">26</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">JUL</span> <span class="font_18 medium">7</span>
+						<ul class="cf">
+							<li class="box_light">03</li>
+							<li class="box_dark">10</li>
+							<li class="box_light">17</li>
+							<li class="box_dark">24</li>
+							<li class="box_light">31</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">AGU</span> <span class="font_18 medium">8</span>
+						<ul class="cf">
+							<li class="box_light">07</li>
+							<li class="box_dark">14</li>
+							<li class="box_light">21</li>
+							<li class="box_dark">24</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">SEP</span> <span class="font_18 medium">9</span>
+						<ul class="cf">
+							<li class="box_light">04</li>
+							<li class="box_dark">11</li>
+							<li class="box_light">18</li>
+							<li class="box_dark">26</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">OCT</span> <span class="font_18 medium">10</span>
+						<ul class="cf">
+							<li class="box_light">012</li>
+							<li class="box_dark">09</li>
+							<li class="box_light">16</li>
+							<li class="box_dark">23</li>
+							<li class="box_light">30</li>
+						</ul>
+					</li>
+					<li class="on_month"><span class="font_12 medium">NOV</span> <span class="font_18 medium">11</span>
+						<ul class="cf">
+							<li class="box_light">01</li>
+							<li class="box_dark">08</li>
+							<li class="box_light">15</li>
+							<li class="box_dark">22</li>
+							<li class="box_light">29</li>
+						</ul>
+					</li>
+					<li><span class="font_12 medium">DEC</span> <span class="font_18 medium">12</span>
+						<ul class="cf">
+							<li class="box_light">04</li>
+							<li class="box_dark">11</li>
+							<li class="box_light">18</li>
+							<li class="box_dark">25</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="ref">
+					<div class="text"><div class="box_dark"></div><p class="font_12 medium">전체 휴관일</p></div>
+					<div class="text"><div class="box_light"></div><p class="font_12 medium">자료실 휴관일</p></div>
+				</div>
+		</a></div>
+	</div>
+<!------------------------------------------------------------------------->
+	<section>
+		<div class="title cf">
+			<div class="img_cover"><img src="./images/file.png" alt=""/></div>
+			<h2 class="medium">추천 자료</h2>
+		</div>
+		<div class="locate cf box_light">
+			<div class="img_cover floatLeft"><img src="./images/information.png" alt=""/></div>
+			<h5 class="medium font_14 floatLeft">Information</h5> 
+			<h5 class="medium font_18 floatLeft in">></h5>
+			<div class="img_cover floatLeft"><img src="./images/file.png" alt=""/></div>
+			<h5 class="medium font_14 floatLeft">추천 자료</h5>
+			<h5 class="medium font_18 floatLeft in">></h5>
+			<h5 class="medium font_14 floatLeft">일반</h5>
+		</div>
+		<article class="book">
+			<div class="tab cf">
+				<div class="tab_btn floatLeft tab1 tab_on"><a href="#">일반</a></div>
+				<div class="tab_btn floatLeft tab2"><a href="#">청소년</a></div>
+				<div class="tab_btn floatLeft tab3"><a href="#">아동</a></div>
+				<div class="tab_btn floatLeft tab4"><a href="#">유아</a></div>
+			</div>
+			
+			<div class="contents bg_fff cf">
+				<div class="top img_cover floatLeft"><img src="./images/best11.jpg" alt=""/></div>
+				<div class="top book_info floatLeft">
+					<h2>혼자에게 혼자가 : 이병률 산문집</h2>
+					<ul>
+						<li>저자 : 이병률 지음</li>
+						<li>출판사 : 달</li>
+						<li>발행연도 : 2019</li>
+						<li>ISBN : 9791158161026</li>
+						<li>자료실 : [중원]문헌정보실</li>
+						<li>청구기호 : 814.7-ㅇ737ㅎ</li>
+					</ul>
+				</div>
+				<div class="book_sum">
+					<p>이 책은 ‘혼자’인 자신과 ‘혼자’인 타인에 더욱 집중한다. 그 지점에서 맞닿은 ‘우리’의 교차점도 있을 것이다. 이렇다보니 여행지 같은 특정 장소보다는 혼자 있을 수 있는 공간들에 더욱 집중한다 책에는 오로지 혼자이기에 오롯이 깊어지고 누릴 수 있었던 시간들이 촘촘히 기록되어 있다.   [출처: 인터넷 교보문고]</p>
+				</div>
+			</div>
+			
+			<div class="button cf">
+				<div class="search_btn font_16 floatRight box_dark"><a href="#">자료검색</a></div>
+				<div class="list_btn font_16 floatRight box_light"><a href="./sub3-1.html">목록</a></div>
+			</div>
+		</article>
+<!------------------------------------------------------------------------->	
+		<article class="footer box_dark cf">
+				<ul class="policy font_12 cf">
+					<li class="medium"><a class="color_dark" href="#">개인 정보 처리 방침</a></li>
+					<li><a href="#">영상 정보 처리 기기 관리 방침</a></li>
+					<li><a href="#">이용 약관</a></li>
+					<li><a href="#">이메일 무단 수집 거부</a></li>
+				</ul>
+				<p class="copyright font_12">Copyright © 성남시도서관사업소. All Rights Reserved.</p>
+		</article>
+	</section>
+	
+	<div class="pop_wrap login_pop">
+		<div id="pop_bg"></div>
+		<div class="pop_center">
+			<div class="logo"><img src="./images/logo.png" alt=""/></div>
+			<div class="close"></div>
+			<div class="contents">
+				<form>
+					<input type="text" name="id" class="font_14" placeholder="아이디"/>
+					<input type="password" name="psw" class="font_14" placeholder="패스워드"/>
+					<input type="button" name="btn" class="box_dark font_16" value="로그인">
+				</form>
+				<ul class="font_14 cf">
+					<li class="floatLeft"><a class="color_333" href="#">아이디 찾기</a></li>
+					<li class="floatLeft"><a class="color_333" href="#">비밀번호 찾기</a></li>
+					<li class="floatLeft"><a class="color_dark" href="./sub1.html">회원가입</a></li>
+				</ul>
+				<ul class="font_12 light color_666">
+					<li>로그인이 안되시는 경우 <strong class="medium">한/영키와 Caps Lock</strong>키가 눌러져 있지 않은지 확인하세요.</li>
+					<li>계속해서 로그인이 안되는 경우 관리자에게 문의하시기 바랍니다.</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

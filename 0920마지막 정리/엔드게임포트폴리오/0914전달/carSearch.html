@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${pageName}|"></title>
+    <!-- CSS only -->
+
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <!-- font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/footer.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+    <style>
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 1320px;
+            margin: 0 auto;
+            padding: 32px 0;
+            min-height: 630px;
+        }
+
+        .section .row {
+            width: 1320px;
+            margin: 0;
+        }
+
+        .section .row .customSelect {
+            width: 315px;
+            padding: 10px;
+            margin: 16px 16px 16px 0;
+            background: #F9FAFB;
+        }
+
+        .section .row .carCardBox{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            width: 985px;
+        }
+
+        .car-card {
+            width: 315px;
+            padding: 10px;
+            margin-bottom: 16px;
+        }
+
+        .car-card img{
+            width: 100%;
+            height: 300px;
+            border: 1px solid #E9ECEF;
+            border-radius: 10px;
+
+
+        }
+        .section .row .customSelect,
+        .car-card,
+        .section .row .carSearchBox,
+        .section .row .carSearchBox input,
+        .section .row .carSearchBox .fontBox {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            }
+
+        .section .row .carSearchBox  {
+            width: 985px;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: #F9FAFB;
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+
+        .section .row .carSearchBox input {
+            width: 800px;
+            height: 50px;
+            font-type:4rem;
+        }
+
+        .section .row .carSearchBox .fontBox {
+            height: 50px;
+            width: 50px;
+            background: #fff;
+        }
+
+        .section .row .carSearchBox .fontBox a {
+            display: block;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section .row .carSearchBox i {
+            text-align: center;
+            font-type: 4rem;
+        }
+
+        select {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 180px;
+        }
+
+        label {
+            width: 100px;
+        }
+
+        select,label {
+            padding: 4px 8px;
+            background-color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 1px solid #aaa;
+            border-radius: .5em;
+        }
+
+        .cardImgBox {
+        width: 295px;
+        height: 300px;
+        border: 1px solid red;
+        border-radius: 10px;
+        margin-bottom: 16px;
+        }
+
+        .car-card {
+            width: 315px;
+            padding: 10px;
+        }
+
+        .car-card img{
+            width: 100%;
+            height: 200px;
+            margin-bottom: 8px;
+        }
+        .car-card p{font-size: 1.5rem;}
+        .selectedCheckList {
+            width: 985px;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            background: #F9FAFB;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            }
+
+    </style>
+</head>
+<body>
+<div th:replace="~{fragments/header::header}"></div>
+<div class="section">
+    <div class="row">
+        <div class="customSelect">
+            <div class="filter">
+                <div class="checkbox">
+                    <label th:for="brand" class="selBrand">
+                        <b>브랜드</b>
+                    </label>
+                    <select name="brand" onchange="applyFilters()">
+                        <option value="">브랜드를 선택해주세요</option>
+                        <option value="현대">현대</option>
+                        <option value="제네시스">제네시스</option>
+                        <option value="기아">기아</option>
+                        <option value="쉐보레(GM대우)">쉐보레(GM대우)</option>
+                        <option value="르노코리아(삼성)">르노코리아(삼성)</option>
+                        <option value="KG모빌리티(쌍용)">KG모빌리티(쌍용)</option>
+                        <option value="벤츠">벤츠</option>
+                        <option value="BMW">BMW</option>
+                        <option value="아우디">아우디</option>
+                        <option value="폭스바겐">폭스바겐</option>
+                        <option value="미니">미니</option>
+                        <option value="볼보">볼보</option>
+                        <option value="폴스타">폴스타</option>
+                        <option value="포르쉐">포르쉐</option>
+                        <option value="렉서스">렉서스</option>
+                        <option value="도요타">도요타</option>
+                        <option value="인피니티">인피니티</option>
+                        <option value="혼다">혼다</option>
+                        <option value="닛산">닛산</option>
+                        <option value="미쯔비시">미쯔비시</option>
+                        <option value="테슬라">테슬라</option>
+                        <option value="포드">포드</option>
+                        <option value="지프">지프</option>
+                    </select>
+
+                </div>
+                <div class="checkbox">
+                    <label th:for="type" class="selType">
+                        <b>차종</b>
+                    </label>
+                    <select>
+                        <option value="">차종을 선택해주세요</option>
+                        <option value="경차">경차</option>
+                        <option value="소형">소형</option>
+                        <option value="준중형">준중형</option>
+                        <option value="대형">대형</option>
+                        <option value="RV">RV</option>
+                        <option value="SUV">SUV</option>
+                        <option value="승합차">승합차</option>
+                        <option value="스포츠카">스포츠카</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label th:for="color" class="selType">
+                        <b>색상</b>
+                    </label>
+                    <select>
+                        <option value="">색상을 선택해주세요</option>
+                        <option value="흰색">흰색</option>
+                        <option value="은색">은색</option>
+                        <option value="회색">회색</option>
+                        <option value="검은색">검은색</option>
+                        <option value="빨간색">빨간색</option>
+                        <option value="파란색">파란색</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="checkbox">
+                    <label th:for="carManufacturingDate" class="selCarManufacturingDate">
+                        <b>연식</b>
+                    </label>
+                    <select>
+                        <option value="">연식을 선택해주세요</option>
+                        <option value="2023">2023년</option>
+                        <option value="2022">2022년</option>
+                        <option value="2021">2021년</option>
+                        <option value="2020">2020년</option>
+                        <option value="2019">2019년</option>
+                        <option value="2018">2018년</option>
+                        <option value="2017">2017년</option>
+                        <option value="2016">2016년</option>
+                        <option value="2015">2015년</option>
+                        <option value="2014">2014년</option>
+                        <option value="2013">2013년</option>
+                        <option value="2012">2012년</option>
+                        <option value="2011">2011년</option>
+                        <option value="2010">2010년</option>
+                        <option value="2009">2009년</option>
+                        <option value="2008">2008년</option>
+                        <option value="2007">2007년</option>
+                        <option value="2006">2006년</option>
+                        <option value="2005">2005년</option>
+                        <option value="2004">2004년</option>
+                        <option value="2003">2003년</option>
+                        <option value="2002">2002년</option>
+                        <option value="2001">2001년</option>
+                        <option value="2000">2000년</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="carCardBox">
+            <div class="carSearchBox">
+                <input type="text" id="searchInput" placeholder="원하는 차량을 검색하세요">
+                <div class="fontBox"><a href="#" onclick="searchCars()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+                <div class="fontBox"><a href="#"><i class="fa-solid fa-arrow-rotate-right"></i></a></div>
+            </div>
+            <div class="selectedCheckList">
+                <p>위치확인</p>
+            </div>
+            <div class="carCardBox">
+                <th:block th:each="car, status: ${cars.getContent()}">
+                    <div class="car-card">
+                        <a th:href="'/car/' +${car.id}" class="text-dark">
+                                <img th:src="${car.imgUrl}" class="card-img-top" th:alt="${car.carName}">
+                            <div>
+                                <p>[[${car.carName}]]</p>
+                                <p>[[${car.carOption}]]</p>
+                                <p>[[${car.price}]]원</p>
+                            </div>
+                        </a>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer::footer}"></div>
+<script th:inline="javascript">
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            searchCars();
+        }
+    }
+
+    // JavaScript 코드
+    function searchCars() {
+        var searchText = document.getElementById("searchInput").value.toLowerCase();
+        var carCards = document.getElementsByClassName("car-card");
+
+        for (var i = 0; i < carCards.length; i++) {
+            var carCard = carCards[i];
+            var carName = carCard.querySelector("h3").textContent.toLowerCase();
+
+            if (carName.includes(searchText)) {
+                carCard.style.display = "block";
+            } else {
+                carCard.style.display = "none";
+            }
+        }
+    }
+
+    // 선택한 브랜드, 차종, 색상, 연식을 저장할 배열을 초기화합니다.
+    var selectedBrands = [];
+    var selectedTypes = [];
+    var selectedColors = [];
+    var selectedManufacturingDates = [];
+
+    // 셀렉트 박스에서 옵션을 선택할 때마다 호출되는 함수입니다.
+    function applyFilters() {
+        // 선택한 브랜드 옵션을 가져옵니다.
+        var selectedBrand = document.querySelector("select[name='brand']").value;
+
+        // 선택한 차종 옵션을 가져옵니다.
+        var selectedType = document.querySelector("select[name='type']").value;
+
+        // 선택한 색상 옵션을 가져옵니다.
+        var selectedColor = document.querySelector("select[name='color']").value;
+
+        // 선택한 연식 옵션을 가져옵니다.
+        var selectedManufacturingDate = document.querySelector("select[name='carManufacturingDate']").value;
+
+        // 선택한 브랜드를 selectedBrands 배열에 추가합니다.
+        if (selectedBrand !== "") {
+            selectedBrands.push(selectedBrand);
+        }
+
+        // 선택한 차종을 selectedTypes 배열에 추가합니다.
+        if (selectedType !== "") {
+            selectedTypes.push(selectedType);
+        }
+
+        // 선택한 색상을 selectedColors 배열에 추가합니다.
+        if (selectedColor !== "") {
+            selectedColors.push(selectedColor);
+        }
+
+        // 선택한 연식을 selectedManufacturingDates 배열에 추가합니다.
+        if (selectedManufacturingDate !== "") {
+            selectedManufacturingDates.push(selectedManufacturingDate);
+        }
+
+        // 선택한 옵션을 셀렉티드 체크 리스트에 보여줍니다.
+        showSelectedOptions();
+    }
+
+    // 선택한 옵션을 셀렉티드 체크 리스트에 보여주는 함수입니다.
+    function showSelectedOptions() {
+        var selectedCheckList = document.querySelector(".selectedCheckList");
+
+        // 셀렉티드 체크 리스트를 초기화합니다.
+        selectedCheckList.innerHTML = "";
+
+        // 브랜드 옵션을 보여줍니다.
+        if (selectedBrands.length > 0) {
+            var brandList = document.createElement("ul");
+            brandList.innerHTML = "<b>선택한 브랜드:</b>";
+            selectedBrands.forEach(function (brand) {
+                var listItem = document.createElement("li");
+                listItem.textContent = brand;
+                brandList.appendChild(listItem);
+            });
+            selectedCheckList.appendChild(brandList);
+        }
+
+        // 차종 옵션을 보여줍니다.
+        if (selectedTypes.length > 0) {
+            var typeList = document.createElement("ul");
+            typeList.innerHTML = "<b>선택한 차종:</b>";
+            selectedTypes.forEach(function (type) {
+                var listItem = document.createElement("li");
+                listItem.textContent = type;
+                typeList.appendChild(listItem);
+            });
+            selectedCheckList.appendChild(typeList);
+        }
+
+        // 색상 옵션을 보여줍니다.
+        if (selectedColors.length > 0) {
+            var colorList = document.createElement("ul");
+            colorList.innerHTML = "<b>선택한 색상:</b>";
+            selectedColors.forEach(function (color) {
+                var listItem = document.createElement("li");
+                listItem.textContent = color;
+                colorList.appendChild(listItem);
+            });
+            selectedCheckList.appendChild(colorList);
+        }
+
+        // 연식 옵션을 보여줍니다.
+        if (selectedManufacturingDates.length > 0) {
+            var dateList = document.createElement("ul");
+            dateList.innerHTML = "<b>선택한 연식:</b>";
+            selectedManufacturingDates.forEach(function (date) {
+                var listItem = document.createElement("li");
+                listItem.textContent = date;
+                dateList.appendChild(listItem);
+            });
+            selectedCheckList.appendChild(dateList);
+        }
+    }
+
+
+</script>
+</body>
+</html>

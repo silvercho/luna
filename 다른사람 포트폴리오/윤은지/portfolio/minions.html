@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Minions</title>
+	<style>
+	body{background-color: #3F5C8F;}
+
+.wrap{
+	width: 400px; height: 400px;
+	position: fixed;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+	.h1{
+		position: absolute;
+		top: 20%; left: 50%;
+		animation: heart 2s infinite ease-in-out;
+	}
+		@keyframes heart{
+			100%{top: -20%; left: 20%;}
+		}
+		
+	.h2{
+		position: absolute;
+		top: 20%; left: 50%;
+		animation: love 2s infinite ease-in;
+	}		
+		@keyframes love{
+			100%{top: -60%; left: 60%;}
+		}
+		
+		
+
+	.wrap .body{
+		width: 210px; height: 250px;
+		background-color: #FDD657;
+		border: 7px solid #333;
+		border-radius: 50% 50% 30% 30% /  30% 30% 20% 20%;
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		box-sizing: border-box;
+	}
+	
+		.body .eye{
+			width: 100px; height: 100px;
+			border-radius: 50%;
+			border: 12px solid #333;
+			box-sizing: border-box;
+			background-color: #fff;
+			position: absolute;
+		}
+		
+		.body:hover .eye.right:after{
+			top: 0px; right: 20px;
+		}
+		.body:hover .eye.left:after{
+			top: 0px; left: 20px;
+		}
+		
+		.body .eye.left{top: 0; left: 0;}
+		.body .eye.right{top: 0; right: 0;}
+				
+		.body .eye:after{
+			content: '';
+			display: block;
+			width: 35px; height: 35px;
+			background-color: #333;
+			border-radius: 50%;
+			position: absolute;
+		}
+		.body .eye.left:after{top: 30px; left: 26px;}	
+		.body .eye.right:after{top: 30px; right: 26px;}	
+		
+		.body .eye:before{
+			content: '';
+			display: block;
+			width: 20px; height: 30px;
+			background-color: #333;
+			position: absolute;
+		}
+		.body .eye.left:before{top: 20px; right: 100%;}
+		.body .eye.right:before{top: 20px; left: 100%;}
+		
+		.body .mouth{
+			width: 45px; height: 18px; 
+			background-color: #333;
+			border-radius: 0 0 50% 50% / 0 0 100% 100%;
+			position: absolute;
+			top: 46%; left: 39%;
+		}	
+			
+			.body .mouth:after{
+				content: '';
+				display: block;	
+				width: 39.5px; height: 5px; 
+				background-color: #fff;
+				position: absolute; left: 2.1px;
+				opacity: 0;
+			}
+				
+		.body:hover .mouth{
+			width: 45px; height: 35px; 
+			background-color: #8D354A;
+		}		
+		.body:hover .mouth:after{opacity: 1;}
+				
+		.body .pants{
+			width: 210px; height: 60px; 
+			background-color: #108FD2;
+			border-radius: 0 0 30% 30% / 0 0 80% 80%;
+			border: 7px solid #333;
+			box-sizing: border-box;
+			position: absolute;
+			bottom: -8px; left: -7px;
+		}
+		
+			.pants:before{
+				content:'';
+				display: block;
+				width: 140px; height: 35px;
+				background-color: #108FD2;
+				position: absolute; 
+				top: -30px; left: 28px;
+				z-index: 1;
+			}
+			
+			
+			.body .pants .top{
+				width: 140px; height: 35px; 
+				background-color: #108FD2;
+				border: 7px solid #333;
+				position: absolute;
+				bottom: 100%; left: 50%;
+				transform: translateX(-50%);
+			}
+				.pants .top:before,
+				.pants .top:after{
+					content: '';
+					display: block;
+					width: 45px; height: 7px;
+					border: 7px solid #333;
+					background-color: #108FD2;
+					position: absolute;
+					z-index: 2;
+				}
+				.pants .top:before{
+					transform: rotate(45deg);
+					bottom: 108%; right: 88.5%;
+					border-right-color: transparent;
+				}
+				.pants .top:after{
+					transform: rotate(-45deg);
+					bottom: 108%; left:88.5%;
+					border-left-color: transparent;
+				}
+				
+			.pants .leg{
+				width: 25px; height: 10px;
+				border: 7px solid #333;
+				background-color: #108FD2;
+				position: absolute;
+				top: 100%;
+			}
+				.pants .leg:after{
+					content: '';
+					display: block;
+					width:25px; height: 10px;
+					background-color: #108FD2;
+					position: absolute;
+					top: -10px;
+				}
+			.pants .leg.left{left:55px;}
+			.pants .leg.right{right: 55px;}
+		
+				.pants .leg .foot{
+					width: 50px; height: 17px;
+					background-color: #333;
+					position: absolute;
+					top: 100%
+				}
+				.pants .leg.left .foot{border-top-left-radius: 35% 90%; right: -7px;}
+				.pants .leg.right .foot{border-top-right-radius: 35% 90%; left: -7px;}
+				
+		
+			.body .arm{
+				width: 80px; height: 10px;
+				border: 7px solid #333;
+				background-color: #FDD657;
+				position: absolute;
+				top: 150px;
+				z-index:-1;
+			}				
+				.body .arm.left{
+					right: 85%;
+					transform: rotate(-60deg);
+				}
+				.body .arm.right{
+					top: 115px;
+					left: 95%;
+					transform: rotate(-40deg);
+					transform-origin: left top;
+					animation: hi 250ms infinite alternate;
+					
+				}
+					@keyframes hi{
+						100%{transform: rotate(-20deg);}
+					} 
+						
+					.arm .fist{
+						width: 40px; height: 30px;
+						background-color: #333;
+						position: absolute;
+					}
+					.arm.left .fist{
+						top:-10px; right: 80%;
+						border-top-left-radius: 12px;
+					}
+					.arm.right .fist{
+						top:-10px; left: 80%;
+						border-top-right-radius: 12px;
+					}
+					
+						.arm .fist:before{
+							content:'';
+							display: block;
+							width: 40px; height: 30px;
+							background-color: #333;
+							position: absolute;
+							border-radius: 12px;
+						}
+						.arm.left .fist:before{
+							transform: rotate(90deg);
+							top: 5px; left: -5px;}
+		
+						.arm.right .fist:before{
+							transform: rotate(90deg);
+							top: 5px; right: -5px;}
+		
+		
+		.body .logo{
+			width: 58px; height: 60px;
+			border-radius: 45%;
+			background-color: #333;
+			position: absolute;
+			top: 161px; left: 50%;
+			transform: translateX(-50%);
+			z-index: 3;
+		
+		}	
+			.body .logo:after{
+				content: '';
+				display: block;
+				width:41px; height: 41px; 
+				background-color: #108FD2;
+				transform: rotate(-45deg);
+				position: absolute;
+				top: 9.2px; left: 8.3px;
+				
+				animation: led 300ms infinite;
+			}
+				@keyframes led{
+					0%{background-color: #fff;}
+					100%{background-color:#108FD2; }
+				}
+		.body .logo .logo_in{
+				width: 20px; height: 20px;
+				background-color: #333;
+				border-radius: 50%;
+				z-index: 4;
+				position: absolute;
+				top: 50%; left: 50%;
+				transform: translate(-50%, -50%);
+		}
+		
+			.logo .logo_in:before,
+			.logo .logo_in:after{
+				content: '';
+				display: block;
+				width: 29px; height: 3px;
+				background-color: green;
+				position: absolute;
+				left: 10px;
+			}
+			.logo .logo_in:before{
+				top:7px; 
+				background-color: #333;
+			}
+			.logo .logo_in:after{
+				top:10px;
+				background-color: #108FD2;
+				
+				animation: led 300ms infinite;
+			}
+			
+				@keyframes led{
+					0%{background-color: #fff;}
+					100%{background-color:#108FD2; }	
+				}
+	</style>
+</head>
+<body>	
+	<div class="wrap">
+	
+		<svg class="h1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="80px" height="80px" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+			<path style="fill:#33CCCC" d="M150.25,145.5C150.111,107.909,203,107.517,203,144s-50.861,65.504-50.861,65.504
+		S97.5,181.483,97.5,145S150.25,109.017,150.25,145.5"/></svg>
+		
+		<svg class="h2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="80px" height="80px" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+			<path style="fill:#33CCCC" d="M150.25,145.5C150.111,107.909,203,107.517,203,144s-50.861,65.504-50.861,65.504
+		S97.5,181.483,97.5,145S150.25,109.017,150.25,145.5"/></svg>
+	
+		<div class="body">
+			<div class="eye left"></div>
+			<div class="eye right"></div>
+			<div class="mouth"></div>
+			
+			
+			<div class="pants">
+				<div class="top"></div>
+				<div class="leg left">
+					<div class="foot"></div>
+				</div>
+				<div class="leg right">
+					<div class="foot"></div>
+				</div>
+			</div>
+			
+			<div class="arm left">
+				<div class="fist"></div>
+			</div>
+			<div class="arm right">
+				<div class="fist"></div>
+			</div>
+			
+			<div class="logo">
+				<div class="logo_in"></div>
+			</div>
+			
+		</div>
+	</div>
+	
+
+</body>
+</html>

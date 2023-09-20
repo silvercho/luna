@@ -1,0 +1,95 @@
+<!DOCTYPE html >
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">	
+	<title>테마 레이아웃</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/theme.css">	
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/nav.js"></script>
+</head>
+<body>
+<!--전체 영역-->
+    <div id="wrap" class="">
+        
+        <!--이미지 삽입-->
+        <img src="images/cloud1.png" alt="">
+        <img src="images/cloud2.png" alt="">
+        
+        <!--로고 삽입-->
+        <h1></h1>
+        
+        <!--메인 내비게이션(gnb)-->
+        <!--ul#gnb>(li>a[href=#])*5-->
+        <ul id="gnb">
+            <li><a href="#">소개</a></li>
+            <li><a href="#">전망</a></li>
+            <li><a href="#">배경</a></li>
+            <li><a href="#">예약</a></li>
+            <li><a href="#">찾아오기</a></li>
+        </ul>
+        
+        <!--sns(웹 폰트 아이콘)-->
+        <!--ul>(li>a[href=#]>i.fa.fa-)*3-->
+        <ul id="sns">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+        
+        <!--슬로건 텍스트 영역-->
+        <!--article>p+em-->
+        <article>
+            <p><strong>Wooree</strong> Resort</p>
+            <em>시간에 따른 테마 적용으로 디자인 한 레이아웃 메인 페이지</em>
+        </article>
+        
+        <!--전경 디자인 프레임-->
+        <div id="frontFrame">
+            <p>
+                <!--시계-->
+                <span>00</span> : <span>00</span> : <span>00</span>
+                
+                <!--이미지-->
+                <img src="images/cloud1.png" alt="" class="cld1">
+                <img src="images/cloud2.png" alt="" class="cld2">
+            </p>
+        </div>
+        
+        
+        
+        <!--테마 변경 메뉴(테마 확인용)-->
+        <!--nav>ul>(li>a[href=#])*4-->
+        <nav id="themeChange">
+            <ul>
+                <li><a href="#" title="morning">05시 - 11시</a></li>
+                <li><a href="#" title="afternoon">11시 - 16시</a></li>
+                <li><a href="#" title="evening">16시 - 20시</a></li>
+                <li><a href="#" title="night">20시 - 04시</a></li>
+            </ul>
+        </nav>
+        
+    </div>    
+
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

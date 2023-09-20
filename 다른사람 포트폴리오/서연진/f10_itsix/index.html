@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script src="./js/script.js"></script>
+	<title>Document</title>
+	<script>
+		function initialize() {
+
+			/*
+				http://openapi.map.naver.com/api/geocode.php?key=f32441ebcd3cc9de474f8081df1e54e3&encoding=euc-kr&coord=LatLng&query=서울특별시 강남구 강남대로 456
+                위와같이 링크에서 뒤에 주소를 적으면 x,y 값을 구할수 있습니다.
+			*/
+			var Y_point			= 37.465841;		// Y 좌표
+			var X_point			= 126.887666;		// X 좌표
+
+			<!-- 37.417716 127.253874 -->
+			
+			var zoomLevel		= 16;						// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+
+			var markerTitle		= "ITSIX";				// 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+			var markerMaxWidth	= 300;						// 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+			// 말풍선 내용
+			var contentString	= '<div>' +
+			'<h2>ITSIX</h2>'+
+			'<p>디지털엠파이어빌딩 607호 아이티식스</p>' +
+			'</div>';
+
+			var myLatlng = new google.maps.LatLng(Y_point, X_point);
+			var mapOptions = {
+								zoom: zoomLevel,
+								center: myLatlng,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+			var marker = new google.maps.Marker({
+													position: myLatlng,
+													map: map,
+													title: markerTitle
+			});
+
+			var infowindow = new google.maps.InfoWindow(
+														{
+															content: contentString,
+															maxWidth: markerMaxWidth
+														}
+			);
+
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+	</script>
+
+	</script>
+</head>
+<body onload="initialize()">
+	<div id="wrap">
+		
+		<header>
+			<h1 class="logo">
+				<img src="./images/logo.png" alt=""/>
+			</h1>
+			<ul class="menu">
+				<li><a href="#">ABOUT ITSIX</a></li>
+				<li><a href="#">OUR WORK</a></li>
+				<li><a href="#">CONTACT US</a></li>
+				<li><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+			</ul>
+			<div class="m_menu">
+				<li><a href="#">ABOUT ITSIX</a></li>
+				<li><a href="#">OUR WORK</a></li>
+				<li><a href="#">CONTACT US</a></li>
+				<li><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+			</div>
+			<ul class="rightmenu">
+				<li><a href="#">
+					<img src="./images/top-right-menu-request.png" alt=""/>
+				</a></li>
+				<li><a href="#">
+					<img src="./images/top-right-menu-extranet.png" alt=""/>
+				</a></li>
+				<li><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+			</ul>
+		</header>
+		<div id="fake_header"></div>
+		<section id="main">
+			<div class="main_center">
+				<ul class="center_bg">
+					<li><img src="./images/s-01-01.png" alt=""/></li>
+					<li><img src="./images/s-01-02.png" alt=""/></li>
+					<li><img src="./images/s-01-03.png" alt=""/></li>
+					<li><img src="./images/s-01-04.png" alt=""/></li>
+					<li><img src="./images/s-01-05.png" alt=""/></li>
+					<li><img src="./images/s-01-06.png" alt=""/></li>
+					<li><img src="./images/main_center.png" alt=""/></li>
+				</ul>
+				
+			</div>
+			<div class="hexagon">
+				<ul>
+					<li class="hexagon_g">
+						<img src="./images/img2.png" alt=""/> 
+					</li>
+					<li class="hexagon_r">
+						<img src="./images/img.png" alt=""/> 
+					</li>
+				</ul>	
+				<span>ITSIX<p>SIXTH SENSE FOR CONNECTION</p></span>
+			</div>
+		</section>
+		
+<!-- 레드카펫 영역 -->
+
+		<div class="redcarpet">
+			<div id="leftside"></div>
+			<div id="rightside">
+				<span class="service">Our Services</span>
+				<ul>
+					<li><img src="./images/service-ico-01.png" alt=""/>
+						<b>귀 기울여 듣는 생각</b>
+						<p>STRATEGY &amp; PLANNING</p>
+						<span>
+							ITSIX는 수많은 경험으로 쌓아온 전문성과 판단력으로
+							고객들의 생각을 적극적으로 수용하고 니즈를 파악하여
+							체계적으로 기획합니다.
+						</span>
+					</li>
+					<li><img src="./images/service-ico-02.png" alt=""/>
+						<b>눈으로 쫓는 트렌드</b>
+						<p>DESIGN</p>
+						<span>
+							ITSIX만의 스타일로 귀사의 아이덴티티를 탄생시키며,
+							사용자 중심의 UI/UX를 기본으로 트랜드에 맞춰 감각적이고
+							창의적인 디자인을 합니다.
+						</span>
+					</li>
+					<li><img src="./images/service-ico-03.png" alt=""/>
+						<b>손끝으로 담아내는 기술</b>
+						<p>DEVELOPMENT</p>
+						<span>
+							ITSIX는 개발에 대한 명확한 이해와 전문성으로 높은 수준의 서비스를 제공하며,
+							웹 표준을 기반으로 최적화된 서비스 환경이 될 수 있도록 개발합니다.
+						</span>
+					</li>
+					<li><img src="./images/service-ico-04.png" alt=""/>
+						<b>유지보수</b>
+						<p>MAINTENANCE</p>
+						<span>
+							웹사이트는 생명이 있는 유기체 입니다. 
+							방문하는 네티즌들에게 적절히 반응하고 계절별 비즈니스 이벤트 별 변화에 대응하기
+							위하여 ITSIX는 프로그래밍 및 디자인 부문에서 서비스 하고 있습니다.
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+<!-- 포트폴리오 영역 -->
+
+		<div id="portfolio">
+			<div class="span_cover">
+				<span>Our Portfolio</span>
+			</div>
+			
+			<div class="port_cover">
+				<ul class="cf">
+					<li><a href="#"><img src="./images/thmb-36.png" alt=""/></a>
+						<p>JUSE TV Desktop / Mobile 사이트 구축</p>
+						<span class="gray">(주)프리에이티브</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-35.png" alt=""/></a>
+						<p>코스메인 쇼핑몰 구축</p>
+						<span class="gray">(주)동우씨엠</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-38.jpg" alt=""/></a>
+						<p>ROOKIE ASIA M-STYLE SHIW사이트 구축</p>
+						<span class="gray">ROOKIE ASIA M-STYLE SHIW</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-37.jpg" alt=""/></a>
+						<p>Sopnida 사이트 구축 메인부문</p>
+						<span class="gray">(주)CK Globalnet</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-34.png" alt=""/></a>
+						<p>더마젝 사이트 구축</p>
+						<span class="gray">(주)더마젝</span>
+					</li>
+				<!-- 2 -->
+					<li><a href="#"><img src="./images/thmb-33.png" alt=""/></a>
+						<p>솔라휴먼 사이트 구축</p>
+						<span class="gray">딘월드</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-32.png" alt=""/></a>
+						<p>서울시 직장맘 지원센터 사이트 구축</p>
+						<span class="gray">서울시 직장맘 지원센터</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-31.png" alt=""/></a>
+						<p>마가뮤직 사이트 구축</p>
+						<span class="gray">(주)마가뮤직</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-01.jpg" alt=""/></a>
+						<p>데미소다 "황금상자" 이벤트</p>
+						<span class="gray">(주)데미소다</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-02.jpg" alt=""/></a>
+						<p>서문교회 Desktop / Mobile 사이트 구축</p>
+						<span class="gray">서문교회</span>
+					</li>
+				<!-- 3 -->
+					<li><a href="#"><img src="./images/thmb-03.png" alt=""/></a>
+						<p>아이브레인 사이트 리뉴얼</p>
+						<span class="gray">(주)아이브레인</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-04.png" alt=""/></a>
+						<p>지에스티지글로벌 사이트 구축</p>
+						<span class="gray">(주)지에스티지</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-05.png" alt=""/></a>
+						<p>ART n TOY GALLERY 사이트 구축</p>
+						<span class="gray">(주)아트앤토이 갤러리</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-06.png" alt=""/></a>
+						<p>BR뇌교육 Desktop / Mobile 사이트 구축</p>
+						<span class="gray">(주)비알뇌교육</span>
+					</li>
+					<li><a href="#"><img src="./images/thmb-07.png" alt=""/></a>
+						<p>청소년인성교육협회 사이트 구축</p>
+						<span class="gray">청소년인성교육협회</span>
+					</li>
+				</ul>
+			</div>
+			
+			<ul class="port_bg">
+				<li><img src="./images/s-01-06.png" alt=""/></li>
+				<li><img src="./images/s-03-01.png" alt=""/></li>
+				<li><img src="./images/s-03-02.png" alt=""/></li>
+				<li><img src="./images/s-03-03.png" alt=""/></li>
+			</ul>
+		</div>
+		
+<!-- 레드카펫2 영역 -->
+
+	<div id="redcarpet2">
+		<div id="redside"></div>
+		<div id="redrightside">
+			<span>Contact</span>
+			<div class="add">
+				<ul>
+					<li><b>Address</b> 서울시 금천구 범안로 1130(가산동 685번지) 디지털엠파이어빌딩 607호 아이티식스</li>
+					<li><b>Phone</b><a href="#"> 02-852-1846</a></li>
+					<li><b>fax</b> 02-858-1845</li>
+					<li><b>e-mail</b><a href="#"> hcjung@itsix.co.kr</a></li>
+				</ul>
+			</div>
+			<div class="pro"><i class="fa fa-book" aria-hidden="true"></i><a href="#">PROJECT REQUEST</a></div>
+		</div>
+	<!-- 지도 영역 -->
+		<div id="map_cover">
+			<div id="map_view" style="width:100%; height:900px;"></div>
+		
+	<!-- 푸터 영역 -->
+			<footer>
+				<div class="foot_cover">
+					<h3>SIXTH SENSE FOR CONNECTION</h3>
+					<ul>
+						<li>서울시 금천구 범안로 1130 디지털엠파이어빌딩 607호</li>
+						<li>T. 02-852-1846</li>
+						<li>F. 02-858-1845</li>
+					</ul>
+					<span>Copyright (c) ITSIX All Rights Reserved.</span>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	
+		
+		
+	</div>
+</body>
+</html>

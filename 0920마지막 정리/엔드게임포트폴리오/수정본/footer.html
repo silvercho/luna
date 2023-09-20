@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    li { list-style: none;}
+    /* 성은씨 작업물 */
+#footer {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 80px 70px 330px;
+    background: rgb(29, 29, 29) url(/img/logo7.png) no-repeat 80px 50%/10%;
+}
+#footer .copy {
+    margin-top: 30px;
+}
+#footer .fs {    border: 1px solid #000;
+    position: relative;
+    top: 50px;
+    width: 240px;
+    height: 50px;
+}
+#footer .fs .fsBtn {
+    font-size: 1.6rem;
+    display: inline-block;
+    width: 240px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #494949;
+    color: #b9b9b9;
+}        
+#footer.fs i {margin-left: 40px;}
+
+#footer .fs ul {
+    font-size: 1.6rem;
+            display: none;
+            position: absolute;
+            left: 0;
+            bottom: 50px;
+            width: 240px;
+            background: #494949;
+            border: 1px solid #676767;
+            border-bottom: none;
+            padding: 15px 40px;
+        }
+
+        #footer .fs ul a {
+            color: #b9b9b9;
+            line-height: 2;
+        }
+</style>
+</head>
+<body>
+    <div class="footer"  th:fragment="footer">
+        <!-- 푸터 -->
+        <div id="footer">
+            <div class="leftCont">
+                <div class="logo"></div>
+                <div class="addr">
+                    <p>경기도 안양시 만안구 안양로 303 메쎄포스빌 8층 | TEL : 031) 446-2111 </p>
+                    <p>사업자등록번호 : 2023-04-06 | 통신판매업 신고 : 안양 제 0920호 | 대표이사 : 최윤석 외 4명</p>
+                </div>
+                <div class="copy">COPYRIGHT 2023 ENDCAR COMPANY.ALL RIGHTS RESERVED</div>
+            </div>
+            <div class="fs">
+                <a href="#" class="fsBtn"><span>관련 사이트 </span><i class="fa-solid fa-plus"></i></a>
+                <ul>
+                    <li><a href="customerSupport.html">고객지원실</a></li>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        const fs = $('.fs'),
+            fsLst = fs.find('ul'),
+            fsBtn = fs.find('.fsBtn');
+
+        let state = 0;
+        fsBtn.click(function () {
+            fsLst.slideToggle();
+            if (state == 0) {
+                $('.fs i').attr({ class: 'fa-solid fa-minus' });
+                state = 1;
+            } else {
+                $('.fs i').attr({ class: 'fa-solid fa-plus' });
+                state = 0;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewfort" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<title>GIGABYTE</title>
+	<script>
+	$(function(){
+		var i = 0;
+		//var repeat;
+		
+		$(".img_slide .button li").click(function(){
+			
+			i=$(this).index();
+			
+			$(".img_slide .imgs").stop().animate({
+				"margin-left":-i*100+"%"
+			},600);
+		
+			$(".img_slide .button li").removeClass("on");
+			$(this).addClass("on");
+		});
+		
+		///
+		timer();
+		function timer(){
+			repeat = setInterval(function(){
+				i++;
+				if(i==5){
+					i=0;
+				}
+				$(".img_slide .button li").eq(i).trigger("click");
+				
+			},5000);
+		
+		}
+		
+		$(".img_slide .button li").mouseover(function(){
+			clearInterval(repeat);
+		});
+		$(".img_slide .button li").mouseleave(function(){
+			timer();
+		});
+		
+		
+	});
+
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<header>
+		
+			<div class="header_top">
+				<a href="#"></a>
+					<img src="./images/GigabyteLOGO_white.png" alt=""/>
+				</a>
+			</div>
+		
+	
+			<div class="gnb_wrap">
+				<div class="gnb_cover">
+					
+						<ul>
+							<li><a href="#">제품</a>
+								<div class="full_down cf">
+									<div class="bg"></div>
+									
+									<div class="bg_img f1">	
+										<h3>그래픽카드</h3>
+									</div>	
+									
+									<div class="bg_img f2">
+										<h3>메인보드</h3>
+									</div>
+									
+									<div class="bg_img f3">
+										<h3>SSD</h3>
+									</div>
+									
+									<div class="bg_img f4">
+										<h3>마우스</h3>
+									</div>	
+								</div>
+							</li>
+							<li><a href="#">지원</a></li>
+							<li><a href="#">Insight</a></li>
+							<li><a href="#">Events/News</a></li>
+							<li><a href="#">구입</a></li>
+							</ul>
+						
+				</div>
+			</div>
+			
+			
+		</div>
+			<div class="crum">
+				
+				<div class="other">
+					<a href="#">
+						<img src="./images/LanguageIcon_white.png" alt=""/>
+					</a>
+					<a href="#">
+						<img src="./images/MemberCenter_white.png" alt=""/>
+					</a>
+					<a href="#">
+						<img src="./images/SearchIcon_white.png" alt=""/>
+					</a>
+					<div class="aorus">
+					<a href="#">
+						<img src="./images/aorus-logo-white.png" alt=""/>
+					</a>
+				</div>
+				</div>
+			</div>
+		
+				
+				
+			</div>
+			
+		</div>
+		
+		<div class="img_slide">
+			
+			<ul class="imgs cf">
+				<li>
+				<video autoplay loop muted>
+					
+					<source src="./media/2142.mp4" type="video/mp4"/> 
+				</video>
+				</li>
+				<li><a href="#"><img src="./images/1683.jpg" alt=""/></a></li>
+				<li>
+				<video autoplay loop muted>
+					<source src="./media/1925.mp4" type="video/mp4"/> 
+				</video>
+				</li>
+				<li><a href="#"><img src="./images/1750.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./images/1810.jpg" alt=""/></a></li>
+				
+			</ul>
+			
+		
+		
+			<ul class="button">
+				<li class="on"><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>	
+	</header>
+	<section class="cf">
+		<div class="section_cover">
+			<h2>
+			Welcome to GIGABYTE
+			</h2>
+			
+		</div>
+		
+			<div class="article_coverL cf">
+				<div class="article-box a1">
+					<a href="#"><img src="./images/2241_s.jpg" alt=''/></a>
+				</div>
+				<div class="article-box a2">
+					<a href="#"><img src="./images/2252_s.jpg" alt=''/></a>
+				</div>
+				<div class="article-box a3">
+					<a href="#"><img src="./images/1808_s.jpg" alt=''/></a>
+				</div>
+				<div class="article-box a4">
+					<a href="#"><img src="./images/1693_s.jpg" alt=''/></a>
+				</div>
+			</div>
+		
+		
+	</section>
+	
+	<footer>
+		<div id="footer">
+			<div class="top_footer cf">
+				<div class="tf">
+				
+					<h3 class="title"><a href="#">Discover</a></h3>
+					<h3 class="title"><a href="#">GIGABYTE소개</a></h3>
+					<h3 class="title"><a href="#">뉴스</a></h3>
+					<h3 class="title"><a href="#">지원</a></h3>
+					<h3 class="title"><a href="#">문의하기</a></h3>
+				</div>
+				<div class="sns">
+					<a href="#"><img src="./images/fb_icon_footer_black.png" alt=''/></a>
+					<a href="#"><img src="./images/ig_icon_footer_black.png" alt=''/></a>
+					<a href="#"><img src="./images/in_icon_footer_black.png" alt=''/></a>
+					<a href="#"><img src="./images/youtube_icon_footer_black.png" alt=''/></a>
+				</div>
+			</div>
+			<div class="bottom_footer">
+				<div class="lang">
+					<div class="lang_cover"><a href="#"><img src="./images/LanguageIcon_white.png" alt=''/>
+					<span>&nbsp;Korea(한국어)</span></div>
+					</a>
+					
+				</div>
+				<div class="copy"><span>&copy;2019 GIGA-BYTE Technology Co., Ltd.는 본 저작권을 보유하고 있습니다. | 이용약관 | 개인정보보호
+				<img src="./images/cat.png" alt=""/>
+				</span>
+				
+			</div>
+			
+		
+		
+		
+		</div>
+	</footer>
+</div>
+</body>
+</html>

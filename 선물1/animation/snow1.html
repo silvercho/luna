@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title> jQuery </title>
+		<link rel="stylesheet" type="text/css" href="../common/css/reset.css">
+		<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+
+		<!-- 스타일 -->
+		<style type="text/css">
+		body { background:#000; }
+		.home { background:#fff; color:#000; }
+		#snow { position:absolute; top:-50px; font-size:25px; color:#fff; }
+		</style>
+		<!-- // 스타일 -->
+
+	</head>
+	<body>
+
+		<a href="../index-2.html" class="home">Home</a>		<div id="wrap">
+			<div id="snow">&#10052;</div>
+		</div>
+
+		<!-- 스크립트 -->
+		<script type="text/javascript">
+		var t = setInterval(function(){
+			var documentHeight 		= $(document).height();
+			var startPositionLeft 	= Math.random() * $(document).width() - 100;
+			var startOpacity		= 0.5 + Math.random();
+			var sizeFlake			= 10 + Math.random() * 20;
+			var endPositionTop		= documentHeight - 40;
+			var endPositionLeft		= startPositionLeft - 100 + Math.random() * 200;
+			var durationFall		= documentHeight * 10 + Math.random() * 5000;
+			$('#snow')
+				.clone()
+				.appendTo('#wrap')
+				.css(
+					{
+						left: startPositionLeft,
+						opacity: startOpacity,
+						'font-size': sizeFlake
+					}
+				)
+				.animate(
+					{
+						top: endPositionTop,
+						left: endPositionLeft,
+						opacity: 0.2
+					},
+					durationFall,
+					'linear',
+					function() {
+						$(this).remove()
+					}
+				);
+		}, 500);
+
+
+
+
+		var snow = {};
+		var snowflex = {};
+
+		snowflex.create  = function(){
+			var flex = document.createElement('div');
+				flex.innerHTML		 	= "&#10052;";
+				flex.style.fontSize 	= 10 + Math.random() * 20 + 'px';
+				flex.style.top 			= - 50 + Math.random() * 20 + 'px';
+				flex.style.left 		= Math.random() * 1500 + 'px';
+				flex.style.position 	= "absolute";
+				flex.style.color 		= "#F3F3F3";
+				flex.style.opacity		= Math.random();
+				document.getElementsByTagName('body')[0].appendChild(flex);
+				return flex;
+		};
+
+
+		snow.snowflex = function(){
+			var flex = snowflex.create();
+			var x = -1 + Math.random() * 2;
+			var t = setInterval( 
+						function(){
+							flex.style.top 	= parseInt(flex.style.top) +  5 + 'px';
+							flex.style.left = parseInt(flex.style.left) +  x + 'px';
+							if (parseInt(flex.style.top) > 1500) {
+								clearInterval(t);
+								document.getElementsByTagName('body')[0].removeChild(flex);
+							}			
+						}, 45 + Math.random() * 20);
+		};
+		
+		snow.storm = function(){
+			var t	= setInterval(
+						function(){
+							snow.snowflex();
+						}, 500);
+		};
+
+		//snow.storm();
+
+		var fog = {};
+
+		fog.draw = function(ctx, x, y){
+			
+				ctx.fillStyle = "rgba( 255, 255, 255, " + Math.random() + " )";
+				ctx.arc( x, y, 10,0,Math.PI*2,true);
+				ctx.closePath();
+				ctx.fill();
+
+		};
+
+
+		fog.start = function(){
+			var ctx = document.getElementById('canvas').getContext("2d");
+			var x = 0;
+			var y = 0;
+			var t = setInterval( 
+						function(){
+							
+							x = 300 + 300*Math.sin(x);
+							y = 300 + 300* -Math.cos(x);
+							 
+							x += 2;
+							fog.draw(ctx, x, y);
+
+						}, 100);
+			
+		};
+		
+		//fog.start();
+		</script>
+		<!-- // 스크립트 -->
+
+	</body>
+
+</html>

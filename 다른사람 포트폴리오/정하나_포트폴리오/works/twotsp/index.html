@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="./img/pavicon.png">
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="./js/jquery-3.1.1.js"></script>
+	<script src="./js/jquery.transform2d.js"></script>
+	<script src="./js/jquery.transform3d.js"></script>
+	<script src="./js/jquery.mousewheel.min.js"></script>
+	<script src="./js/jquery-ui.js"></script>
+	<script src="./js/jquery.js"></script>
+	<title>TWOTSP</title>
+	<script>
+	$(function(){
+		var w =$(".dragable_box .dragable_img").width();
+		$(".dragable_box .dragable_img .before img,.dragable_box .dragable_img .after img").width(w);
+		
+		$(window).resize(function(){
+			var w =$(".dragable_box .dragable_img").width();
+			$(".dragable_box .dragable_img .before img,.dragable_box .dragable_img .after img").width(w);
+		
+		});
+		
+	
+		$(".handle_1").draggable({
+			axis:"x",
+			containment:".drag_1",
+			drag:function(event, ui){
+				var l = $(this).css("left");
+				$(".drag_1 .after").css("width",l);
+			}
+		});
+		$(".handle_2").draggable({
+			axis:"x",
+			containment:".draga_2",
+			drag:function(event, ui){
+				var l = $(this).css("left");
+				$(".drag_2 .after").css("width",l);
+			}
+		});
+	});
+	
+	
+	</script>
+</head>
+	<header>
+		<h1 class="logo">
+			<img src="./img/img_logo.jpg" alt=""/>
+		</h1>
+		<div class="lang">
+			<ul>
+				<li><a href="#"><img src="./img/img_lan_ko.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./img/img_lan_en.jpg" alt=""/></a></li>
+				<li><a href="#"><img src="./img/img_lan_ch.jpg" alt=""/></a></li>
+			</ul>
+		</div>
+		<div class="full_down_btn">
+			<a href="#"><img src="./img/btn_gnbOpen_hover.jpg" alt=""/></a>
+		</div>
+		<div class="full_down_btn_x">
+			<a href="#"><img src="./img/btn_gnbClose.jpg"alt=""/></a>
+		</div>	
+	</header>
+	<div class="full_down">
+		<ul>
+			<li><a href="#">LOGIN</a></li>
+			<li><a href="#">JOIN</a></li>
+			<li><a href="#">MYPAGE</a></li>
+			<li><a href="#">ORDER LIST</a></li>
+			<li><a href="#">SHOPPING BAG</a></li>
+			<li><a href="#">PRODUCT</a></li>
+			<li><a href="#">REVIEW</a></li>
+		</ul>
+	</div>	
+	
+	<ul class="pager_box">
+		<li class="circle"><a href="#main"></a></li>
+		<li><a href="#main_2"></a></li>
+		<li><a href="#main_3"></a></li>
+		<li><a href="#main_4"></a></li>
+		<li><a href="#main_5"></a></li>
+		<li><a href="#main_6"></a></li>
+	</ul>
+	
+	<div class="section">
+		<div id="main" class="article mousemove">
+			<div class="mousemove_left">
+				<div class="mousemove_left_box"></div>
+				<div class="mousemove_left_tit">
+					<p class="txt_1">EWG ALL GREEN</p>
+					<p class="txt_2">LAVENDER</p>
+					<p class="txt_3">with</p>
+					<p class="txt_4">PEARL</p>
+					<p class="txt_5">라주 마스크 1일 1팩 보습 진정</p>
+				</div>
+			</div>
+			<div class="mousemove_right">
+				<img src="./img/bgTxt.png">
+				<div class="img"><img src="./img/intro_1_item.png"></div>
+			</div>
+		</div>
+		<div id="main_2" class="article media">
+			<video loop autoplay muted>
+			<source src="./media/Edit_Lavender_Pearl_v06_web.mp4" type="video/mp4"/>
+			</video>
+		</div>
+		<div id="main_3" class="article article1">
+			<ul>
+				<li>
+					<ul>
+						<li>
+							<div class="article1_tit">
+								<span>Lavender</span><br/>
+								<h3>라벤더 꽃수</h3>
+								<p>살균과 소독에 도움을 주는 라벤더 꽃은 가벼운 화상이나 벌레 물린 곳에 치료 효과를 가지고 있는 천연재료입니다.라벤더 꽃으로 만든 라벤더 꽃수는 피부에 긴장을 완화시켜주며 세정 효과에 도움을 주어 예민하고 거칠어진 피부를 빠르게 진정시키고 부드럽게 가꾸는데 도움을 줍니다</p>
+							</div>
+						<img src="./img/img_m04_01_new.jpg">
+						</li>
+						<li>
+							<div class="article1_tit">
+								<span>Hydrolized Pearl</span><br/>
+								<h3>하이드롤라이즈드펄</h3>
+								<p>아미노산과 기타 미네랄 등으로 이루어진 진주는 각종 유해인자의 침투를 억제하고 활성산소를 제거해 세포손상에 도움을 주는 천연재료입니다.진주의 유효성분이 피부에 더욱 잘 흡수되도록 파파인으로 발효시킨 발효 진주 추출물이 피부의 수분함량을 늘려 탄력감소에 도움을 주며 피부수분공급· 상처치료효과· 주름개선 및 미백에도 도움을 줍니다.</p>
+							</div>
+						<img src="./img/img_m04_02_new.jpg">
+						</li>
+						<li><img src="./img/img_m04_03_new.jpg">
+							<div class="article1_tit">
+								<span>EWG ALL GREEN</span><br/>
+								<h3>그린 등급의 원료</h3>
+								<p>유해성분 무첨가, 미국 환경 단체 EWG에서 부여한 EWG ALL GREEN 등급의 원료로 만들어 민감한 피부도 믿고 사용할 수 있는 마스크입니다</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li><img src="./img/img_m04_04_new.jpg">
+							<div class="article1_tit">
+								<span>Glutacion</span><br/>
+								<h3>글루타치온</h3>
+								<p>멜라닌 생성을 억제해 뛰어난 미백효과와 세포손상을 방지해 항산화 작용을 가진 글루타치온성분은 피부를 맑고 건강하게 가꾸어 주며 즉각적인 브라이트닝 효과로 화사하고 깨끗한 피부를 유지하는데 도움을 줍니다</p>
+							</div>
+						</li>
+						<li><img src="./img/img_m04_05_new.jpg">
+							<div class="article1_tit">
+								<span>Hyalpol Matrix 6</span><br/>
+								<h3> 6종 히아루론산</h3>
+								<p>저분자, 중분자, 고분자의 소듐하이알루로네이트로 이루어진 3가지 히아루론산 복합체와 강력한 보습작용의 하이드롤라이즈드하이알루로닉애씨드등 6가지 히아루론산 성분이 모인 복합체가 피부보습력 강화 및 유지와 피부 탄력, 주름개선에 도움을 줍니다</p>
+							</div>
+						</li>
+						<li><img src="./img/img_m04_06_new.jpg">
+							<div class="article1_tit">
+								<span>Herb Complex 10</span><br/>
+								<h3>10종 허브 콤플렉스</h3>
+								<p>아사이열매, 녹차, 레몬밤, 블루베리, 크랜베리, 로즈힙열매, 루이보스, 로즈마리, 레이디스맨틀잎, 히비스커스 성분이 들어있어 자연에서 추출한 원료로 피부 속부터 건강하고 탄탄하게 보습,진정,영양을 한번에 공급할 수 있습니다.</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="slide_btn_10">
+				<div class="slide_btn slide_btn_11 on"></div>
+				<div class="slide_btn slide_btn_12"></div>
+			</div>
+		</div>
+		
+		
+		<div id="main_4" class="article article2">
+			<div class="article2_left">
+				<ul class="article2_left_ul">
+					<li><span>"라벤더 한 스푼의 비밀"</span></span?><img src="./img/img_m05_lavender.jpg"></li>
+					<li><span>"진주 펄 한 스푼의 비밀"</span><img src="./img/img_m05_pearl.jpg"></li>
+				</ul>
+			</div>
+			<ul class="article2_right">
+				<li class="lavender article_right_li">
+					<ul>
+						<div class="article2_img">
+							<div class="a first">
+								<img src="./img/img_m05_01_new.jpg">
+							</div>
+							<div class="a second">
+								<img src="./img/img_m05_04_new.jpg">
+							</div>
+						</div>
+						<li>
+							<div class="article2_tit lavender_tit">
+								<h2>SKIN SOOTHING(피부진정)</h2>
+								<p>예민하고 거칠어진 피부를 빠르게 진정시켜줍니다.</p>
+							</div>
+							<div class="article2_tit pearl_tit">
+								<h2>PORE CLEANSER</h2>
+								<p>향균성을 가진 꿀의 효소가 박테리아로 인한 불균형을 막아주고 모공을 깨끗하게 도와줍니다.</p>
+							</div>
+						</li>
+						<div class="article2_img">
+							<div class="a first">
+								<img src="./img/img_m05_02_new.jpg">
+							</div>
+							<div class="a second">
+								<img src="./img/img_m05_05_new.jpg">
+							</div>
+						</div>
+						<li class="color">
+							<div class="article2_tit lavender_tit">
+								<h2>REFRESH (피부결정리)</h2>
+								<p>피부의 긴장을 완화시켜주며 세정효과로 피부를 부드럽게 가꾸는데 도움을 줍니다.</p>
+							</div>
+							<div class="article2_tit pearl_tit">
+								<h2>HYDRATION (보습케어)</h2>
+								<p>천연 보습인자로부터 아미노산과 미네랄이 피부를 매끄럽게 해줍니다.</p>
+							</div>
+						</li>
+						<div class="article2_img">
+							<div class="a first">
+								<img src="./img/img_m05_03_new.jpg">
+							</div>
+							<div class="a second">
+								<img src="./img/img_m05_06_new.jpg">
+							</div>
+						</div>
+						<li>
+							<div class="article2_tit lavender_tit">
+								<h2>SKIN REGENERATION (피부재생)</h2>
+								<p>살균과 소독에 도움을 주는 천연재료입니다.</p> 
+							</div>
+							<div class="article2_tit pearl_tit">
+								<h2>PROTECTION (보호장벽)</h2>
+								<p>진주의 유효성분이 유해인자의 피부 침투를 억제하여 멜라닌 색소 형성을 예방해줍니다.</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="slide_btn_20">
+				<div class="slide_btn slide_btn_21 on"></div>
+				<div class="slide_btn slide_btn_22"></div>
+			</div>
+		</div>
+		
+		
+		<div id="main_5" class="article dragable">
+			<ul>
+				<li class="dragable_box">
+					<div class="dragable_tit">
+						<span>자연에서 추출한 원료로 1일 1팩 보습케어</span>
+						<p>유해 성분 무첨가, EWG GREEN 등급 원료로 안심하고 사용할 수 있는 건강한 마스크팩</p>
+					</div>
+					<div class="dragable_img drag_1">
+						<div class="before">
+							<img src="./img/img_m06_under01_new.jpg">
+						</div>
+						<div class="after">
+							<img src="./img/img_m06_cover01_new.jpg">
+						</div>
+						
+						<div class="dragable_line"></div>
+						<div class="handle_1 dragable_handle">
+							<i class="fa fa-angle-left" aria-hidden="true"></i>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</div>
+					</div>
+					
+					
+				</li>
+				<li class="dragable_box">
+					<div class="dragable_tit">
+						<span>즉각적인 쿨링,피부온도 감소효과</span>
+						<p>피부를 촉촉하게 하며 -3˚C의 피부 온도 감소 	효과를 입증 받은 쿨링 폭탄 마스크입니다 
+						물방울이 터지는 듯한 제형이 달아오른 피부를 시원하게 잠재워 주며 넘치는 수분감을 선사합니다.</p>
+					</div>
+					<div class="dragable_img drag_2">
+						<div class="before">
+							<img src="./img/img_m06_under02_new.jpg">
+						</div>
+						<div class="after">
+							<img src="./img/img_m06_cover02_new.jpg">
+						</div>
+						<div class="dragable_line"></div>
+						<div class="handle_2 dragable_handle">
+							<i class="fa fa-angle-left" aria-hidden="true"></i>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="slide_btn_30">
+				<div class="slide_btn slide_btn_31 on"></div>
+				<div class="slide_btn slide_btn_32"></div>
+			</div>
+		</div>
+		<div id="main_6" class="article buy">
+			<img src="./img/img_m08_new.jpg">
+			<div class="buy_tit">
+				<h2>LAVENDER PEARL MASK</h2>
+				<p>라벤더펄마스크</br>
+					￦3,000</p>
+				<a href="#"><span>buy</span></a>
+			</div>
+		</div>
+	</div>
+</html>

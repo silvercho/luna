@@ -1,0 +1,174 @@
+/*테마 디자인 - theme.css*/
+/*테마1 -  morning*/
+#wrap.morning{
+	background-image:url(../images/bg_morning.jpg);
+}
+
+#wrap.morning .logo a{
+	background-image:url(../images/logo_b.png);
+}
+
+#wrap.morning .gnb li a{
+	color:#555;
+}
+
+#wrap.morning .sns li i{
+	color:#555;
+}
+
+#wrap.morning #frontFrame{
+	background-image:url(../images/phone_morning.png);
+}
+
+#wrap.morning article p{
+	color:#666;
+}
+
+#wrap.morning article p strong{
+	color:#111;
+}
+
+#wrap.morning article em{
+	color:#333;
+}
+
+#wrap.morning #frontFrame p{
+	color:#333;
+}
+
+
+
+/*테마2 - afternoon*/
+#wrap.afternoon{
+	background-image:url(../images/bg_afternoon.jpg);
+}
+
+#wrap.afternoon .logo a{
+	background-image:url(../images/logo_b.png);
+}
+
+#wrap.afternoon .gnb li a{
+	color:#555;
+}
+
+#wrap.afternoon .sns li i{
+	color:#555;
+}
+
+#wrap.afternoon #frontFrame{
+	background-image:url(../images/phone_afternoon.png);
+}
+
+#wrap.afternoon article p{
+	color:#666;
+}
+
+#wrap.afternoon article p strong{
+	color:#111;
+}
+
+#wrap.afternoon article em{
+	color:#333;
+}
+
+#wrap.afternoon #frontFrame p{
+	color:#333;
+}
+
+
+
+
+
+
+/*테마3 - evening*/
+#wrap.evening{
+	background-image:url(../images/bg_evening.jpg);
+}
+
+#wrap.evening .logo a{
+	background-image:url(../images/logo_w.png);
+}
+
+#wrap.evening .gnb li a{
+	color:#fff;
+}
+
+#wrap.evening .sns li i{
+	color:#fff;
+}
+
+#wrap.evening #frontFrame{
+	background-image:url(../images/phone_evening.png);
+}
+
+#wrap.evening article p{
+	color:#444;
+}
+
+#wrap.evening article p strong{
+	color:#fff;
+}
+
+#wrap.evening article em{
+	color:#333;
+}
+
+#wrap.evening #frontFrame p{
+	color:#fff;
+}
+
+
+
+
+
+
+
+ 
+/*테마4 - night*/
+#wrap.night{
+	background-image:url(../images/bg_night.jpg);
+}
+
+#wrap.night .logo a{
+	background-image:url(../images/logo_w.png);
+}
+
+#wrap.night .gnb li a{
+	color:#fff;
+}
+
+#wrap.night .sns li i{
+	color:#fff;
+}
+
+#wrap.night #frontFrame{
+	background-image:url(../images/phone_night.png);
+}
+
+#wrap.night article p{
+	color:#444;
+}
+
+#wrap.night article p strong{
+	color:#fff;
+}
+
+#wrap.night article em{
+	color:#333;
+}
+
+#wrap.night #frontFrame p{
+	color:#fff;
+}
+
+
+
+
+
+ 
+ 
+/*전경 프레임 이미지*/
+
+
+
+

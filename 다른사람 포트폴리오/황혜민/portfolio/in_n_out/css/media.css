@@ -1,0 +1,305 @@
+@media screen and (max-width:1400px){
+	
+#btn{
+		display:none;
+	}
+.beverages a{
+		display:block;
+		width:50%;
+		height:100%;
+		float:left;
+		position:relative;
+	}
+.beverages a.right_cover{
+		display:block;
+		width:50%;
+		height:100%;
+		float:left;
+	}
+ .beverages .left{
+		width:100%;
+		height:100%;
+	}
+
+.beverages .left h2{
+		color:#fff;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+	}
+ .beverages .left img{
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%) scale(1);
+		width:80%;
+		transition:all 0.6s;
+	}
+
+.beverages .left:hover img{
+
+		transform:translate(-50%,-50%) scale(1.2);
+
+	}
+	
+
+ .beverages .right_cover{
+		width:100%;
+		height:100%;
+		position:static;
+		transform:skewX(0deg);
+		transform-origin:left bottom;
+		overflow:hidden;
+	}
+	
+ .beverages .right_cover .right h2{
+		position:absolute;
+		bottom:50%;
+		left:50%;
+		transform:skewX(0deg) translate(-50%,50%);
+		color:#fff;
+		z-index:4444;
+	}
+ .beverages .right img{
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:skewX(0deg) translate(-50%,-50%) scale(1);
+		width:80%;
+		transition:all 0.6s;
+	}
+ .beverages .right:hover img{
+		transform:skewX(0deg) translate(-50%,-50%) scale(1.2);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+@media screen and (max-width:1250px){
+	
+	/*header*/
+	#btn{
+		display:none;
+	}
+	#header_wrap{
+		margin:0 auto;
+		position:relative;
+	}
+	#header_wrap > a > img{
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+	}
+
+
+	#header_wrap .gnb ul li{
+		width:20%;
+		position:absolute;
+	}
+	#header_wrap .gnb ul li:first-child{
+		left:0;
+	}
+	#header_wrap .gnb ul li:nth-child(2){
+		left:191.59px;
+	}
+	#header_wrap .gnb ul li:nth-child(3){
+		right:191.59px;
+	}
+	#header_wrap .gnb ul li:nth-child(4){
+		right:0;
+	}
+	
+	/*top_section*/
+ .bur{
+		width:33.33%;
+		height:400px;
+	}
+ .fries{
+		width:33.33%;
+		float:left;
+		height:400px !important;
+ }
+ .beverages{
+		width:66.67%;
+		float:left;
+		height:400px !important;
+	}
+.se{
+	width:33.33%;
+	height:400px !important;
+	}
+	
+}
+
+@media screen and (max-width:1200px){
+	#fake_header{
+		display:block;
+	}
+	#btn{
+		display:none;
+	}
+	header{
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:9999;
+	}
+	#header_wrap .gnb ul li:after{
+		
+	}
+	
+	#img_slide{
+		display:none;
+	}
+	.bur img{
+		display:none;
+	}
+	.bur:first-child{
+		width:50%;
+		height:400px;
+		background-image:none;
+		background:url(../images/1200_1.png) no-repeat center /cover;
+		transition:all 0.6s;
+	}
+	.bur:first-child:hover{
+		background:url(../images/1200_1_4.png) no-repeat center /cover;
+	}
+	.bur:nth-child(2){
+		display:none;
+	}
+	.bur:nth-child(3){
+		display:none;
+	}
+	.bur:nth-child(4){
+		display:none;
+	}
+	 .fries{
+			width:50%;
+			float:left;
+			height:400px !important;
+			background:url(../images/1200_2.png) no-repeat center /cover;
+			transition:all 0.6s;
+	 }
+	 .fries:hover{
+		 background:url(../images/1200_2_1.png) no-repeat center /cover;
+	 }
+	 .fries img{
+		 display:none;
+	 }
+	 .beverages{
+			display:none;
+	}	
+	 .se.s1{
+		 background:none;
+		 background:url(../images/1200_3.png) no-repeat center /cover;
+		 transition:all 0.6s;
+	 }
+	 .se.s1:hover{
+		 background:url(../images/1200_3_1.png) no-repeat center /cover;
+	 }
+	 .se.s1:before{
+		 display:none;
+	 }
+	 .se.s1:after{
+		 display:none;
+	 }
+	 .se.s2{
+		 background:none;
+		 background:url(../images/1200_4.png) no-repeat center /cover;
+		display:block;
+		transition:all 0.6s;
+	 }
+	 .se.s2:hover{
+		 background:url(../images/1200_4_1.png) no-repeat center /cover;
+	 }
+	 .se.s2:before{
+		 display:none;
+	 }
+	 .se.s2:after{
+		 display:none;
+	 }
+	.se{
+		width:50%;
+		height:400px !important;
+	}
+	.se span{
+		display:none;
+	}
+	.se:last-child{
+		display:none;
+		background:none;
+	}
+}
+
+
+
+@media screen and (max-width:980px){
+	#btn{
+		display:block;
+	}
+	#header_wrap{
+		width:70%;
+		margin:0 auto;
+	}
+	#header_wrap .gnb ul li{
+		display:none;
+	}
+	
+	
+	#footer .f_wrap{
+		width:60%;
+		margin:0 auto;
+	}
+	#footer .f_wrap > p{
+	text-align:center;
+	right:0;
+}
+	#footer .f_wrap .sns{
+		display:none;
+	}
+	
+}
+
+@media screen and (max-width:940px){
+	
+	#footer .f_wrap > p{
+		width:800px;
+		text-align:center;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+}
+	#footer .f_wrap img{
+		display:none;
+	}
+
+}
+
+@media screen and (max-width:600px){
+	.bur:first-child{
+		width:100%;
+	}
+	.fries{
+			width:100%;	
+	 }
+	 .se{
+		 width:100%;
+	 }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;color:#000;}
+
+.cf:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+body{
+	font-family: 'Gugi', cursive;
+}
+
+#wrap{
+	width:100%;
+	height:100%;
+	position:fixed;
+}
+
+header{
+	position:fixed;
+	width:20%;
+	height:100%;
+	background-color:#F19C01;
+	top:0;
+	background:no-repeat center /cover;
+	background-image:url(../image/s2.png);
+}
+
+header .logo{
+	width:75%;
+	height:auto;
+	position:absolute;
+	left:50%;
+	top:2%;
+	transform:translateX(-50%);
+}
+
+header .logo img{
+	width:100%;
+	display:block;
+}
+
+
+header .gnb{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	font-size:28px;
+	width:100%;
+	text-align:center;
+	line-height:70px;
+}
+
+header .gnb a{
+	display:block;
+	color:#000;
+	text-shadow:-1px 0 1px #000; 
+	transition:all 0.6s;
+}
+
+header .gnb a:hover{
+	color:#fff;
+	transform:scale(1.1);
+}
+
+header .sns{
+	position:absolute;
+	top:28%;
+	width:100%;
+	margin-left:27%;
+}
+
+header .sns li{
+	float:left;
+	font-size:20px;
+	width:20%;
+}
+
+header .sns li i{
+	color:#000;
+	opacity:0.7;
+	transition:all 0.6s;
+}
+
+header .sns li:hover i{
+	opacity:1;
+	transform:scale(1.2);
+	color:#fff;
+}
+
+
+section{
+	width:80%;
+	height:auto;
+	margin-left:20%;
+	
+}
+
+section article{
+	width:20%;
+	height:280px;
+	float:left;
+}
+
+section article .imgs .a1{
+	width:100%;
+	height:100%;
+	transition:all 0.5s;
+}
+
+section article .imgs .a1 img.move{
+	position:absolute;
+	left:50%;
+	top:60%;
+	transform:translateX(-50%);
+}
+
+
+
+section article .imgs .a1 img.move1{
+	left:22%;
+	position:absolute;
+}
+
+section article img{
+	display:block;
+}
+
+section article:nth-child(1){
+	width:70%;
+	height:450px;
+	background-color:#fff;
+	
+}
+
+section article:nth-child(2){
+	width:30%;
+	height:450px;
+	background-color:#fff;
+
+}
+
+section article .a2 img{
+	opacity:1;
+	transition:all 0.5s;
+	width:100%;
+	height:100%;
+}
+
+section article .a2:hover img{
+	opacity:0.5;
+}
+
+section article span{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:100%;
+	height:100%;
+	color:#000;
+	display:none;
+}
+
+section article h2{
+	padding:20px;
+}
+
+section article p{
+	padding:20px;
+	line-height:30px;
+}
+
+section article .jaja{
+	width:100%;
+	height:100%;
+	left:22%;
+}
+
+section article .jaja h1{
+	position:absolute;
+	bottom:5%;
+	left:5%;
+	font-size:25px;
+	color:#000;
+	text-shadow:3px 0px 1px #fff;
+	transition:all 0.6s;
+	opacity:0;
+}
+
+section article .jaja:hover h1{
+	transform:scale(1.2);
+	opacity:1;
+}
+
+
+section article .a2:hover span{
+	display:block;
+	background-color:rgba(0,255,255,0.1);
+}
+
+
+section article:nth-child(3){
+	width:35%;
+	background-color:#F19C01;
+}
+
+section article:nth-child(4){
+	width:35%;
+	background-color:#F19C01;
+}
+
+section article:nth-child(5){
+	width:30%;
+	background-color:#F19C01;
+}
+
+section article:nth-child(6){
+	width:70%;
+	background-color:#fff;
+}
+
+section article:nth-child(6) .baba{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+section article:nth-child(6) .baba li{
+	width:14%;
+	float:left;
+	margin-top:35px;
+	animation:move 7s infinite linear;
+}
+
+
+section article:nth-child(6) .baba li img{
+	width:100%;
+	height:auto;
+	display:block;
+}
+
+section article:nth-child(6) .baba li:nth-child(1){
+	animation-delay:0;
+}
+
+section article:nth-child(6) .baba li:nth-child(2){
+	animation-delay:1;
+}
+
+section article:nth-child(6) .baba li:nth-child(3){
+	animation-delay:2;
+}
+
+section article:nth-child(6) .baba li:nth-child(4){
+	animation-delay:3;
+}
+
+section article:nth-child(6) .baba li:nth-child(5){
+	animation-delay:4;
+}
+
+
+section article:nth-child(6) .baba li:nth-child(6){
+	animation-delay:5;
+}
+
+
+section article:nth-child(6) .baba li:nth-child(7){
+	animation-delay:6;
+}
+
+
+@keyframes move{
+	from{opacity:0;}
+	to{opacity:1;}
+}
+
+section article:nth-child(7){
+	width:30%;
+	/* background-color:steelblue; */
+}
+
+
+
+section article > div{
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

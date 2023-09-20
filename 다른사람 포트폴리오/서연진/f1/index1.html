@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<title>M&M's</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<script>
+	
+	$(function(){
+		$(".nav li").mouseover(function(){
+			var i = $(this).index();
+			$(".sub_menu_box ul").stop().animate({
+				"left":"0"
+			},400);
+			$(".sub_menu_box ul").eq(i).stop().animate({
+				"left":"200px"
+			},400);
+		});
+		$(".sub_menu_box ul").mouseover(function(){
+			$(".sub_menu_box ul").stop().animate({
+				"left":"0"
+			},400);
+			$(this).stop().animate({
+				"left":"200px"
+			},400);
+		});
+		
+		$(".nav li").mouseleave(function(){
+			var i = $(this).index();
+			$(".sub_menu_box ul").stop().animate({
+				"left":"0"
+			},400);
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="vid">
+			<video autoplay muted loop playsinline>
+				<source src="./media/m&m_cf.mp4" type="video/mp4"/>
+			</video>
+		</div>
+	
+	
+	
+	
+	<header>
+		<div class="sub_menu_box">
+			<ul class="sub sub1">
+				<li><a href="#"><em>M&M's <span>밀크</span> </em></a></li>
+				<li><a href="#"><em>M&M's  <span>피넛</span></em></a></li>
+				<li><a href="#"><em>M&M's <span>크리스피</span> </em></a></li>
+			</ul>
+			<ul class="sub sub2">
+				
+				<li class="red"><a href="#"><em>red</em></a></li>
+				<li class="yellow"><a href="#"><em>yellow</em></a></li>
+				<li class="blue"><a href="#"><em>blue</em></a></li>
+				<li class="orange"><a href="#"><em>orange</em></a></li>
+				<li class="green"><a href="#"><em>green</em></a></li>
+				<li class="brown"><a href="#"><em>Ms.brown</em></a></li>
+				
+				<img src="./images/character.png" alt=""/>
+				<div class="txtbox">
+					<div class="webox">
+					<i class="fa fa-comment-o" aria-hidden="true">
+					<p class="we">
+					우리는 <span>M&M's!</span>
+					</p></i>
+					</div>
+				</div>
+			</ul>
+		</div>
+		
+		<div class="nav_bg">
+			<img src="./images/m&m_bg.png" alt=""/>
+		</div>
+		<h1 class="logo">
+			<a href="#">
+				<img src="./images/logo.png" alt=""/>
+			</a>
+		</h1>
+		<ul class="nav">
+			
+			<li class="menu nav1"><a href="#"><em>제품소개</em></a>
+				
+			</li>
+			<li class="menu nav2"><a href="#"><em>캐릭터 소개</em></a>
+				
+			</li>
+		</ul>
+
+		</header>
+		<ul class="sns">
+			<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+		</ul>
+		
+		<section>
+				<div class="side_bg">
+						<img src="./images/m&m_bg.png" alt=""/>
+				
+					<div class="side">
+					
+						<div ><a href="#">
+							<img class="img1" src="./images/menu_new_milk.png" alt=""/>
+						</a></div>
+				
+						<div ><a href="#">
+							<img class="img2" src="./images/menu_new_peanut.png" alt=""/>
+						</a></div>
+					
+						<div ><a href="#">
+							<img class="img3" src="./images/menu_new_crispy.png" alt=""/>
+						</a></div>
+					</div>
+				</div>
+				
+				<div class="btn">
+					<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+					<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+					<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+				</div>
+		</section>
+	
+	</div>
+</body>
+</html>
